@@ -1,0 +1,15 @@
+{
+  "original_runs": 2790,
+  "original_censored": 707,
+  "extended_censored": 522,
+  "new_kb_runs": 4410,
+  "new_hk_runs": 500,
+  "new_binary_runs": 700,
+  "isolate_sensitivity_runs": 1170,
+  "blocked_censored": 39,
+  "censored_all_discordant_edges_touch_unmatchable": 520,
+  "isolate_sensitivity_censored": 0.0,
+  "reproduced_output_rows": 2790.0,
+  "bootstrap_seed": 20261103,
+  "bootstrap_resamples": 10000
+}

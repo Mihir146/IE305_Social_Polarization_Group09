@@ -1,0 +1,10 @@
+{
+  "cohort": "pilot",
+  "markets": 30,
+  "policies": 18,
+  "runs": 540,
+  "repeated_period_rows": 32940,
+  "elapsed_seconds": 4.895,
+  "fixed_campaign_periods": 60,
+  "anylogic_executed": false
+}

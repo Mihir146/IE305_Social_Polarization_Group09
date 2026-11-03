@@ -1,0 +1,10 @@
+{
+  "cohort": "main",
+  "markets": 100,
+  "policies": 18,
+  "runs": 1800,
+  "repeated_period_rows": 109800,
+  "elapsed_seconds": 15.465,
+  "fixed_campaign_periods": 60,
+  "anylogic_executed": false
+}

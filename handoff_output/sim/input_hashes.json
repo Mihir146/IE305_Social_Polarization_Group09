@@ -1,0 +1,46 @@
+[
+  {
+    "file": "01_MANIFEST.md",
+    "sha256": "eb64da74dd057ba317f3bfe9dcd3020f58ec927237b059d503bf7d40e030b449"
+  },
+  {
+    "file": "02_original_brief.txt",
+    "sha256": "b9acba6145bc625335c6d07849f60aef52acb1ebfcdf2b8adf978ea4bf2b8533"
+  },
+  {
+    "file": "AnyLogic_port.md",
+    "sha256": "29fd312289bf1103f49500dcfa9e5422b5b4eaa1a549dc078ea5a7a57aa9d179"
+  },
+  {
+    "file": "FIVE_HOUR_PLAN.md",
+    "sha256": "ba4db2ede891a86d109d636c4920c8d281ffb7f64ab156d554bf7f55381e9bf5"
+  },
+  {
+    "file": "polarization_project_blueprint.md",
+    "sha256": "09c9c18f9c8330644c0a14a1c3d25ff781bd49047abbbab2a1657b885731b5df"
+  },
+  {
+    "file": "sim/analyze.py",
+    "sha256": "b5d3b0a3938e393ce9b1c81c2b791fd8228a3970ff1feed4557bd7936ad175ec"
+  },
+  {
+    "file": "sim/model.py",
+    "sha256": "1bfac2661f071503727cc1893cfdba3252ba08c9bc474f17d6c8b7347074b174"
+  },
+  {
+    "file": "sim/run_experiments.py",
+    "sha256": "51cd6c7bccd14466007f8036415aeca7cbef15ef17b7ff825c16b3250724b3a6"
+  },
+  {
+    "file": "sim/sanity.py",
+    "sha256": "366d12a71a1c9022a4a8cf9e5a7e1d68bd689afa9f4862fd8c5036b21d3e2a85"
+  },
+  {
+    "file": "sim/summary.txt",
+    "sha256": "7d4166276582e625c329fc5d6837da55e02947809a871874065815bd6e9d9255"
+  },
+  {
+    "file": "sim/validate_kb.py",
+    "sha256": "363a9827711903ce60994a35fe107b5b713ccf825574aecc033b7335ae5578ff"
+  }
+]

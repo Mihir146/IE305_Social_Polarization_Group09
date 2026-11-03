@@ -1,0 +1,8 @@
+check,seed,status
+native_vs_reference,3,PASS
+native_vs_reference,4,PASS
+native_vs_reference,5,PASS
+native_vs_reference,6,PASS
+native_vs_reference,7,PASS
+hand_calculated_KPIs,,PASS
+mean_and_variance_identity,,PASS

@@ -1,0 +1,14 @@
+.git/
+.git-storage/
+.codex/
+.agents/
+.aws/
+__pycache__/
+*.py[cod]
+*.so
+*.class
+*.zip
+.DS_Store
+*.tmp
+*.log
+handoff_output/sim/figure_script_for_syntax_check.js

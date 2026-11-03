@@ -1,0 +1,5 @@
+#!/bin/sh
+# Standard Git metadata is read-only in this managed workspace.
+# Keep the same worktree tracked using an alternate supported metadata directory.
+project_root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec git --git-dir="$project_root/.git-storage" --work-tree="$project_root" "$@"

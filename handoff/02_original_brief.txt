@@ -1,0 +1,42 @@
+# IE 305 Simulation Lab: Project Planning and Research
+
+We are a two-person undergraduate IEOR team, Mihir Vasave and Vaibhav Mathur, building a simulation project in **AnyLogic** over approximately two months, with roughly one dedicated day per week. Our goal is to produce a technically rigorous, visually compelling project that demonstrates stochastic simulation, Monte Carlo experimentation, statistical output analysis, and sound Operations Research methodology.
+
+## Project idea: When Social Choice Creates Social Polarization
+
+We want to investigate whether a population that begins with a socially mixed network can spontaneously develop polarized opinions and disconnected communities through individual decisions about whom to interact with.
+
+Each agent represents a person with an opinion, tolerance for disagreement, and susceptibility to social influence. Agents interact through a social network. Interactions can change opinions, while disagreement can probabilistically weaken or break connections. Agents may then form new connections with people whose opinions are more similar. This creates feedback between opinion dynamics and network structure, potentially producing polarization and network fragmentation.
+
+**Central research question:** Under what conditions do individual-level opinion updates and adaptive social connections cause a connected, mixed population to become polarized or fragmented?
+
+## What we need from you
+
+Act as a research-oriented simulation modeller and project supervisor. Help us turn this idea into a feasible, well-defined, reproducible project rather than merely describing it conceptually.
+
+1. **Research foundation:** Find and critically review relevant peer-reviewed papers on opinion dynamics, adaptive networks, homophily, social influence, and network fragmentation. Prioritize foundational models and research that can directly inform our implementation. Provide verified citations, DOI or accessible links, and explain precisely which mechanisms or findings we should use.
+
+2. **Data and parameter plan:** Determine whether published empirical data is necessary or whether a literature-calibrated synthetic population is defensible. Identify what data we need, credible sources, how to obtain it, which parameters can be estimated from literature, which require assumptions, and how to document uncertainty. Do not invent empirical values or imply that arbitrary parameters are validated.
+
+3. **Concrete mathematical model:** Specify agent attributes, network initialization, opinion-update rules, stochastic interaction and rewiring mechanisms, simulation timing, and stopping conditions. Define all parameters and equations clearly. Distinguish established literature mechanisms from our proposed adaptations. Avoid unnecessary complexity.
+
+4. **AnyLogic implementation plan:** Recommend an appropriate modelling approach, agent types, network representation, events, state variables, random distributions, and methods for recording outputs. Explain implementation choices and flag AnyLogic-specific technical risks, especially dynamic connections and network metrics.
+
+5. **Experiments and analysis:** Design a manageable baseline experiment, independent variables, parameter ranges, scenario matrix, replication strategy, random-seed handling, KPIs, confidence intervals, sensitivity analysis, and useful visualizations. Include verification tests, behavioural validation against published findings, and reproducibility checks. Explain how to distinguish opinion polarization from network fragmentation.
+
+6. **Project execution:** Create a week-by-week plan for our eight-week timeline, assuming about one workday per week. Include tangible deliverables, dependencies, milestones, and a minimum viable model before optional extensions. Prioritize work that yields defensible results and a strong final presentation.
+
+## Constraints and expectations
+
+- AnyLogic is mandatory. The implementation should be challenging enough to demonstrate genuine modelling skill, but achievable by two undergraduates in eight weeks.
+- Monte Carlo simulation and probabilistic behaviour should be central, not decorative.
+- The project must demonstrate core simulation methodology and IEOR relevance, including experimental design, output analysis, verification, validation, and decision-oriented insights.
+- We have limited time and should avoid unnecessary real-world data collection, overcomplicated equations, or features that do not contribute to the research question.
+- Do not assume the model will necessarily produce polarization. Treat that as a hypothesis to test.
+- Be critical: identify conceptual weaknesses, identifiability issues, unrealistic assumptions, confounding factors, and alternative explanations.
+- Separate established research findings, modelling assumptions, and our own hypotheses.
+- Prefer a small number of well-designed experiments over many superficial ones.
+
+## Required first response
+
+Start with a concrete project blueprint, not a generic introduction. Give us: (1) a refined research question and testable hypotheses, (2) the recommended minimum viable mathematical model, (3) a source-backed data and parameter acquisition plan, (4) an initial AnyLogic architecture, (5) the first experiments and outputs, and (6) a prioritized checklist of what we should do in our first work session. Cite sources for research claims and flag anything that still needs verification.

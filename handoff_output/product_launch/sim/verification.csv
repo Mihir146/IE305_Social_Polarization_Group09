@@ -1,0 +1,17 @@
+check,status,evidence
+native_reference_0,PASS,"Exact customer states, graph, awareness, purchases and purchase values; daily metrics agree to1e-12"
+native_reference_1,PASS,"Exact customer states, graph, awareness, purchases and purchase values; daily metrics agree to1e-12"
+native_reference_2,PASS,"Exact customer states, graph, awareness, purchases and purchase values; daily metrics agree to1e-12"
+native_reference_3,PASS,"Exact customer states, graph, awareness, purchases and purchase values; daily metrics agree to1e-12"
+native_reference_4,PASS,"Exact customer states, graph, awareness, purchases and purchase values; daily metrics agree to1e-12"
+no_launch_no_purchases,PASS,"With no seeds and no awareness, even zero price produces no purchases"
+zero_sharing,PASS,Only3 sampled owners aware;0 paid buyers;profit−750
+unattainable_price,PASS,"Price exceeds every value scale, so no paid purchase is possible"
+all_aware_zero_price,PASS,Exactly27 paid/free-price purchases plus3 samples; never30 paid sales; all30 production costs charged
+two_compromises_hand_calculation,PASS,"One2-agent period has2 activations: (.2,.3)→(.23,.27)→(.242,.258);mean.25,variance.000064"
+rewire_before_cut,PASS,"Forced one-activation fixture replaces(0,1)by(0,2);old neighbor excluded;one edge retained;isolate allowed"
+empty_similar_set_fallback,PASS,No compatible candidate;uniform non-neighbor fallback reconnects to2
+no_candidate_complete_graph,PASS,Complete graph has no eligible replacement;no edge lost
+equal_budget_and_group_allocation,PASS,"Distributed strategy gives exactly4 samples/group,12 total"
+separate_initialization_streams,PASS,Changing graph clustering/price/h leaves customer attributes and selection priority identical at fixed rep
+full_market_invariants,PASS,"Six300-person/60-period runs pass awareness-before-purchase,affordability,value,no double/sample sales,edge and accounting assertions"

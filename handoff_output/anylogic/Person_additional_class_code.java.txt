@@ -1,0 +1,2 @@
+public double opinion = 0.0;
+public int idx = -1;

@@ -1,0 +1,8 @@
+{
+  "runs": 2790,
+  "censored": 0.0,
+  "short_D_runs": 630,
+  "isolate_rule": "allowed",
+  "cap": 30000,
+  "edge_conservation": true
+}

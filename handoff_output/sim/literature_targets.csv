@@ -1,0 +1,52 @@
+id,source_url,locator,published_setup_or_result,status
+KB1,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,Figs.1–2,"N=1000, mean degree=5, d=.15; static versus w=.7",confirmed
+KB2,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,"Figs.3–4, §III","mean degree=10; N=500,1000,2000,5000; 100 network realizations; d₁≈.256; largest/second-largest fractions near 1/0 versus 1/2,1/2",confirmed
+KB3,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,"§III, Fig.6","d₂≈1/(2k̄); k̄=10,20,30; inset uses 2(k̄−1)d",confirmed
+KB4,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,Fig.7,"w=.5; N=500,2000,5000,20000; inset N=5000, w=0,.1,.5,.9; d₁(w) increases",confirmed
+KB5,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,Figs.8–11,"d=.1 debris analysis; cutoff N/50 in Fig.10; debris count scales N^β(w), β(0)=1; numerical nonzero-w exponents [UNVERIFIED]; small-d mean-field comparison 1/(2d)",contains_unverified_plot_values
+KB6,https://www.cpt.univ-mrs.fr/~barrat/PhysRevE_77_016102.pdf,Figs.12–13,"Fig.12: d=.1,N=1000 and d=.005,N=10000, k̄=10; Fig.13: N=2000,w=.5,d=.05",confirmed
+DW1,https://opencourse.inf.ed.ac.uk/sites/default/files/https/opencourse.inf.ed.ac.uk/dbba/2023/deffuantmixingbeliefsamonginteractingagents.pdf,Fig.1,"d=.5, μ=.5, N=2000 **in caption**; surrounding prose says N=1000",confirmed
+DW2,https://opencourse.inf.ed.ac.uk/sites/default/files/https/opencourse.inf.ed.ac.uk/dbba/2023/deffuantmixingbeliefsamonginteractingagents.pdf,Fig.2,"d=.2, μ=.5, N=1000; multiple surviving peaks",confirmed
+DW3,https://opencourse.inf.ed.ac.uk/sites/default/files/https/opencourse.inf.ed.ac.uk/dbba/2023/deffuantmixingbeliefsamonginteractingagents.pdf,Figs.3–4,"Fig.3 d=.1, μ=.5; Fig.4 N=1000, μ=.5, 250 samples, “wings” excluded",confirmed
+DW4,https://opencourse.inf.ed.ac.uk/sites/default/files/https/opencourse.inf.ed.ac.uk/dbba/2023/deffuantmixingbeliefsamonginteractingagents.pdf,"Figs.5–7, §3","29×29 square lattice, four neighbors; d=.3/.15, μ=.3, 100000 pair iterations; Fig.7 main histogram peak at .76",confirmed
+V1,https://arxiv.org/html/0710.4910,Eq.2,`dρ/dt=(2ρ/k̄)[(1−p)(k̄−1)(1−2ρ)−1]`,confirmed
+V2,https://arxiv.org/html/0710.4910,"Eqs.3–4, Fig.2",Mean-field `ρ_s=[(1−p)(k̄−1)−1]/[2(1−p)(k̄−1)]`; `p_c=(k̄−2)/(k̄−1)`,confirmed
+V3,https://arxiv.org/html/0710.4910,Fig.3,"k̄=4; N=250,1000,4000; 10000 realizations; simulated p_c≈.38; largest fraction ≈1 below, ≈1/2 above",confirmed
+V4,https://arxiv.org/html/0710.4910,"Fig.4, Eq.6","N=10000,k̄=4; p=0,.35,.4; `ρ_p(m)=ξ_p(1−m²)`",confirmed
+V5,https://arxiv.org/html/0710.4910,"Convergence-times paragraph, Fig.3c",Below: `τ∼N/(p_c−p)`; above: `τ∼ln[k̄(p−p_c)N]/(p−p_c)`,confirmed
+HN1,https://arxiv.org/html/physics/0603023,Figs.2–3,"k̄=4,γ=10; N=3200 for Fig.2; φ_c=.458±.008; community-size exponent 3.5±.3",confirmed
+HN2,https://arxiv.org/html/physics/0603023,"Eq.1, Fig.3",`S=N^(−a) F[N^b(φ−φ_c)]`; a=.61±.05; b=.7±.1; 10000 realizations,confirmed
+HN3,https://arxiv.org/html/physics/0603023,Fig.4,"Other k̄,γ: N=200,400,800,1600; 10000 realizations; threshold varies; exponents compatible with same values",confirmed
+HN4,https://arxiv.org/html/physics/0603023,"Fig.5, §IV","Time in updates/node: φ=0, τ∼N; φ=1, τ∼ln N; critical z=.61±.15",confirmed
+S1,https://arxiv.org/html/1905.03919,Figs.3–4,"N=100,E=400,l=10,ε=.4,μ=p=q=.5; Fig.4:20 runs",confirmed
+S2,https://arxiv.org/html/1905.03919,Figs.5–6,μ/q=0 or .1 comparisons; 200 attempted runs/configuration; cap100000; joint rates above .1 accelerate segregation; some impossible-segregation runs excluded,confirmed
+S3,https://arxiv.org/html/1905.03919,"Effects of Rewiring Strategies, Fig.7",Comparable opinion-cluster end states; recommendation convergence >2× faster; triad comparison20 runs,confirmed
+HK1,https://jasss.soc.surrey.ac.uk/5/3/2/2.pdf,Fig.2,"N=625; one common random start: ε=.01→38 opinions; .15→2 camps; .25→consensus, within15 periods",confirmed
+HK2,https://jasss.soc.surrey.ac.uk/5/3/2/2.pdf,"Fig.3, §4.1","50 runs each; ε=.01,.02,…,.40; transition around .25 for this experiment",confirmed
+HK3,https://jasss.soc.surrey.ac.uk/5/3/2/2.pdf,Figs.7–8,Regular 100-opinion profile: ε=.05→8 splits; ε=.25→consensus,confirmed
+HK4,https://jasss.soc.surrey.ac.uk/5/3/2/2.pdf,Fig.12,"N=625;25 runs/point; ε_left/right in0,.02,…,.4",confirmed
+HK5,https://jasss.soc.surrey.ac.uk/5/3/2/2.pdf,Figs.17–18,"Total confidence .2,.4,.6; bias m=0,.04,…,1; at total .6, consensus breaks around m=.4; Fig.18 regular50-agent examples",confirmed
+B1,https://arxiv.org/html/1906.12325,"Fig.1, supplement I","N=1000; initial opinions uniformly **spaced** [−1,1]; m=10, activity cutoff=.01, exponent2.1; RK4 dt=.01; K=3,r=.5; (α,β)=(.05,2),(3,0),(3,3)",confirmed
+B2,https://arxiv.org/html/1906.12325,Eq.3 / supplement IV Eq.10,"`α_c≈1/[(1+r)Km〈a〉]`; finite-N factor N/(N−1), derived neglecting homophily",confirmed
+B3,https://arxiv.org/html/1906.12325,Supplement III/Fig.S2,"N=250,1000 runs,dt=.05,K=1; polarized lifetime grows at least exponentially with β",confirmed
+B4,https://arxiv.org/html/1906.12325,Fig.4,"200 simulations; K=2.5,α=4.5,β=2,r=.65;45 aggregated snapshots",confirmed
+N1,https://arxiv.org/html/0711.1261v1,Fig.1 and text,"100 realizations; static voter t_c∝N; adaptive direct voter t_c∝ln N, reverse voter t_c exponential in N",confirmed
+N2,https://arxiv.org/html/0711.1261v1,Note3,"Near direct-voter transition, t_c∼N^a,a≈.43",confirmed
+N3,https://arxiv.org/html/0711.1261v1,Fig.2,"N=1000,k̄=10 ensemble; single runs N=500,k̄=10,Φ=.4",confirmed
+N4,https://arxiv.org/html/0711.1261v1,Figs.3–4,"Naming-game direct/reverse t_c∝ln N; Fig.4 N=10000,k̄=10,Φ=.2",confirmed
+D1,https://arxiv.org/html/1411.5181,"Figs.2,4–5","N=250; Fig.2 ensemble1000; full noise gives active-link density1/2; examples(p,ε)=(.5,.1),(.2,10⁻⁴),(.8,10⁻⁴)",confirmed
+D2,https://arxiv.org/html/1411.5181,"Appendix A Eq.10, Fig.10",Approximation `ε_c=[1+N/(2(1−p))]^(−1)`; not valid around the fragmentation transition,confirmed
+D3,https://arxiv.org/html/1411.5181,§IV,`q_max≈1−sqrt(k̄/N)`; noisy nodes isolate in topologically absorbing states; at least qN components,confirmed
+D4,https://arxiv.org/html/1411.5181,Fig.8 / Appendix B,"N=250,1000 realizations,Tmax=2000 snapshots; at(p=.8,q=.45), giant≈N/2, second≈8 nodes",confirmed
+BA1,https://dlab.epfl.ch/teaching/spring2019/cs718/papers/bail2018exposure.pdf,Fig.3,"Analytic samples Democrats697,Republicans542",confirmed
+BA2,https://dlab.epfl.ch/teaching/spring2019/cs718/papers/bail2018exposure.pdf,Fig.3,"ITT: Democrats−.02,p=.45; Republicans+.12,p=.008",confirmed
+BA3,https://dlab.epfl.ch/teaching/spring2019/cs718/papers/bail2018exposure.pdf,Fig.3,"Fully compliant CACE: Democrats−.14,p=.46; Republicans+.60,p<.01",confirmed
+KFP1,https://arxiv.org/html/2112.05856,§4,"N1000,p.01,M1,K5,alpha.1,50 runs; major>=5%; shifted C .26 -> up to .34",confirmed
+KFP2,https://arxiv.org/html/2112.05856,Fig.2 and §4.5,"pseudo-consensus subcluster difference .0003; N5000,p.01,M5,K25 changes mean degree to50",confirmed
+L1,https://arxiv.org/html/0707.1762v2,Figs.1-2,"1001 bins,mass threshold1e-9; density HK thresholds about .19/.22, max reported convergence21431",confirmed
+L2,https://arxiv.org/html/0707.1762v2,§3,approximate integer-part 1/(2epsilon) major-cluster heuristic; not an exact finite-N theorem,confirmed
+NE1,https://arxiv.org/html/physics/0602124,Table1,karate optimized Q .419; not a fixed-partition validation target,confirmed
+BS1,https://arxiv.org/html/1906.09076,§III and §V,"43 weekly windows,285670 users,2066042 mentions; coherence exp(-beta*distance),beta1; randomized ensemble100",confirmed
+P1,https://link.springer.com/article/10.1007/s41109-022-00495-7,Experimental settings,"N250,30 runs,mu.5; epsilon .2,.3,.4; gamma0,.4,.8,1.2,1.6; pr0,.1,...,.5; cap1e5",confirmed
+BG1,https://sites.stat.columbia.edu/gelman/surveys.course/BaldassarriGelman2008.pdf,"Tables1,3","47 issues,NES1972-2004; correlation slopes .05/.04 per decade(SE.01); issue-pair slope .02/decade",confirmed
+GB1,https://arxiv.org/html/0709.1858,§III and Fig.3,Boolean-network K=2+12.4*N^(-.47); oscillator exponent -.48; not opinion-model validation targets,confirmed

@@ -1,0 +1,10 @@
+check,status,scope
+ingest_reference_fixture,PASS,CSV plumbing only; no AnyLogic observations
+reject_mixed_caps,PASS,CSV plumbing only; deliberate invalid fixture
+reject_duplicate_replication,PASS,CSV plumbing only; deliberate invalid fixture
+reject_duplicate_seed,PASS,CSV plumbing only; deliberate invalid fixture
+reject_invalid_isolate_rule,PASS,CSV plumbing only; deliberate invalid fixture
+reject_edge_loss,PASS,CSV plumbing only; deliberate invalid fixture
+reject_invalid_fraction,PASS,CSV plumbing only; deliberate invalid fixture
+analyze_partial_grid,PASS,CSV plumbing only; reference fixture
+comparison_command_reference_fixture,PASS,Command plumbing only; NOT cross-implementation agreement

@@ -1,0 +1,11 @@
+{
+  "input": "/home/mihirv/ie305_final_project/handoff_output/sim/results_primary.csv",
+  "runs": 2790,
+  "scenarios": 93,
+  "censored": 0.0,
+  "S_cutoff": 0.9,
+  "mean_CI": "percentile bootstrap95%",
+  "proportion_CI": "Wilson95%",
+  "bootstrap_seed": 20261103
+}
+See scenario_summary.csv for intervals.

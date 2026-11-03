@@ -143,3 +143,9 @@ The new view draws all1,200 actual discussion ties, with solid/dotted compatibil
 Checks: compilation against actual installed AnyLogic8.9.10 APIs passes; animated default plus180 batch summaries match the prior Java reference except cohort/runtime. Histogram sums, tie counts and buying-reason partitions pass. Actual live-network editor import/render/performance remains pending the first student engine run. Opening the approved grid file is the immediate rollback.
 
 Presentation improvement: generated seven standard JFreeChart plots as PNG and SVG with exact asymmetric bootstrap endpoints. The primary PowerPoint uses those rendered figures for portable display. A separate deck retains native editable Office charts/workbooks. Apache POI/XmlBeans independently parses and schema-validates the primary16-slide deck; Windows PowerPoint rendering is still a separate compatibility check. Java2D previews were inspected and an overlapping heading was shortened.
+
+## Git-history repair
+
+The normal `.git` branch and the tool's writable `.git-storage` branch diverged when both were committed independently. The files were substantially the same, but Git correctly rejected a non-fast-forward push. We fetched the local ordinary history and merged it without conflicts, preserving both parent histories and the user's commit `bb8f9da`.
+
+Prepared `unify-git.sh` for the normal terminal. It merges any remaining ordinary/remote commits, backs up the original metadata to ignored `.git-root-backup/`, and replaces `.git` with Git's supported pointer to `.git-storage`. Ordinary `git` and `project-git` then share one branch/index. It does not reset working files or force-push. A normal-terminal step is required because the managed permission profile makes the original root `.git` read-only to tools.

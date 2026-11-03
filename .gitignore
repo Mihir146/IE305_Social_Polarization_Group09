@@ -12,3 +12,5 @@ __pycache__/
 *.tmp
 *.log
 handoff_output/sim/figure_script_for_syntax_check.js
+.git-root-backup/
+.git-pointer.tmp

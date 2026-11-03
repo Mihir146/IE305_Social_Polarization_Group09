@@ -163,7 +163,7 @@ Research, implementation, experiments and drafting were AI-assisted. The student
 
 ## Presentation variant added after the approved model
 
-At the students' request, a separate live-network model adds ownership-colored nodes and explicit opinion values, solid/dotted actual ties, recent-interaction highlights, awareness/sales histories and customer-state diagnostics. It uses the same kernel and exports the same summaries plus a separate17-column network-metrics CSV. API/wiring checks pass; an earlier network default export matches Java. The current flat-color display still needs a visual check. The approved grid `.alp` remains the tested fallback. See LIVE_NETWORK.md.
+At the students' request, a separate live-network model adds ownership-colored nodes and explicit opinion values, solid/dotted actual ties, recent-interaction highlights, awareness/sales histories and customer-state diagnostics. It uses the same kernel and exports the same summaries plus a separate17-column network-metrics CSV. API/wiring checks pass; an earlier network default export matches Java. The current flat-color completed display is now recorded in a student-supplied screenshot, with the expected default outcomes. The approved grid `.alp` remains the tested fallback. See LIVE_NETWORK.md.
 
 ### Scope of the degree-targeting conclusion
 

@@ -1,0 +1,25 @@
+{
+  "origin": "Student-supplied completed simplified-display screenshot, plus matching local engine export",
+  "screenshot": "simplified_network_completed_user.png",
+  "screenshot_sha256": "50cce5d3095b45042f3e59f6af4805290c5ae96c0c0b7c9c09aa80c54381f6f3",
+  "current_model_sha256": "bbfe929ee6370e227b19f050ca7f7598fb5e1cde37bd83d2f067814dce5663a7",
+  "visually_observed": {
+    "period": 60,
+    "aware": 300,
+    "paid_buyers": 148,
+    "free_samples": 12,
+    "revenue": 59200,
+    "total_cost": 40000,
+    "profit": 19200,
+    "aware_nonowners": 140,
+    "low_value_nonowners": 140,
+    "compatible_ties_percent": 60.5,
+    "largest_component_percent": 100,
+    "rewires": 329
+  },
+  "matching_local_export_rep": 1000,
+  "summary_matches_java_except_cohort_and_secs": true,
+  "network_metric_rows": 61,
+  "extra_metric_partitions_pass": true,
+  "scope": "One default realization, rerun of the same policy/market; not a new independent market or a full engine batch. Still screenshot establishes the completed display, not every animation frame/performance."
+}

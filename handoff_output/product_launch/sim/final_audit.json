@@ -4,7 +4,7 @@
   "standalone_java_evaluations": 1080,
   "actual_engine_summary_rows": 2,
   "actual_engine_independent_market_labels": 1,
-  "engine_scope": "Grid and earlier live-network default; same replication1000. White-layout visual check remains separate.",
+  "engine_scope": "Grid and simplified live-network completed screenshot/default export; same replication1000, not independent markets.",
   "approved_grid_preserved": true,
   "models": [
     {

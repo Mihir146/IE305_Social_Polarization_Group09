@@ -10,7 +10,7 @@ We simulate a hypothetical seller launching a reusable bottle to 300 connected c
 | File | Purpose / evidence |
 |---|---|
 |[CampusProductLaunch.alp](handoff_output/product_launch/CampusProductLaunch.alp)|Approved grid animation; actual default screenshot and CSV verified|
-|[CampusProductLaunch_LiveNetwork.alp](handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp)|Separate live network with opinion colors, tie styles and history plots; actual API/wiring checks pass, earlier network default export verified; white-layout visual check pending|
+|[CampusProductLaunch_LiveNetwork.alp](handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp)|Separate live network with opinion colors, tie styles and history plots; actual API/wiring checks pass, current flat-color completed display and matching default export confirmed by student screenshot|
 |[RUN_ANYLOGIC.md](RUN_ANYLOGIC.md)|Exact opening and running steps|
 |[LIVE_NETWORK.md](handoff_output/product_launch/LIVE_NETWORK.md)|Visual meanings, extra data and immediate rollback|
 

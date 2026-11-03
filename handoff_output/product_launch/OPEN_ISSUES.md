@@ -21,10 +21,10 @@ Do not add untested features to address every limitation before the presentation
 
 ## New live-network variant
 
-The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. The earlier network default has actual engine-export evidence. The latest white-layout animation/performance still needs a visual review on the presenting computer. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, flat ownership/awareness colors, explicit meeting beliefs and the extra disjoint customer-state metrics.
+The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. The earlier network default has actual engine-export evidence. The latest flat-color completed display is confirmed by the student screenshot. Performance on another presentation computer remains a separate practical check. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, flat ownership/awareness colors, explicit meeting beliefs and the extra disjoint customer-state metrics.
 
 The portable primary deck now passes independent Apache POI/XmlBeans schema validation and has Java2D previews. It uses standard rendered plots; the separate native-chart deck retains editable workbooks. The local schema library was incomplete for one native-chart type, so no full native-chart schema-validation claim is made.
 
-Actual CSVs from the earlier live-network default have now been checked: the summary matches Java, all61 extra metric rows satisfy the partitions, and the same replication is not counted as an independent new market. The final white-layout visual check remains separate.
+Actual CSVs from the earlier live-network default have now been checked: the summary matches Java, all61 extra metric rows satisfy the partitions, and the same replication is not counted as an independent new market. The simplified flat-color completed display is now documented by the student screenshot; it does not add an independent market.
 
 The former Deffuant/Bass/DiMaggio/Delre2010 main-text gaps have been resolved by direct public PDF retrieval, OCR and targeted page inspection. Remaining source limits include plot-only critical values, uncertain OCR table cells, and unread supplementary analyses; none is silently converted into a verified project claim.

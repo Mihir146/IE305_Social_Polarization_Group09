@@ -18,6 +18,6 @@ The bundle is `handoff_output/IE305_Group09_Submission.zip`. Its manifest lists 
 
 ## Evidence boundaries to keep visible
 
-All customer data and behavior are synthetic. Reference/C++ results, standalone Java references and actual AnyLogic outputs are separate datasets. Repeated runs of the same policy/rep are not new independent markets. The current white-layout visual confirmation and a multi-policy engine batch must not be silently inferred from earlier default exports.
+All customer data and behavior are synthetic. Reference/C++ results, standalone Java references and actual AnyLogic outputs are separate datasets. Repeated runs of the same policy/rep are not new independent markets. The current flat-color completed display has a student-supplied screenshot; a multi-policy engine batch is still unobserved and cannot be inferred from default exports.
 
 The main recommendation is conditional on this finite candidate set and assumptions. It does not claim an actual-campus demand forecast or a global optimum. Free sample owners are never paid sales. Research, code, analysis and drafting were AI-assisted.

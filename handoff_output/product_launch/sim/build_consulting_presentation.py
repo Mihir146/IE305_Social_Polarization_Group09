@@ -189,10 +189,11 @@ def main():
     d.takeaway('The three-sample idea was exploratory. The separate fresh-market check strengthens its evidence.')
 
     d.start('Live demo: follow news, one meeting and one purchase','Animation — 90 seconds',90,'Open the simplified network model before this slide. Grey is unaware; blue is aware but not an owner; orange is free sample; green is a paid buyer. Point at the black meeting line and the before/after beliefs. Solid grey ties connect close beliefs; dotted ties connect more different ones. A blue highlight is a new contact. Positions are only social-group layout, not physical movement. Watch awareness rise before paid sales. Then accelerate to period60: the default policy6/rep1000 should show148 paid buyers andRs19,200 profit. This is one illustrative run, not the recommended three-sample policy or an average. If display fails, use the approved grid model.',cite('CampusProductLaunch_LiveNetwork.alp','anylogic/evidence/','LIVE_NETWORK.md'))
-    for i,(col,title,body) in enumerate([('B0B0B0','GREY','Not heard yet'),('377EB8','BLUE','Heard; not owner'),('FF9F1C','ORANGE','Free sample owner'),('27915A','GREEN','Paid buyer')]):
-        x=34+i*226;d.rect(x,150,212,65,LIGHT);d.rect(x+12,166,15,15,col);d.text(x+38,160,166,title,16,True);d.text(x+12,191,190,body,12)
-    d.text(34,240,890,'1  Watch launch news spread through contacts.\n2  Pause on one meeting: show both beliefs before and after.\n3  Show paid sales rising only when individual buying conditions hold.',20)
-    d.text(34,365,890,'Default demonstration: policyIndex6, rep1000, 12 samples, priceRs400.\nEnd: 300 aware | 148 paid | Rs59,200 revenue − Rs40,000 costs = Rs19,200.',17)
+    d.image(ROOT/'anylogic/evidence/simplified_network_completed_user.png',34,136,485,303.3)
+    d.text(550,143,370,'Actual completed default run',19,True,BLUE)
+    d.text(550,181,370,'Grey: unaware\nBlue: aware, not owner\nOrange: free sample\nGreen: paid buyer',16)
+    d.text(550,274,370,'Show one meeting and its belief change.\nThen watch awareness and paid sales.',16)
+    d.text(550,346,370,'Policy6 / rep1000; price Rs400\n300 aware | 148 paid | 12 samples\nProfit Rs19,200\nOne run, not a policy average.',16,True)
     d.takeaway('Solid / dotted ties explain agreement; node color explains customer state. These are different facts.')
 
     price=sorted([r for r in policies if r['n_samples']==12 and r['strategy']=='degree' and r['h']==0],key=lambda r:r['price'])

@@ -37,7 +37,7 @@ The animation advances ten attempted interactions per visual tick. It highlights
 - Every campaign emits 61 extra metric rows. Histogram bins sum to 300; compatible plus discordant edges sum to 1,200; buying-reason categories partition the aware nonowners.
 - The approved fallback file remains unchanged.
 
-These checks use API compilation and stand-in wiring. The earlier network default has an actual matched engine export. **The current flat-color simplification still needs a visual check.** Its appearance/performance is not inferred from prior exports. No behavioral rule or random draw order changed.
+These checks use API compilation and stand-in wiring. The earlier network default has an actual matched engine export. **The current flat-color display is now confirmed by a student-supplied completed screenshot**, saved as `anylogic/evidence/simplified_network_completed_user.png`. The local default summary still matches Java;61 metric rows pass the partitions. A still screenshot does not establish every animation frame or performance on another computer. No behavioral rule or random draw order changed.
 
 ## One first engine check
 

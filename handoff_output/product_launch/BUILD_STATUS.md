@@ -8,7 +8,7 @@ Build started3 November2026,12:05 UTC; original four-hour target16:05 UTC. The s
 |Readable/accelerated implementation|16 verification checks pass; invariants asserted in executed designs|
 |Pilot/main/sensitivity/confirmation data|Complete; separate generators/cohorts and repeated-market structure recorded|
 |Approved AnyLogic grid model|Actual revised screenshot and one summary/61 period rows verified; exact default agreement with Java except cohort/runtime|
-|Separate live-network animation|Actual installed API compile and animated/default plus180 batch wiring checks pass; earlier network default export verified; current white-layout visual review pending|
+|Separate live-network animation|Actual installed API compile and animated/default plus180 batch wiring checks pass; current flat-color completed screenshot and default export verified; one policy/market only|
 |Rollback|Approved CampusProductLaunch.alp preserved byte-for-byte, plus Git checkpoint branch|
 |Report, literature and viva|Written; extraction gaps and negative findings retained|
 |Presentation|20 slides (16 main,4 Q&A),700-second main plan; matching embedded-font PDF/editable PowerPoint; current primary schema-validated; PDF/PowerPoint previews checked|

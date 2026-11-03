@@ -15,4 +15,4 @@ The repository's `.html` files display charts or slides in a browser. They are s
 
 ## Optional live-network version
 
-Open `handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp` for the separately prepared network animation. It keeps the same defaults and expected financial result. Follow `LIVE_NETWORK.md`. An earlier network default export matches Java; the current simpler flat-color display still needs a visual check. To roll back, open the approved `CampusProductLaunch.alp`.
+Open `handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp` for the separately prepared network animation. It keeps the same defaults and expected financial result. Follow `LIVE_NETWORK.md`. The current simpler flat-color display has a student-supplied completed screenshot and matching default export. To roll back, open the approved `CampusProductLaunch.alp`.

@@ -46,7 +46,7 @@ def main():
     info=dict(saved_dataset_checks_pass=True,reference_policy_evaluations=10240,standalone_java_evaluations=1080,
         actual_engine_summary_rows=sum(r['policy_evaluation_rows'] for r in counts if r['dataset'].startswith('anylogic')),
         actual_engine_independent_market_labels=len({r['rep'] for name,_,_ in DESIGNS if name.startswith('anylogic') for r in load_runs(ROOT/f'sim/results/{name}_runs.csv')}),
-        engine_scope='Grid and earlier live-network default; same replication1000. White-layout visual check remains separate.',
+        engine_scope='Grid and simplified live-network completed screenshot/default export; same replication1000, not independent markets.',
         approved_grid_preserved=True,models=models,markdown_local_links_checked=True,
         primary_powerpoint_schema_valid=True,main_slides=deck['main_slides'],backup_slides=deck['backup_slides'],main_seconds_including_demo=deck['planned_main_seconds'],
         empirical_validation=False,paper_extraction_gaps='Explicit in parent/product literature read-status tables',

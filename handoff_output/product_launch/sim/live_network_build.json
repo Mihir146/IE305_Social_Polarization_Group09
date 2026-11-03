@@ -5,6 +5,6 @@
   "live_sha256": "bbfe929ee6370e227b19f050ca7f7598fb5e1cde37bd83d2f067814dce5663a7",
   "same_kernel_source": true,
   "summary_schema_unchanged": true,
-  "actual_engine_status": "Prior network default export verified; this simplified presentation requires a visual check. API/wiring checks are separate.",
+  "actual_engine_status": "Student-supplied current simplified-display completed screenshot and matching local default export confirmed; see anylogic/evidence/simplified_network_completed_check.json",
   "new_export": "network_metrics with disjoint buying reasons and 10 opinion bins"
 }

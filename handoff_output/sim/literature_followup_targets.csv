@@ -1,0 +1,11 @@
+id,source_version,location,quantity,value_or_expression,scope
+DW-DENSITY,Deffuant2000 teaching/author draft,p3,delta rho,(d^3/2)*mu*(mu-1)*d2(rho^2)/dx2,Printed approximation; later analytical corrections exist; not used by our engine
+DW-PEAK,Deffuant2000 teaching/author draft,p4; Figure4,rough p_max,1/(2*d),No floor/ceiling printed; wings excluded in figure; not a universal threshold
+DW-VECTOR3,Deffuant2000 teaching/author draft,p9 section4.2,significant vector peaks,"2–7 at m13,d3,N1000; >1% each",Different vector model; not replicated
+DW-VECTOR2,Deffuant2000 teaching/author draft,p9 section4.2,small vector clusters,"about500 at m13,d2,N1000",Geometry/off-by-one inconsistencies retained
+DELRE-UTILITY,Delre et al2010 published author PDF,p271 Eq3,individual utility,q_g^gamma/(q_g^gamma+p_i^gamma); gamma50,Not our rupee purchase threshold
+DELRE-FACTORIAL,Delre et al2010 published author PDF,p274 Figure4,factorial setup,"N100000;900steps;30runs;beta .25,.375,.5,.625,.75",No exact replication attempted
+BASS-PEAK,Bass1969 published scan,p218,interior sales-peak time,"ln(q/p)/(p+q), for q>p",Aggregate initial-purchase model; not implemented
+BASS-FORECAST,Bass1969 published scan,p225 Table5,historical color-TV forecast peak,6.7 million in1968,"Historical forecast, not our simulation or validation"
+DEB-FAMILY,DiMaggio et al1996 published university copy,p709 Figure3,variance and kurtosis1977–1994,variance6.88 to6.12; kurtosis-.32 to-.10,Empirical historical survey example; not calibration
+DEB-ABORTION,DiMaggio et al1996 published university copy,p710 Figure4,variance1977–1994,5.19 to5.96,Empirical historical survey example; not calibration

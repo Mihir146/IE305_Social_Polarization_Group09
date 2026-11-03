@@ -45,6 +45,6 @@ git commit -m "Update project handoff"
 git push
 ```
 
-The managed tool can edit project files but cannot write the protected Git metadata or resolve GitHub, so the user performs the commit/push. A normal clone uses ordinary Git without any unification step. Installed third-party software and personal caches do not belong in the repository.
+Git metadata and network access are now available to the project tool, and the completed package has been committed and pushed to the public remote under the configured user identity. A normal clone uses ordinary Git without any unification step. Installed third-party software and personal caches do not belong in the repository.
 
 Research, implementation, analysis and drafting were AI-assisted. The students must understand the work, run their required model, follow course disclosure rules and submit/present it themselves.

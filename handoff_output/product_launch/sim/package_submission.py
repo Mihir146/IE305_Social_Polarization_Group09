@@ -32,6 +32,6 @@ def main():
         assert 'IE305_Group09/handoff_output/sim/native.cpp' in z.namelist()
     info=dict(archive=str(OUT.relative_to(ROOT)),files=len(files),bytes=OUT.stat().st_size,sha256=hashlib.sha256(OUT.read_bytes()).hexdigest(),crc_test_pass=True,
         includes='Models, presentation, data, scripts, literature, validation and archived mechanism evidence',excludes='Git metadata, caches, regenerable binaries, logs, application autosaves and other ZIPs',
-        uploaded_to_moodle=False,remote_push_performed_by_user=True)
+        uploaded_to_moodle=False,remote_sync="Verify the packaged revision against the public Git history; archive creation alone does not prove upload")
     (ROOT/'handoff_output/SUBMISSION_ARCHIVE.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info,indent=2))
 if __name__=='__main__':main()

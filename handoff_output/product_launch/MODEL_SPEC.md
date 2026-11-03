@@ -79,3 +79,5 @@ The live-network extension exports a separate61-row `network_metrics` CSV. A com
 The visible network draws all1,200 ties. Gold shows a selected recent actual meeting; orange briefly persists for a recently created tie. Neither highlighting nor line thickness adds a new influence weight. Node positions show known social groups and have no physical-distance or opinion-axis interpretation.
 
 The parameter q is the mean of the underlying normal experience draw **before clipping**. Near the boundaries, the clipped experience distribution has a different actual mean and variance. Plots label q as an experience parameter rather than an observed customer average.
+
+Similarity-based reconnection assumes access to every customer's current modeled belief, including the category/offer priors of currently unaware candidates. This is an ideal-information policy scenario. We do not model estimating those beliefs from ratings, observation errors or the cost of collecting network/preferences data. It is not presented as a deployable recommendation algorithm.

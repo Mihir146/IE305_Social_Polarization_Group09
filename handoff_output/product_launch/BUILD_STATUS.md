@@ -13,7 +13,7 @@ Build started3 November2026,12:05 UTC; original four-hour target16:05 UTC. The s
 |Report, literature and viva|Written; extraction gaps and negative findings retained|
 |Presentation|16 slides,735-second main plan; portable rendered-chart and native editable-chart copies; primary independently schema-validated and Java2D-rendered|
 |Figures|Seven standard JFreeChart plots in PNG and SVG, with traceable data and exact interval endpoints|
-|Remote upload|User pushes manually; tool workspace cannot resolve GitHub|
+|Remote upload|Git access restored; completed package pushed to the public repository; verify the latest revision before downloading|
 |Students' remaining tasks|Run/assess optional live-network version, preserve actual engine outputs, inspect slides on the presenting computer, rehearse and submit|
 
 Current unresolved issues are ranked in OPEN_ISSUES.md. No claim is made that the reference experiment grid or live-network engine batch has run inside AnyLogic.

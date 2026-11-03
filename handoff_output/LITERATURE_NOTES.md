@@ -9,7 +9,7 @@ The earlier passes used snippets and page summaries. This session used literal, 
 | Paper | Read status in this session | Remaining limits |
 |---|---|---|
 | Kozma & Barrat 2008 | Full arXiv text; published PDF checked for model/threshold notation | Journal Greek fonts garbled; equations recovered from HTML; plot-only values unavailable |
-| Deffuant et al. 2000 | Full prose; **partial mathematical recovery** | Readable pair rule/captions recovered from author-uploaded OCR; density equation and exact typography of peak formula remain [UNVERIFIED] |
+| Deffuant et al. 2000 | Full 12-page teaching/author draft; scalar equations/captions now also inspected as rendered PDF pages | Journal typesetting not compared separately; draft has caption/prose and vector-section inconsistencies |
 | Vazquez et al. 2008 | Full arXiv text, including previously missing ending | Plots read through captions, not digitized |
 | Holme & Newman 2006 | Full arXiv text | Exact coordinates in Fig.4 not recovered |
 | Sasahara et al. 2021 | Full arXiv text, Methods and appendix; relevant author code | Code read, not executed; questionable triad formula not adopted |
@@ -26,13 +26,13 @@ The earlier passes used snippets and page summaries. This session used literal, 
 | Balsamo et al. 2019 | Full arXiv main text | Supplement not independently read; journal publication not verified |
 | Pansanella, Rossetti & Milli 2022 | Full main HTML article | Supplement and image-only algorithms not fully inspected |
 | Baldassarri & Gelman 2008 | Published author PDF, main article | Table/footnote disagree about centering year; no fit reproduced |
-| DiMaggio, Evans & Bryson 1996 | **Abstract only**; full scan located | Institutional PDF returns zero text; readable/OCR PDF needed |
+| DiMaggio, Evans & Bryson 1996 | Full published main text, appendices and references through a readable university-hosted PDF; selected damaged pages/figures inspected as images | Rotated-plot OCR remains imperfect; no unverified plotted coefficients or present-day trend claims |
 | Zhao, Sasahara & Chen 2026 | Full main/supplement HTML text | Preprint; stopping-time and homophily-formula inconsistencies noted below |
 | Guerra et al. 2013 | Full 10-page main PDF text and tables | Plot coordinates not digitized; boundary-index qualifications below |
 | Interian et al. 2023 | **Partial main text**, through §3.6, extraction lines 0–612 | Remaining review not read; printed modularity expression questioned below |
-| Delre et al. 2007; Delre et al. 2010; Kempe et al. 2003; Bass 1969 | Product-specific sources, with individual read limits | See product_launch/LITERATURE_NOTES.md; do not silently upgrade Delre 2010 or Bass to full reading |
+| Delre et al. 2007; Delre et al. 2010; Kempe et al. 2003; Bass 1969 | Product-specific sources, with individual read limits | See product_launch/LITERATURE_NOTES.md; direct PDF/OCR follow-up now completed Delre2010 and Bass main texts, with equation/table limits stated individually |
 
-Access attempts: HAL returned an access-denied challenge; PMC returned reCAPTCHA. These were not bypassed. Public arXiv/author copies were used where available. Deffuant's first fetch timed out, then the indexed PDF worked. A readable original Deffuant PDF and an OCR/text-enabled DiMaggio PDF would resolve the main extraction gaps.
+Access attempts: HAL returned an access-denied challenge; PMC returned reCAPTCHA. These were not bypassed. Public arXiv/author copies were used where available. Deffuant's first fetch timed out, then the indexed PDF worked. Subsequent direct public PDF access, local OCR and rendered-page inspection resolved the central Deffuant draft mathematics and the DiMaggio main/appendix reading gaps; residual limits are recorded by source.
 
 ## 1. Paper by paper
 
@@ -80,9 +80,11 @@ Example of equations 6–7: `Δ=2d` gives `p=e⁻¹` and `p_rw=1−e⁻¹`. Thes
 | DW3 | Figs.3–4 | Fig.3 d=.1, μ=.5; Fig.4 N=1000, μ=.5, 250 samples, “wings” excluded |
 | DW4 | Figs.5–7, §3 | 29×29 square lattice, four neighbors; d=.3/.15, μ=.3, 100000 pair iterations; Fig.7 main histogram peak at .76 |
 
-**Other model in the paper:** binary opinion vectors, Hamming-distance bounded interaction, random copying on differing coordinates; §4/Figs.8–9. These are **not** the scalar model and are not our validation targets. Its damaged numerical expressions are not silently reconstructed.
+**Other model in the paper:** binary opinion vectors, Hamming-distance bounded interaction, random copying on differing coordinates; §4/Figs.8–9. The rendered draft p.9 reports m=13, N=1000, convergence on the order of10 million pair iterations; d>7 gives a single opinion, d=4–7 gives over99.5% in the main opinion, d=3 gives2–7 significant peaks (>1% each), and d=2 about500 small clusters. For m=21, a small-cluster-count regime is reported around d=5. These are vector-model examples, not validation targets for our scalar code. The draft's statement about hyperspace radius/diameter and its claimed maximum distance14 when m=13 are inconsistent; do not repair or repeat them as correct geometry.
 
-**Limits:** constant symmetric confidence is an explicit simplification; other network claims are conjectures. Peak means/widths fluctuate in finite samples. **Correction:** this paper does not establish a precise universal complete-mixing critical d. The rough `1/(2d)` **major-peak heuristic** is verified in Lorenz's survey; the exact printed original formula remains [UNVERIFIED]. The original claim that μ and N “only” affect time/width must not be generalized to adaptive networks or all bounded-confidence variants. Our model inherits the scalar compromise rule, not the vector model or a universal threshold.
+**Limits:** constant symmetric confidence is an explicit simplification; other network claims are conjectures. Peak means/widths fluctuate in finite samples. **Correction:** this paper does not establish a precise universal complete-mixing critical d. The rendered draft p.4 explicitly prints `p_max=1/(2d)` as a rough peak-count estimate, without a floor/ceiling; Fig.4 excludes small wings. It is a heuristic, not an exact integer formula or universal critical threshold. **Recovered printed density expression, draft p.3:** `δρ(x) = (d³/2) μ(μ−1) ∂²(ρ²)/∂x²`. For μ=.5 the printed coefficient is −d³/8; this arithmetic example is not a new simulation result. Direct PDF rendering resolved the font extraction. This transcribes the draft; it is not a validation of the approximation. A later analytical correction by Gómez-Serrano & Le Boudec (arXiv1201.1789) discusses errors in earlier continuous-density derivations. We do not implement this density equation.
+
+The original claim that μ and N “only” affect time/width must not be generalized to adaptive networks or all bounded-confidence variants. Our model inherits the scalar compromise rule, not the vector model or a universal threshold.
 
 ### 1.3 Vazquez, Eguíluz & San Miguel (2008)
 
@@ -145,7 +147,7 @@ Example of equations 6–7: `Δ=2d` gives `p=e⁻¹` and `p_rw=1−e⁻¹`. Thes
 | HK4 | Fig.12 | N=625;25 runs/point; ε_left/right in0,.02,…,.4 |
 | HK5 | Figs.17–18 | Total confidence .2,.4,.6; bias m=0,.04,…,1; at total .6, consensus breaks around m=.4; Fig.18 regular50-agent examples |
 
-**L — definitions/qualification:** cluster means equal final opinions; “fragmentation” is multiple opinions, not graph components. §4.3 p.29 says random serial updating gives extremes somewhat more survival; qualitative conclusions survive. Appendix establishes finite-time stabilization for homogeneous synchronous BC. **Our assessment:** .25 is a finite-population example/region, not a universal mathematical critical constant; Lorenz finds different density-model thresholds. The exact Fig.2 count cannot be seed-replicated without their initial vector. Our separate HK benchmark checks the published pattern, not our adaptive model directly.
+**L — definitions/qualification:** cluster means equal final opinions; “fragmentation” is multiple opinions, not graph components. §4.3 p.29 says random serial updating gives extremes somewhat more survival; qualitative conclusions survive. Appendix establishes finite-time stabilization for homogeneous synchronous BC. Direct image inspection of pp.30–33 recovered the time-varying matrix-overlap condition (Theorem4), confidence-chain sufficient condition (Theorem5), and finite-time cluster stabilization statement (Theorem6). The proof is not reproduced here; these synchronous-model statements do not prove finite-time freezing of our asynchronous adaptive model. **Our assessment:** .25 is a finite-population example/region, not a universal mathematical critical constant; Lorenz finds different density-model thresholds. The exact Fig.2 count cannot be seed-replicated without their initial vector. Our separate HK benchmark checks the published pattern, not our adaptive model directly.
 
 ### 1.7 Baumann et al. (2020)
 
@@ -316,7 +318,7 @@ Balsamo et al., *Inside the Echo Chamber: Disentangling network dynamics from po
 
 **Baldassarri & Gelman (2008)**, *Partisans without constraint: political polarization and trends in American public opinion*, **AJS114,408–446**, [published author PDF](https://sites.stat.columbia.edu/gelman/surveys.course/BaldassarriGelman2008.pdf). **L:** NES1972–2004,47 issues; multilevel varying-intercept/slope models of issue/party correlations and issue-pair correlations. Table1: average correlation growth .05/decade with party identity and .04 with ideology (SE .01). Table3: issue-pair growth .02/decade, interpreted as substantively weak. Issue sorting differs from cross-issue alignment. No agent-network rewiring rule is estimated. **Our assessment:** historical correlational evidence cannot demonstrate our micro-mechanism or today's trend. One-dimensional opinions cannot represent their cross-issue concept. A correlation of .17 must not be translated into17% variance explained; it would imply r²≈.029 in a simple bivariate linear interpretation. The table and footnote also disagree on centering year; slopes are the safer quoted quantities.
 
-**DiMaggio, Evans & Bryson (1996)**, *Have Americans' Social Attitudes Become More Polarized?*, **AJS102,690–755**, DOI [10.1086/230995](https://doi.org/10.1086/230995), [publisher abstract](https://www.journals.uchicago.edu/doi/10.1086/230995), [unreadable institutional scan](https://cpi.stanford.edu/_media/pdf/Reference%20Media/DiMaggio_1996_Public_Opinion.pdf). **Abstract-level only:** differentiates dispersion, distribution shape, ideological constraint and group differences; reports limited broad evidence in its historical period, with exceptions. Detailed methods, tables and quantitative values are **[UNVERIFIED]** pending a readable PDF. Do not cite it as evidence that all real attitudes have become more polarized.
+**DiMaggio, Evans & Bryson (1996)** is now read in full published main/appendix text from a readable university copy, with targeted image checks. See the direct-PDF follow-up below. It distinguishes dimensions and provides historical survey evidence, not calibration of our synthetic network or evidence of present-day polarization.
 
 ### Zhao, Sasahara & Chen (2026): temporal paths already have direct precedent
 
@@ -337,6 +339,15 @@ Table2 supplies useful counterexamples: university Q=.24/P=−.24 versus karate 
 ### Product-launch application
 
 The selected final domain is now implemented, with actual AnyLogic default evidence and new sales experiments. Marketing-paper readings, source links and a second claim-verification table are in [product_launch/LITERATURE_NOTES.md](product_launch/LITERATURE_NOTES.md). The original opinion results are mechanism evidence rather than sales observations. Product experiences break the original global mean/variance invariant; the pairwise compromise identity itself remains valid.
+
+
+### DiMaggio, Evans & Bryson (1996): direct full-text follow-up
+
+*Have Americans’ Social Attitudes Become More Polarized?*, **AJS102(3),690–755**, DOI [10.1086/230995](https://doi.org/10.1086/230995). [Readable university-hosted published PDF](https://www.acsu.buffalo.edu/~jcampbel/documents/DimaggioEvansBryson.pdf). Full main text, appendix tables and references read; rendered pp.695,734,737 checked where extraction failed.
+
+**L — definitions/data.** Distinguishes dispersion (variance), bimodality (excess kurtosis), cross-issue constraint (Cronbach alpha) and consolidation with group identity. NES1972–1992 and GSS1974–1994 are repeated surveys, not a simulated network. Table1/2 pooled year-variable N are22,802/28,556; effective N varies by item. Figure3 reports family-role variance6.88→6.12 and kurtosis−.32→−.10 during1977–1994; Figure4 abortion variance5.19→5.96, with bimodality strongest around1984. These are historical empirical examples, not calibration/validation targets for our0–1 opinions.
+
+**Limits/relevance.** Short6–15-point trend series use permissive p≤.10 screening, explicitly heuristic significance; survey framing, missing answers, scale boundaries and unmeasured intensity matter. Authors’ discussion offers hypotheses about political mechanisms, not causal tests. Our one-opinion model cannot measure cross-issue constraint, political hostility or party sorting. Their dimensional distinction supports separating our measures, not treating kurtosis or clustering as a universal polarization test.
 
 ## 7. Claim verification in the supplied files
 

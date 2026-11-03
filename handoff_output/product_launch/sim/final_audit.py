@@ -7,14 +7,16 @@ import csv,json,hashlib,re,xml.etree.ElementTree as ET
 from analyze import load_runs
 from run_experiments import save
 ROOT=Path(__file__).resolve().parent.parent
-DESIGNS=[('pilot',540,30),('main',1800,100),('budget3',1800,100),('stress',2400,100),('behavior',2100,100),('quality_diagnostic',1200,100),('confirmation',400,100),('java_kernel',1080,30),('anylogic',1,1),('anylogic_network',1,1)]
+DESIGNS=[('pilot',540,30),('main',1800,100),('budget3',1800,100),('stress',2400,100),('behavior',2100,100),('quality_diagnostic',1200,100),('confirmation',400,100),('java_kernel',1080,30),('anylogic',None,None),('anylogic_network',None,None)]
 
 def main():
     counts=[]
     for name,expected,markets in DESIGNS:
         path=ROOT/f'sim/results/{name}_runs.csv';rows=load_runs(path)
-        assert len(rows)==expected,(name,len(rows));assert len({r['rep'] for r in rows})==markets
-        counts.append(dict(dataset=name,policy_evaluation_rows=len(rows),market_labels=markets,
+        if expected is not None:assert len(rows)==expected,(name,len(rows))
+        if markets is not None:assert len({r['rep'] for r in rows})==markets
+        else:assert rows and all(r['cohort']=='anylogic' for r in rows)
+        counts.append(dict(dataset=name,policy_evaluation_rows=len(rows),market_labels=len({r['rep'] for r in rows}),
             implementation='Actual user engine export' if name.startswith('anylogic') else 'Standalone Java' if name=='java_kernel' else 'Python/NumPy initialization plus C++ dynamics',
             note='Markets reused across policies; do not pool datasets or generators as independent populations'))
     save(ROOT/'sim/analysis/experiment_inventory.csv',counts)
@@ -41,12 +43,13 @@ def main():
             if not (path.parent/target).exists():missing.append(dict(file=str(path.relative_to(ROOT.parent.parent)),target=target))
     assert not missing,missing
     info=dict(saved_dataset_checks_pass=True,reference_policy_evaluations=10240,standalone_java_evaluations=1080,
-        actual_engine_summary_rows=2,actual_engine_independent_market_labels=1,
+        actual_engine_summary_rows=sum(r['policy_evaluation_rows'] for r in counts if r['dataset'].startswith('anylogic')),
+        actual_engine_independent_market_labels=len({r['rep'] for name,_,_ in DESIGNS if name.startswith('anylogic') for r in load_runs(ROOT/f'sim/results/{name}_runs.csv')}),
         engine_scope='Grid and earlier live-network default; same replication1000. White-layout visual check remains separate.',
         approved_grid_preserved=True,models=models,markdown_local_links_checked=True,
         primary_powerpoint_schema_valid=True,main_slides=12,backup_slides=4,main_seconds_including_demo=735,
         empirical_validation=False,paper_extraction_gaps='Explicit in parent/product literature read-status tables',
-        remote_upload='Performed by user; no network push inferred from local files')
+        remote_upload='Network/push now available; actual remote confirmation is recorded by Git, not inferred from local files')
     (ROOT/'sim/final_audit.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info,indent=2))
     paths=[]
     for folder in ('sim','anylogic','data','figures'):

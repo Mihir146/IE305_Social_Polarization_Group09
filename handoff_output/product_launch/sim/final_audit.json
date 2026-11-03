@@ -27,5 +27,5 @@
   "main_seconds_including_demo": 735,
   "empirical_validation": false,
   "paper_extraction_gaps": "Explicit in parent/product literature read-status tables",
-  "remote_upload": "Performed by user; no network push inferred from local files"
+  "remote_upload": "Network/push now available; actual remote confirmation is recorded by Git, not inferred from local files"
 }

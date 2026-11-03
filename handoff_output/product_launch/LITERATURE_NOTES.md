@@ -6,15 +6,15 @@
 
 | Source | What was actually read | Remaining limit |
 |---|---|---|
-|Deffuant et al. 2000|Full prose and recovered pair-rule/caption text|Some mathematical extraction remains garbled; see parent notes|
+|Deffuant et al. 2000|Full teaching/author draft; central printed mathematics now checked from rendered PDF pages|Journal typesetting not compared separately; draft inconsistencies recorded in parent notes|
 |Kozma & Barrat 2008|Full arXiv main text; journal PDF notation cross-check|Plot-only coordinates not digitized|
 |Delre, Jager, Bijmolt & Janssen 2007|Full author PDF, main text and Appendix A, including tables/captions|Several body/appendix parameter and timing inconsistencies; not silently repaired|
-|Delre, Jager, Bijmolt & Janssen 2010|Almost all author PDF main text, model, experiments and conclusions|Literal extraction lines 695–745 were not fully recovered in visible output; later attempts timed out. Part of Eq.3 typography remains [UNVERIFIED]. Keep status **partial**, not full|
+|Delre, Jager, Bijmolt & Janssen 2010|Full author PDF main text/captions/references, with missing section recovered by direct PDF extraction; Eq.3 inspected visually|Plots not digitized; Eq.3 now resolved exactly|
 |Kempe, Kleinberg & Tardos 2003|Full 10-page author PDF main text, proofs, experiments, extensions and references, literal extraction lines 0–1101 across overlapping reads|No plot digitization or reproduction of their greedy algorithm. Some long mathematical typography is difficult; no claim to verify every proof algebra symbol|
-|Bass 1969|Publisher metadata/abstract and a located author-hosted scan|Scan returned zero text. **Abstract-level only**; not a full read, fit or benchmark|
+|Bass 1969|Complete 13-page main article/references via local Tesseract OCR of the 14-page public scan; central equations and selected tables inspected as images|OCR has errors in some table cells and discrete-bias algebra; those values are not silently transcribed. No model fit/replication attempted|
 |Other opinion/network sources|See the parent table for all twelve priority papers and additional readings|A survey citation does not imply reading all of its cited papers|
 
-A readable authorized PDF/OCR would resolve the Bass gap. For Delre 2010, a text-enabled copy of the missing main-text segment and clean Eq.3 would resolve the remaining extraction issue. No paywall or access challenge was bypassed.
+Local OCR and rendered-page inspection now resolve the main Bass reading gap. Direct PDF access after the workspace permission change resolved the missing Delre2010 segment and Eq.3. No paywall or access challenge was bypassed.
 
 ## 2. The foundations we actually use
 
@@ -40,7 +40,7 @@ A readable authorized PDF/OCR would resolve the Bass gap. For Delre 2010, a text
 
 **L — verified parts.** Informed agents evaluate utility combining individual preferences and the fraction of adopting neighbors; adoption requires a utility threshold. Initial free adoption is 0.5%. Only adopters propagate information. Static lattice/scale-free network variants examine social susceptibility and hub constraints. Figure 3 uses N=900 and thirty runs; the main factorial study uses N=100,000, 900 steps and at least thirty runs per condition. Their h is a hub/network parameter, not our reconnection h.
 
-**Relevance and limits.** The authors distinguish hubs' information reach from stronger persuasion. This supports testing degree as an opportunity advantage, not assigning popular customers a magical persuasion coefficient. Our model adds explicit money, adaptive opinions/contacts and personal experience. These do not follow as validated consequences. The missing extraction segment and Eq.3 prevent an exact full-model reproduction claim. No quantitative adoption target from this source was used to tune our sales results.
+**Relevance and limits.** The authors distinguish hubs' information reach from stronger persuasion. This supports testing degree as an opportunity advantage, not assigning popular customers a magical persuasion coefficient. Our model adds explicit money, adaptive opinions/contacts and personal experience. These do not follow as validated consequences. No full-model reproduction was attempted. Eq.3 is now recovered exactly from rendered p.271: `y_ig = q_g^γ / (q_g^γ + p_i^γ)`, with γ=50. At q_g=p_i>0 this individual-utility component is1/2; it is not our rupee purchase threshold. The directional-link variant changes social utility, while its information exchange remains unaffected by that direction process (p.279). No quantitative adoption target from this source was used to tune our sales results.
 
 ## 4. Seeding is a known optimization problem
 
@@ -50,7 +50,13 @@ Kempe, Kleinberg & Tardos (2003), *Maximizing the Spread of Influence through a 
 
 **A/R — implication for us.** Our high-degree rule is a heuristic, not their marginal-gain greedy algorithm. Their guarantee is not proved for our price, profit, experience and adaptive-tie feedback. Their results support comparing structural heuristics instead of assuming one is best. We do not reproduce their influence benchmark or infer an identical ranking for bottle sales. Profit can fall when free recipients increase, so a theorem about monotone activation spread cannot simply be relabeled a profit theorem.
 
-Bass, *A New Product Growth for Model Consumer Durables* (title as printed in the verified INFORMS metadata), **Management Science 15(5), 215–227** (1969), DOI [10.1287/mnsc.15.5.215](https://doi.org/10.1287/mnsc.15.5.215), is an additional classic lead. The original full text was not read from the unreadable scan. **We do not call our implementation a Bass model or claim a Bass fit.**
+### Bass (1969): a distinct aggregate diffusion model
+
+*A New Product Growth for Model Consumer Durables* (verified publisher title), **Management Science15(5),215–227**, DOI [10.1287/mnsc.15.5.215](https://doi.org/10.1287/mnsc.15.5.215). [Public scan](https://pdodds.w3.uvm.edu/files/papers/others/1969/bass1969a.pdf). Complete main text was read through local OCR; central mathematics was checked against rendered pp.217–218.
+
+**L — model.** Conditional purchase hazard is `p+qF(t)`. Thus cumulative first purchases Y=mF obey `Y'=(p+qY/m)(m−Y)`, with Y(0)=0. This is an aggregate continuous-time model, without an explicit contact network. For q>p, p.218 gives `t*=ln(q/p)/(p+q)` and peak sales `m(p+q)²/(4q)`. These are possible analytical checks for a Bass implementation, which we have not implemented. Table5 forecasts a1968 color-TV peak of6.7 million units; it is a historical forecast, not our result.
+
+**Limits/relevance.** The article concerns initial purchases of new generic product classes, distinguishes them from new brands/models, excludes replacement sales in its fitted intervals, and warns that sparse early data yield unstable parameters. It also distinguishes ex-post fitting from forecasting. Our bottle campaign is an individual-agent scenario, not an estimated Bass forecast. No Bass coefficients, fit or approximation guarantee are claimed. OCR-damaged table cells and discrete-bias algebra remain untranscribed rather than guessed.
 
 ## 5. Application claim-verification table
 
@@ -70,7 +76,7 @@ Bass, *A New Product Growth for Model Consumer Durables* (title as printed in th
 |Price/value/budget and experience rules are jointly validated by prior papers|**corrected**|New application assumptions; mechanism verification is not empirical sales validation|
 |The quality reversal is established marketing fact|**corrected**|R from our diagnostic CSVs; a model-risk finding|
 |The Java reference grid was executed in AnyLogic|**corrected**|Separate implementations. Actual engine export count is recorded independently|
-|Our model was fitted to Bass diffusion|**corrected**|Bass is only an abstract-level lead; no fitting or benchmark implemented|
+|Our model was fitted to Bass diffusion|**corrected**|Full main text is now read; still no Bass fitting or benchmark implemented|
 |Every equation in every source was read cleanly|**corrected**|Read table and parent review explicitly preserve extraction gaps|
 
 ## 6. What to say about novelty

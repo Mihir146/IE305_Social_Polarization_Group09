@@ -164,3 +164,7 @@ Research, implementation, experiments and drafting were AI-assisted. The student
 ## Presentation variant added after the approved model
 
 At the students' request, a separate live-network model adds ownership-colored nodes and explicit opinion values, solid/dotted actual ties, recent-interaction highlights, awareness/sales histories and customer-state diagnostics. It uses the same kernel and exports the same summaries plus a separate17-column network-metrics CSV. API/wiring checks pass; actual engine execution of this optional version is pending. The approved grid `.alp` remains the tested fallback. See LIVE_NETWORK.md.
+
+### Scope of the degree-targeting conclusion
+
+Our highly connected recipients are peers in the synthetic graph: the included example has maximum initial degree16 and mean8. This is not a celebrity or a hub reaching a large share of a population. Delre2010 separately studies much more heterogeneous hub structures. The small targeting contrast here must not be generalized to every influencer market. Direct PDF follow-up also recovered Delre's utility equation and confirmed that information exchange and directional social utility are separate in that model. Our purchase threshold and discussion network remain independently specified assumptions.

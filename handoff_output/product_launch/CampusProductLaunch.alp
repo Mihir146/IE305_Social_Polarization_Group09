@@ -1,0 +1,1267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307181718" AlpVersion="8.8.2">
+  <Model>
+    <Id>1793700000001</Id>
+    <Name>CampusProductLaunch</Name>
+    <EngineVersion>6</EngineVersion>
+    <JavaPackageName>campusproductlaunch</JavaPackageName>
+    <ModelTimeUnit>Second</ModelTimeUnit>
+    <ActiveObjectClasses>
+      <ActiveObjectClass>
+        <Id>1793700000002</Id>
+        <Name>Main</Name>
+        <AdditionalClassCode>// AnyLogic8.9PLE: paste the entire body into Main Additional class code.
+// Actual AnyLogic engine integration remains unexecuted here.
+// Standalone Java kernel. The AnyLogic Main body embeds this as a static class.
+// This class uses no AnyLogic APIs; engine integration is checked separately.
+public static class ProductKernel {
+    public static class Config {
+        public int N=300,k0=8,groups=3,periods=60,nSamples=12;
+        public double withinWeight=6,price=500,unitCost=250,d=.2,mu=.3,phi=.05,h=0,
+            shareProb=.25,quality=.8,experienceSD=.1;
+        public void check() {
+            if(N&lt;2||k0&lt;0||k0&gt;=N||groups!=3||periods&lt;1||nSamples&lt;0||nSamples&gt;N||withinWeight&lt;1||price&lt;0||unitCost&lt;0||
+               !(d&gt;0&amp;&amp;d&lt;=1&amp;&amp;mu&gt;=0&amp;&amp;mu&lt;=.5&amp;&amp;phi&gt;=0&amp;&amp;phi&lt;=1&amp;&amp;h&gt;=0&amp;&amp;h&lt;=1&amp;&amp;shareProb&gt;=0&amp;&amp;shareProb&lt;=1&amp;&amp;quality&gt;=0&amp;&amp;quality&lt;=1&amp;&amp;experienceSD&gt;=0))
+                throw new IllegalArgumentException("Invalid launch configuration");
+        }
+    }
+    public static class Customer {
+        public int group,awarePeriod=-1,paidPeriod=-1;
+        public double initialBelief,belief,valueScale,budget,experience,valueAtPurchase=-1;
+        public boolean aware=false,freeSample=false;
+    }
+    public static final String[] STRATEGIES={"random","degree","distributed"};
+    public static final String DAY_HEADER="period,aware,paid_buyers,free_samples,new_paid,revenue,total_cost,profit,paid_adoption,min_group_adoption,giant_frac,cross_group_frac,rewires,belief_mean,belief_variance,paid_group0,paid_group1,paid_group2,aware_group0,aware_group1,aware_group2,degree_zero,total_edges";
+    public static final String SUMMARY_HEADER="cohort,scenario,rep,graph_seed,trait_seed,selection_seed,event_seed,strategy,N,k0,groups,within_weight,periods,n_samples,price,unit_cost,d,mu,phi,h,share_prob,quality,experience_sd,aware,paid_buyers,free_samples,new_paid,revenue,total_cost,profit,paid_adoption,min_group_adoption,giant_frac,cross_group_frac,rewires,belief_mean,belief_variance,paid_group0,paid_group1,paid_group2,aware_group0,aware_group1,aware_group2,degree_zero,total_edges,t20,hit20,restricted_t20,secs";
+    public final Config config;
+    public final int rep,strategy;
+    public final Customer[] customers;
+    public final boolean[][] adj;
+    public final int[] degree;
+    public final java.util.ArrayList&lt;double[]&gt; history=new java.util.ArrayList&lt;&gt;();
+    public int period=0,rewires=0;
+    public final java.util.Random eventRng;
+    private final long started=System.nanoTime();
+
+    public ProductKernel(Config c,int replication,int seedingStrategy) {
+        c.check();if(replication&lt;0||replication&gt;=1000000||seedingStrategy&lt;0||seedingStrategy&gt;2)
+            throw new IllegalArgumentException("Invalid replication or strategy");
+        config=c;rep=replication;strategy=seedingStrategy;
+        int n=c.N;customers=new Customer[n];adj=new boolean[n][n];degree=new int[n];
+        java.util.Random graphRng=new java.util.Random(1000000L+rep);
+        int edges=0,target=n*c.k0/2;
+        while(edges&lt;target) {
+            int i=graphRng.nextInt(n),j=graphRng.nextInt(n);
+            if(i==j||adj[i][j])continue;
+            if(i%3!=j%3&amp;&amp;graphRng.nextDouble()&gt;=1/c.withinWeight)continue;
+            adj[i][j]=adj[j][i]=true;degree[i]++;degree[j]++;edges++;
+        }
+        java.util.Random traitRng=new java.util.Random(2000000L+rep);
+        for(int i=0;i&lt;n;i++) {
+            Customer a=new Customer();a.group=i%3;
+            double u=traitRng.nextDouble(),v=traitRng.nextDouble(),w=traitRng.nextDouble();
+            a.initialBelief=Math.max(Math.min(u,v),Math.min(Math.max(u,v),w));
+            a.belief=a.initialBelief;a.valueScale=500+500*traitRng.nextDouble();
+            a.budget=400+600*traitRng.nextDouble();
+            a.experience=Math.max(0,Math.min(1,c.quality+c.experienceSD*traitRng.nextGaussian()));
+            customers[i]=a;
+        }
+        int[] priority=new int[n],rank=new int[n];for(int i=0;i&lt;n;i++)priority[i]=i;
+        java.util.Random selectionRng=new java.util.Random(3000000L+rep);
+        for(int i=n-1;i&gt;0;i--){int j=selectionRng.nextInt(i+1),tmp=priority[i];priority[i]=priority[j];priority[j]=tmp;}
+        for(int i=0;i&lt;n;i++)rank[priority[i]]=i;
+        Integer[] order=new Integer[n];for(int i=0;i&lt;n;i++)order[i]=i;
+        java.util.Arrays.sort(order,(a,b)-&gt;degree[a]!=degree[b]?Integer.compare(degree[b],degree[a]):Integer.compare(rank[a],rank[b]));
+        if(strategy==0)for(int t=0;t&lt;c.nSamples;t++)sample(priority[t]);
+        else if(strategy==1)for(int t=0;t&lt;c.nSamples;t++)sample(order[t]);
+        else {
+            int picked=0,g=0;
+            while(picked&lt;c.nSamples) {
+                for(int i:order)if(customers[i].group==g&amp;&amp;!customers[i].freeSample){sample(i);picked++;break;}
+                g=(g+1)%3;
+            }
+        }
+        eventRng=new java.util.Random(4000000L+rep);
+        history.add(snapshot(0));
+    }
+
+    private void sample(int i){Customer a=customers[i];a.freeSample=true;a.aware=true;a.awarePeriod=0;a.belief=a.experience;}
+
+    public void interaction(double[] u) {
+        int n=config.N,i=(int)(u[0]*n);if(degree[i]==0)return;
+        int rank=(int)(u[1]*degree[i]),j=-1;
+        for(int z=0;z&lt;n;z++)if(adj[i][z]&amp;&amp;rank--==0){j=z;break;}
+        if(j&lt;0)throw new IllegalStateException("Neighbor rank mismatch");
+        Customer a=customers[i],b=customers[j];
+        if(!a.aware&amp;&amp;!b.aware)return;
+        if(a.aware!=b.aware) {
+            if(u[2]&gt;=config.shareProb)return;
+            Customer other=a.aware?b:a;other.aware=true;other.awarePeriod=period;
+        }
+        double xi=a.belief,xj=b.belief;
+        if(Math.abs(xi-xj)&lt;config.d){a.belief=xi+config.mu*(xj-xi);b.belief=xj+config.mu*(xi-xj);}
+        else if(u[3]&lt;config.phi) {
+            int[] candidates=new int[n];int count=0;
+            if(u[4]&lt;config.h)for(int k=0;k&lt;n;k++)if(k!=i&amp;&amp;!adj[i][k]&amp;&amp;Math.abs(customers[k].belief-xi)&lt;config.d)candidates[count++]=k;
+            if(count==0)for(int k=0;k&lt;n;k++)if(k!=i&amp;&amp;!adj[i][k])candidates[count++]=k;
+            if(count&gt;0) {
+                int k=candidates[(int)(u[5]*count)];
+                adj[i][j]=adj[j][i]=false;adj[i][k]=adj[k][i]=true;
+                degree[j]--;degree[k]++;rewires++;
+            }
+        }
+    }
+
+    public boolean stepPeriod() {
+        if(period&gt;=config.periods)return false;
+        period++;
+        for(int z=0;z&lt;config.N;z++) {
+            double[] u=new double[6];for(int q=0;q&lt;6;q++)u[q]=eventRng.nextDouble();
+            interaction(u);
+        }
+        int[] buyers=new int[config.N];int count=0;
+        for(int i=0;i&lt;config.N;i++) {
+            Customer a=customers[i];double value=a.valueScale*a.belief;
+            if(a.aware&amp;&amp;!a.freeSample&amp;&amp;a.paidPeriod&lt;0&amp;&amp;a.budget&gt;=config.price&amp;&amp;value&gt;=config.price) {
+                a.paidPeriod=period;a.valueAtPurchase=value;buyers[count++]=i;
+            }
+        }
+        for(int z=0;z&lt;count;z++)customers[buyers[z]].belief=customers[buyers[z]].experience;
+        double[] row=snapshot(count);history.add(row);check(row);
+        return period&lt;config.periods;
+    }
+
+    public double[] snapshot(int newPaid) {
+        int n=config.N,pa=0,aw=0,fr=0,edges=0,cross=0,isolates=0,giant=0;
+        int[] pg=new int[3],ag=new int[3],eligible=new int[3];double mean=0,var=0;
+        for(int i=0;i&lt;n;i++) {
+            Customer a=customers[i];boolean paid=a.paidPeriod&gt;=0;
+            pa+=paid?1:0;aw+=a.aware?1:0;fr+=a.freeSample?1:0;
+            pg[a.group]+=paid?1:0;ag[a.group]+=a.aware?1:0;eligible[a.group]+=a.freeSample?0:1;
+            mean+=a.belief;isolates+=degree[i]==0?1:0;
+            for(int j=i+1;j&lt;n;j++)if(adj[i][j]){edges++;cross+=a.group!=customers[j].group?1:0;}
+        }
+        mean/=n;for(Customer a:customers)var+=(a.belief-mean)*(a.belief-mean);var/=n;
+        boolean[] seen=new boolean[n];int[] queue=new int[n];
+        for(int root=0;root&lt;n;root++)if(!seen[root]) {
+            int front=0,end=0;queue[end++]=root;seen[root]=true;
+            while(front&lt;end){int u=queue[front++];for(int j=0;j&lt;n;j++)if(adj[u][j]&amp;&amp;!seen[j]){seen[j]=true;queue[end++]=j;}}
+            giant=Math.max(giant,end);
+        }
+        double minRate=1;boolean found=false;
+        for(int g=0;g&lt;3;g++)if(eligible[g]&gt;0){found=true;minRate=Math.min(minRate,(double)pg[g]/eligible[g]);}
+        return new double[]{period,aw,pa,fr,newPaid,config.price*pa,config.unitCost*(pa+fr),
+            (config.price-config.unitCost)*pa-config.unitCost*fr,n&gt;fr?(double)pa/(n-fr):0,
+            found?minRate:0,(double)giant/n,edges&gt;0?(double)cross/edges:0,rewires,mean,var,
+            pg[0],pg[1],pg[2],ag[0],ag[1],ag[2],isolates,edges};
+    }
+
+    public void check(double[] row) {
+        if(row[22]!=config.N*config.k0/2||row[3]!=config.nSamples||row[2]+row[3]&gt;config.N||row[2]+row[3]&gt;row[1])
+            throw new IllegalStateException("Graph, sample or owner-count invariant failed");
+        for(Customer a:customers) {
+            if(!Double.isFinite(a.belief)||a.belief&lt;0||a.belief&gt;1)throw new IllegalStateException("Belief range failed");
+            if(a.paidPeriod&gt;=0&amp;&amp;(!a.aware||a.freeSample||a.budget&lt;config.price||a.valueAtPurchase&lt;config.price||a.awarePeriod&gt;a.paidPeriod))
+                throw new IllegalStateException("Purchase eligibility failed");
+        }
+    }
+
+    public static String numbers(double[] row){java.util.ArrayList&lt;String&gt; a=new java.util.ArrayList&lt;&gt;();for(double v:row)a.add(Double.toString(v));return String.join(",",a);}
+    public String summaryCsv(String cohort,String scenario) {
+        Config c=config;java.util.ArrayList&lt;String&gt; a=new java.util.ArrayList&lt;&gt;();
+        String[] meta={cohort,scenario,""+rep,""+(1000000L+rep),""+(2000000L+rep),""+(3000000L+rep),""+(4000000L+rep),STRATEGIES[strategy],
+            ""+c.N,""+c.k0,""+c.groups,""+c.withinWeight,""+c.periods,""+c.nSamples,""+c.price,""+c.unitCost,""+c.d,""+c.mu,""+c.phi,""+c.h,""+c.shareProb,""+c.quality,""+c.experienceSD};
+        java.util.Collections.addAll(a,meta);double[] last=history.get(history.size()-1);
+        for(int i=1;i&lt;last.length;i++)a.add(Double.toString(last[i]));
+        int target=-1;double threshold=.2*(c.N-c.nSamples);
+        for(double[] row:history)if(row[2]&gt;=threshold){target=(int)row[0];break;}
+        a.add(""+target);a.add(target&gt;=0?"1":"0");a.add(""+(target&gt;=0?target:c.periods));a.add(""+((System.nanoTime()-started)/1e9));
+        return String.join(",",a);
+    }
+}
+
+
+public ProductKernel launch;
+public boolean launchExported=false;
+
+public void initializeLaunch() {
+    if(policyIndex&lt;0||policyIndex&gt;=18)throw new IllegalArgumentException("policyIndex must be0..17");
+    ProductKernel.Config c=new ProductKernel.Config();
+    c.price=new double[]{400,500,600}[(policyIndex/2)%3];
+    c.h=policyIndex%2;
+    launch=new ProductKernel(c,rep,policyIndex/6);
+    if(consumers.size()!=c.N)throw new IllegalStateException("Set consumers population size to300");
+    for(int i=0;i&lt;c.N;i++) {
+        Consumer a=consumers.get(i);a.customerId=i;a.state=launch.customers[i];
+        double angle=2*Math.PI*(i/3)/100.0;
+        double radius=30+8*Math.sqrt(i/3);
+        a.setXY(150+250*(i%3)+radius*Math.cos(angle),230+radius*Math.sin(angle));
+    }
+    launchExported=false;
+    refreshLaunchLinks();
+    refreshLaunchDisplay();
+}
+
+public void refreshLaunchLinks() {
+    for(Consumer a:consumers)a.disconnectFromAll();
+    if(!animateNetwork)return;
+    for(int i=0;i&lt;launch.config.N;i++)for(int j=i+1;j&lt;launch.config.N;j++)
+        if(launch.adj[i][j])consumers.get(i).connectTo(consumers.get(j));
+}
+
+public void refreshLaunchDisplay() {
+    if(launch==null)return;
+    if(animateNetwork)for(Consumer a:consumers)a.nodeMark.setFillColor(a.stateColor());
+    statusLabel.setText(launchStatus());
+}
+
+public String launchStatus() {
+    if(launch==null)return "Launch initializing";
+    double[] r=launch.history.get(launch.history.size()-1);
+    return "Policy "+policyIndex+" | "+ProductKernel.STRATEGIES[launch.strategy]+" | price Rs "+launch.config.price+" | h="+launch.config.h+
+        "\nPeriod "+launch.period+"/60 | aware "+(int)r[1]+" | paid buyers "+(int)r[2]+" | free samples "+(int)r[3]+
+        "\nRevenue Rs "+(int)r[5]+" | total cost Rs "+(int)r[6]+" | profit Rs "+(int)r[7];
+}
+
+public void advanceLaunchPeriod() {
+    if(launchExported)return;
+    launch.stepPeriod();
+    if(animateNetwork)refreshLaunchLinks();
+    refreshLaunchDisplay();
+    if(launch.period&gt;=launch.config.periods){exportLaunch();finishSimulation();}
+}
+
+public void exportLaunch() {
+    if(launchExported)return;
+    String id="policy"+policyIndex+"_rep"+rep;
+    java.nio.file.Path base=java.nio.file.Paths.get(outputDirectory);
+    try {
+        java.nio.file.Files.createDirectories(base.resolve("summary"));
+        java.nio.file.Files.createDirectories(base.resolve("trajectories"));
+        java.nio.file.Path summary=base.resolve("summary").resolve(id+".csv");
+        java.nio.file.Files.write(summary,java.util.Arrays.asList(ProductKernel.SUMMARY_HEADER,launch.summaryCsv("anylogic","baseline")),java.nio.charset.StandardCharsets.UTF_8);
+        java.util.ArrayList&lt;String&gt; lines=new java.util.ArrayList&lt;&gt;();
+        lines.add("cohort,scenario,rep,strategy,price,h,"+ProductKernel.DAY_HEADER);
+        for(double[] r:launch.history)lines.add("anylogic,baseline,"+rep+","+ProductKernel.STRATEGIES[launch.strategy]+","+launch.config.price+","+launch.config.h+","+ProductKernel.numbers(r));
+        java.nio.file.Files.write(base.resolve("trajectories").resolve(id+".csv"),lines,java.nio.charset.StandardCharsets.UTF_8);
+        launchExported=true;traceln("Launch CSV saved: "+summary.toAbsolutePath());
+    }catch(java.io.IOException e){throw new RuntimeException("Launch CSV export failed",e);}
+}
+</AdditionalClassCode>
+        <Generic>false</Generic>
+        <GenericParameter>
+          <Id>1793700000003</Id>
+          <Name>1793700000003</Name>
+          <GenericParameterValue Class="CodeValue">
+            <Code>T extends Agent</Code>
+          </GenericParameterValue>
+          <GenericParameterLabel>Generic parameter:</GenericParameterLabel>
+        </GenericParameter>
+        <FlowChartsUsage>ENTITY</FlowChartsUsage>
+        <SamplesToKeep>100</SamplesToKeep>
+        <LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+        <ElementsLimitValue>100</ElementsLimitValue>
+        <MakeDefaultViewArea>true</MakeDefaultViewArea>
+        <SceneBackgroundColor>-1</SceneBackgroundColor>
+        <SceneSkybox>null</SceneSkybox>
+        <AgentProperties>
+          <EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+          <RotateAnimationTowardsMovement>false</RotateAnimationTowardsMovement>
+          <RotateAnimationVertically>false</RotateAnimationVertically>
+          <VelocityCode Class="CodeUnitValue">
+            <Code>0</Code>
+            <Unit Class="SpeedUnits">MPS</Unit>
+          </VelocityCode>
+          <PhysicalLength Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalLength>
+          <PhysicalWidth Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalWidth>
+          <PhysicalHeight Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalHeight>
+        </AgentProperties>
+        <EnvironmentProperties>
+          <EnableSteps>false</EnableSteps>
+          <StepDurationCode Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </StepDurationCode>
+          <SpaceType>CONTINUOUS</SpaceType>
+          <WidthCode>1000</WidthCode>
+          <HeightCode>650</HeightCode>
+          <ZHeightCode>0</ZHeightCode>
+          <ColumnsCountCode>100</ColumnsCountCode>
+          <RowsCountCode>100</RowsCountCode>
+          <NeigborhoodType>MOORE</NeigborhoodType>
+          <LayoutType>USER_DEF</LayoutType>
+          <LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+          <NetworkType>USER_DEF</NetworkType>
+          <NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+          <ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
+          <ConnectionsRangeCode>50</ConnectionsRangeCode>
+          <NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
+          <MCode>10</MCode>
+        </EnvironmentProperties>
+        <DatasetsCreationProperties>
+          <AutoCreate>false</AutoCreate>
+          <OccurrenceAtTime>true</OccurrenceAtTime>
+          <OccurrenceDate>1793664000000</OccurrenceDate>
+          <OccurrenceTime Class="CodeUnitValue">
+            <Code>0</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </OccurrenceTime>
+          <RecurrenceCode Class="CodeUnitValue">
+            <Code>0.5</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </RecurrenceCode>
+        </DatasetsCreationProperties>
+        <ScaleRuler>
+          <Id>1793700000004</Id>
+          <Name>scale</Name>
+          <X>0</X>
+          <Y>-150</Y>
+          <Label>
+            <X>10</X>
+            <Y>0</Y>
+          </Label>
+          <PublicFlag>false</PublicFlag>
+          <PresentationFlag>true</PresentationFlag>
+          <ShowLabel>false</ShowLabel>
+          <Length>100</Length>
+          <Rotation>0</Rotation>
+          <ScaleType>BASED_ON_LENGTH</ScaleType>
+          <ModelLength>100</ModelLength>
+          <LengthUnits>METER</LengthUnits>
+          <Scale>1</Scale>
+          <InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+        </ScaleRuler>
+        <CurrentLevel>1793700000005</CurrentLevel>
+        <ConnectionsId>1793700000006</ConnectionsId>
+        <AgentLinks>
+          <AgentLink>
+            <Id>1793700000006</Id>
+            <Name>connections</Name>
+            <X>50</X>
+            <Y>-50</Y>
+            <Label>
+              <X>15</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <HandleReceiveInConnections>false</HandleReceiveInConnections>
+            <AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+            <AgentLinkBidirectional>true</AgentLinkBidirectional>
+            <MessageType>Object</MessageType>
+            <LineStyle>SOLID</LineStyle>
+            <LineWidth>0.5</LineWidth>
+            <LineColor>1149802922</LineColor>
+            <LineZOrder>UNDER_AGENTS</LineZOrder>
+            <LineArrow>NONE</LineArrow>
+            <LineArrowPosition>END</LineArrowPosition>
+          </AgentLink>
+        </AgentLinks>
+        <Presentation>
+          <Level>
+            <Id>1793700000005</Id>
+            <Name>level</Name>
+            <X>0</X>
+            <Y>0</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D</DrawMode>
+            <Z>0</Z>
+            <LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+            <Presentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000022</Id>
+                <Name>consumers_presentation</Name>
+                <X>0</X>
+                <Y>0</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <AsObject>true</AsObject>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <Text>
+                <Id>1793700000024</Id>
+                <Name>titleLabel</Name>
+                <X>35</X>
+                <Y>20</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Campus Product Launch — price, samples and word of mouth</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>23</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000025</Id>
+                <Name>statusLabel</Name>
+                <X>35</X>
+                <Y>65</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Initializing launch...</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>15</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000026</Id>
+                <Name>groupLabel0</Name>
+                <X>95</X>
+                <Y>380</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Social group 1</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>16</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000027</Id>
+                <Name>groupLabel1</Name>
+                <X>345</X>
+                <Y>380</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Social group 2</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>16</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000028</Id>
+                <Name>groupLabel2</Name>
+                <X>595</X>
+                <Y>380</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Social group 3</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>16</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Rectangle>
+                <Id>1793700000029</Id>
+                <Name>legendMark0</Name>
+                <X>40</X>
+                <Y>430</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-7562326</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>13</Width>
+                <Height>13</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-7562326</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Text>
+                <Id>1793700000030</Id>
+                <Name>legendLabel0</Name>
+                <X>60</X>
+                <Y>426</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Unaware</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Rectangle>
+                <Id>1793700000031</Id>
+                <Name>legendMark1</Name>
+                <X>245</X>
+                <Y>430</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-1333971</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>13</Width>
+                <Height>13</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-1333971</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Text>
+                <Id>1793700000032</Id>
+                <Name>legendLabel1</Name>
+                <X>265</X>
+                <Y>426</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Aware, not owner</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Rectangle>
+                <Id>1793700000033</Id>
+                <Name>legendMark2</Name>
+                <X>450</X>
+                <Y>430</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-7907921</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>13</Width>
+                <Height>13</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-7907921</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Text>
+                <Id>1793700000034</Id>
+                <Name>legendLabel2</Name>
+                <X>470</X>
+                <Y>426</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Free sample</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Rectangle>
+                <Id>1793700000035</Id>
+                <Name>legendMark3</Name>
+                <X>655</X>
+                <Y>430</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-14117281</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>13</Width>
+                <Height>13</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-14117281</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Text>
+                <Id>1793700000036</Id>
+                <Name>legendLabel3</Name>
+                <X>675</X>
+                <Y>426</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>Paid buyer</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000037</Id>
+                <Name>clockLabel</Name>
+                <X>35</X>
+                <Y>475</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>60 synthetic periods;300 interaction attempts/period. Samples are not paid sales.</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000038</Id>
+                <Name>dataLabel</Name>
+                <X>35</X>
+                <Y>500</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-15255989</Color>
+                <Text>All inputs synthetic. This model does not forecast actual campus customers.</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>14</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+            </Presentation>
+          </Level>
+        </Presentation>
+        <StartupCode>initializeLaunch();</StartupCode>
+        <Variables>
+          <Variable Class="Parameter">
+            <Id>1793700000013</Id>
+            <Name>policyIndex</Name>
+            <X>30</X>
+            <Y>80</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <Properties SaveInSnapshot="true" ModificatorType="STATIC">
+              <Type>int</Type>
+              <UnitType>NONE</UnitType>
+              <SdArray>false</SdArray>
+              <DefaultValue Class="CodeValue">
+                <Code>6</Code>
+              </DefaultValue>
+              <ParameterEditor>
+                <Id>1793700000014</Id>
+                <EditorContolType>TEXT_BOX</EditorContolType>
+                <MinSliderValue>0</MinSliderValue>
+                <MaxSliderValue>100</MaxSliderValue>
+                <DelimeterType>NO_DELIMETER</DelimeterType>
+              </ParameterEditor>
+            </Properties>
+          </Variable>
+          <Variable Class="Parameter">
+            <Id>1793700000015</Id>
+            <Name>rep</Name>
+            <X>30</X>
+            <Y>115</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <Properties SaveInSnapshot="true" ModificatorType="STATIC">
+              <Type>int</Type>
+              <UnitType>NONE</UnitType>
+              <SdArray>false</SdArray>
+              <DefaultValue Class="CodeValue">
+                <Code>1000</Code>
+              </DefaultValue>
+              <ParameterEditor>
+                <Id>1793700000016</Id>
+                <EditorContolType>TEXT_BOX</EditorContolType>
+                <MinSliderValue>0</MinSliderValue>
+                <MaxSliderValue>100</MaxSliderValue>
+                <DelimeterType>NO_DELIMETER</DelimeterType>
+              </ParameterEditor>
+            </Properties>
+          </Variable>
+          <Variable Class="Parameter">
+            <Id>1793700000017</Id>
+            <Name>animateNetwork</Name>
+            <X>30</X>
+            <Y>150</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <Properties SaveInSnapshot="true" ModificatorType="STATIC">
+              <Type>boolean</Type>
+              <UnitType>NONE</UnitType>
+              <SdArray>false</SdArray>
+              <DefaultValue Class="CodeValue">
+                <Code>true</Code>
+              </DefaultValue>
+              <ParameterEditor>
+                <Id>1793700000018</Id>
+                <EditorContolType>TEXT_BOX</EditorContolType>
+                <MinSliderValue>0</MinSliderValue>
+                <MaxSliderValue>100</MaxSliderValue>
+                <DelimeterType>NO_DELIMETER</DelimeterType>
+              </ParameterEditor>
+            </Properties>
+          </Variable>
+          <Variable Class="Parameter">
+            <Id>1793700000019</Id>
+            <Name>outputDirectory</Name>
+            <X>30</X>
+            <Y>185</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <Properties SaveInSnapshot="true" ModificatorType="STATIC">
+              <Type>String</Type>
+              <UnitType>NONE</UnitType>
+              <SdArray>false</SdArray>
+              <DefaultValue Class="CodeValue">
+                <Code>"product_output"</Code>
+              </DefaultValue>
+              <ParameterEditor>
+                <Id>1793700000020</Id>
+                <EditorContolType>TEXT_BOX</EditorContolType>
+                <MinSliderValue>0</MinSliderValue>
+                <MaxSliderValue>100</MaxSliderValue>
+                <DelimeterType>NO_DELIMETER</DelimeterType>
+              </ParameterEditor>
+            </Properties>
+          </Variable>
+        </Variables>
+        <EmbeddedObjects>
+          <EmbeddedObject>
+            <Id>1793700000021</Id>
+            <Name>consumers</Name>
+            <X>280</X>
+            <Y>80</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <PresentationId>1793700000022</PresentationId>
+            <ActiveObjectClass>
+              <PackageName>campusproductlaunch</PackageName>
+              <ClassName>Consumer</ClassName>
+            </ActiveObjectClass>
+            <GenericParameterSubstitute>
+              <GenericParameterSubstituteReference>
+                <PackageName>campusproductlaunch</PackageName>
+                <ClassName>Consumer</ClassName>
+                <ItemName>1793700000008</ItemName>
+              </GenericParameterSubstituteReference>
+            </GenericParameterSubstitute>
+            <Parameters />
+            <ReplicationFlag>true</ReplicationFlag>
+            <Replication Class="CodeValue">
+              <Code>300</Code>
+            </Replication>
+            <CollectionType>ARRAY_LIST_BASED</CollectionType>
+            <InEnvironment>true</InEnvironment>
+            <InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+            <XCode Class="CodeValue">
+              <Code>0</Code>
+            </XCode>
+            <YCode Class="CodeValue">
+              <Code>0</Code>
+            </YCode>
+            <ZCode Class="CodeValue">
+              <Code>0</Code>
+            </ZCode>
+            <ColumnCode Class="CodeValue">
+              <Code>0</Code>
+            </ColumnCode>
+            <RowCode Class="CodeValue">
+              <Code>0</Code>
+            </RowCode>
+            <LatitudeCode Class="CodeValue">
+              <Code>0</Code>
+            </LatitudeCode>
+            <LongitudeCode Class="CodeValue">
+              <Code>0</Code>
+            </LongitudeCode>
+            <LocationNameCode Class="CodeValue">
+              <Code>""</Code>
+            </LocationNameCode>
+            <InitializationType>SPECIFIED_NUMBER</InitializationType>
+            <InitializationDatabaseTableQuery>
+              <TableReference />
+            </InitializationDatabaseTableQuery>
+            <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+            <QuantityColumn />
+          </EmbeddedObject>
+        </EmbeddedObjects>
+        <Events>
+          <Event>
+            <Id>1793700000023</Id>
+            <Name>launchPeriod</Name>
+            <X>280</X>
+            <Y>140</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>true</ShowLabel>
+            <Properties TriggerType="timeout" Mode="cyclic">
+              <Timeout Class="CodeUnitValue">
+                <Code>0.5</Code>
+                <Unit Class="TimeUnits">SECOND</Unit>
+              </Timeout>
+              <Rate Class="CodeUnitValue">
+                <Code>2</Code>
+                <Unit Class="RateUnits">PER_SECOND</Unit>
+              </Rate>
+              <OccurrenceAtTime>true</OccurrenceAtTime>
+              <OccurrenceDate>1793664000000</OccurrenceDate>
+              <OccurrenceTime Class="CodeUnitValue">
+                <Code>0.5</Code>
+                <Unit Class="TimeUnits">SECOND</Unit>
+              </OccurrenceTime>
+              <RecurrenceCode Class="CodeUnitValue">
+                <Code>0.5</Code>
+                <Unit Class="TimeUnits">SECOND</Unit>
+              </RecurrenceCode>
+              <Condition>true</Condition>
+            </Properties>
+            <Action>advanceLaunchPeriod();</Action>
+          </Event>
+        </Events>
+      </ActiveObjectClass>
+      <ActiveObjectClass>
+        <Id>1793700000007</Id>
+        <Name>Consumer</Name>
+        <AdditionalClassCode>// Paste into Consumer Advanced Java &gt; Additional class code.
+public int customerId;
+public Main.ProductKernel.Customer state;
+public java.awt.Color stateColor() {
+    if(state==null||!state.aware)return new java.awt.Color(140,155,170);
+    if(state.freeSample)return new java.awt.Color(135,85,175);
+    if(state.paidPeriod&gt;=0)return new java.awt.Color(40,150,95);
+    return new java.awt.Color(235,165,45);
+}
+public String customerTooltip() {
+    if(state==null)return "Initializing";
+    return "Customer "+customerId+" | group "+state.group+"\nBelief "+String.format(java.util.Locale.US,"%.2f",state.belief)+
+        " | value Rs "+(int)(state.valueScale*state.belief)+" | budget Rs "+(int)state.budget+
+        "\nAware="+state.aware+" | sample="+state.freeSample+" | paid period="+state.paidPeriod;
+}
+</AdditionalClassCode>
+        <Generic>false</Generic>
+        <GenericParameter>
+          <Id>1793700000008</Id>
+          <Name>1793700000008</Name>
+          <GenericParameterValue Class="CodeValue">
+            <Code>T extends Agent</Code>
+          </GenericParameterValue>
+          <GenericParameterLabel>Generic parameter:</GenericParameterLabel>
+        </GenericParameter>
+        <FlowChartsUsage>ENTITY</FlowChartsUsage>
+        <SamplesToKeep>100</SamplesToKeep>
+        <LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+        <ElementsLimitValue>100</ElementsLimitValue>
+        <MakeDefaultViewArea>true</MakeDefaultViewArea>
+        <SceneBackgroundColor>-1</SceneBackgroundColor>
+        <SceneSkybox>null</SceneSkybox>
+        <AgentProperties>
+          <EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+          <RotateAnimationTowardsMovement>false</RotateAnimationTowardsMovement>
+          <RotateAnimationVertically>false</RotateAnimationVertically>
+          <VelocityCode Class="CodeUnitValue">
+            <Code>0</Code>
+            <Unit Class="SpeedUnits">MPS</Unit>
+          </VelocityCode>
+          <PhysicalLength Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalLength>
+          <PhysicalWidth Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalWidth>
+          <PhysicalHeight Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="LengthUnits">METER</Unit>
+          </PhysicalHeight>
+        </AgentProperties>
+        <EnvironmentProperties>
+          <EnableSteps>false</EnableSteps>
+          <StepDurationCode Class="CodeUnitValue">
+            <Code>1</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </StepDurationCode>
+          <SpaceType>CONTINUOUS</SpaceType>
+          <WidthCode>1000</WidthCode>
+          <HeightCode>650</HeightCode>
+          <ZHeightCode>0</ZHeightCode>
+          <ColumnsCountCode>100</ColumnsCountCode>
+          <RowsCountCode>100</RowsCountCode>
+          <NeigborhoodType>MOORE</NeigborhoodType>
+          <LayoutType>USER_DEF</LayoutType>
+          <LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
+          <NetworkType>USER_DEF</NetworkType>
+          <NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
+          <ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
+          <ConnectionsRangeCode>50</ConnectionsRangeCode>
+          <NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
+          <MCode>10</MCode>
+        </EnvironmentProperties>
+        <DatasetsCreationProperties>
+          <AutoCreate>false</AutoCreate>
+          <OccurrenceAtTime>true</OccurrenceAtTime>
+          <OccurrenceDate>1793664000000</OccurrenceDate>
+          <OccurrenceTime Class="CodeUnitValue">
+            <Code>0</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </OccurrenceTime>
+          <RecurrenceCode Class="CodeUnitValue">
+            <Code>0.5</Code>
+            <Unit Class="TimeUnits">SECOND</Unit>
+          </RecurrenceCode>
+        </DatasetsCreationProperties>
+        <ScaleRuler>
+          <Id>1793700000009</Id>
+          <Name>scale</Name>
+          <X>0</X>
+          <Y>-150</Y>
+          <Label>
+            <X>10</X>
+            <Y>0</Y>
+          </Label>
+          <PublicFlag>false</PublicFlag>
+          <PresentationFlag>true</PresentationFlag>
+          <ShowLabel>false</ShowLabel>
+          <Length>100</Length>
+          <Rotation>0</Rotation>
+          <ScaleType>BASED_ON_LENGTH</ScaleType>
+          <ModelLength>100</ModelLength>
+          <LengthUnits>METER</LengthUnits>
+          <Scale>1</Scale>
+          <InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+        </ScaleRuler>
+        <CurrentLevel>1793700000010</CurrentLevel>
+        <ConnectionsId>1793700000011</ConnectionsId>
+        <AgentLinks>
+          <AgentLink>
+            <Id>1793700000011</Id>
+            <Name>connections</Name>
+            <X>50</X>
+            <Y>-50</Y>
+            <Label>
+              <X>15</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>false</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <HandleReceiveInConnections>false</HandleReceiveInConnections>
+            <AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+            <AgentLinkBidirectional>true</AgentLinkBidirectional>
+            <MessageType>Object</MessageType>
+            <LineStyle>SOLID</LineStyle>
+            <LineWidth>0.5</LineWidth>
+            <LineColor>1149802922</LineColor>
+            <LineZOrder>UNDER_AGENTS</LineZOrder>
+            <LineArrow>NONE</LineArrow>
+            <LineArrowPosition>END</LineArrowPosition>
+          </AgentLink>
+        </AgentLinks>
+        <Presentation>
+          <Level>
+            <Id>1793700000010</Id>
+            <Name>level</Name>
+            <X>0</X>
+            <Y>0</Y>
+            <Label>
+              <X>10</X>
+              <Y>0</Y>
+            </Label>
+            <PublicFlag>true</PublicFlag>
+            <PresentationFlag>true</PresentationFlag>
+            <ShowLabel>false</ShowLabel>
+            <DrawMode>SHAPE_DRAW_2D</DrawMode>
+            <Z>0</Z>
+            <LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+            <Presentation>
+              <Rectangle>
+                <Id>1793700000012</Id>
+                <Name>nodeMark</Name>
+                <X>-4</X>
+                <Y>-4</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-7562326</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>8</Width>
+                <Height>8</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-7562326</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+            </Presentation>
+          </Level>
+        </Presentation>
+      </ActiveObjectClass>
+    </ActiveObjectClasses>
+    <DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+    <MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+    <AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+    <AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+    <FixedTimeStep>0.001</FixedTimeStep>
+    <RelativeAccuracy>1.0E-5</RelativeAccuracy>
+    <TimeAccuracy>1.0E-5</TimeAccuracy>
+    <Frame>
+      <Id>1793700000039</Id>
+      <Width>1000</Width>
+      <Height>650</Height>
+    </Frame>
+    <Database>
+      <Id>1793700000040</Id>
+      <Logging>false</Logging>
+      <AutoExport>false</AutoExport>
+      <ImportSettings />
+      <ExportSettings />
+    </Database>
+    <RunConfiguration ActiveObjectClassId="1793700000002">
+      <Id>1793700000041</Id>
+      <Name>RunConfiguration</Name>
+      <ModelTimeProperties>
+        <StopOption>Never</StopOption>
+        <InitialDate>1793664000000</InitialDate>
+        <InitialTime>0</InitialTime>
+        <FinalDate>1793750400000</FinalDate>
+        <FinalTime>31</FinalTime>
+      </ModelTimeProperties>
+      <AnimationProperties>
+        <StopNever>true</StopNever>
+        <ExecutionMode>realTimeScaled</ExecutionMode>
+        <RealTimeScale>1</RealTimeScale>
+        <EnableZoomAndPanning>true</EnableZoomAndPanning>
+        <EnableDeveloperPanel>true</EnableDeveloperPanel>
+        <ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+      </AnimationProperties>
+      <Inputs />
+      <Outputs />
+    </RunConfiguration>
+    <Experiments>
+      <SimulationExperiment ActiveObjectClassId="1793700000002">
+        <Id>1793700000042</Id>
+        <Name>Simulation</Name>
+        <CommandLineArguments />
+        <MaximumMemory>512</MaximumMemory>
+        <RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+        <CustomGeneratorCode>new Random()</CustomGeneratorCode>
+        <SeedValue>1</SeedValue>
+        <SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+        <VmArgs />
+        <LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+        <Parameters />
+        <PresentationProperties>
+          <EnableZoomAndPanning>true</EnableZoomAndPanning>
+          <ExecutionMode>realTimeScaled</ExecutionMode>
+          <Title>CampusProductLaunch : Simulation</Title>
+          <EnableDeveloperPanel>true</EnableDeveloperPanel>
+          <ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+          <RealTimeScale>1</RealTimeScale>
+        </PresentationProperties>
+        <ModelTimeProperties>
+          <StopOption>Never</StopOption>
+          <InitialDate>1793664000000</InitialDate>
+          <InitialTime>0</InitialTime>
+          <FinalDate>1793750400000</FinalDate>
+          <FinalTime>31</FinalTime>
+        </ModelTimeProperties>
+        <BypassInitialScreen>true</BypassInitialScreen>
+      </SimulationExperiment>
+    </Experiments>
+  </Model>
+</AnyLogicWorkspace>

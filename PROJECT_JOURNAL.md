@@ -49,12 +49,12 @@ The exact rules are in [MODEL_SPEC.md](handoff_output/product_launch/MODEL_SPEC.
 |Build a concrete contact-recommendation case study|Done in the reference|180 realizations,900 repeated snapshots; `sim/application_summary.csv`|
 |Select product launch as the final domain|Done; user selected it|Conversation decision,3 November2026|
 |Write exact product rules before examining sales results|Done|`product_launch/MODEL_SPEC.md`|
-|Read the marketing sources supporting the added rules|In progress|Public Bass/Kempe/Delre sources located; reading status will be recorded honestly|
+|Read the marketing sources supporting the added rules|In progress|Delre2007 model section confirms separate awareness/adoption and prior group-targeting work; full-source notes being completed|
 |Implement the purchase/awareness/experience model|Readable reference and accelerated engine written; first tiny run succeeds|`product_launch/sim/model.py`, `engine.py`, `native.cpp`; full verification next|
 |Verify product rules and accounting|16 checks passed, including exact native/reference states and analytical limits|`product_launch/sim/verification.csv`; actual AnyLogic execution remains pending|
-|Run pilot and independent main experiment|Pending|Planned18 cells:3 prices ×3 seeding rules ×2 recommendation rules|
-|Run focused sensitivity checks|Pending|Inputs and policy contrasts will be logged|
-|Prepare the product AnyLogic port and export contract|Pending|Actual compilation/runtime remains student-side|
+|Run pilot and independent main experiment|Done:540 pilot and1800 main runs; disjoint replication cohorts|`product_launch/sim/results/`;100 main markets per policy|
+|Run focused sensitivity checks|Done:2400 targeting-stress and2100 behavioral-sensitivity runs; analysis available|`analysis/stress_summary.csv`, `behavior_summary.csv`, `stress_paired.csv`|
+|Prepare the product AnyLogic port and export contract|Generated .alp and paste-ready source ready for one engine check|`CampusProductLaunch.alp`, `ANYLOGIC_BUILD.md`; wrapper/Java checks pass; actual engine pending|
 |Finish product report, presentation and viva notes|Pending|Will use new sales CSVs, not relabeled opinion outcomes|
 
 ## 4. Issues, lessons and fixes
@@ -79,6 +79,13 @@ The exact rules are in [MODEL_SPEC.md](handoff_output/product_launch/MODEL_SPEC.
 |Publishing to GitHub|The tool environment cannot connect to `api.github.com`; the login check alone cannot distinguish a bad token from network failure|Prepare `publish_github.sh` for a normal terminal; public upload remains pending until a successful URL is verified|`gh api user` connection error; publishing script|
 
 |Pilot/main stream separation|Offsetting replication IDs by1000 would reuse a different stream family when seed bases are only1000 apart|Changed product stream bases to1,2,3 and4 million before the main experiments; pilot/main replication IDs stay disjoint|model.py and engine.py; verification rerun after the change|
+
+|AnyLogic integration confidence|A tested Java algorithm is still not proof of engine wiring|Ran540 standalone Java cases and compiled/executed the Main wrapper against stand-ins; wrapper export exactly matches the Java reference. Generated a structurally checked .alp. Request only one actual engine run first|`java_kernel_comparison.csv`, `wrapper_readiness.json`, `alp_structure_checks.json`|
+|Sales versus awareness|Nearly all customers know the launch by the end, yet many do not buy at higher prices|Keep the funnel explicit: awareness is not conversion. At price600, average paid sales are around32, not300|`analysis/policy_summary.csv`|
+|Targeting effects are smaller than price effects in the baseline|We must not credit a price-plus-targeting improvement entirely to targeting|Compare seed rules at fixed price and show paired intervals; pilot-selected policy comparison remains separate|`analysis/paired_contrasts.csv`, `pilot_selected_evaluation.json`|
+|Recommendation effect is not universally zero|Eight of nine final-profit h contrasts include zero; one high-price contrast has a positive pointwise interval|Report the exception and the multiple-comparison limitation instead of claiming no effect everywhere|paired_contrasts.csv|
+
+|Unexpected quality sensitivity|At the hard confidence cutoff, higher experience quality produced fewer purchases in the first sensitivity runs|Do not hide or fix the result by tuning parameters. Launch an exploratory quality×confidence×rewiring diagnostic at fixed price400, plus initial sample-contact compatibility measurements. Interpretation pending its results|`sim/check_quality_effect.py`; original behavioral summaries retained|
 
 ## 5. Decisions made and their reasons
 
@@ -108,6 +115,9 @@ Before presenting, both students should be able to explain one interaction, one 
 |Implementation checkpoint|Readable product reference and C++ accelerator written; first30-customer/3-period run completed with accounting and structural assertions passing|
 |Version-control checkpoint|Created a Git repository using alternate metadata because the managed `.git` path is read-only. Commits use the configured user identity; GitHub publication needs network access outside this sandbox|
 
+|Main-results checkpoint|All18 policies evaluated on100 separate main markets. Pilot-selected price400/high-degree/h0 improves mean profit by₹874.50 over price500/random/h0, with paired95% interval[₹260.95,₹1471.50]. This changes both price and targeting; it does not isolate the targeting benefit|
+|AnyLogic-readiness checkpoint|Generated CampusProductLaunch.alp;16 product checks and540 standalone Java cases complete. Main wiring/export check against stand-ins matches the Java reference exactly. One actual8.9PLE run is now needed; expected default148 paid buyers and₹19200 profit|
+
 ### Next checkpoint
 
-Implement both the readable product reference and accelerated engine, then run deterministic and limiting-case checks before interpreting any pilot outcome. Update the progress table with actual files and results.
+Await the single AnyLogic engine check while finishing the marketing literature notes,13-minute slides, report, sensitivity interpretation and viva preparation. Keep actual engine status pending until students report/record it.

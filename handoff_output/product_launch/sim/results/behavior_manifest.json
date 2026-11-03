@@ -1,0 +1,8 @@
+{
+  "markets": 100,
+  "runs": 2100,
+  "period_rows": 128100,
+  "rep_start": 3000,
+  "rep_end": 3099,
+  "anylogic_executed": false
+}

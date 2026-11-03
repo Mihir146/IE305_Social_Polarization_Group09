@@ -1,0 +1,10 @@
+{
+  "xml_well_formed": true,
+  "unique_ids": 42,
+  "agent_types": 2,
+  "consumer_count": 300,
+  "parameters": 4,
+  "source_format": "8.8.2; intended upgrade/open in8.9PLE",
+  "anylogic_compiled": false,
+  "anylogic_executed": false
+}

@@ -1,0 +1,15 @@
+// Paste into Consumer Advanced Java > Additional class code.
+public int customerId;
+public Main.ProductKernel.Customer state;
+public java.awt.Color stateColor() {
+    if(state==null||!state.aware)return new java.awt.Color(140,155,170);
+    if(state.freeSample)return new java.awt.Color(135,85,175);
+    if(state.paidPeriod>=0)return new java.awt.Color(40,150,95);
+    return new java.awt.Color(235,165,45);
+}
+public String customerTooltip() {
+    if(state==null)return "Initializing";
+    return "Customer "+customerId+" | group "+state.group+"\nBelief "+String.format(java.util.Locale.US,"%.2f",state.belief)+
+        " | value Rs "+(int)(state.valueScale*state.belief)+" | budget Rs "+(int)state.budget+
+        "\nAware="+state.aware+" | sample="+state.freeSample+" | paid period="+state.paidPeriod;
+}

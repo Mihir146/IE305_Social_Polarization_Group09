@@ -1,6 +1,6 @@
 # Application: contact recommendations for a campus discussion platform
 
-**Implemented reference case study.** The product-launch alternative in §6 is a proposal, not an implemented sales model. All inputs and outcomes in the completed application are synthetic.
+**Historical contact-policy case study.** The students selected the product-launch application, now implemented in [product_launch/](product_launch/README.md). Its sales experiments and actual AnyLogic evidence are separate from the contact results below. All inputs and outcomes are synthetic.
 
 ## 1. A concrete setting and decision
 
@@ -89,4 +89,4 @@ The experience mechanism is still a design choice: what does a sample tell its r
 
 Literature starting points are [Bass1969](https://doi.org/10.1287/mnsc.15.5.215), which concerns timing of initial purchases, and [Kempe, Kleinberg & Tardos2003](https://www.cs.cornell.edu/home/kleinber/kdd03-inf.pdf), which concerns influence-maximizing seed selection. Only metadata/abstract and introductory material were checked for this domain discussion; these are **not a completed marketing literature review**. A new product implementation would require reading the relevant models fully, choosing the added rules, updating the AnyLogic port, and validating the new outcomes.
 
-The product proposal can supply a stronger commercial decision problem, but it is not part of the completed numerical evidence. Keep the contact application available as the directly tested project while discussing that scope change.
+The product proposal was subsequently implemented. Use `product_launch/PROJECT_REPORT.md`, its raw sales CSVs and `CampusProductLaunch.alp` for the selected final application. The specification below records the earlier proposal; the authoritative implemented rules are in `product_launch/MODEL_SPEC.md`.

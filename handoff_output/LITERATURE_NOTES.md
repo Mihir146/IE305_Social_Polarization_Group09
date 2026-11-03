@@ -27,8 +27,10 @@ The earlier passes used snippets and page summaries. This session used literal, 
 | Pansanella, Rossetti & Milli 2022 | Full main HTML article | Supplement and image-only algorithms not fully inspected |
 | Baldassarri & Gelman 2008 | Published author PDF, main article | Table/footnote disagree about centering year; no fit reproduced |
 | DiMaggio, Evans & Bryson 1996 | **Abstract only**; full scan located | Institutional PDF returns zero text; readable/OCR PDF needed |
-| Zhao, Sasahara & Chen 2026 | **Abstract/introduction only** | Preprint; remaining model/results not verified |
-| Guerra et al. 2013; Interian et al. 2023 | **Abstract/search leads only** | Do not cite their detailed methods as read |
+| Zhao, Sasahara & Chen 2026 | Full main/supplement HTML text | Preprint; stopping-time and homophily-formula inconsistencies noted below |
+| Guerra et al. 2013 | Full 10-page main PDF text and tables | Plot coordinates not digitized; boundary-index qualifications below |
+| Interian et al. 2023 | **Partial main text**, through §3.6, extraction lines 0–612 | Remaining review not read; printed modularity expression questioned below |
+| Delre et al. 2007; Delre et al. 2010; Kempe et al. 2003; Bass 1969 | Product-specific sources, with individual read limits | See product_launch/LITERATURE_NOTES.md; do not silently upgrade Delre 2010 or Bass to full reading |
 
 Access attempts: HAL returned an access-denied challenge; PMC returned reCAPTCHA. These were not bypassed. Public arXiv/author copies were used where available. Deffuant's first fetch timed out, then the indexed PDF worked. A readable original Deffuant PDF and an OCR/text-enabled DiMaggio PDF would resolve the main extraction gaps.
 
@@ -316,11 +318,25 @@ Balsamo et al., *Inside the Echo Chamber: Disentangling network dynamics from po
 
 **DiMaggio, Evans & Bryson (1996)**, *Have Americans' Social Attitudes Become More Polarized?*, **AJS102,690–755**, DOI [10.1086/230995](https://doi.org/10.1086/230995), [publisher abstract](https://www.journals.uchicago.edu/doi/10.1086/230995), [unreadable institutional scan](https://cpi.stanford.edu/_media/pdf/Reference%20Media/DiMaggio_1996_Public_Opinion.pdf). **Abstract-level only:** differentiates dispersion, distribution shape, ideological constraint and group differences; reports limited broad evidence in its historical period, with exceptions. Detailed methods, tables and quantitative values are **[UNVERIFIED]** pending a readable PDF. Do not cite it as evidence that all real attitudes have become more polarized.
 
-### Leads that remain partial
+### Zhao, Sasahara & Chen (2026): temporal paths already have direct precedent
 
-[Zhao, Sasahara & Chen2026, arXiv2601.16457v2](https://arxiv.org/html/2601.16457) is a **preprint**, read only through its introduction. Its abstract already claims different temporal paths of segregation and polarization under recommendation rules. This defeats a broad novelty claim about studying their temporal order, without establishing its detailed results here.
+[arXiv2601.16457v2](https://arxiv.org/html/2601.16457v2), **preprint**, full main/supplement HTML text read. Directed message/continuous-opinion model: N=500, mean outgoing degree15, tolerance .45, influence/posting rates .005–.1, recommendation controls and histories, 1024 settings with36 trials each. Homophily and local/global polarization are separate; a path integral describes their temporal ordering. This directly rules out claiming that studying temporal paths is generally our invention.
 
-[Guerra et al.2013](https://ojs.aaai.org/index.php/ICWSM/article/view/14421) warns in its abstract that modularity alone does not measure antagonism. [Interian et al.'s OR review](https://doi.org/10.1111/itor.13224) is a relevant measures lead; full text not yet read. These are explicitly incomplete leads, not silently upgraded to full readings.
+The reported stopping rule uses60 quiet steps with changes below10⁻⁷ and a20000-step cap, while a supplement activity example discusses10⁵: this needs clarification. The printed initial-homophily approximation also appears inconsistent with its uniform-interval algebra. We do not copy these as verified benchmarks. Retrospective pathway classification can use future trajectory information, which complicates a real-time intervention interpretation. Multipolar opinions also challenge a single polarization index.
+
+### Guerra et al. (2013): community structure is not automatically antagonism
+
+[Full primary PDF](https://ojs.aaai.org/index.php/ICWSM/article/download/14421/14270/17939), ten-page main text read. Boundary nodes have both a cross-group neighbor and a qualifying internal neighbor. Their score averages `d_i/(d_i+d_b) − 1/2` over this boundary. It distinguishes boundary structure beyond modularity; empty boundaries need explicit handling rather than an automatic antagonism score.
+
+Table2 supplies useful counterexamples: university Q=.24/P=−.24 versus karate Q=.35/P=.17, and soccer Q=.39/P=.20 versus political blogs Q=.42/P=.18. These are source examples, not our simulated values. Authors acknowledge that separation alone need not imply antagonism; a node-level cutoff sentence appears inconsistent with the centered index. We use the conceptual caution, not an uncritically transcribed replacement KPI.
+
+### Interian et al. (2023): partial OR measures review
+
+[Author-hosted review](https://ic.unicamp.br/~ruben/publications/2023%20-%20Network%20polarization%20filter%20bubbles%20and%20echo%20chambers%20An%20annotated%20review.pdf), DOI [10.1111/itor.13224](https://doi.org/10.1111/itor.13224). Read literal text through §3.6, including earlier extraction gaps, **not the whole37-page review**. It distinguishes several network measures and reviews78 selected papers; reading the review is not reading those78 sources. Its E–I index is `(external−internal)/total`, equivalent to `2×cross-edge fraction−1` for that edge partition. A printed modularity normalization differs from Newman's standard expression, so our implementation follows the verified primary Newman definition. Remaining sections are an explicit open reading task.
+
+### Product-launch application
+
+The selected final domain is now implemented, with actual AnyLogic default evidence and new sales experiments. Marketing-paper readings, source links and a second claim-verification table are in [product_launch/LITERATURE_NOTES.md](product_launch/LITERATURE_NOTES.md). The original opinion results are mechanism evidence rather than sales observations. Product experiences break the original global mean/variance invariant; the pairwise compromise identity itself remains valid.
 
 ## 7. Claim verification in the supplied files
 

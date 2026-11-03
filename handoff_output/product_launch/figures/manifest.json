@@ -1,0 +1,58 @@
+[
+  {
+    "chart": 1,
+    "title": "Initial belief histogram",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart1_data.tsv",
+    "png": "chart1.png",
+    "svg": "chart1.svg"
+  },
+  {
+    "chart": 2,
+    "title": "Awareness and paid sales by price",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart2_data.tsv",
+    "png": "chart2.png",
+    "svg": "chart2.svg"
+  },
+  {
+    "chart": 3,
+    "title": "Confirmed sample quantity profit",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart3_data.tsv",
+    "png": "chart3.png",
+    "svg": "chart3.svg"
+  },
+  {
+    "chart": 4,
+    "title": "Confirmed profit contrasts",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart4_data.tsv",
+    "png": "chart4.png",
+    "svg": "chart4.svg"
+  },
+  {
+    "chart": 5,
+    "title": "Confidence quality diagnostic",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart5_data.tsv",
+    "png": "chart5.png",
+    "svg": "chart5.svg"
+  },
+  {
+    "chart": 6,
+    "title": "Profit by price and recipient strategy",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart6_data.tsv",
+    "png": "chart6.png",
+    "svg": "chart6.svg"
+  },
+  {
+    "chart": 7,
+    "title": "Price and unit cost",
+    "tool": "JFreeChart1.5.3 / JFreeSVG3.4.3",
+    "data": "chart7_data.tsv",
+    "png": "chart7.png",
+    "svg": "chart7.svg"
+  }
+]

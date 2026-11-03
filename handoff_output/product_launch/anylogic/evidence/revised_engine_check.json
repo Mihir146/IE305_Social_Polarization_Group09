@@ -1,0 +1,23 @@
+{
+  "evidence": "User ran revised model and supplied screenshot plus actual local engine export files",
+  "screenshot": "anylogic/evidence/revised_engine_run.png",
+  "alp_sha256": "2762e98ce1b432139fcf5b896f8deb3f6b2a87718a9990b5f32bb1bf2b840759",
+  "summary_rows": 1,
+  "period_rows": 61,
+  "summary_sha256": "728153efa9dba4c5c8d9d3bc80889dffdef99e4b1be5c9522bb61d9f556a68e4",
+  "trajectory_sha256": "cffc1a8d09c870bfafcee78fab9fda448420fe7446ac41fdc927540e8b662ba1",
+  "configuration": {
+    "policyIndex": 6,
+    "rep": 1000
+  },
+  "observed": {
+    "period": 60,
+    "aware": 300,
+    "paid_buyers": 148,
+    "samples": 12,
+    "profit": 19200
+  },
+  "exact_match_to_matching_java_except_cohort_and_secs": true,
+  "engine_batch_executed": false,
+  "scope": "One default engine realization; animation screenshot inspected; batch still unobserved"
+}

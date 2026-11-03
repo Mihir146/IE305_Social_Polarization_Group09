@@ -1,3 +1,5 @@
+> **Scope:** this is the original opinion-only port. The selected final product model is [product_launch/CampusProductLaunch.alp](product_launch/CampusProductLaunch.alp), with successful actual default-run evidence in that folder. Do not paste this older body into the product model.
+
 # AnyLogic port and minimal verification plan
 
 **Actual AnyLogic status: NOT compiled or run.** Documentation signatures were checked. A plain Java compiler was used with small stand-ins for the documented agent methods to catch syntax/type errors; that is **not** compilation against the AnyLogic engine and is not a runtime test. The students must save and execute the actual `.alp` model.

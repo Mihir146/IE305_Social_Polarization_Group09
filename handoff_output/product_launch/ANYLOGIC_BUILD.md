@@ -6,7 +6,7 @@ Open **`handoff_output/product_launch/CampusProductLaunch.alp`**. It is the requ
 
 **First engine check succeeded:** the student supplied a Windows PLE screenshot showing period 60, 300 aware, 148 paid buyers, 12 samples, revenue ₹59,200, cost ₹40,000 and profit ₹19,200. This matches the standalone Java default. Evidence: `anylogic/evidence/first_engine_run_windows.jpg` and `engine_check.json`. The exact installed patch version and CSV contents are not visible in that screenshot.
 
-**Current revision:** improves the animation and adds the three-sample policies and automatic batch. Java wiring checks pass, including unchanged default results and 180 batch cases exactly matching the Java reference. The revised animation still needs one visual check in the actual engine. Do not describe that revision as already observed in AnyLogic.
+**Current revision:** improves the animation and adds the three-sample policies and automatic batch. Java wiring checks pass, including unchanged default results and 180 batch cases exactly matching the Java reference. The revised animation is now confirmed by the student-supplied screenshot and actual default CSVs. The one default summary matches Java exactly except cohort/runtime, and 61 period rows were inspected. The automatic engine batch is still unobserved. Evidence: `revised_engine_run.png`, `revised_engine_check.json` and `actual_anylogic_exact_comparison.csv`.
 
 ## Open and run
 

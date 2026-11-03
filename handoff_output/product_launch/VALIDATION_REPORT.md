@@ -1,6 +1,6 @@
 # Verification and validation: product-launch application
 
-**Scope:** synthetic mechanism and decision study. The numerical experiments here were executed with a readable Python specification, an accelerated C++ implementation and a separate Java kernel. Actual AnyLogic integration is pending the students' engine run. Successful software checks do not establish empirical accuracy.
+**Scope:** synthetic mechanism and decision study. The numerical experiments here were executed with a readable Python specification, an accelerated C++ implementation and a separate Java kernel. The revised AnyLogic default has been run by the students and its actual export inspected. The multi-policy engine batch is still pending. Successful software checks do not establish empirical accuracy.
 
 ## Evidence table
 
@@ -45,4 +45,4 @@ The original 12-sample pilot selected price ₹400, degree targeting and h=0 bef
 
 ## Evidence still needed from the students
 
-Save the AnyLogic-converted `.alp`, actual exported summary/trajectory files and a screenshot showing period 60. Record the installed version and the successful run configuration. If the default result differs from its matching Java realization, resolve the discrepancy before showing a claimed match. If engine execution remains unavailable, say so clearly in the presentation and use precomputed reference data only as reference data.
+The revised screenshot and actual default CSV files are saved. Preserve the AnyLogic-converted `.alp` as well. Record the installed version and the successful run configuration. If the default result differs from its matching Java realization, resolve the discrepancy before showing a claimed match. If engine execution remains unavailable, say so clearly in the presentation and use precomputed reference data only as reference data.

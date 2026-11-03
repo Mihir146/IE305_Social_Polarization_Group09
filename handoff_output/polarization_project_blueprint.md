@@ -1,10 +1,10 @@
-# When Social Choice Creates Social Polarization
+# Opinion-network foundation and the selected product-launch extension
 
 **IE305 Simulation Lab — Mihir Vasave and Vaibhav Mathur — revised 3 November 2026**
 
 Suggested presentation subtitle: **Can more contacts prevent echo chambers—or only delay them?**
 
-**Application:** contact recommendations for a hypothetical campus policy discussion platform. `APPLICATION_DESIGN.md` maps the states and choices, supplies the six-policy study and distinguishes the proposed product-launch extension from completed evidence.
+**Selected final application:** a synthetic reusable-bottle launch. Use [product_launch/PROJECT_REPORT.md](product_launch/PROJECT_REPORT.md), its model specification, sales CSVs and actual tested `.alp`. The original opinion/contact model below is the mechanism foundation; its sales-free results are not product observations.
 
 ## 0. Current, honest status
 
@@ -15,8 +15,8 @@ Suggested presentation subtitle: **Can more contacts prevent echo chambers—or 
 | Python reference grid | Supplied 2790 output rows reproduced, including saved KPIs; not 2790 independently observed trajectories |
 | Additional validation | Published-model benchmarks, longer caps, isolate-rule and KPI sensitivity checks executed; see `VALIDATION_REPORT.md` |
 | Recommended main model | Allow isolates. Matched primary grid in `sim/results_primary.csv`; legacy protected-isolate output retained separately |
-| AnyLogic | API audit and paste-ready port prepared; **not compiled or run in AnyLogic** |
-| AnyLogic/Python comparison | **Pending** students' exported AnyLogic results |
+| AnyLogic | Original opinion-only port unexecuted; selected product default has actual successful run/animation/export evidence |
+| Product engine comparison | Actual default matches matching Java except cohort/runtime; large reference grid remains separately labeled |
 | Interpretation | Original positive rewiring-threshold interpretation revised after longer runs |
 
 Provenance: AI assisted source review, code and analysis. Students must understand the mechanism and personally verify the AnyLogic model they present. This document does not assert that unfinished implementation work has happened.
@@ -253,7 +253,24 @@ Reviews/measurement and sociological sources are additionally listed with their 
 4. Reproduce at least one low-φ long-horizon case and record the isolate switch.
 5. Save the `.alp`, exported CSV, exact version and screenshots. Keep incomplete evidence labeled pending.
 
-## 11. Spoken script, matched to current evidence
+## 11. Spoken script for the selected product application
+
+The timed13-minute presentation, including the live model, is [product_launch/SPEAKER_NOTES.md](product_launch/SPEAKER_NOTES.md). Use that script and PowerPoint for the course presentation.
+
+“We simulate a hypothetical campus seller launching one reusable bottle to300 synthetic customers. We choose a price and a free-sample policy. Each person has their own budget, perceived value, awareness, experience and discussion contacts. People talk, close opinions move together, and an informed nonowner buys only when they can afford the bottle and think it is worth the price.
+
+“Our opinion mechanism builds on Deffuant and adaptive-network work including Kozma and Barrat. Product seeding is also established prior work. Our contribution is a transparent decision comparison with explicit financial accounting and checks, rather than a new discovery of adaptive fragmentation.
+
+“We compare policies within shared synthetic markets and keep pilot, exploratory follow-up and fresh-market confirmation distinct. On100 fresh markets, three samples rather than twelve improves modeled profit by Rs2,854.50 at the same price and degree targeting. The extra gain from degree over random targeting is small and uncertain. These contrasts have different purposes and should not be combined into an influencer-success claim.
+
+“A surprising quality result exposes a limitation: a hard confidence cutoff can make moderate people ignore very positive owners. Removing the cutoff reverses that association, even without rewiring. This is a warning about the assumed mechanism, not advice to reduce real product quality.
+
+“We ran the required AnyLogic product model and saved its screenshot and actual default export. It matches the matching Java reference. Large Monte Carlo results come from a separately labeled implementation. All inputs are synthetic, recommendations are conditional and no real-campus demand prediction is claimed.”
+
+Sources for numerical lines: `product_launch/sim/analysis/confirmation_paired.csv`, `quality_paired.csv` and `actual_anylogic_exact_comparison.csv`.
+
+### Historical opinion-mechanism script, for background questions only
+
 
 “Our application is a hypothetical campus discussion platform choosing how many contacts to offer and whether to recommend similar or random new partners. Our question is whether people becoming more similar to their contacts can still leave a population divided into separate groups. We track opinions and paths between people separately.
 
@@ -265,6 +282,6 @@ The model also makes an interesting distinction possible. Averaging always lower
 
 We did not find clear evidence for our hypothesis that choosing similar new contacts increases final fragmentation. We also found that the original rule forbidding new isolates can cause persistent searching. We therefore allow isolates in the recommended main model and retain the original as a sensitivity case. Capped time is not automatically a convergence time.
 
-The reference output has been reproduced, and separate published-model checks are documented. The AnyLogic code is prepared but has not yet been executed at this handoff. We will only claim an AnyLogic implementation and comparison once we have its actual saved results.”
+The original opinion-only port is separate from the selected product model. The product default has actual AnyLogic evidence; the background standalone reference and its benchmarks remain separately identified.”
 
 After the students complete AnyLogic, replace only the final status statement with what they actually ran and the measured comparison. Use `VIVA_PREP.md` for questions, definitions and a shorter explanation.

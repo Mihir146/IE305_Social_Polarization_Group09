@@ -1,0 +1,8 @@
+{
+  "primary": "Campus_Product_Launch.pptx",
+  "native_editable_charts": "Campus_Product_Launch_EditableCharts.pptx",
+  "visible_rendered_charts": 7,
+  "chart_renderer": "JFreeChart1.5.3 with exact bootstrap interval endpoints",
+  "text_and_shapes_editable": true,
+  "scope": "Native chart data remain in the separate editable-chart deck"
+}

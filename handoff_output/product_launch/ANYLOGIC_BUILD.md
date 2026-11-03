@@ -1,128 +1,84 @@
-# Build and test in AnyLogic8.9 PLE on Windows11
+# Run the model in AnyLogic 8.9 PLE on Windows 11
 
-**Actual engine status: not yet compiled or run in AnyLogic.** The pure Java kernel is tested separately. This guide prepares the required engine execution and live animation; it does not claim that execution has happened.
+## Where the model is
 
-## Fast path: one short engine check
+Open **`handoff_output/product_launch/CampusProductLaunch.alp`**. It is the required AnyLogic model. HTML files are chart/presentation support files and do not run the simulation.
 
-Open **CampusProductLaunch.alp** in AnyLogic8.9PLE, accept the normal older-format conversion if offered, and run the default **Simulation** once to period60. No manual construction is needed for this generated project. The checks available here have passed: Java kernel fixtures,540 Java runs, wrapper compilation/export against stand-ins and XML structure. Actual engine import/compilation remains the one missing check.
+**First engine check succeeded:** the student supplied a Windows PLE screenshot showing period 60, 300 aware, 148 paid buyers, 12 samples, revenue ₹59,200, cost ₹40,000 and profit ₹19,200. This matches the standalone Java default. Evidence: `anylogic/evidence/first_engine_run_windows.jpg` and `engine_check.json`. The exact installed patch version and CSV contents are not visible in that screenshot.
 
-With defaults **policyIndex=6,rep=1000**, the matching standalone Java run ends at **300 aware,148 paid buyers,12 samples,profit₹19200**. It should save one summary row and61 period rows. Report either those final values or the exact opening/compiler/runtime error. This is the only first test requested; further checks depend on what it shows.
+**Current revision:** improves the animation and adds the three-sample policies and automatic batch. Java wiring checks pass, including unchanged default results and 180 batch cases exactly matching the Java reference. The revised animation still needs one visual check in the actual engine. Do not describe that revision as already observed in AnyLogic.
 
-The source file deliberately uses the observed8.8.2 project format for opening/upgrading in8.9. It was generated here, not saved by an installed AnyLogic editor. Preserve the saved/converted .alp after a successful run. The manual steps below are a fallback/reference.
+## Open and run
 
-## 1. Minimum build: two agent types, four parameters, one event
+1. Get the latest repository files and extract any ZIP first. In AnyLogic choose **File → Open**, select `CampusProductLaunch.alp`, and accept older-format conversion if offered.
+2. Expand the project, right-click **Simulation → Run**. Press play if paused.
+3. Keep **policyIndex=6**, **rep=1000** for the default illustration. It should still finish with **148 paid buyers and ₹19,200 profit**.
+4. Use real-time speed 1× to watch conversations, or around 2× for a shorter demonstration. Use the toolbar's fit/zoom control if the entire presentation does not fit your screen.
+5. Let period 60 complete. The console prints the absolute output path. Save the converted `.alp` and actual output files.
 
-1. Create a new model, **CampusProductLaunch**, using seconds as the model time unit. Keep the root agent named **Main**.
-2. Create an agent type named **Consumer**.
-3. Open **Consumer → Advanced Java → Additional class code**. Paste the entire [Consumer body](anylogic/Consumer_additional_class_code.java.txt). Do not create separate Variable or Function elements with the same names.
-4. Draw a small rectangle named **nodeMark**, size8×8 centered at(0,0), and make it public/visible on the upper agent. The controller updates its fill using `stateColor()`. Set its tooltip to `customerTooltip()` if the editor offers that property.
-5. In Main, create an agent population named **consumers**, type **Consumer**, initial size **300**. Select a **User defined** network and enable its connection display. Do not use an automatic random-network generator: the model generates its own initial graph.
-6. Create these four **Parameter** elements in Main, with exactly these names:
+The editor's parameters are not intended as overlapping labels in the running presentation. To select another policy, stop the model and change the **Main parameter default** in the editor, or override it in the Simulation experiment's parameter properties. Restart for the changed setting. Changing a caption does not change a model input.
 
-| Name | Type | Default |
-|---|---|---|
-|`policyIndex`|int|6|
-|`rep`|int|1000|
-|`animateNetwork`|boolean|true|
-|`outputDirectory`|String|`"product_output"`|
+## What the animation means
 
-7. Open **Main → Advanced Java → Additional class code**. Paste the entire [Main body](anylogic/Main_additional_class_code.java.txt). It embeds the kernel; no JAR, extra Java Class element or Python installation is needed inside AnyLogic.
-8. Main **On startup** action: `initializeLaunch();`.
-9. Create a cyclic timeout Event named **launchPeriod**. Set first occurrence to **.5 seconds**, recurrence **.5 seconds**, action `advanceLaunchPeriod();`.
-10. In the Simulation experiment, use seconds and set its stop condition to **Never**, or a stop time greater than31 seconds. The model exports after period60 and calls `finishSimulation()` itself. An earlier experiment stop would prevent its final export.
+There are three panels of 100 **Consumer agents**. The panel is the customer's known social group. Position within a panel is only a stable layout; it is not an opinion axis or a friendship edge.
 
-Run once. At period0 there should be12 purple sample owners. Over time gray customers become informed, some turn green after paying, and the summary should reach period60. Inspect the console for the actual absolute CSV output path.
+- Gray: unaware of the launch. Amber: informed without ownership. Purple: free-sample owner. Green: paid owner.
+- A blue mini-bar beneath each person shows their current belief, on a 0–1 scale. Longer means higher expected appeal.
+- Yellow marks identify the participants in the highlighted meeting. A blue line connects the selected pair. An orange line marks a new contact when a disagreement causes replacement.
+- The conversation panel gives the actual selected meeting and both before/after beliefs. It can also show a meeting where information was not shared or confidence was too low for averaging.
+- The display advances **10 actual attempted interactions per visual tick**, highlighting the latest attempt. It does not pretend that the highlighted meetings are the entire contact graph or all interactions.
+- Purchases happen simultaneously after all 300 attempts in a period. New owners then receive their own experience signal. Thus opinion changes can occur through conversations and through ownership experience.
 
-## 2. Animation and live display
+The scheduler stores separate customer states and a contact graph. Every AnyLogic Consumer references its own live state. There is no aggregate sales-growth equation. Main schedules the agent interactions and collects results; central scheduling is compatible with agent-based modeling.
 
-The three clouds represent the three pre-campaign social groups. Customer positions depend only on ID/group; layout randomness does not consume model draws. Link colors/layout are not evidence of sales or fragmentation; the recorded metrics are.
+The event interval is .05 engine seconds. With animation on, one campaign period uses 30 ticks, or 1.5 engine seconds. A full campaign takes 90 engine seconds. These are display speeds, not real days. With animation off, each tick executes one entire campaign period for faster batch runs; the primitive random draw order and period-end purchase schedule stay the same.
 
-| Color | Meaning |
-|---|---|
-|Gray|Unaware of the launch|
-|Amber|Aware, without a free sample or paid purchase|
-|Purple|Received a free sample; never counted as a paid sale|
-|Green|Made one paid purchase|
+## Policy choices
 
-Add a large public **Text** element named **statusLabel** in Main. The controller sets its text from `launchStatus()`. Put it above the agent clouds. Add a static legend using the four colors. Set a comfortable model window/presentation size, for example900×550, with the clouds around x150,400,650 and y230.
+| Base index | Recipients | Price | Contact policy |
+|---:|---|---:|---|
+|0 / 1|Random people|₹400|Random / similar|
+|2 / 3|Random people|₹500|Random / similar|
+|4 / 5|Random people|₹600|Random / similar|
+|6 / 7|Most contacts|₹400|Random / similar|
+|8 / 9|Most contacts|₹500|Random / similar|
+|10 / 11|Most contacts|₹600|Random / similar|
+|12 / 13|Distributed across groups|₹400|Random / similar|
+|14 / 15|Distributed across groups|₹500|Random / similar|
+|16 / 17|Distributed across groups|₹600|Random / similar|
 
-If time permits, add a Time Plot with automatic updates at.5-second intervals. Its values can reference the last history row:
+Indices **0–17 use 12 samples**. Add **18** to use **3 samples** with the same price, targeting and contact rule. For example **24 = ₹400, 3 samples, most contacts, random replacements**. This is the provisional finite-candidate recommendation. Index 6 remains the original default illustration so the first run has a stable numerical reference.
 
-```java
-launch == null ? 0 : launch.history.get(launch.history.size()-1)[1] // aware
-launch == null ? 0 : launch.history.get(launch.history.size()-1)[2] // paid buyers
-```
+## One automatic engine batch after the visual run works
 
-The x-axis then shows **engine seconds**, with one model period per.5 seconds. Label this mapping. Use the CSV trajectory for plots whose x-axis must be the integer campaign period. The engine-time interval is not a real-day calibration.
+Set **policyIndex=36**, **rep=1000**, **animateNetwork=false**, and choose a fresh output directory such as `product_batch`. Select **virtual time / as fast as possible**, then run once. The model sequentially executes 36 policies × 5 markets = **180 campaigns** and writes separate files. No paid Parameter Variation feature is needed.
 
-The kernel's adjacency matrix is the graph used by the rules. With animateNetwork=true, the controller mirrors it into Consumer connections after every period. With animation off, it avoids those display updates; the mathematical graph still evolves. Each Consumer holds a reference to its own live kernel state, so its color/tooltip follows the actual customer state.
+This is an integration batch, not the 100-market reference precision claim. No additional automatic replications should be added. Identical policy/rep reruns replace the same named export and are not new observations. A batch with another starting rep uses different markets; keep IDs below one million.
 
-## 3. Policy index and reduced experiment
+## CSV exports and comparison
 
-| Index | Sampling strategy | Price | h |
-|---:|---|---:|---:|
-|0,1|Random|400|0,1|
-|2,3|Random|500|0,1|
-|4,5|Random|600|0,1|
-|6,7|Highest degree|400|0,1|
-|8,9|Highest degree|500|0,1|
-|10,11|Highest degree|600|0,1|
-|12,13|Distributed across groups|400|0,1|
-|14,15|Distributed across groups|500|0,1|
-|16,17|Distributed across groups|600|0,1|
-
-Every policy has12 samples and unit cost250. Thus comparisons at the same price hold sample spending fixed. Policy6 is the highest-pilot-mean candidate; policy2 is the default comparison policy. This is not a guaranteed optimum for actual customers.
-
-If Parameter Variation is available in your PLE installation, choose **Freeform**,90 runs, with extra automatic replications **off**:
-
-```java
-policyIndex: index / 5
-rep: 1000 + index % 5
-animateNetwork: false
-outputDirectory: "product_batch"
-```
-
-These are separate parameter-table expressions, not a Java block. Five runs/cell provide a small engine integration check, not the main precision claim. If time is tight, start with policies2 and6, ten replications each; then broaden only after checks pass. Manual Simulation runs with changed rep values are a fallback. Do not count an identical policy/rep rerun as a new independent observation.
-
-Use virtual/maximum speed and animation off for batches. The PLE Custom experiment is not a fallback. Keep the actual exported run count in the report.
-
-## 4. Exports and comparison
-
-Each run writes separate files, avoiding parallel append conflicts:
+Each campaign writes:
 
 ```
 product_output/summary/policy6_rep1000.csv
 product_output/trajectories/policy6_rep1000.csv
 ```
 
-Summary fields match `sim/results/main_runs.csv`. Trajectory fields match `main_trajectories.csv`. Replication seeds are four separate logged streams. Java and NumPy use different generators; equal seed labels do not mean identical markets or paths.
+A normal campaign gives one summary row and 61 trajectory rows, including period 0. The summary schema matches the reference data. From this product folder, after collecting actual engine files:
 
-After collecting files, run the supplied ingestion/comparison commands from the product folder; see its README. Compare only the same price, sampling rule, h, horizon, group graph and behavioral assumptions. The standalone Java-kernel output is **not** an AnyLogic export.
+```sh
+python sim/ingest_anylogic.py PATH_TO_PRODUCT_OUTPUT
+python sim/compare_implementations.py --candidate sim/results/anylogic_runs.csv --reference sim/results/java_kernel_runs.csv --exact-java --out sim/analysis/actual_anylogic_exact_comparison.csv
+```
 
-## 5. Reference checks (not a request to run a long test suite)
+The supplied Java reference covers rep 1000–1029 and all 36 policies. A matching engine run should agree exactly except cohort label and wall-clock runtime. For other replication IDs, generate matching Java references or use a separately labeled distribution comparison. Java and NumPy/C++ same-numbered seeds are different generators, so they should not be forced into an exact trajectory comparison.
 
-- Population300, total initial graph edges1200, samples12, paid0, revenue0, cost3000, profit−3000 at period0.
-- Free recipients remain separate from paid buyers; sample count stays12.
-- At every paid purchase the buyer was aware, could afford the price, had sufficient pre-purchase value and had not already owned the product.
-- The graph stays simple and undirected with1200 edges. Isolates are permitted.
-- Repeat the same policy/rep: outputs match except wall-clock seconds. Change rep for a new market.
-- Let the model reach period60. Confirm exactly one summary row and61 trajectory rows, including period0. Record output paths, version and actual values.
-- Run a small batch and compare distributions with the matching reference. A single realization need not equal a reference mean.
-- Save **CampusProductLaunch.alp**, all support files and screenshots. Reopen that saved model before presentation.
+## Manual construction fallback
 
-The Java class `ProductKernel.java` can be tested with `KernelCheck.java` independently of AnyLogic. Passing it strengthens the algorithm check; it does not verify the AnyLogic editor, population properties, animation, event wiring or export location.
+Use only if importing the `.alp` fails; preserve the exact error first. Create Main and Consumer, a Consumer population `consumers` of initial size 300, and the four parameters `policyIndex` int 6, `rep` int 1000, `animateNetwork` boolean true and `outputDirectory` String `"product_output"`. Paste the supplied additional-class bodies, set Main startup to `initializeLaunch();`, and add a cyclic timeout event at .05 seconds calling `advanceLaunchPeriod();`. Stop option must be **Never**; the model finishes itself.
 
-## 6. Common build problems
+The animation requires the named public shapes and labels serialized by `sim/build_alp.py`, including Consumer `nodeMark`, `headMark`, `beliefMark`, `focusMark`; Main status/group/interaction labels and progress/meeting rectangles. The build script lists their exact names and layout. The earlier minimalist manual instructions do not contain the revised animation, so importing the prepared file is the practical route.
 
-| Symptom | Check / smallest likely correction |
-|---|---|
-|Duplicate variable/function|Remove editor elements duplicating fields/methods already pasted into Additional class code|
-|Unknown Consumer/Main name|Keep the exact agent type/population names used in this guide|
-|Unknown policyIndex/rep/etc.|Create the four Parameter elements in Main with the specified types|
-|All circles stay gray|Use a dynamic fill expression, not a static fill; verify startup assigns Consumer.state|
-|Model stops before export|Remove the experiment's early stop time and let period60 finish|
-|Output files seem missing|Use the console's absolute path; the working directory can differ from the .alp folder|
-|Repeated results across batch runs|Check that rep changes and that extra replication settings do not duplicate the same index|
-|Compiler/API message|Save the exact error and surrounding code. Change the smallest affected line; do not alter the purchase rules to silence an unrelated editor error|
+## API evidence
 
-The earlier Agent API audit covers `connectTo`, `disconnectFromAll` and execution control; `setXY` is a documented Agent method. Exact engine integration remains pending until tested in your AnyLogic8.9PLE installation.
+The animation uses public documented rectangle methods `setWidth`, `setVisible`, `setPos`, `setRotation` and `setFillColor`; see [AnyLogic Rectangle documentation](https://www.anylogic.help/anylogic/presentation/rectangle.html). Consumer position and connection APIs use Agent methods. API documentation and stand-in checks support the revision, but the visual engine check remains necessary. No actual engine data are manufactured from the stand-in harness.

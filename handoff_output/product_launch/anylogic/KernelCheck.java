@@ -19,12 +19,12 @@ public class KernelCheck {
             java.nio.file.Path output=java.nio.file.Paths.get(args[0]);
             try(java.io.BufferedWriter writer=java.nio.file.Files.newBufferedWriter(output,java.nio.charset.StandardCharsets.UTF_8)) {
                 writer.write(ProductKernel.SUMMARY_HEADER);writer.newLine();
-                for(int rep=1000;rep<1030;rep++)for(int strategy=0;strategy<3;strategy++)for(double price:new double[]{400,500,600})for(double h:new double[]{0,1}) {
-                    c=new ProductKernel.Config();c.price=price;c.h=h;k=new ProductKernel(c,rep,strategy);
-                    while(k.period<c.periods)k.stepPeriod();writer.write(k.summaryCsv("java_kernel","baseline"));writer.newLine();
+                for(int samples:new int[]{12,3})for(int rep=1000;rep<1030;rep++)for(int strategy=0;strategy<3;strategy++)for(double price:new double[]{400,500,600})for(double h:new double[]{0,1}) {
+                    c=new ProductKernel.Config();c.price=price;c.h=h;c.nSamples=samples;k=new ProductKernel(c,rep,strategy);
+                    while(k.period<c.periods)k.stepPeriod();writer.write(k.summaryCsv("java_kernel",samples==12?"baseline":"budget3"));writer.newLine();
                 }
             }
-            System.out.println("Wrote540 standalone Java kernel runs for distribution comparison");
+            System.out.println("Wrote1080 standalone Java kernel runs for distribution comparison");
         }
     }
 }

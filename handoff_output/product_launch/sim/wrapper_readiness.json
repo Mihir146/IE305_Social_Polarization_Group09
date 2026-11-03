@@ -6,5 +6,8 @@
   "anylogic_engine_compiled": false,
   "anylogic_engine_executed": false,
   "expected_default_paid_buyers": 148.0,
-  "expected_default_profit": 19200.0
+  "expected_default_profit": 19200.0,
+  "batch_cases_exactly_match_java": 180,
+  "bar_and_group_text_wiring": true,
+  "scope": "Stand-in wiring, no AnyLogic engine execution; real first-run evidence is separate"
 }

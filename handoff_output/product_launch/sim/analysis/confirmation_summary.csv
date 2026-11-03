@@ -1,0 +1,5 @@
+policy,price,n_samples,strategy,h,n,profit_mean,profit_lo,profit_hi,paid_buyers_mean,paid_buyers_lo,paid_buyers_hi,aware_mean,aware_lo,aware_hi
+provisional,400,3,degree,0,100,21711.0,21405.0,22017.0,149.74,147.7,151.78,299.98,299.95,300.0
+targeting_control,400,3,random,0,100,21679.5,21357.0,22008.0,149.53,147.38,151.72,299.98,299.95,300.0
+quantity_control,400,12,degree,0,100,18856.5,18548.9625,19164.0,145.71,143.65975,147.76,299.98,299.95,300.0
+original_comparison,500,12,random,0,100,17602.5,16914.9375,18305.0625,82.41,79.65975,85.22025,299.97,299.93,300.0

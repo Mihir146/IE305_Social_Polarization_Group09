@@ -26,6 +26,9 @@ public class ProductKernel {
     public final int[] degree;
     public final java.util.ArrayList<double[]> history=new java.util.ArrayList<>();
     public int period=0,rewires=0;
+    public int activationInPeriod=0,lastI=-1,lastJ=-1,lastNew=-1;
+    public double beforeI,beforeJ,afterI,afterJ;
+    public String lastOutcome="Campaign initialized";
     public final java.util.Random eventRng;
     private final long started=System.nanoTime();
 
@@ -74,18 +77,26 @@ public class ProductKernel {
     private void sample(int i){Customer a=customers[i];a.freeSample=true;a.aware=true;a.awarePeriod=0;a.belief=a.experience;}
 
     public void interaction(double[] u) {
-        int n=config.N,i=(int)(u[0]*n);if(degree[i]==0)return;
+        int n=config.N,i=(int)(u[0]*n);
+        lastI=i;lastJ=-1;lastNew=-1;lastOutcome="No discussion contact";
+        beforeI=afterI=customers[i].belief;
+        if(degree[i]==0)return;
         int rank=(int)(u[1]*degree[i]),j=-1;
         for(int z=0;z<n;z++)if(adj[i][z]&&rank--==0){j=z;break;}
         if(j<0)throw new IllegalStateException("Neighbor rank mismatch");
         Customer a=customers[i],b=customers[j];
+        lastJ=j;beforeJ=afterJ=b.belief;lastOutcome="Neither customer knows the launch";
         if(!a.aware&&!b.aware)return;
+        boolean informed=false;
         if(a.aware!=b.aware) {
+            lastOutcome="Launch news was not shared in this meeting";
             if(u[2]>=config.shareProb)return;
             Customer other=a.aware?b:a;other.aware=true;other.awarePeriod=period;
+            informed=true;
         }
         double xi=a.belief,xj=b.belief;
-        if(Math.abs(xi-xj)<config.d){a.belief=xi+config.mu*(xj-xi);b.belief=xj+config.mu*(xi-xj);}
+        lastOutcome=informed?"Launch news shared; opinions too far apart":"Opinions too far apart; contact kept";
+        if(Math.abs(xi-xj)<config.d){a.belief=xi+config.mu*(xj-xi);b.belief=xj+config.mu*(xi-xj);lastOutcome=informed?"News shared and opinions moved closer":"Opinions moved closer";}
         else if(u[3]<config.phi) {
             int[] candidates=new int[n];int count=0;
             if(u[4]<config.h)for(int k=0;k<n;k++)if(k!=i&&!adj[i][k]&&Math.abs(customers[k].belief-xi)<config.d)candidates[count++]=k;
@@ -94,17 +105,25 @@ public class ProductKernel {
                 int k=candidates[(int)(u[5]*count)];
                 adj[i][j]=adj[j][i]=false;adj[i][k]=adj[k][i]=true;
                 degree[j]--;degree[k]++;rewires++;
+                lastNew=k;lastOutcome="Disagreement: discussion contact replaced";
             }
         }
+        afterI=a.belief;afterJ=b.belief;
     }
 
     public boolean stepPeriod() {
-        if(period>=config.periods)return false;
-        period++;
-        for(int z=0;z<config.N;z++) {
-            double[] u=new double[6];for(int q=0;q<6;q++)u[q]=eventRng.nextDouble();
-            interaction(u);
-        }
+        if(period>=config.periods&&activationInPeriod==0)return false;
+        do{stepActivation();}while(activationInPeriod!=0);
+        return period<config.periods;
+    }
+
+    public boolean stepActivation() {
+        if(period>=config.periods&&activationInPeriod==0)return false;
+        if(activationInPeriod==0)period++;
+        double[] u=new double[6];for(int q=0;q<6;q++)u[q]=eventRng.nextDouble();
+        interaction(u);activationInPeriod++;
+        if(activationInPeriod<config.N)return true;
+        activationInPeriod=0;
         int[] buyers=new int[config.N];int count=0;
         for(int i=0;i<config.N;i++) {
             Customer a=customers[i];double value=a.valueScale*a.belief;

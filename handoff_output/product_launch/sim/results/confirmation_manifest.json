@@ -1,0 +1,35 @@
+{
+  "purpose": "Fresh-market confirmation of four fixed comparisons after exploratory follow-up",
+  "policies": [
+    [
+      "provisional",
+      400,
+      3,
+      "degree"
+    ],
+    [
+      "targeting_control",
+      400,
+      3,
+      "random"
+    ],
+    [
+      "quantity_control",
+      400,
+      12,
+      "degree"
+    ],
+    [
+      "original_comparison",
+      500,
+      12,
+      "random"
+    ]
+  ],
+  "rep_start": 5000,
+  "rep_end": 5099,
+  "independent_markets": 100,
+  "runs": 400,
+  "selection_on_this_cohort": false,
+  "anylogic_executed": false
+}

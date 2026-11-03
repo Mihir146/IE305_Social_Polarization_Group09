@@ -1,0 +1,20 @@
+# Open issues, ranked by evaluation importance
+
+| Priority | Issue | What resolves it / how to present honestly |
+|---|---|---|
+|1 — required submission and live demo|Actual AnyLogic 8.9 PLE execution is pending|Open the supplied `.alp`, run the requested default once, preserve exact errors or actual outputs. Standalone Java is checked; engine import/compile/animation is not inferred from that|
+|2 — submission logistics|The announcement says submit before 3 November 16:00 IST|The students must check the actual Moodle status or any extension and submit the `.alp`, support files and slides. A prepared folder is not an uploaded submission|
+|3 — live presentation|Rehearse the required 13 minutes including the model demonstration|Use the speaker timings, split speaking roles and keep the live demonstration short. Bring the saved model, local files and a screenshot fallback. Attend the whole Group 9 slot on 4 November, 14:00–15:40, LC002|
+|4 — engine evidence breadth|Large numerical results currently come from the reference implementation|After the first engine run succeeds, collect a small matched AnyLogic batch if feasible. Label actual engine run counts separately; do not relabel the full Python/C++ grid as AnyLogic output|
+|5 — model validity|Purchase and contact rules are synthetic, uncalibrated assumptions|State this upfront. Discuss sensitivity; do not claim real demand, real optimal price or evidence that actual students behave this way|
+|6 — surprising quality response|Hard bounded confidence can prevent very positive owners from influencing moderate nonowners|Report the controlled diagnostic. It is a warning about applying an opinion mechanism to product decisions, not a recommendation to lower actual quality. Future work would calibrate or soften the confidence rule|
+|7 — coverage of sample quantities|Only 3 and 12 samples are tested, not every possible quantity|Call the recommendation best among tested choices. Zero samples implies no initial awareness in this model and thus no launch; other advertising channels are absent. An interior/global optimum has not been found|
+|8 — practical targeting expense|Degree information and group membership are assumed available at no additional cost|The modest incremental targeting gain may not justify acquiring network data. Add actual targeting cost before making a business decision|
+|9 — recommendation and targeting comparisons|Several pointwise intervals were examined|Do not claim equivalence when an interval includes zero. Do not present one exploratory h effect as a universal platform rule|
+|10 — omitted operations|Inventory, delivery, returns, competition, fixed overhead and repeat purchases are outside scope|Profit is modeled contribution after production/sample costs. It is not a complete profit-and-loss statement. Keep the one-product campaign scope explicit|
+|11 — literature extraction limits|Some original PDFs have garbled formulas; Bass and DiMaggio readable full text remain unavailable|Keep the parent read-status table and `[UNVERIFIED]` markers. A readable authorized PDF/OCR would resolve these gaps. Do not cite unread equations as verified|
+|12 — precise literature critical points|KB and binary-voter finite-size thresholds were not exactly reproduced|Parent validation report labels these partial. Published critical values are not automatically targets for the product extension|
+|13 — PowerPoint rendering|OOXML package/relationships can be checked here; Windows PowerPoint rendering needs a local look|Use the generated editable deck and its HTML fallback. Check layout once on the presenting computer; do not infer visual compatibility solely from XML validity|
+|14 — remote synchronization|The user is uploading/pushing manually|Ensure the final files reach the remote and pull/download those exact files on the presentation computer. Local preparation does not prove a remote upload|
+
+Do not add untested features to address every limitation before the presentation. Prioritize a working required model, traceable analysis, a clear explanation and honest boundaries.

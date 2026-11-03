@@ -1,0 +1,10 @@
+provisional_minus,metric,n,difference,lo,hi
+targeting_control,profit,100,31.5,-112.5,177.0
+targeting_control,paid_buyers,100,0.21,-0.75,1.18
+targeting_control,aware,100,0.0,-0.03,0.03
+quantity_control,profit,100,2854.5,2698.5,3006.0
+quantity_control,paid_buyers,100,4.03,2.99,5.04
+quantity_control,aware,100,0.0,-0.03,0.03
+original_comparison,profit,100,4108.5,3581.5,4623.5
+original_comparison,paid_buyers,100,67.33,65.36,69.27
+original_comparison,aware,100,0.01,-0.02,0.04

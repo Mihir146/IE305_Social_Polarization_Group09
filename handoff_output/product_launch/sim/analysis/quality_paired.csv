@@ -1,0 +1,11 @@
+contrast,d,phi,metric,n,difference,lo,hi
+quality095_minus060,0.2,0.0,paid_buyers,100,-38.16,-39.840250000000005,-36.49
+quality095_minus060,0.2,0.0,profit,100,-5724.0,-5976.0375,-5473.5
+quality095_minus060,0.2,0.05,paid_buyers,100,-37.96,-39.74,-36.2
+quality095_minus060,0.2,0.05,profit,100,-5694.0,-5961.0,-5430.0
+quality095_minus060,1.0,0.0,paid_buyers,100,106.2,104.40975,108.02024999999999
+quality095_minus060,1.0,0.0,profit,100,15930.0,15661.4625,16203.037499999999
+quality095_minus060,1.0,0.05,paid_buyers,100,106.2,104.40975,108.02024999999999
+quality095_minus060,1.0,0.05,profit,100,15930.0,15661.4625,16203.037499999999
+quality_effect_d1_minus_d02_static_graph,difference,0,paid_buyers,100,144.36,142.01,146.68
+quality_effect_d1_minus_d02_static_graph,difference,0,profit,100,21654.0,21301.5,22002.0

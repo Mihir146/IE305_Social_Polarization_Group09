@@ -1,0 +1,10 @@
+{
+  "input": "sim/results/budget3_runs.csv",
+  "runs": 1800,
+  "markets": 100,
+  "policy_cells": 18,
+  "bootstrap_seed": 20261103,
+  "bootstrap_resamples": 10000,
+  "intervals": "Pointwise95%; market resampling; no global multiple-comparison guarantee",
+  "anylogic_executed": false
+}

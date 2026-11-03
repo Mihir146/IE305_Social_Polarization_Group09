@@ -1,0 +1,26 @@
+{
+  "evidence_type": "Student-supplied screenshot inspected directly",
+  "screenshot": "anylogic/evidence/first_engine_run_windows.jpg",
+  "platform": "Windows; AnyLogic Personal Learning Edition, user reports 8.9",
+  "actual_installed_patch_version": "Not visible in screenshot",
+  "configuration": {
+    "policyIndex": 6,
+    "rep": 1000
+  },
+  "observed": {
+    "period": 60,
+    "aware": 300,
+    "paid_buyers": 148,
+    "free_samples": 12,
+    "revenue": 59200,
+    "total_cost": 40000,
+    "profit": 19200
+  },
+  "run_state": "Finished",
+  "matches_standalone_java_default": true,
+  "first_checked_alp_sha256": "58843ade4a0eb8b42b9ca764b6ed42263a7fa47fc115347bbd2896cd4fa2a586",
+  "engine_import_and_runtime_observed": true,
+  "student_reports_no_compilation_errors": true,
+  "csv_export_contents_inspected": false,
+  "remaining": "Inspect actual CSV files; subsequent presentation/batch wrapper revisions require their own evidence"
+}

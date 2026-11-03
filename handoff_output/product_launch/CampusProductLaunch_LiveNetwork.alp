@@ -482,6 +482,32 @@ public void exportLaunch(){
             <Presentation>
               <Rectangle>
                 <Id>1793700000070</Id>
+                <Name>canvasBackground</Name>
+                <X>0</X>
+                <Y>0</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-15919834</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>1290</Width>
+                <Height>900</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-15919834</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Rectangle>
+                <Id>1793700000071</Id>
                 <Name>networkPanel</Name>
                 <X>24</X>
                 <Y>185</Y>
@@ -507,7 +533,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000071</Id>
+                <Id>1793700000072</Id>
                 <Name>reachPanel</Name>
                 <X>900</X>
                 <Y>185</Y>
@@ -533,7 +559,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000072</Id>
+                <Id>1793700000073</Id>
                 <Name>opinionPanel</Name>
                 <X>900</X>
                 <Y>405</Y>
@@ -559,7 +585,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000073</Id>
+                <Id>1793700000074</Id>
                 <Name>statsPanel</Name>
                 <X>900</X>
                 <Y>595</Y>
@@ -585,7 +611,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000074</Id>
+                <Id>1793700000075</Id>
                 <Name>meetingPanel</Name>
                 <X>24</X>
                 <Y>700</Y>
@@ -611,7 +637,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Group>
-                <Id>1793700000075</Id>
+                <Id>1793700000076</Id>
                 <Name>linksLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -628,7 +654,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000076</Id>
+                    <Id>1793700000077</Id>
                     <Name>linksLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -656,7 +682,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Rectangle>
-                <Id>1793700000077</Id>
+                <Id>1793700000078</Id>
                 <Name>meetingLine</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -682,7 +708,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000078</Id>
+                <Id>1793700000079</Id>
                 <Name>newContactLine</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -730,7 +756,7 @@ public void exportLaunch(){
                 <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
               </EmbeddedObjectPresentation>
               <Group>
-                <Id>1793700000079</Id>
+                <Id>1793700000080</Id>
                 <Name>historyLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -747,7 +773,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000080</Id>
+                    <Id>1793700000081</Id>
                     <Name>historyLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -775,7 +801,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Group>
-                <Id>1793700000081</Id>
+                <Id>1793700000082</Id>
                 <Name>histogramLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -792,7 +818,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000082</Id>
+                    <Id>1793700000083</Id>
                     <Name>histogramLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -820,7 +846,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Text>
-                <Id>1793700000083</Id>
+                <Id>1793700000084</Id>
                 <Name>titleLabel</Name>
                 <X>24</X>
                 <Y>20</Y>
@@ -845,7 +871,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000084</Id>
+                <Id>1793700000085</Id>
                 <Name>introLabel</Name>
                 <X>24</X>
                 <Y>57</Y>
@@ -870,7 +896,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000085</Id>
+                <Id>1793700000086</Id>
                 <Name>statusLabel</Name>
                 <X>24</X>
                 <Y>88</Y>
@@ -895,7 +921,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000086</Id>
+                <Id>1793700000087</Id>
                 <Name>kpiLabel</Name>
                 <X>24</X>
                 <Y>122</Y>
@@ -920,7 +946,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000087</Id>
+                <Id>1793700000088</Id>
                 <Name>financeLabel</Name>
                 <X>24</X>
                 <Y>154</Y>
@@ -945,7 +971,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000088</Id>
+                <Id>1793700000089</Id>
                 <Name>networkTitle</Name>
                 <X>42</X>
                 <Y>203</Y>
@@ -970,7 +996,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000089</Id>
+                <Id>1793700000090</Id>
                 <Name>group0</Name>
                 <X>106</X>
                 <Y>580</Y>
@@ -995,7 +1021,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000090</Id>
+                <Id>1793700000091</Id>
                 <Name>group1</Name>
                 <X>386</X>
                 <Y>580</Y>
@@ -1020,7 +1046,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000091</Id>
+                <Id>1793700000092</Id>
                 <Name>group2</Name>
                 <X>666</X>
                 <Y>580</Y>
@@ -1045,7 +1071,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000092</Id>
+                <Id>1793700000093</Id>
                 <Name>reachTitle</Name>
                 <X>920</X>
                 <Y>204</Y>
@@ -1070,7 +1096,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000093</Id>
+                <Id>1793700000094</Id>
                 <Name>reachLabel</Name>
                 <X>920</X>
                 <Y>231</Y>
@@ -1095,7 +1121,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Rectangle>
-                <Id>1793700000094</Id>
+                <Id>1793700000095</Id>
                 <Name>reachAxis</Name>
                 <X>949</X>
                 <Y>246</Y>
@@ -1121,7 +1147,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000095</Id>
+                <Id>1793700000096</Id>
                 <Name>reachFloor</Name>
                 <X>949</X>
                 <Y>355</Y>
@@ -1147,7 +1173,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Text>
-                <Id>1793700000096</Id>
+                <Id>1793700000097</Id>
                 <Name>reachTop</Name>
                 <X>917</X>
                 <Y>247</Y>
@@ -1172,7 +1198,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000097</Id>
+                <Id>1793700000098</Id>
                 <Name>reachZero</Name>
                 <X>933</X>
                 <Y>345</Y>
@@ -1197,7 +1223,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000098</Id>
+                <Id>1793700000099</Id>
                 <Name>reachPeriod0</Name>
                 <X>949</X>
                 <Y>365</Y>
@@ -1222,7 +1248,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000099</Id>
+                <Id>1793700000100</Id>
                 <Name>reachPeriod60</Name>
                 <X>1170</X>
                 <Y>365</Y>
@@ -1247,7 +1273,57 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000100</Id>
+                <Id>1793700000101</Id>
+                <Name>awareCurveKey</Name>
+                <X>990</X>
+                <Y>372</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-1001646</Color>
+                <Text>— Aware</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>12</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000102</Id>
+                <Name>paidCurveKey</Name>
+                <X>1080</X>
+                <Y>372</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-11086176</Color>
+                <Text>— Paid</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>12</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000103</Id>
                 <Name>opinionTitle</Name>
                 <X>920</X>
                 <Y>421</Y>
@@ -1272,7 +1348,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000101</Id>
+                <Id>1793700000104</Id>
                 <Name>histMaxLabel</Name>
                 <X>920</X>
                 <Y>450</Y>
@@ -1297,7 +1373,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000102</Id>
+                <Id>1793700000105</Id>
                 <Name>lowBelief</Name>
                 <X>950</X>
                 <Y>548</Y>
@@ -1322,7 +1398,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000103</Id>
+                <Id>1793700000106</Id>
                 <Name>highBelief</Name>
                 <X>1118</X>
                 <Y>548</Y>
@@ -1347,7 +1423,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000104</Id>
+                <Id>1793700000107</Id>
                 <Name>statsTitle</Name>
                 <X>920</X>
                 <Y>611</Y>
@@ -1372,7 +1448,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000105</Id>
+                <Id>1793700000108</Id>
                 <Name>statsLabel</Name>
                 <X>920</X>
                 <Y>639</Y>
@@ -1397,7 +1473,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000106</Id>
+                <Id>1793700000109</Id>
                 <Name>reasonsLabel</Name>
                 <X>920</X>
                 <Y>745</Y>
@@ -1422,7 +1498,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000107</Id>
+                <Id>1793700000110</Id>
                 <Name>tieLegend</Name>
                 <X>34</X>
                 <Y>647</Y>
@@ -1447,7 +1523,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000108</Id>
+                <Id>1793700000111</Id>
                 <Name>activityLegend</Name>
                 <X>34</X>
                 <Y>671</Y>
@@ -1472,7 +1548,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000109</Id>
+                <Id>1793700000112</Id>
                 <Name>interactionLabel</Name>
                 <X>42</X>
                 <Y>718</Y>
@@ -1497,7 +1573,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000110</Id>
+                <Id>1793700000113</Id>
                 <Name>beliefLabel</Name>
                 <X>42</X>
                 <Y>748</Y>
@@ -1522,7 +1598,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000111</Id>
+                <Id>1793700000114</Id>
                 <Name>meetingNote</Name>
                 <X>42</X>
                 <Y>778</Y>
@@ -1547,7 +1623,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Oval>
-                <Id>1793700000112</Id>
+                <Id>1793700000115</Id>
                 <Name>ownerKey0</Name>
                 <X>42</X>
                 <Y>826</Y>
@@ -1573,7 +1649,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
-                <Id>1793700000113</Id>
+                <Id>1793700000116</Id>
                 <Name>ownerCaption0</Name>
                 <X>56</X>
                 <Y>817</Y>
@@ -1598,7 +1674,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Oval>
-                <Id>1793700000114</Id>
+                <Id>1793700000117</Id>
                 <Name>ownerKey1</Name>
                 <X>247</X>
                 <Y>826</Y>
@@ -1624,7 +1700,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
-                <Id>1793700000115</Id>
+                <Id>1793700000118</Id>
                 <Name>ownerCaption1</Name>
                 <X>261</X>
                 <Y>817</Y>
@@ -1649,7 +1725,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Oval>
-                <Id>1793700000116</Id>
+                <Id>1793700000119</Id>
                 <Name>ownerKey2</Name>
                 <X>452</X>
                 <Y>826</Y>
@@ -1675,7 +1751,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
-                <Id>1793700000117</Id>
+                <Id>1793700000120</Id>
                 <Name>ownerCaption2</Name>
                 <X>466</X>
                 <Y>817</Y>
@@ -1700,7 +1776,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Oval>
-                <Id>1793700000118</Id>
+                <Id>1793700000121</Id>
                 <Name>ownerKey3</Name>
                 <X>657</X>
                 <Y>826</Y>
@@ -1726,7 +1802,7 @@ public void exportLaunch(){
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
-                <Id>1793700000119</Id>
+                <Id>1793700000122</Id>
                 <Name>ownerCaption3</Name>
                 <X>671</X>
                 <Y>817</Y>
@@ -1751,7 +1827,7 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000120</Id>
+                <Id>1793700000123</Id>
                 <Name>caption</Name>
                 <X>24</X>
                 <Y>855</Y>

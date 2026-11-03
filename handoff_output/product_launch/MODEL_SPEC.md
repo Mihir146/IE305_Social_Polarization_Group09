@@ -63,3 +63,17 @@ Use a fixed campaign horizon. Do not reuse the original opinion-only freezing pr
 Check no purchase before awareness, no double purchase, no sample counted as sale, affordability/value at purchase, edge conservation, valid beliefs, exactly12 samples, and accounting identities. Test zero samples/awareness, zero sharing, unaffordable prices, zero-price all-aware cases and deterministic pair/rewiring fixtures. Quantitative literature checks remain separately identified; matching the original opinion model does not validate the added purchase rules.
 
 The studied seeding idea has direct prior work in influence maximization and promotional diffusion. Our contribution is a transparent simulation decision comparison with price, affordability, experience and adaptive discussion. Results may be negative. No result is claimed before its CSV exists.
+
+## Follow-ups and presentation variants (added after the original design)
+
+The specification above records the original18-cell,12-sample design fixed before the main runs. A later exploratory extension adds three samples across the same18 combinations, creating36 candidate cells on the same100 main markets. Three-sample distributed targeting selects one person per known group. Accounting generalizes to `profit=(price−unit_cost)×paid−unit_cost×n_samples`. This is a budget-ceiling extension: sample spending may be below the original Rs3,000. It was not preregistered as part of the original design.
+
+After inspecting that extension, four policies were fixed before a separate100-market confirmation (rep5000–5099): Rs400/3/degree/h0, Rs400/3/random/h0, Rs400/12/degree/h0 and Rs500/12/random/h0. This cohort is not searched for a new winner. Source: `sim/run_confirmation.py`, its manifest and paired CSV.
+
+The quality diagnostic is also exploratory. It crosses q=.6,.8,.95 with d=.2 or1 and phi=0 or.05 at Rs400/12/degree/h0. It was motivated by an unexpected sensitivity result. The behavior was not tuned to remove the reversal.
+
+The approved grid file and separate live-network file use the same customer kernel and primitive event draw order. Animated runs execute ten attempts per visual tick; unanimated batch runs execute a whole period per tick. Buying remains at each300-attempt period boundary. Display colors, spatial layout and plot updates consume no model randomness.
+
+The live-network extension exports a separate61-row `network_metrics` CSV. A compatible edge has endpoint belief difference strictly below d, irrespective of whether both endpoints are informed; actual influence still requires awareness. Ten belief bins cover [0,.1),…,[.9,1]. Aware nonowners are partitioned first by insufficient budget, then insufficient perceived value among those who can afford, then eligible to buy. At completed period ends that last count is zero because eligible people have just bought. Mid-period it can be positive. The quantities are descriptive customer states, not fitted real-world probabilities.
+
+The visible network draws all1,200 ties. Gold shows a selected recent actual meeting; orange briefly persists for a recently created tie. Neither highlighting nor line thickness adds a new influence weight. Node positions show known social groups and have no physical-distance or opinion-axis interpretation.

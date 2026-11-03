@@ -2,7 +2,7 @@
   "model": "CampusProductLaunch_LiveNetwork.alp",
   "approved_grid_model_unchanged": true,
   "grid_sha256": "2762e98ce1b432139fcf5b896f8deb3f6b2a87718a9990b5f32bb1bf2b840759",
-  "live_sha256": "ef2b7daa9e230a40e1e29dcb81f5152c0b376db6493a210f81d1119e16eca132",
+  "live_sha256": "98fb2703084e0adba974785da0f496e41bf88eea0b361399a3914cc3ffdfd451",
   "same_kernel_source": true,
   "summary_schema_unchanged": true,
   "actual_engine_status": "Not yet run; API and wiring checks follow",

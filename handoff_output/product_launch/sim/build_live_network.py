@@ -200,6 +200,7 @@ def main():
         ruler.find('PresentationFlag').text='false';ruler.find('ShowLabel').text='false'
     shape=mainagent.find('Presentation/Level/Presentation');eop=shape.find('EmbeddedObjectPresentation');shape.remove(eop);shape.clear()
     pshape=person.find('Presentation/Level/Presentation');pshape.clear();oval(pshape,'focusMark',0,0,9,'ffe3a1');oval(pshape,'ownerMark',0,0,6.5,'7d8ea5');oval(pshape,'nodeMark',0,0,4.4,'5d6e85')
+    b.rectangle(shape,'canvasBackground',0,0,1290,900,'0d1526')
     b.rectangle(shape,'networkPanel',24,185,850,450,'121f32');b.rectangle(shape,'reachPanel',900,185,355,205,'17263b');b.rectangle(shape,'opinionPanel',900,405,355,175,'17263b');b.rectangle(shape,'statsPanel',900,595,355,205,'17263b');b.rectangle(shape,'meetingPanel',24,700,850,100,'17263b')
     group(shape,'linksLayer');b.rectangle(shape,'meetingLine',0,0,0,2.3,'ffe3a1');b.rectangle(shape,'newContactLine',0,0,0,3.0,'ff9a56');shape.append(eop)
     group(shape,'historyLayer');group(shape,'histogramLayer')
@@ -211,6 +212,7 @@ def main():
     text(shape,'reachTitle','REACH AND PAID SALES',920,204,17,True);text(shape,'reachLabel','',920,231,13,color='9cafc5')
     b.rectangle(shape,'reachAxis',949,246,1,110,'51647c');b.rectangle(shape,'reachFloor',949,355,275,1,'51647c')
     text(shape,'reachTop','300',917,247,11,color='9cafc5');text(shape,'reachZero','0',933,345,11,color='9cafc5');text(shape,'reachPeriod0','0',949,365,11,color='9cafc5');text(shape,'reachPeriod60','60 periods',1170,365,11,color='9cafc5')
+    text(shape,'awareCurveKey','— Aware',990,372,12,color='f0b752');text(shape,'paidCurveKey','— Paid',1080,372,12,color='56d6a0')
     text(shape,'opinionTitle','CURRENT OPINIONS',920,421,17,True);text(shape,'histMaxLabel','',920,450,12,color='9cafc5');text(shape,'lowBelief','0 · low appeal',950,548,12,color='5ebee4');text(shape,'highBelief','1 · high appeal',1118,548,12,color='f39f7e')
     text(shape,'statsTitle','NETWORK AND DECISIONS',920,611,16,True);text(shape,'statsLabel','',920,639,14);text(shape,'reasonsLabel','',920,745,12,color='9cafc5')
     # Compact, explicit legends: link style is compatibility, not influence weight.

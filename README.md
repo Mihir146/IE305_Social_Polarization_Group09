@@ -1,28 +1,48 @@
-# IE305 — product launch through word of mouth
+# IE305 — campus product launch through word of mouth
 
-Mihir Vasave and Vaibhav Mathur · Simulation Lab
+**Group 9 · Mihir Jagdish Vasave and Vaibhav Mathur**  
+[Public repository](https://github.com/Mihir146/IE305_Social_Polarization_Group09)
 
-We are building a synthetic campus market for a new reusable bottle. The decision is which price and fixed-budget free-sample strategy produces the most modeled profit, and how random versus similar-contact recommendations affect diffusion.
+We simulate a hypothetical seller launching a reusable bottle to 300 connected customers. Prices, free samples, conversations, individual budgets and experience shape paid purchases and modeled profit. All customer data and behavioral inputs are synthetic.
 
-**Current build is in progress.** See [PROJECT_JOURNAL.md](PROJECT_JOURNAL.md) for progress, issues, lessons and fixes, and [the product model specification](handoff_output/product_launch/MODEL_SPEC.md) for the exact assumptions. Existing opinion/network experiments are a foundation, not simulated sales results.
+## Open the model
 
-All inputs are synthetic. No claim is made to predict actual campus customers. AI assistance is used for research, programming, experiments and drafting. Actual AnyLogic compilation and runtime evidence must be obtained by the students; prepared Java text is not evidence that AnyLogic ran.
+| File | Purpose / evidence |
+|---|---|
+|[CampusProductLaunch.alp](handoff_output/product_launch/CampusProductLaunch.alp)|Approved grid animation; actual default screenshot and CSV verified|
+|[CampusProductLaunch_LiveNetwork.alp](handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp)|Separate live network with opinion colors, tie styles and history plots; actual API/wiring checks pass, first engine run pending|
+|[RUN_ANYLOGIC.md](RUN_ANYLOGIC.md)|Exact opening and running steps|
+|[LIVE_NETWORK.md](handoff_output/product_launch/LIVE_NETWORK.md)|Visual meanings, extra data and immediate rollback|
 
-## Repository commands in this managed workspace
+Use AnyLogic **8.9 PLE**. The tested default is policyIndex6, rep1000: period60, 300 aware,148 paid buyers,12 samples and Rs19,200 profit. Free recipients are not paid buyers. The live-network variant uses the same behavioral kernel; opening the approved file is the rollback.
 
-The workspace's root `.git` directory is read-only. Git metadata therefore lives in `.git-storage`, using Git's supported alternate metadata option. The tracked working directory is still this project:
+## Read and present
+
+- [Project report](handoff_output/product_launch/PROJECT_REPORT.md): business question, inputs, model, experiments, results and limitations.
+- [PowerPoint](handoff_output/product_launch/Campus_Product_Launch.pptx): 12 main slides plus4 backups; planned12m15s including the live model. Visible charts use standard rendered figures for reliable display.
+- [Editable-chart PowerPoint](handoff_output/product_launch/Campus_Product_Launch_EditableCharts.pptx): the same deck with native Office charts and embedded workbooks.
+- [Speaker notes](handoff_output/product_launch/SPEAKER_NOTES.md) and [viva guide](handoff_output/product_launch/VIVA_PREP.md): explanations and25 questions.
+- [Literature](handoff_output/product_launch/LITERATURE_NOTES.md), [validation](handoff_output/product_launch/VALIDATION_REPORT.md) and [open issues](handoff_output/product_launch/OPEN_ISSUES.md): precise evidence boundaries.
+- [PROJECT_JOURNAL.md](PROJECT_JOURNAL.md): progress, issues, lessons and fixes.
+
+The main synthetic finding is that three samples outperform twelve in contribution profit under the baseline assumptions; the gain persists on fresh confirmation markets. The extra degree-targeting advantage is small and uncertain. A quality/confidence diagnostic exposes an assumption that needs validation. None is presented as a real-campus sales forecast or a globally optimal policy.
+
+## Data and reproducibility
+
+The [product folder](handoff_output/product_launch/README.md) contains the exact model specification, synthetic inputs, raw policy outcomes, scripts, plots and actual engine evidence. Browser HTML files are optional chart/text-slide viewers. The required simulation is the `.alp`, and the submission deck is PowerPoint/PDF.
+
+The original handoff is preserved in `handoff/`; the opinion-network literature and validation foundation is in `handoff_output/`. Its opinion-only results are separate from product-sales evidence.
+
+## Git in this managed workspace
+
+Commits use **Mihir <mihirv416@gmail.com>**. The managed root `.git` is read-only to tools, so tool-created checkpoints use alternate metadata through `./project-git`. From your normal terminal in this folder:
 
 ```sh
 ./project-git status
-./project-git log --oneline
+./project-git log -3 --oneline
+./project-git push origin main
 ```
 
-Commits use the user's configured identity. To publish the explicitly requested **public** GitHub repository, use:
+The tool sandbox cannot resolve GitHub; the user performs the remote push. Do not force-push a diverged branch. A normal clone from the public repository uses ordinary Git. All project files belong on the remote; installed third-party software and personal caches do not.
 
-```sh
-./publish_github.sh
-```
-
-The current tool environment cannot connect to `api.github.com`. Run publishing from a normal terminal with GitHub connectivity and an authenticated `gh` session. If necessary authenticate with `gh auth login` first. No token should be pasted into project files or chat. Once cloned from GitHub, the repository will use an ordinary `.git` directory.
-
-The original supplied handoff is preserved in `handoff/`; upgraded research and reproducibility evidence are in `handoff_output/`. Final product-specific results and presentation material will be under `handoff_output/product_launch/`.
+Research, implementation, analysis and drafting were AI-assisted. The students must understand the work, run their required model, follow course disclosure rules and submit/present it themselves.

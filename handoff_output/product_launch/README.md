@@ -7,8 +7,8 @@ A hypothetical campus seller launches a reusable bottle to 300 connected custome
 ## Start here
 
 - Open [CampusProductLaunch.alp](CampusProductLaunch.alp) in **AnyLogic 8.9 PLE on Windows 11**. Follow [ANYLOGIC_BUILD.md](ANYLOGIC_BUILD.md). The first default run should match the independently tested Java realization: period 60, 300 aware, 148 paid, 12 free samples, ₹19,200 profit.
-- Read [PROJECT_REPORT.md](PROJECT_REPORT.md), then [VIVA_PREP.md](VIVA_PREP.md), to understand and defend the project.
-- Use `Campus_Product_Launch.pptx` for the presentation; it contains rendered plots for reliable display. `Campus_Product_Launch_EditableCharts.pptx` retains native Office charts/workbooks. `Campus_Product_Launch.pdf` is a rendered backup. HTML files are optional viewers.
+- Read [UNDERSTAND_THE_PROJECT.md](UNDERSTAND_THE_PROJECT.md) first: a short explanation of every grading criterion, parameter and key result. Use [PROJECT_REPORT.md](PROJECT_REPORT.md) and [VIVA_PREP.md](VIVA_PREP.md) for details.
+- Use `Campus_Product_Launch.pdf` or the matching editable `Campus_Product_Launch.pptx`:20 slides (16 main,4 Q&A), planned11m40s including the demo. Text/tables are editable in PowerPoint. The previous native-chart deck remains archival; it is not the current talk. HTML files are optional older viewers.
 - Check [VALIDATION_REPORT.md](VALIDATION_REPORT.md) and [OPEN_ISSUES.md](OPEN_ISSUES.md) before making claims about engine validation or real-world accuracy.
 - The living progress/issue/learning record is [PROJECT_JOURNAL.md](../../PROJECT_JOURNAL.md).
 
@@ -65,6 +65,6 @@ The largest observed mean is a finite simulated policy comparison. It is not a g
 
 Research, code, analysis and drafting were AI-assisted. The students are responsible for understanding, running and presenting the model and for following their course's disclosure rules.
 
-## Rebuild the presentation
+## Rebuild the current presentation
 
-`sim/build_deck.py` makes the native chart deck and HTML/table data. `sim/render_figures.py` uses standard JFreeChart/JFreeSVG jars already bundled in the installed AnyLogic examples (or the `--examples` folder you supply). `sim/portable_deck.py` saves the native chart copy separately and uses the rendered figures in the primary deck. `sim/verify_deck_with_poi.py` independently parses, schema-validates and previews the primary deck with Apache POI/XmlBeans. Installed third-party libraries are not redistributed. Run the steps in that order. Windows PowerPoint rendering still deserves a local look.
+Install `sim/requirements_presentation.txt` in a temporary Python environment, then run `python sim/build_consulting_presentation.py`. It produces matching PDF and PowerPoint, charts from saved CSVs, speaker notes and a provenance/timing manifest. `sim/verify_deck_with_poi.py` independently validates/previews the PowerPoint with installed Apache POI. Rendered PDF pages were also inspected. The older `build_deck.py`/`portable_deck.py` workflow reproduces the previous archived deck, not the current version. Third-party libraries are not redistributed.

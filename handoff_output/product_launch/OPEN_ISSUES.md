@@ -14,14 +14,14 @@
 |10 — omitted operations|Inventory, delivery, returns, competition, fixed overhead and repeat purchases are outside scope|Profit is modeled contribution after production/sample costs. It is not a complete profit-and-loss statement. Keep the one-product campaign scope explicit|
 |11 — literature extraction limits|Direct PDF/OCR follow-up recovered the central Deffuant mathematics and the full main texts of Bass, DiMaggio and Delre2010; some plot-only values and supplementary analyses remain unchecked|Use the updated read-status tables. Do not infer unread supporting analyses, uncertain OCR table cells or plot coordinates from the main-text reading|
 |12 — precise literature critical points|KB and binary-voter finite-size thresholds were not exactly reproduced|Parent validation report labels these partial. Published critical values are not automatically targets for the product extension|
-|13 — PowerPoint rendering|OOXML package/relationships can be checked here; Windows PowerPoint rendering needs a local look|Use the generated editable deck and its HTML fallback. Check layout once on the presenting computer; do not infer visual compatibility solely from XML validity|
+|13 — PowerPoint rendering|OOXML package/relationships can be checked here; Windows PowerPoint rendering needs a local look|Use the matching current PDF and editable PowerPoint. The HTML viewer is an older optional artifact. Check layout once on the presenting computer; do not infer visual compatibility solely from XML validity|
 |14 — remote synchronization|Git access restored and the completed package pushed|Pull/download the latest public revision on the presentation computer. Check the final commit after any later local edits; local preparation alone does not prove upload|
 
 Do not add untested features to address every limitation before the presentation. Prioritize a working required model, traceable analysis, a clear explanation and honest boundaries.
 
 ## New live-network variant
 
-The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. The earlier network default has actual engine-export evidence. The latest white-layout animation/performance still needs a visual review on the presenting computer. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, ownership rings, opinion colors and the extra disjoint customer-state metrics.
+The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. The earlier network default has actual engine-export evidence. The latest white-layout animation/performance still needs a visual review on the presenting computer. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, flat ownership/awareness colors, explicit meeting beliefs and the extra disjoint customer-state metrics.
 
 The portable primary deck now passes independent Apache POI/XmlBeans schema validation and has Java2D previews. It uses standard rendered plots; the separate native-chart deck retains editable workbooks. The local schema library was incomplete for one native-chart type, so no full native-chart schema-validation claim is made.
 

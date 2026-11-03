@@ -217,7 +217,7 @@ public void startLaunchCase(int policy,int replication){
  if(animateNetwork)refreshLaunchLinks();refreshLaunchDisplay();
 }
 public java.awt.Color beliefColor(double belief){
- double b=Math.max(0,Math.min(1,belief));return new java.awt.Color((int)(66+187*b),(int)(187-31*b),(int)(230-111*b));
+ return new java.awt.Color(55,126,184); // One flat blue for the opinion histogram; no color scale.
 }
 public com.anylogic.engine.presentation.ShapeLine line(double x,double y,double dx,double dy,java.awt.Color color,double width,com.anylogic.engine.presentation.LineStyle style){
  return new com.anylogic.engine.presentation.ShapeLine(true,x,y,color,dx,dy,width,style);
@@ -239,7 +239,7 @@ public void synchronizeDisplayedTies(){
   for(int i=0;i<300;i++)for(int j=i+1;j<300;j++)if(launch.adj[i][j]){
    int key=i*300+j;if(!drawnTies.containsKey(key)){
     Consumer a=consumers.get(i),z=consumers.get(j);
-    com.anylogic.engine.presentation.ShapeLine edge=line(a.getX(),a.getY(),z.getX()-a.getX(),z.getY()-a.getY(),new java.awt.Color(132,151,179,30),.6,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
+    com.anylogic.engine.presentation.ShapeLine edge=line(a.getX(),a.getY(),z.getX()-a.getX(),z.getY()-a.getY(),new java.awt.Color(150,150,150,35),.6,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
     linksLayer.add(edge);drawnTies.put(key,edge);
    }
   }
@@ -251,7 +251,7 @@ public void synchronizeDisplayedTies(){
   int code=compatible?(a.aware&&z.aware?2:1):0;
   if(tieStyles.getOrDefault(e.getKey(),-1)!=code){
    e.getValue().setLineStyle(compatible?com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID:com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
-   e.getValue().setColor(code==2?new java.awt.Color(61,132,177,80):code==1?new java.awt.Color(61,132,177,50):new java.awt.Color(125,132,143,48));tieStyles.put(e.getKey(),code);
+   e.getValue().setColor(code==2?new java.awt.Color(115,115,115,65):code==1?new java.awt.Color(145,145,145,45):new java.awt.Color(145,145,145,35));tieStyles.put(e.getKey(),code);
   }
  }
 }
@@ -277,8 +277,8 @@ public void refreshHistory(double[] metrics){
  historyLayer.clear();
  for(int k=1;k<launch.history.size();k++){
   double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=65+325*a[0]/60.0,x2=65+325*z[0]/60.0;
-  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
-  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(55,126,184),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(39,145,90),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  }
 }
 public void refreshLaunchDisplay(){
@@ -287,7 +287,7 @@ public void refreshLaunchDisplay(){
  if(!animateNetwork)return;
  for(Consumer a:consumers){a.nodeMark.setFillColor(a.stateColor());a.ownerMark.setFillColor(a.ownerColor());a.focusMark.setVisible(a.customerId==recentI||a.customerId==recentJ||a.customerId==rewireK&&rewireLife>0);}
  synchronizeDisplayedTies();
- statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples   |   "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
+ statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples\nRecipients: "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
  kpiLabel.setText("Aware "+(int)r[1]+" / 300        Paid buyers "+(int)r[2]+"        Free samples "+(int)r[3]+"        Profit Rs "+(int)r[7]);
  financeLabel.setText("Revenue Rs "+(int)r[5]+"  -  all bottle costs Rs "+(int)r[6]+"  =  modeled profit");
  reachLabel.setText("Aware "+(int)r[1]+"     Paid "+(int)r[2]+"     |     periods 0–60");

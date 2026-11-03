@@ -1,7 +1,7 @@
 {
   "independent_tool": "Apache POI 5.4.1 / XmlBeans 5.3.0 from installed AnyLogic dependencies",
   "schema_validation_passed": true,
-  "output": "slides=16 charts=0 schema_valid=true\n",
+  "output": "slides=20 charts=0 schema_valid=true\n",
   "diagnostics": "",
   "scope": "OOXML schema/type parsing; Java2D previews can omit native charts; no PowerPoint rendering claimed"
 }

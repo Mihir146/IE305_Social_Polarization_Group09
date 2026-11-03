@@ -4,5 +4,6 @@
   "visible_rendered_charts": 7,
   "chart_renderer": "JFreeChart1.5.3 with exact bootstrap interval endpoints",
   "text_and_shapes_editable": true,
-  "scope": "Native chart data remain in the separate editable-chart deck"
+  "scope": "Native chart data remain in the separate editable-chart deck",
+  "evidence_scope": "Previous archived16-slide presentation only; current deck: consulting_deck_checks.json"
 }

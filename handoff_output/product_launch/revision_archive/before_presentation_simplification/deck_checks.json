@@ -1,0 +1,12 @@
+{
+  "slides": 16,
+  "main_slides": 12,
+  "backup_slides": 4,
+  "native_editable_charts": 7,
+  "embedded_chart_workbooks": 7,
+  "planned_main_seconds": 735,
+  "available_seconds": 780,
+  "xml_and_relationships_checked": true,
+  "rendered_in_powerpoint_here": false,
+  "caution": "Check rendering once in Windows PowerPoint; HTML/tables provide a fallback"
+}

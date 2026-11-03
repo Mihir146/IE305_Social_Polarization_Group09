@@ -1,55 +1,127 @@
-# Presentation speaker notes and timing
+# Presentation: simple words and speaking plan
 
-12 main slides: 12 minutes 15 seconds including a 90-second live demo. Keep 45 seconds as a buffer. Slides 13–16 are Q&A backups. Mihir presents slides 1–6; Vaibhav slides 7–12. Rehearse aloud once.
+16 main slides, 4 Q&A backups. 700 seconds including the 90-second live model. Mihir: slides1–8; Vaibhav: slides9–16. The original pitch is saved in sources/. Professor feedback is attributed to the students’ account, not an invented written quotation.
 
-## 1. Can a smaller giveaway make a better product launch? — Mihir, 35 seconds
+## 1. Can a smaller giveaway make a better launch? — 25 seconds
 
-We model a seller launching one reusable bottle in a synthetic campus market. The question is not just how many people hear about it: it is which tested price and sample policy earns more contribution profit. We will show the individual-agent mechanism, compare policies with uncertainty, and run the model live. All inputs are generated assumptions.
+Our original topic was social polarization. We retained the idea that conversations and contact choices affect opinions, but applied it to a seller launching a reusable bottle. We compare prices and free samples, then check whether the result holds in new simulated markets. Every customer input is synthetic.
 
-## 2. The seller chooses the launch. Customers decide to buy. — Mihir, 45 seconds
+Evidence: MODEL_SPEC.md; confirmation_paired.csv
 
-Our seller chooses one of three prices and a sample policy. Random recipients, well-connected recipients and recipients distributed across groups are compared. Twelve samples were the initial fixed-spending design; three samples were a later budget-ceiling extension. We track awareness, paid sales and modeled profit separately. Inventory, repeat purchases, competitors and fixed overhead are outside this one-product campaign.
+## 2. We kept the mechanism and made the question useful — 35 seconds
 
-## 3. Synthetic inputs are specified, not fitted to campus data. — Mihir, 60 seconds
+The original pitch asked whether a socially mixed population could split as people change contacts. The feedback, as we understood it, was to use a clear application, synthetic data and what-if comparisons. We therefore turned opinion into expected product appeal, added awareness and individual buying decisions, and kept adaptive discussion contacts. This is a change in application, not evidence that product buyers follow real political behavior.
 
-Each market has 300 generated customers in three groups and 1,200 contacts. Initial appeal follows Beta two two. A value scale between 500 and 1,000 rupees is separate from a budget between 400 and 1,000. Experiences are centered at 0.8 with clipped noise. This histogram is one generated market, not surveyed attitudes. We report actual generated moments and vary important assumptions rather than claiming empirical calibration.
+Evidence: sources/project_pitch_social_polarization.pdf; Student-reported professor feedback; PROJECT_JOURNAL.md
 
-## 4. A conversation changes beliefs. A purchase needs value AND budget. — Mihir, 80 seconds
+## 3. The seller chooses the offer; each customer decides to buy — 35 seconds
 
-A free recipient begins informed and receives an experience signal. An informed customer sometimes passes launch information to a contact. If their opinions differ by less than 0.2, both move 30 percent toward the other old opinion. A bigger disagreement can replace a discussion contact. After 300 attempts, informed nonowners buy if budget and perceived value both exceed price. An 800-rupee value scale times belief 0.6 is 480 rupees, so that person rejects a 500-rupee price. New owners receive their own experience. Samples never count as paid buyers.
+We model one product and one campaign. The seller chooses price, number of samples and who gets them. Contact replacement is an environment scenario, not necessarily a lever the seller controls. We exclude stock limits, delivery, competitors, returns and repeat purchases. Profit here means revenue minus the bottle cost of sales and samples.
 
-## 5. Established mechanisms; explicit new assumptions; checked code. — Mihir, 60 seconds
+Evidence: MODEL_SPEC.md
 
-Bounded confidence comes from Deffuant and related work. Kozma and Barrat already study adaptive opinion-network fragmentation. Promotional seeding and awareness/adoption models also predate this project. Our course contribution is the transparent decision comparison and mechanism diagnostic, not inventing those ideas. We checked limiting cases, purchase eligibility and accounting, matched small reference/native cases and used a separate Java implementation. The first actual AnyLogic run matched its Java reference. The revised animation and actual default export have now also been confirmed.
+## 4. Four simple AnyLogic parts create the agent-based model — 50 seconds
 
-## 6. Compare policies on the same market; confirm on fresh markets. — Mihir, 60 seconds
+Main is the organizer. It owns a population of 300 Consumer agents, each with its own changing state. A cyclic Event called launchPeriod schedules ten interaction attempts per visual tick. After 300 attempts, one period ends and eligible people buy. Java methods implement the rules and record CSVs. We use ordinary circles, lines, text and a histogram for presentation. We did not build a queueing process or move people through physical space; contacts are social ties.
 
-The initial design has 18 policies and a separate thirty-market pilot. One hundred main markets evaluate each policy using shared initial data and aligned random draws. The three-sample follow-up reuses those main markets, so it creates more policy evaluations, not more independent populations. We then freeze four comparisons and test 100 fresh markets. Bootstrap intervals resample whole markets. They quantify simulation variability under the model and are pointwise, not a guarantee that every comparison is simultaneously correct.
+Evidence: CampusProductLaunch_LiveNetwork.alp; anylogic/ProductKernel.java
 
-## 7. Almost everyone hears. Far fewer buy at the high price. — Vaibhav, 55 seconds
+## 5. We generated customer differences instead of collecting surveys — 45 seconds
 
-Here twelve high-degree recipients and random replacement are held fixed. Mean paid sales drop from about 147 at 400 rupees to 85 at 500 and 32 at 600. Almost everyone still hears about the launch. Profit is highest at 400 within this comparison. That is why we separate awareness from conversion. This is simulated behavior under synthetic thresholds, not an estimated real-world demand curve.
+Synthetic means generated by explicit distributions, not arbitrary values typed per person. Most initial beliefs sit near the middle on a zero-to-one scale. Budget means ability to pay; the value scale converts belief into perceived rupee value. Experience is drawn before a campaign and revealed on ownership. This table is one saved example market, not a population estimate. Attributes are independent by assumption.
 
-## 8. Nine fewer free bottles can increase profit while reducing total owners. — Vaibhav, 65 seconds
+Evidence: data/customers_rep1000.csv; input_statistics.csv; initial_graph_statistics.csv
 
-The same 400-rupee price and degree targeting are compared on fresh confirmation markets. Three samples earn about 21,711 rupees versus 18,857 for twelve. The paired gain is 2,854.50 rupees, with interval 2,698.50 to 3,006. The seller saves 2,250 rupees on samples and sells about four extra paid units. But total owners fall by about five because nine free owners disappear. We therefore recommend against interpreting more owners as automatically more profit. Only quantities three and twelve were tested.
+## 6. Each behavior parameter answers a simple “how often / how much?” — 50 seconds
 
-## 9. The sample saving is clear. The influencer premium is uncertain. — Vaibhav, 50 seconds
+These values are assumptions, not estimates from people. A one-in-four sharing chance means hearing the news is not automatic. Tolerance 0.2 is a gap on the zero-to-one appeal scale. A 30 percent adjustment uses both old beliefs; 0.4 and 0.5 become 0.43 and 0.47. Replacing a disagreeing contact is rare at five percent. New contacts are either random or close in belief. We examine sensitivity because the particular values matter.
 
-The targeting control holds price and sample quantity fixed. Degree targeting adds only 31.50 rupees over random selection on fresh markets, with an interval from minus 112.50 to plus 177. That is not evidence that the policies are equivalent, but it does not establish a large targeting premium. In strongly separated groups, distributed seeding helps early reach in a stress test, without a clear final-profit gain for the twelve-sample comparison. Contact recommendation effects are small and conditional; we retain their exceptions in the report.
+Evidence: MODEL_SPEC.md; behavior_summary.csv
 
-## 10. A surprise exposes a risky assumption: very positive opinions can be ignored. — Vaibhav, 65 seconds
+## 7. One conversation can inform; a purchase still needs two checks — 55 seconds
 
-When experiences become more positive, our narrow-confidence model can sell fewer bottles. We kept this awkward result. On a fixed graph, raising the experience mean from 0.6 to 0.95 reduces mean paid sales from about 169 to 131 with tolerance 0.2. With all opinions compatible, it raises sales from 175 to 281. A belief of 0.5 accepts 0.6 but ignores 0.95 under the narrow cutoff. This is a model-risk diagnostic, not advice to lower actual product quality. It tells us to validate the attention mechanism before using the model for business.
+First samples become aware and receive experience. A random person meets a random contact; news may pass if only one is aware. If both know the launch, close beliefs move together; otherwise the contact may change. At period end an aware nonowner buys only if both conditions hold. For value scale800 and belief0.6, perceived value is480. At price400 with budget450, the customer buys; at500 they do not. Paid buyers then receive their own experience. All eligible customers buy simultaneously at the boundary.
 
-## 11. Live: follow one conversation, then check the campaign accounts. — Vaibhav, 90 seconds
+Evidence: MODEL_SPEC.md; anylogic/ProductKernel.java
 
-Switch to the saved engine-tested model. The approved grid shows opinion mini-bars and ownership colors; the separate live network shows ownership with node colors and opinions in the meeting values and histogram. Follow the legend for the version actually tested. Point to a recent actual meeting and its before/after opinions. Explain that purchases occur at the end of a period. Use around two-times real-time speed and let the default finish. Check 300 aware, 148 paid, twelve samples, revenue 59,200, cost 40,000 and profit 19,200. The entire demonstration budget is ninety seconds including switching windows. If execution fails, use the saved real-engine screenshot and explicitly describe the failure.
+## 8. We compare like with like, then check fresh markets — 45 seconds
 
-## 12. Start small. Revisit price with cost. Validate the behavior before deployment. — Vaibhav, 70 seconds
+We first compared 18 policies with twelve samples. We later added three-sample alternatives on the same one hundred main markets, making36 choices and3,600 runs. These are not3,600 independent populations. We keep each market paired across policies: same customers and aligned random input draws. Then we fixed four policies and evaluated100 fresh markets. Intervals are based on10,000 resamples of whole markets. They describe run-to-run variability under our assumptions, not uncertainty about the real world.
 
-For this synthetic baseline and tested choices, start at 400 rupees with three free bottles. Degree targeting has the largest main mean, but its confirmatory gain over random targeting is uncertain and may not pay for collecting network data. Revisit price when unit cost changes; our cost scenarios shift the best observed price. The model demonstrates a mechanism and a decision process rather than predicting a real market. We would next calibrate sharing, willingness to pay and confidence behavior, and add actual operating and targeting costs. Our source, data, scripts and actual engine evidence are included. Research and implementation were AI-assisted; we are responsible for understanding and presenting the work.
+Evidence: sim/results/*manifest.json; confirmation_paired.csv
 
-## Before entering the room
+## 9. Live demo: follow news, one meeting and one purchase — 90 seconds
 
-Keep the saved `.alp`, final deck, real engine screenshot and CSVs on the laptop. Open AnyLogic before your turn. Start the live demo with the tested default; do not edit code on stage. If a visual revision remains untested, use the engine-tested version and say exactly what was run. Confirm Moodle upload separately.
+Open the simplified network model before this slide. Grey is unaware; blue is aware but not an owner; orange is free sample; green is a paid buyer. Point at the black meeting line and the before/after beliefs. Solid grey ties connect close beliefs; dotted ties connect more different ones. A blue highlight is a new contact. Positions are only social-group layout, not physical movement. Watch awareness rise before paid sales. Then accelerate to period60: the default policy6/rep1000 should show148 paid buyers andRs19,200 profit. This is one illustrative run, not the recommended three-sample policy or an average. If display fails, use the approved grid model.
+
+Evidence: CampusProductLaunch_LiveNetwork.alp; anylogic/evidence/; LIVE_NETWORK.md
+
+## 10. A higher price lost buyers faster than it gained margin — 40 seconds
+
+Hold twelve samples, well-connected recipients and random replacement fixed. At price400, mean paid buyers are147.33; at500,84.85; at600,32.21. Profit is highest at400 among these choices. Almost everyone hears in all cases, so awareness alone would miss the difference. The bars are main-market averages and error bars are95 percent intervals for mean profit, not the range of individual runs.
+
+Evidence: all_policy_summary.csv
+
+## 11. Nine fewer free bottles raised profit by about Rs2,846 — 40 seconds
+
+This is the main paired comparison at400 with the same targeting and contact rule. Reducing12 samples to3 saves9 times250, or2250. Paid sales also rise by3.97 on average, contributing595.50 at150 margin. Together the improvement is2845.50. Total ownership falls even though paid sales rise. We cannot say each removed sample turned into a sale: changing samples changes the whole diffusion path.
+
+Evidence: budget_paired.csv; all_policy_summary.csv
+
+## 12. Fresh markets support fewer samples—not expensive targeting — 40 seconds
+
+We checked fixed choices on fresh markets. The provisional policy earns21711 mean profit. Three versus twelve samples gains2854.50, with an interval entirely above zero. Many-contact versus random recipients gains only31.50, with an interval from minus112.50 to177. That is uncertain; it does not prove exact equality. We therefore have a stronger case for fewer samples than for paying to identify popular people.
+
+Evidence: confirmation_summary.csv; confirmation_paired.csv
+
+## 13. What-if analysis changes the price and the timing advice — 45 seconds
+
+If cost changes while buying rules stay fixed, we can recalculate profit on the same sales rather than rerun consumers. Across tested alternatives, the best observed price rises from400 to500 and600 as cost increases. This is finite-grid comparison, not continuous optimization. In a more separated graph, spreading samples across groups adds393 early profit versus targeting only the most connected, but its late difference includes zero. The best action depends on the goal and horizon.
+
+Evidence: all_cost_revaluation.csv; stress_paired.csv; final_paired_contrasts.csv
+
+## 14. An awkward result exposed a weakness in our assumption — 40 seconds
+
+We expected better owner experiences to help sales. Under narrow tolerance the opposite happened: on a fixed graph, increasing q from0.6 to0.95 reduced paid buyers from168.74 to130.58. With tolerance1, sales rose from174.76 to280.96. A moderate belief0.5 accepts0.6 but rejects0.95 at tolerance0.2. This points to the hard confidence gate, not a reason to sell worse bottles. We kept the result and ran a diagnostic instead of hiding it.
+
+Evidence: quality_diagnostic_summary.csv; quality_paired.csv
+
+## 15. We improved the project by testing things that could go wrong — 35 seconds
+
+The initial novelty claim was too broad; the literature already contains adaptive opinion models and promotional seeding. We changed the claim to a transparent application and experiment. We also found that free ownership is not paid demand, short time snapshots can mislead, and a prettier network does not verify the code. The default actual AnyLogic run matches Java, but the full scenario analysis is reference output. AI assisted the research, code and drafting; we must explain and defend the rules ourselves.
+
+Evidence: PROJECT_JOURNAL.md; VALIDATION_REPORT.md; ../VALIDATION_REPORT.md
+
+## 16. Start small; buy network information only if it pays — 30 seconds
+
+Within our synthetic choices, start at400 with3 samples. Choose random recipients unless identifying well-connected people is cheap: its extra benefit is uncertain. Change the price advice if unit cost changes, and consider group coverage for early reach. This is conditional, not a global optimum or a forecast. Only two sample quantities and three prices were tried. We exclude operations and have no empirical calibration. Our strongest lesson is to separate hearing, buying and profit and to test whether assumptions drive the answer.
+
+Evidence: confirmation_paired.csv; all_cost_revaluation.csv; OPEN_ISSUES.md
+
+## 17. Backup: exact parameters and policy codes — backup
+
+Use this if asked how to reproduce the demo or change policy. policyIndex encodes recipient rule, price, contact rule and sample quantity. rep selects the synthetic market seed, not the number of runs. d,mu,phi and sharing are in ProductKernel.Config, not separate drag-and-drop blocks.
+
+Evidence: MODEL_SPEC.md; anylogic/ProductKernel.java; CampusProductLaunch_LiveNetwork.alp
+
+## 18. Backup: statistical evidence and exact fresh-market comparisons — backup
+
+A replication is an independently generated market. The same market is paired across policies. We resample entire markets with replacement10,000 times. A95 percent interval does not include model-realism uncertainty; these are pointwise intervals. We did not establish equality when a targeting interval includes zero. Full scenario grids run in the reference implementation; actual AnyLogic execution evidence is narrower.
+
+Evidence: confirmation_summary.csv; confirmation_paired.csv; sim/final_audit.json
+
+## 19. Backup: published mechanisms and our own assumptions — backup
+
+The original pitch listed journal/year leads without precise papers. Those vague leads are not treated as verified citations. The final review uses identified primary sources. Our own exact purchase rule and synthetic rupee distributions are not validated by these authors. The contribution is a carefully documented course experiment and diagnostic, not priority for a new opinion or marketing mechanism.
+
+Evidence: LITERATURE_NOTES.md; ../LITERATURE_NOTES.md; sources/project_pitch_social_polarization.pdf
+
+## 20. Backup: where every evaluation criterion is covered — backup
+
+The required deliverables are the actual AnyLogic model, input/analysis support and slides. This map shows where the presentation addresses each criterion. Keep both models and the PDF offline; the approved grid is the fallback. No browser or internet is required for the talk.
+
+Evidence: SUBMISSION_GUIDE.md; COURSE_REQUIREMENTS.md
+
+## Demo fallback
+
+Open the approved grid model if the simplified network display has a problem. It uses the same rules and default result. Do not debug code on stage. The PDF is the slide fallback. The 100-market scenario analysis is reference implementation output; actual AnyLogic evidence is one matched default market shown in two presentation variants, not a full engine batch.

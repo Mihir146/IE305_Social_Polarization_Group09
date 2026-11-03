@@ -15,19 +15,19 @@ Every node is one of 300 Consumer agents. The three clouds are the known initial
 
 | Visual | Meaning |
 |---|---|
-|Node fill gray / amber / purple / green|Unaware / informed nonowner / free recipient / paid owner|
-|Blue participant halo|Customer involved in the highlighted recent meeting|
-|Thin solid cyan discussion tie|Endpoint beliefs differ by less than the confidence tolerance|
+|Node fill gray / blue / orange / green|Unaware / informed nonowner / free recipient / paid owner|
+|Black participant halo|Customer involved in a highlighted recent meeting or recent new contact|
+|Thin solid gray discussion tie|Endpoint beliefs differ by less than the confidence tolerance|
 |Thin dotted gray discussion tie|Endpoint beliefs are too far apart to average|
-|Bright blue line and participant halos|A recent actual meeting, with before/after opinions below|
-|Orange line|A recently formed contact after actual rewiring; it briefly persists for visibility|
-|Gold and green history curves|All aware customers and paid buyers over completed campaign periods|
-|Current-opinion histogram|All 300 current beliefs, including unaware customers; bin counts are exported|
+|Black line and participant halos|A recent actual meeting, with before/after opinions below|
+|Blue line|A recently formed contact after actual rewiring; it briefly persists for visibility|
+|Blue and green history curves|All aware customers and paid buyers over completed campaign periods|
+|Single-blue current-opinion histogram|All 300 current beliefs, including unaware customers; bin counts are exported|
 |Decision panel|Aware nonowners split into insufficient budget, insufficient perceived value, or ready for the next period-end purchase|
 
 The current design uses a white background and a larger network, with compact plots below. Individual opinions appear in the highlighted conversation and the distribution plot. All 1,200 discussion ties are drawn. Line style shows compatibility, not an empirical measure of friendship strength. A compatible edge does not guarantee both endpoints know the launch or that they are the pair currently meeting.
 
-The animation advances ten attempted interactions per visual tick. It highlights one recent meeting periodically so the caption can be read. All attempts still affect the simulation. The last orange edge can remain visible briefly even after another meeting happens; it is labeled recent, not current. Pause the model to inspect a conversation.
+The animation advances ten attempted interactions per visual tick. It highlights one recent meeting periodically so the caption can be read. All attempts still affect the simulation. The last blue new-contact edge can remain visible briefly even after another meeting happens; it is labeled recent, not current. Pause the model to inspect a conversation.
 
 ## Checks completed before requesting an engine run
 
@@ -37,7 +37,7 @@ The animation advances ten attempted interactions per visual tick. It highlights
 - Every campaign emits 61 extra metric rows. Histogram bins sum to 300; compatible plus discordant edges sum to 1,200; buying-reason categories partition the aware nonowners.
 - The approved fallback file remains unchanged.
 
-These checks use API compilation and stand-in wiring. **The live-network editor import, engine animation and performance still need the first actual run.** They are not inferred from the successful fallback run.
+These checks use API compilation and stand-in wiring. The earlier network default has an actual matched engine export. **The current flat-color simplification still needs a visual check.** Its appearance/performance is not inferred from prior exports. No behavioral rule or random draw order changed.
 
 ## One first engine check
 

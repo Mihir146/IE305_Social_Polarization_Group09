@@ -8,5 +8,6 @@
   "available_seconds": 780,
   "xml_and_relationships_checked": true,
   "rendered_in_powerpoint_here": false,
-  "caution": "Check rendering once in Windows PowerPoint; HTML/tables provide a fallback"
+  "caution": "Check rendering once in Windows PowerPoint; HTML/tables provide a fallback",
+  "evidence_scope": "Previous archived16-slide presentation only; current deck: consulting_deck_checks.json"
 }

@@ -73,6 +73,6 @@ def main():
     info=dict(wiring_compiles_with_standins=True,animated_default_matches_java=True,batch_matches_java=180,
         displayed_actual_ties=1200,customer_state_references=300,network_metric_rows_per_campaign=61,
         extra_metric_partitions_checked=True,approved_grid_model_unchanged=True,
-        scope='Stand-in wiring only. Actual API compile recorded separately. Live-network engine execution remains pending.')
+        scope='Stand-in wiring only. Installed API compile is separate. Earlier network default engine export is verified; current simplified display still needs a visual check.')
     (ROOT/'sim/live_network_wiring_checks.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info,indent=2))
 if __name__=='__main__':main()

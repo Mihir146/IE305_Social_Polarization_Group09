@@ -2,10 +2,10 @@
 public int customerId;
 public Main.ProductKernel.Customer state;
 public java.awt.Color stateColor(){
- if(state==null||!state.aware)return new java.awt.Color(142,153,166);
- if(state.freeSample)return new java.awt.Color(151,111,193);
- if(state.paidPeriod>=0)return new java.awt.Color(43,153,104);
- return new java.awt.Color(227,167,53);
+ if(state==null||!state.aware)return new java.awt.Color(176,176,176);
+ if(state.freeSample)return new java.awt.Color(255,159,28);
+ if(state.paidPeriod>=0)return new java.awt.Color(39,145,90);
+ return new java.awt.Color(55,126,184);
 }
 public java.awt.Color ownerColor(){return java.awt.Color.WHITE;}
 public String customerTooltip(){

@@ -15,16 +15,16 @@
     },
     {
       "model": "CampusProductLaunch_LiveNetwork.alp",
-      "sha256": "755e4725090e3970933c795030a5b27e6a7bc1d28abdab5667e44c62d814eb0c",
+      "sha256": "bbfe929ee6370e227b19f050ca7f7598fb5e1cde37bd83d2f067814dce5663a7",
       "same_kernel": true,
       "unique_ids": true
     }
   ],
   "markdown_local_links_checked": true,
   "primary_powerpoint_schema_valid": true,
-  "main_slides": 12,
+  "main_slides": 16,
   "backup_slides": 4,
-  "main_seconds_including_demo": 735,
+  "main_seconds_including_demo": 700,
   "empirical_validation": false,
   "paper_extraction_gaps": "Explicit in parent/product literature read-status tables",
   "remote_upload": "Network/push now available; actual remote confirmation is recorded by Git, not inferred from local files"

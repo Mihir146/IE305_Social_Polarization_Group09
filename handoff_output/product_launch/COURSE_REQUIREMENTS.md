@@ -14,11 +14,11 @@ Source: pasted Moodle announcement by Saurabh Jain,1 November2026,18:36. This fi
 
 | Criterion | Evidence we are preparing |
 |---|---|
-|Scope and objectives|One product, finite campaign, fixed sample budget, price/targeting decisions and explicit omissions|
+|Scope and objectives|One product, finite campaign, 3/12-sample alternatives, price/targeting decisions and explicit omissions|
 |Data and input analysis|Synthetic distributions, rationale, generated customer/contact tables and actual summary statistics|
 |Model building|Agent states, awareness/value/purchase distinction, event order, experience feedback and adaptive discussion links|
 |Basic output analysis|Paid sales, awareness, cost, profit, time target and group adoption, with replication uncertainty|
-|Advanced output analysis|18 policy alternatives, pilot-based selection with independent evaluation, paired comparisons and focused what-if checks|
+|Advanced output analysis|36 tested alternatives including the exploratory sample extension; paired comparisons,100 fresh confirmation markets and focused what-if checks|
 |Animation|AnyLogic Consumer colors, live status and graph display; actual engine test and saved model required|
 |Final recommendation|Best-supported choice within tested assumptions, uncertainty in targeting and conditions that change the decision|
 |Clarity and communication|A13-minute narrative including a live demo, with backup slides and viva answers|

@@ -19,8 +19,9 @@ Use AnyLogic **8.9 PLE**. The tested default is policyIndex6, rep1000: period60,
 ## Read and present
 
 - [Project report](handoff_output/product_launch/PROJECT_REPORT.md): business question, inputs, model, experiments, results and limitations.
-- [PowerPoint](handoff_output/product_launch/Campus_Product_Launch.pptx): 12 main slides plus4 backups; planned12m15s including the live model. Visible charts use standard rendered figures for reliable display.
-- [Editable-chart PowerPoint](handoff_output/product_launch/Campus_Product_Launch_EditableCharts.pptx): the same deck with native Office charts and embedded workbooks.
+- [PowerPoint](handoff_output/product_launch/Campus_Product_Launch.pptx): 16 main slides plus4 backups; planned11m40s including the live model. Plain-language tables, parameter explanations and charts cover the rubric.
+- [Short project explainer](handoff_output/product_launch/UNDERSTAND_THE_PROJECT.md): read this first to understand the model and every grading criterion.
+- The previous deck and animation are preserved in `handoff_output/product_launch/revision_archive/`.
 - [Speaker notes](handoff_output/product_launch/SPEAKER_NOTES.md) and [viva guide](handoff_output/product_launch/VIVA_PREP.md): explanations and25 questions.
 - [Literature](handoff_output/product_launch/LITERATURE_NOTES.md), [validation](handoff_output/product_launch/VALIDATION_REPORT.md) and [open issues](handoff_output/product_launch/OPEN_ISSUES.md): precise evidence boundaries.
 - [PROJECT_JOURNAL.md](PROJECT_JOURNAL.md): progress, issues, lessons and fixes.

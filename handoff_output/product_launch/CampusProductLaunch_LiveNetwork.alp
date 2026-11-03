@@ -229,7 +229,7 @@ public void startLaunchCase(int policy,int replication){
  if(animateNetwork)refreshLaunchLinks();refreshLaunchDisplay();
 }
 public java.awt.Color beliefColor(double belief){
- double b=Math.max(0,Math.min(1,belief));return new java.awt.Color((int)(66+187*b),(int)(187-31*b),(int)(230-111*b));
+ return new java.awt.Color(55,126,184); // One flat blue for the opinion histogram; no color scale.
 }
 public com.anylogic.engine.presentation.ShapeLine line(double x,double y,double dx,double dy,java.awt.Color color,double width,com.anylogic.engine.presentation.LineStyle style){
  return new com.anylogic.engine.presentation.ShapeLine(true,x,y,color,dx,dy,width,style);
@@ -251,7 +251,7 @@ public void synchronizeDisplayedTies(){
   for(int i=0;i&lt;300;i++)for(int j=i+1;j&lt;300;j++)if(launch.adj[i][j]){
    int key=i*300+j;if(!drawnTies.containsKey(key)){
     Consumer a=consumers.get(i),z=consumers.get(j);
-    com.anylogic.engine.presentation.ShapeLine edge=line(a.getX(),a.getY(),z.getX()-a.getX(),z.getY()-a.getY(),new java.awt.Color(132,151,179,30),.6,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
+    com.anylogic.engine.presentation.ShapeLine edge=line(a.getX(),a.getY(),z.getX()-a.getX(),z.getY()-a.getY(),new java.awt.Color(150,150,150,35),.6,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
     linksLayer.add(edge);drawnTies.put(key,edge);
    }
   }
@@ -263,7 +263,7 @@ public void synchronizeDisplayedTies(){
   int code=compatible?(a.aware&amp;&amp;z.aware?2:1):0;
   if(tieStyles.getOrDefault(e.getKey(),-1)!=code){
    e.getValue().setLineStyle(compatible?com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID:com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
-   e.getValue().setColor(code==2?new java.awt.Color(61,132,177,80):code==1?new java.awt.Color(61,132,177,50):new java.awt.Color(125,132,143,48));tieStyles.put(e.getKey(),code);
+   e.getValue().setColor(code==2?new java.awt.Color(115,115,115,65):code==1?new java.awt.Color(145,145,145,45):new java.awt.Color(145,145,145,35));tieStyles.put(e.getKey(),code);
   }
  }
 }
@@ -289,8 +289,8 @@ public void refreshHistory(double[] metrics){
  historyLayer.clear();
  for(int k=1;k&lt;launch.history.size();k++){
   double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=65+325*a[0]/60.0,x2=65+325*z[0]/60.0;
-  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
-  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(55,126,184),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(39,145,90),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  }
 }
 public void refreshLaunchDisplay(){
@@ -299,7 +299,7 @@ public void refreshLaunchDisplay(){
  if(!animateNetwork)return;
  for(Consumer a:consumers){a.nodeMark.setFillColor(a.stateColor());a.ownerMark.setFillColor(a.ownerColor());a.focusMark.setVisible(a.customerId==recentI||a.customerId==recentJ||a.customerId==rewireK&amp;&amp;rewireLife&gt;0);}
  synchronizeDisplayedTies();
- statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples   |   "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
+ statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples\nRecipients: "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
  kpiLabel.setText("Aware "+(int)r[1]+" / 300        Paid buyers "+(int)r[2]+"        Free samples "+(int)r[3]+"        Profit Rs "+(int)r[7]);
  financeLabel.setText("Revenue Rs "+(int)r[5]+"  -  all bottle costs Rs "+(int)r[6]+"  =  modeled profit");
  reachLabel.setText("Aware "+(int)r[1]+"     Paid "+(int)r[2]+"     |     periods 0–60");
@@ -568,13 +568,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-14587749</LineColor>
+                <LineColor>-14540254</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <Width>0</Width>
                 <Height>2.5</Height>
                 <Rotation>0</Rotation>
-                <FillColor>-14587749</FillColor>
+                <FillColor>-14540254</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
@@ -594,13 +594,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-2654167</LineColor>
+                <LineColor>-13140296</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <Width>0</Width>
-                <Height>3</Height>
+                <Height>2</Height>
                 <Rotation>0</Rotation>
-                <FillColor>-2654167</FillColor>
+                <FillColor>-13140296</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <EmbeddedObjectPresentation>
@@ -744,7 +744,7 @@ public void exportLaunch(){
                 <Id>1793700000080</Id>
                 <Name>statusLabel</Name>
                 <X>24</X>
-                <Y>60</Y>
+                <Y>57</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -760,7 +760,7 @@ public void exportLaunch(){
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>15</Size>
+                  <Size>14</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
@@ -769,7 +769,7 @@ public void exportLaunch(){
                 <Id>1793700000081</Id>
                 <Name>kpiLabel</Name>
                 <X>24</X>
-                <Y>92</Y>
+                <Y>104</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -785,7 +785,7 @@ public void exportLaunch(){
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>20</Size>
+                  <Size>19</Size>
                   <Style>1</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
@@ -794,7 +794,7 @@ public void exportLaunch(){
                 <Id>1793700000082</Id>
                 <Name>financeLabel</Name>
                 <X>24</X>
-                <Y>122</Y>
+                <Y>133</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -819,7 +819,7 @@ public void exportLaunch(){
                 <Id>1793700000083</Id>
                 <Name>interactionLabel</Name>
                 <X>24</X>
-                <Y>153</Y>
+                <Y>162</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -844,7 +844,7 @@ public void exportLaunch(){
                 <Id>1793700000084</Id>
                 <Name>beliefLabel</Name>
                 <X>24</X>
-                <Y>180</Y>
+                <Y>188</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -957,13 +957,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-7431770</LineColor>
+                <LineColor>-5197648</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>5</RadiusX>
                 <RadiusY>5</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-7431770</FillColor>
+                <FillColor>-5197648</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
@@ -1008,13 +1008,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-1857739</LineColor>
+                <LineColor>-13140296</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>5</RadiusX>
                 <RadiusY>5</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-1857739</FillColor>
+                <FillColor>-13140296</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
@@ -1059,13 +1059,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-6852671</LineColor>
+                <LineColor>-24804</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>5</RadiusX>
                 <RadiusY>5</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-6852671</FillColor>
+                <FillColor>-24804</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
@@ -1110,13 +1110,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-13919896</LineColor>
+                <LineColor>-14184102</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>5</RadiusX>
                 <RadiusY>5</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-13919896</FillColor>
+                <FillColor>-14184102</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Text>
@@ -1186,7 +1186,7 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <Rotation>0</Rotation>
                 <Color>-10062717</Color>
-                <Text>Blue highlight: recent meeting   ·   Orange: new contact</Text>
+                <Text>Black line: selected meeting   ·   Blue line: new contact</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>12</Size>
@@ -1438,7 +1438,7 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-4356578</Color>
+                <Color>-13140296</Color>
                 <Text>— Aware</Text>
                 <Font>
                   <Name>SansSerif</Name>
@@ -1463,7 +1463,7 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-13919896</Color>
+                <Color>-14184102</Color>
                 <Text>— Paid</Text>
                 <Font>
                   <Name>SansSerif</Name>
@@ -1900,10 +1900,10 @@ public void exportLaunch(){
 public int customerId;
 public Main.ProductKernel.Customer state;
 public java.awt.Color stateColor(){
- if(state==null||!state.aware)return new java.awt.Color(142,153,166);
- if(state.freeSample)return new java.awt.Color(151,111,193);
- if(state.paidPeriod&gt;=0)return new java.awt.Color(43,153,104);
- return new java.awt.Color(227,167,53);
+ if(state==null||!state.aware)return new java.awt.Color(176,176,176);
+ if(state.freeSample)return new java.awt.Color(255,159,28);
+ if(state.paidPeriod&gt;=0)return new java.awt.Color(39,145,90);
+ return new java.awt.Color(55,126,184);
 }
 public java.awt.Color ownerColor(){return java.awt.Color.WHITE;}
 public String customerTooltip(){
@@ -2064,13 +2064,13 @@ public String customerTooltip(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-5515794</LineColor>
+                <LineColor>-14540254</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>9</RadiusX>
                 <RadiusY>9</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-5515794</FillColor>
+                <FillColor>-14540254</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Oval>
@@ -2093,8 +2093,8 @@ public String customerTooltip(){
                 <LineColor>-1</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
-                <RadiusX>6.5</RadiusX>
-                <RadiusY>6.5</RadiusY>
+                <RadiusX>7</RadiusX>
+                <RadiusY>7</RadiusY>
                 <Rotation>0</Rotation>
                 <FillColor>-1</FillColor>
                 <FillMaterial>null</FillMaterial>
@@ -2116,13 +2116,13 @@ public String customerTooltip(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-7431770</LineColor>
+                <LineColor>-5197648</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
-                <RadiusX>5.4</RadiusX>
-                <RadiusY>5.4</RadiusY>
+                <RadiusX>6</RadiusX>
+                <RadiusY>6</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-7431770</FillColor>
+                <FillColor>-5197648</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
             </Presentation>

@@ -1,0 +1,2938 @@
+[
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "THE DECISION"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Can a smaller giveaway make a better launch?"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "MODEL_SPEC.md; confirmation_paired.csv"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 1,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "1"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 144,
+    "w": 890,
+    "h": 25.83,
+    "text": "From social polarization to a product-launch decision"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 188,
+    "w": 890,
+    "h": 46.74,
+    "text": "A hypothetical campus seller reaches 300 customers through word of mouth.\nThe aim: compare paid sales and contribution profit, not just publicity."
+  },
+  {
+    "slide": 1,
+    "x": 49,
+    "y": 295,
+    "w": 255,
+    "h": 39.36,
+    "text": "300"
+  },
+  {
+    "slide": 1,
+    "x": 49,
+    "y": 346,
+    "w": 255,
+    "h": 19.68,
+    "text": "individual customers"
+  },
+  {
+    "slide": 1,
+    "x": 352,
+    "y": 295,
+    "w": 255,
+    "h": 39.36,
+    "text": "36"
+  },
+  {
+    "slide": 1,
+    "x": 352,
+    "y": 346,
+    "w": 255,
+    "h": 19.68,
+    "text": "tested policy choices"
+  },
+  {
+    "slide": 1,
+    "x": 655,
+    "y": 295,
+    "w": 255,
+    "h": 39.36,
+    "text": "100"
+  },
+  {
+    "slide": 1,
+    "x": 655,
+    "y": 346,
+    "w": 255,
+    "h": 19.68,
+    "text": "fresh confirmation markets"
+  },
+  {
+    "slide": 1,
+    "x": 34,
+    "y": 411,
+    "w": 890,
+    "h": 19.68,
+    "text": "Mihir Jagdish Vasave (24B 4517)  |  Vaibhav Mathur (24B 4534)"
+  },
+  {
+    "slide": 1,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Key result: fewer samples improved modeled profit; costly targeting was harder to justify."
+  },
+  {
+    "slide": 2,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "HOW THE PROJECT EVOLVED"
+  },
+  {
+    "slide": 2,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "We kept the mechanism and made the question useful"
+  },
+  {
+    "slide": 2,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "sources/project_pitch_social_polarization.pdf; Student-reported professor feedback; PROJECT_JOURNAL.md"
+  },
+  {
+    "slide": 2,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 2,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "2"
+  },
+  {
+    "slide": 2,
+    "x": 49,
+    "y": 165,
+    "w": 256,
+    "h": 22.14,
+    "text": "1  INITIAL PITCH"
+  },
+  {
+    "slide": 2,
+    "x": 49,
+    "y": 205,
+    "w": 256,
+    "h": 104.55,
+    "text": "Question: can changing contacts split opinions?\n\nKeep: individual opinions, social contacts and disagreement."
+  },
+  {
+    "slide": 2,
+    "x": 352,
+    "y": 165,
+    "w": 256,
+    "h": 22.14,
+    "text": "2  FEEDBACK  to  DESIGN"
+  },
+  {
+    "slide": 2,
+    "x": 352,
+    "y": 205,
+    "w": 256,
+    "h": 125.46000000000001,
+    "text": "Use a concrete application.\nSynthetic inputs are acceptable.\nCompare what-if scenarios.\n\nFeedback summarized from our account."
+  },
+  {
+    "slide": 2,
+    "x": 655,
+    "y": 165,
+    "w": 256,
+    "h": 22.14,
+    "text": "3  FINAL QUESTION"
+  },
+  {
+    "slide": 2,
+    "x": 655,
+    "y": 205,
+    "w": 256,
+    "h": 125.46000000000001,
+    "text": "For a bottle launch, which price and free-sample plan earns more?\n\nAdd: awareness, budget, perceived value and costs."
+  },
+  {
+    "slide": 2,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "The application changed; the feedback between conversations and beliefs remained."
+  },
+  {
+    "slide": 3,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "SCOPE AND OBJECTIVES"
+  },
+  {
+    "slide": 3,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "The seller chooses the offer; each customer decides to buy"
+  },
+  {
+    "slide": 3,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "MODEL_SPEC.md"
+  },
+  {
+    "slide": 3,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 3,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "3"
+  },
+  {
+    "slide": 3,
+    "x": 43,
+    "y": 157,
+    "w": 267,
+    "h": 18.45,
+    "text": "Seller decisions"
+  },
+  {
+    "slide": 3,
+    "x": 328,
+    "y": 157,
+    "w": 312,
+    "h": 18.45,
+    "text": "Customer behavior"
+  },
+  {
+    "slide": 3,
+    "x": 658,
+    "y": 157,
+    "w": 259,
+    "h": 18.45,
+    "text": "Measures"
+  },
+  {
+    "slide": 3,
+    "x": 43,
+    "y": 213,
+    "w": 267,
+    "h": 18.45,
+    "text": "Price: Rs 400 / 500 / 600"
+  },
+  {
+    "slide": 3,
+    "x": 328,
+    "y": 213,
+    "w": 312,
+    "h": 18.45,
+    "text": "Hear about launch; discuss appeal"
+  },
+  {
+    "slide": 3,
+    "x": 658,
+    "y": 213,
+    "w": 259,
+    "h": 18.45,
+    "text": "Awareness: how many heard?"
+  },
+  {
+    "slide": 3,
+    "x": 43,
+    "y": 269,
+    "w": 267,
+    "h": 18.45,
+    "text": "Free samples: 3 or 12"
+  },
+  {
+    "slide": 3,
+    "x": 328,
+    "y": 269,
+    "w": 312,
+    "h": 18.45,
+    "text": "Buy once if value AND budget allow"
+  },
+  {
+    "slide": 3,
+    "x": 658,
+    "y": 269,
+    "w": 259,
+    "h": 18.45,
+    "text": "Paid sales: samples excluded"
+  },
+  {
+    "slide": 3,
+    "x": 43,
+    "y": 325,
+    "w": 267,
+    "h": 36.9,
+    "text": "Recipients: random / many contacts / across groups"
+  },
+  {
+    "slide": 3,
+    "x": 328,
+    "y": 325,
+    "w": 312,
+    "h": 18.45,
+    "text": "Learn from owning the bottle"
+  },
+  {
+    "slide": 3,
+    "x": 658,
+    "y": 325,
+    "w": 259,
+    "h": 18.45,
+    "text": "Profit after sold + free bottle costs"
+  },
+  {
+    "slide": 3,
+    "x": 34,
+    "y": 385,
+    "w": 890,
+    "h": 39.36,
+    "text": "Boundary: 300 customers, 3 groups, 1,200 contacts, 60 abstract periods.\nNo stock limits, repeat purchases, competition or fixed overhead."
+  },
+  {
+    "slide": 3,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "This is a decision experiment under stated assumptions, not a campus sales forecast."
+  },
+  {
+    "slide": 4,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "MODEL OVERVIEW AND COMPONENTS"
+  },
+  {
+    "slide": 4,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Four simple AnyLogic parts create the agent-based model"
+  },
+  {
+    "slide": 4,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "CampusProductLaunch_LiveNetwork.alp; anylogic/ProductKernel.java"
+  },
+  {
+    "slide": 4,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 4,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "4"
+  },
+  {
+    "slide": 4,
+    "x": 43,
+    "y": 152,
+    "w": 222,
+    "h": 17.22,
+    "text": "Component in AnyLogic"
+  },
+  {
+    "slide": 4,
+    "x": 283,
+    "y": 152,
+    "w": 342,
+    "h": 17.22,
+    "text": "What it does"
+  },
+  {
+    "slide": 4,
+    "x": 643,
+    "y": 152,
+    "w": 274,
+    "h": 17.22,
+    "text": "What we can point to"
+  },
+  {
+    "slide": 4,
+    "x": 43,
+    "y": 209,
+    "w": 222,
+    "h": 17.22,
+    "text": "Main agent"
+  },
+  {
+    "slide": 4,
+    "x": 283,
+    "y": 209,
+    "w": 342,
+    "h": 17.22,
+    "text": "Creates market; schedules and records"
+  },
+  {
+    "slide": 4,
+    "x": 643,
+    "y": 209,
+    "w": 274,
+    "h": 17.22,
+    "text": "Setup, counters, CSV export"
+  },
+  {
+    "slide": 4,
+    "x": 43,
+    "y": 266,
+    "w": 222,
+    "h": 17.22,
+    "text": "Consumer population (300)"
+  },
+  {
+    "slide": 4,
+    "x": 283,
+    "y": 266,
+    "w": 342,
+    "h": 17.22,
+    "text": "Stores each person\u2019s budget, belief and ownership"
+  },
+  {
+    "slide": 4,
+    "x": 643,
+    "y": 266,
+    "w": 274,
+    "h": 17.22,
+    "text": "One circle = one person"
+  },
+  {
+    "slide": 4,
+    "x": 43,
+    "y": 323,
+    "w": 222,
+    "h": 17.22,
+    "text": "Cyclic Event: launchPeriod"
+  },
+  {
+    "slide": 4,
+    "x": 283,
+    "y": 323,
+    "w": 342,
+    "h": 17.22,
+    "text": "10 attempts/tick; 300 attempts/period"
+  },
+  {
+    "slide": 4,
+    "x": 643,
+    "y": 323,
+    "w": 274,
+    "h": 17.22,
+    "text": "Calls advanceLaunchPeriod()"
+  },
+  {
+    "slide": 4,
+    "x": 43,
+    "y": 380,
+    "w": 222,
+    "h": 17.22,
+    "text": "Java rules + basic shapes"
+  },
+  {
+    "slide": 4,
+    "x": 283,
+    "y": 380,
+    "w": 342,
+    "h": 17.22,
+    "text": "Discussion, buying, experience; draw results"
+  },
+  {
+    "slide": 4,
+    "x": 643,
+    "y": 380,
+    "w": 274,
+    "h": 17.22,
+    "text": "Methods, circles, lines, text"
+  },
+  {
+    "slide": 4,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Agent-based: total sales are the sum of individual decisions; no fitted sales-growth curve."
+  },
+  {
+    "slide": 5,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "DATA AND INPUT ANALYSIS"
+  },
+  {
+    "slide": 5,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "We generated customer differences instead of collecting surveys"
+  },
+  {
+    "slide": 5,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "data/customers_rep 1000.csv; input_statistics.csv; initial_graph_statistics.csv"
+  },
+  {
+    "slide": 5,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 5,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "5"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 147,
+    "w": 167,
+    "h": 17.22,
+    "text": "Input"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 147,
+    "w": 347,
+    "h": 17.22,
+    "text": "Generation rule"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 147,
+    "w": 152,
+    "h": 17.22,
+    "text": "Example mean"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 147,
+    "w": 154,
+    "h": 17.22,
+    "text": "Example SD"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 194,
+    "w": 167,
+    "h": 17.22,
+    "text": "Initial appeal"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 194,
+    "w": 347,
+    "h": 17.22,
+    "text": "Beta(2,2); range 0\u20131"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 194,
+    "w": 152,
+    "h": 17.22,
+    "text": "0.490"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 194,
+    "w": 154,
+    "h": 17.22,
+    "text": "0.235"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 241,
+    "w": 167,
+    "h": 17.22,
+    "text": "Value scale"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 241,
+    "w": 347,
+    "h": 17.22,
+    "text": "Uniform Rs 500\u20131,000"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 241,
+    "w": 152,
+    "h": 17.22,
+    "text": "Rs 770.12"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 241,
+    "w": 154,
+    "h": 17.22,
+    "text": "Rs 144.19"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 288,
+    "w": 167,
+    "h": 17.22,
+    "text": "Budget"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 288,
+    "w": 347,
+    "h": 17.22,
+    "text": "Uniform Rs 400\u20131,000"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 288,
+    "w": 152,
+    "h": 17.22,
+    "text": "Rs 710.93"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 288,
+    "w": 154,
+    "h": 17.22,
+    "text": "Rs 178.23"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 335,
+    "w": 167,
+    "h": 17.22,
+    "text": "Owner experience"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 335,
+    "w": 347,
+    "h": 17.22,
+    "text": "Normal(0.8,0.1), clipped 0\u20131"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 335,
+    "w": 152,
+    "h": 17.22,
+    "text": "0.803"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 335,
+    "w": 154,
+    "h": 17.22,
+    "text": "0.094"
+  },
+  {
+    "slide": 5,
+    "x": 43,
+    "y": 382,
+    "w": 167,
+    "h": 17.22,
+    "text": "Contacts/person"
+  },
+  {
+    "slide": 5,
+    "x": 228,
+    "y": 382,
+    "w": 347,
+    "h": 17.22,
+    "text": "Generated graph; average 8"
+  },
+  {
+    "slide": 5,
+    "x": 593,
+    "y": 382,
+    "w": 152,
+    "h": 17.22,
+    "text": "8.00"
+  },
+  {
+    "slide": 5,
+    "x": 763,
+    "y": 382,
+    "w": 154,
+    "h": 17.22,
+    "text": "2.85"
+  },
+  {
+    "slide": 5,
+    "x": 34,
+    "y": 430,
+    "w": 890,
+    "h": 17.22,
+    "text": "Example market: 322 / 1,200 ties cross groups (26.8%). SD = spread across its 300 customers."
+  },
+  {
+    "slide": 5,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Inputs are assumptions; repeated synthetic markets provide the output data."
+  },
+  {
+    "slide": 6,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "PARAMETERS WE CAN EXPLAIN"
+  },
+  {
+    "slide": 6,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Each behavior parameter answers a simple \u201chow often / how much?\u201d"
+  },
+  {
+    "slide": 6,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "MODEL_SPEC.md; behavior_summary.csv"
+  },
+  {
+    "slide": 6,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 6,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "6"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 147.0,
+    "w": 207,
+    "h": 16.605,
+    "text": "Parameter"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 147.0,
+    "w": 107,
+    "h": 16.605,
+    "text": "Baseline"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 147.0,
+    "w": 524,
+    "h": 16.605,
+    "text": "Meaning / example"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 189.14285714285714,
+    "w": 207,
+    "h": 16.605,
+    "text": "Sharing chance s"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 189.14285714285714,
+    "w": 107,
+    "h": 16.605,
+    "text": "0.25"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 189.14285714285714,
+    "w": 524,
+    "h": 16.605,
+    "text": "One aware person passes news in 1 in 4 eligible meetings"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 231.28571428571428,
+    "w": 207,
+    "h": 16.605,
+    "text": "Tolerance d"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 231.28571428571428,
+    "w": 107,
+    "h": 16.605,
+    "text": "0.20"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 231.28571428571428,
+    "w": 524,
+    "h": 16.605,
+    "text": "Only belief gaps below 0.20 allow opinion averaging"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 273.42857142857144,
+    "w": 207,
+    "h": 16.605,
+    "text": "Opinion adjustment \u03bc"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 273.42857142857144,
+    "w": 107,
+    "h": 16.605,
+    "text": "0.30"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 273.42857142857144,
+    "w": 524,
+    "h": 16.605,
+    "text": "Move 30% toward the other\u2019s old belief:0.40  to 0.43"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 315.57142857142856,
+    "w": 207,
+    "h": 16.605,
+    "text": "Replacement chance \u03c6"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 315.57142857142856,
+    "w": 107,
+    "h": 16.605,
+    "text": "0.05"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 315.57142857142856,
+    "w": 524,
+    "h": 16.605,
+    "text": "A disagreeing meeting has a 5% chance to replace its tie"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 357.7142857142857,
+    "w": 207,
+    "h": 16.605,
+    "text": "New-contact rule h"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 357.7142857142857,
+    "w": 107,
+    "h": 16.605,
+    "text": "0 or 1"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 357.7142857142857,
+    "w": 524,
+    "h": 16.605,
+    "text": "0: random; 1: similar beliefs, random fallback"
+  },
+  {
+    "slide": 6,
+    "x": 43,
+    "y": 399.8571428571429,
+    "w": 207,
+    "h": 16.605,
+    "text": "Experience q; unit cost"
+  },
+  {
+    "slide": 6,
+    "x": 268,
+    "y": 399.8571428571429,
+    "w": 107,
+    "h": 16.605,
+    "text": "0.8; Rs 250"
+  },
+  {
+    "slide": 6,
+    "x": 393,
+    "y": 399.8571428571429,
+    "w": 524,
+    "h": 16.605,
+    "text": "q is the normal draw\u2019s pre-clipping mean; cost includes samples"
+  },
+  {
+    "slide": 6,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "A period is 300 interaction attempts\u2014not a day. We do not claim these inputs are calibrated."
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "INDIVIDUAL RULES: A WORKED EXAMPLE"
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "One conversation can inform; a purchase still needs two checks"
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "MODEL_SPEC.md; anylogic/ProductKernel.java"
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 7,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "7"
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 144,
+    "w": 170,
+    "h": 19.68,
+    "text": "SAMPLE"
+  },
+  {
+    "slide": 7,
+    "x": 205,
+    "y": 144,
+    "w": 720,
+    "h": 19.68,
+    "text": "Free recipients start aware and use their own experience."
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 200,
+    "w": 170,
+    "h": 19.68,
+    "text": "MEET"
+  },
+  {
+    "slide": 7,
+    "x": 205,
+    "y": 200,
+    "w": 720,
+    "h": 19.68,
+    "text": "Select a person and one current contact; news may pass."
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 256,
+    "w": 170,
+    "h": 19.68,
+    "text": "DISCUSS"
+  },
+  {
+    "slide": 7,
+    "x": 205,
+    "y": 256,
+    "w": 720,
+    "h": 19.68,
+    "text": "Close beliefs move together; disagreement may replace the tie."
+  },
+  {
+    "slide": 7,
+    "x": 34,
+    "y": 312,
+    "w": 170,
+    "h": 19.68,
+    "text": "BUY / LEARN"
+  },
+  {
+    "slide": 7,
+    "x": 205,
+    "y": 312,
+    "w": 720,
+    "h": 19.68,
+    "text": "At period end, eligible nonowners buy once and learn from use."
+  },
+  {
+    "slide": 7,
+    "x": 46,
+    "y": 391,
+    "w": 866,
+    "h": 36.9,
+    "text": "Example: Rs 800 \u00d7 belief 0.60 = Rs 480 perceived value; budgetRs 450.\nPriceRs 400  to  buy.  PriceRs 500  to  do not buy."
+  },
+  {
+    "slide": 7,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Buy only if aware, not already an owner, budget \u2265 price AND perceived value \u2265 price."
+  },
+  {
+    "slide": 8,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "EXPERIMENT DESIGN AND CONFIDENCE"
+  },
+  {
+    "slide": 8,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "We compare like with like, then check fresh markets"
+  },
+  {
+    "slide": 8,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "sim/results/*manifest.json; confirmation_paired.csv"
+  },
+  {
+    "slide": 8,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 8,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "8"
+  },
+  {
+    "slide": 8,
+    "x": 43,
+    "y": 157,
+    "w": 192,
+    "h": 18.45,
+    "text": "Stage"
+  },
+  {
+    "slide": 8,
+    "x": 253,
+    "y": 157,
+    "w": 282,
+    "h": 18.45,
+    "text": "Markets \u00d7 choices"
+  },
+  {
+    "slide": 8,
+    "x": 553,
+    "y": 157,
+    "w": 364,
+    "h": 18.45,
+    "text": "Purpose"
+  },
+  {
+    "slide": 8,
+    "x": 43,
+    "y": 210,
+    "w": 192,
+    "h": 18.45,
+    "text": "Pilot"
+  },
+  {
+    "slide": 8,
+    "x": 253,
+    "y": 210,
+    "w": 282,
+    "h": 18.45,
+    "text": "30 separate markets \u00d718"
+  },
+  {
+    "slide": 8,
+    "x": 553,
+    "y": 210,
+    "w": 364,
+    "h": 18.45,
+    "text": "Check setup and choose a provisional policy"
+  },
+  {
+    "slide": 8,
+    "x": 43,
+    "y": 263,
+    "w": 192,
+    "h": 18.45,
+    "text": "Main + follow-up"
+  },
+  {
+    "slide": 8,
+    "x": 253,
+    "y": 263,
+    "w": 282,
+    "h": 18.45,
+    "text": "100 markets \u00d736 =3,600 runs"
+  },
+  {
+    "slide": 8,
+    "x": 553,
+    "y": 263,
+    "w": 364,
+    "h": 18.45,
+    "text": "Prices 3 \u00d7 recipients 3 \u00d7 contacts 2 \u00d7 samples 2"
+  },
+  {
+    "slide": 8,
+    "x": 43,
+    "y": 316,
+    "w": 192,
+    "h": 18.45,
+    "text": "Fresh confirmation"
+  },
+  {
+    "slide": 8,
+    "x": 253,
+    "y": 316,
+    "w": 282,
+    "h": 18.45,
+    "text": "100 new markets \u00d74 =400 runs"
+  },
+  {
+    "slide": 8,
+    "x": 553,
+    "y": 316,
+    "w": 364,
+    "h": 18.45,
+    "text": "Check fixed choices without searching again"
+  },
+  {
+    "slide": 8,
+    "x": 34,
+    "y": 372,
+    "w": 892,
+    "h": 41.82,
+    "text": "Fair comparison: the same generated market is reused across policy alternatives.\n95% interval: resample whole markets 10,000 times; never treat customers as replications."
+  },
+  {
+    "slide": 8,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "The three-sample idea was exploratory. The separate fresh-market check strengthens its evidence."
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "ANIMATION \u2014 90 SECONDS"
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Live demo: follow news, one meeting and one purchase"
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "CampusProductLaunch_LiveNetwork.alp; anylogic/evidence/; LIVE_NETWORK.md"
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 9,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "9"
+  },
+  {
+    "slide": 9,
+    "x": 72,
+    "y": 160,
+    "w": 166,
+    "h": 19.68,
+    "text": "GREY"
+  },
+  {
+    "slide": 9,
+    "x": 46,
+    "y": 191,
+    "w": 190,
+    "h": 14.76,
+    "text": "Not heard yet"
+  },
+  {
+    "slide": 9,
+    "x": 298,
+    "y": 160,
+    "w": 166,
+    "h": 19.68,
+    "text": "BLUE"
+  },
+  {
+    "slide": 9,
+    "x": 272,
+    "y": 191,
+    "w": 190,
+    "h": 14.76,
+    "text": "Heard; not owner"
+  },
+  {
+    "slide": 9,
+    "x": 524,
+    "y": 160,
+    "w": 166,
+    "h": 19.68,
+    "text": "ORANGE"
+  },
+  {
+    "slide": 9,
+    "x": 498,
+    "y": 191,
+    "w": 190,
+    "h": 14.76,
+    "text": "Free sample owner"
+  },
+  {
+    "slide": 9,
+    "x": 750,
+    "y": 160,
+    "w": 166,
+    "h": 19.68,
+    "text": "GREEN"
+  },
+  {
+    "slide": 9,
+    "x": 724,
+    "y": 191,
+    "w": 190,
+    "h": 14.76,
+    "text": "Paid buyer"
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 240,
+    "w": 890,
+    "h": 73.80000000000001,
+    "text": "1  Watch launch news spread through contacts.\n2  Pause on one meeting: show both beliefs before and after.\n3  Show paid sales rising only when individual buying conditions hold."
+  },
+  {
+    "slide": 9,
+    "x": 34,
+    "y": 365,
+    "w": 890,
+    "h": 41.82,
+    "text": "Default demonstration: policyIndex 6, rep 1000, 12 samples, priceRs 400.\nEnd: 300 aware | 148 paid | Rs 59,200 revenue \u2212 Rs 40,000 costs = Rs 19,200."
+  },
+  {
+    "slide": 9,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Solid / dotted ties explain agreement; node color explains customer state. These are different facts."
+  },
+  {
+    "slide": 10,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "PRICE COMPARISON"
+  },
+  {
+    "slide": 10,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "A higher price lost buyers faster than it gained margin"
+  },
+  {
+    "slide": 10,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "all_policy_summary.csv"
+  },
+  {
+    "slide": 10,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 10,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "10"
+  },
+  {
+    "slide": 10,
+    "x": 43,
+    "y": 167,
+    "w": 71,
+    "h": 15.99,
+    "text": "Price"
+  },
+  {
+    "slide": 10,
+    "x": 132,
+    "y": 167,
+    "w": 76,
+    "h": 15.99,
+    "text": "Paid buyers"
+  },
+  {
+    "slide": 10,
+    "x": 226,
+    "y": 167,
+    "w": 85,
+    "h": 15.99,
+    "text": "Mean profit"
+  },
+  {
+    "slide": 10,
+    "x": 43,
+    "y": 219,
+    "w": 71,
+    "h": 15.99,
+    "text": "Rs 400"
+  },
+  {
+    "slide": 10,
+    "x": 132,
+    "y": 219,
+    "w": 76,
+    "h": 15.99,
+    "text": "147.33"
+  },
+  {
+    "slide": 10,
+    "x": 226,
+    "y": 219,
+    "w": 85,
+    "h": 15.99,
+    "text": "Rs 19,100"
+  },
+  {
+    "slide": 10,
+    "x": 43,
+    "y": 271,
+    "w": 71,
+    "h": 15.99,
+    "text": "Rs 500"
+  },
+  {
+    "slide": 10,
+    "x": 132,
+    "y": 271,
+    "w": 76,
+    "h": 15.99,
+    "text": "84.85"
+  },
+  {
+    "slide": 10,
+    "x": 226,
+    "y": 271,
+    "w": 85,
+    "h": 15.99,
+    "text": "Rs 18,212"
+  },
+  {
+    "slide": 10,
+    "x": 43,
+    "y": 323,
+    "w": 71,
+    "h": 15.99,
+    "text": "Rs 600"
+  },
+  {
+    "slide": 10,
+    "x": 132,
+    "y": 323,
+    "w": 76,
+    "h": 15.99,
+    "text": "32.21"
+  },
+  {
+    "slide": 10,
+    "x": 226,
+    "y": 323,
+    "w": 85,
+    "h": 15.99,
+    "text": "Rs 8,274"
+  },
+  {
+    "slide": 10,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Near-total awareness is not launch success. Track paid sales and profit separately."
+  },
+  {
+    "slide": 11,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "SAMPLE QUANTITY: EXPLAIN THE MONEY"
+  },
+  {
+    "slide": 11,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Nine fewer free bottles raised profit by about Rs 2,846"
+  },
+  {
+    "slide": 11,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "budget_paired.csv; all_policy_summary.csv"
+  },
+  {
+    "slide": 11,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 11,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "11"
+  },
+  {
+    "slide": 11,
+    "x": 43,
+    "y": 152,
+    "w": 422,
+    "h": 18.45,
+    "text": "Outcome: 100 main markets"
+  },
+  {
+    "slide": 11,
+    "x": 483,
+    "y": 152,
+    "w": 208,
+    "h": 18.45,
+    "text": "12 samples"
+  },
+  {
+    "slide": 11,
+    "x": 709,
+    "y": 152,
+    "w": 208,
+    "h": 18.45,
+    "text": "3 samples"
+  },
+  {
+    "slide": 11,
+    "x": 43,
+    "y": 195,
+    "w": 422,
+    "h": 18.45,
+    "text": "Paid buyers"
+  },
+  {
+    "slide": 11,
+    "x": 483,
+    "y": 195,
+    "w": 208,
+    "h": 18.45,
+    "text": "147.33"
+  },
+  {
+    "slide": 11,
+    "x": 709,
+    "y": 195,
+    "w": 208,
+    "h": 18.45,
+    "text": "151.30"
+  },
+  {
+    "slide": 11,
+    "x": 43,
+    "y": 238,
+    "w": 422,
+    "h": 18.45,
+    "text": "Free bottles"
+  },
+  {
+    "slide": 11,
+    "x": 483,
+    "y": 238,
+    "w": 208,
+    "h": 18.45,
+    "text": "12"
+  },
+  {
+    "slide": 11,
+    "x": 709,
+    "y": 238,
+    "w": 208,
+    "h": 18.45,
+    "text": "3"
+  },
+  {
+    "slide": 11,
+    "x": 43,
+    "y": 281,
+    "w": 422,
+    "h": 18.45,
+    "text": "Total owners (paid + free)"
+  },
+  {
+    "slide": 11,
+    "x": 483,
+    "y": 281,
+    "w": 208,
+    "h": 18.45,
+    "text": "159.33"
+  },
+  {
+    "slide": 11,
+    "x": 709,
+    "y": 281,
+    "w": 208,
+    "h": 18.45,
+    "text": "154.30"
+  },
+  {
+    "slide": 11,
+    "x": 43,
+    "y": 324,
+    "w": 422,
+    "h": 18.45,
+    "text": "Mean profit"
+  },
+  {
+    "slide": 11,
+    "x": 483,
+    "y": 324,
+    "w": 208,
+    "h": 18.45,
+    "text": "Rs 19,100"
+  },
+  {
+    "slide": 11,
+    "x": 709,
+    "y": 324,
+    "w": 208,
+    "h": 18.45,
+    "text": "Rs 21,945"
+  },
+  {
+    "slide": 11,
+    "x": 34,
+    "y": 370,
+    "w": 890,
+    "h": 44.28,
+    "text": "Profit gain = Rs 2,250 saved on samples + Rs 595.50 from extra paid margin.\nPaired 95% interval: Rs 2,673 to Rs 3,013.50."
+  },
+  {
+    "slide": 11,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "More owners and more profit are different objectives. Free bottles cost money."
+  },
+  {
+    "slide": 12,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "CONFIRMATION ON 100 NEW MARKETS"
+  },
+  {
+    "slide": 12,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Fresh markets support fewer samples\u2014not expensive targeting"
+  },
+  {
+    "slide": 12,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "confirmation_summary.csv; confirmation_paired.csv"
+  },
+  {
+    "slide": 12,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 12,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "12"
+  },
+  {
+    "slide": 12,
+    "x": 642,
+    "y": 155,
+    "w": 280,
+    "h": 38.13,
+    "text": "Rs 21,711"
+  },
+  {
+    "slide": 12,
+    "x": 642,
+    "y": 202,
+    "w": 280,
+    "h": 41.82,
+    "text": "Mean profit: Rs 400, 3 samples, many-contact recipients"
+  },
+  {
+    "slide": 12,
+    "x": 642,
+    "y": 286,
+    "w": 280,
+    "h": 104.55,
+    "text": "+Rs 2,854.50\nFewer samples: clear gain\n\n+Rs 31.50\nTargeting: uncertain gain"
+  },
+  {
+    "slide": 12,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Do not pay a substantial targeting fee on the basis of this small, uncertain advantage."
+  },
+  {
+    "slide": 13,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "ADVANCED OUTPUT ANALYSIS"
+  },
+  {
+    "slide": 13,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "What-if analysis changes the price and the timing advice"
+  },
+  {
+    "slide": 13,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "all_cost_revaluation.csv; stress_paired.csv; final_paired_contrasts.csv"
+  },
+  {
+    "slide": 13,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 13,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "13"
+  },
+  {
+    "slide": 13,
+    "x": 43,
+    "y": 157,
+    "w": 117,
+    "h": 17.22,
+    "text": "Unit cost"
+  },
+  {
+    "slide": 13,
+    "x": 178,
+    "y": 157,
+    "w": 142,
+    "h": 17.22,
+    "text": "Best tested price"
+  },
+  {
+    "slide": 13,
+    "x": 338,
+    "y": 157,
+    "w": 142,
+    "h": 17.22,
+    "text": "Mean profit"
+  },
+  {
+    "slide": 13,
+    "x": 43,
+    "y": 204,
+    "w": 117,
+    "h": 17.22,
+    "text": "Rs 150"
+  },
+  {
+    "slide": 13,
+    "x": 178,
+    "y": 204,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 400"
+  },
+  {
+    "slide": 13,
+    "x": 338,
+    "y": 204,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 37,375"
+  },
+  {
+    "slide": 13,
+    "x": 43,
+    "y": 251,
+    "w": 117,
+    "h": 17.22,
+    "text": "Rs 250"
+  },
+  {
+    "slide": 13,
+    "x": 178,
+    "y": 251,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 400"
+  },
+  {
+    "slide": 13,
+    "x": 338,
+    "y": 251,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 21,945"
+  },
+  {
+    "slide": 13,
+    "x": 43,
+    "y": 298,
+    "w": 117,
+    "h": 17.22,
+    "text": "Rs 350"
+  },
+  {
+    "slide": 13,
+    "x": 178,
+    "y": 298,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 500"
+  },
+  {
+    "slide": 13,
+    "x": 338,
+    "y": 298,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 11,702"
+  },
+  {
+    "slide": 13,
+    "x": 43,
+    "y": 345,
+    "w": 117,
+    "h": 17.22,
+    "text": "Rs 450"
+  },
+  {
+    "slide": 13,
+    "x": 178,
+    "y": 345,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 600"
+  },
+  {
+    "slide": 13,
+    "x": 338,
+    "y": 345,
+    "w": 142,
+    "h": 17.22,
+    "text": "Rs 3,420"
+  },
+  {
+    "slide": 13,
+    "x": 525,
+    "y": 151,
+    "w": 395,
+    "h": 22.14,
+    "text": "When groups are more separated"
+  },
+  {
+    "slide": 13,
+    "x": 525,
+    "y": 195,
+    "w": 395,
+    "h": 62.730000000000004,
+    "text": "Across-group vs many-contact seeding:\nPeriod 7: +Rs 393 [Rs 203, Rs 585]\nPeriod 60: \u2212Rs 53 [\u2212Rs 155, Rs 50]"
+  },
+  {
+    "slide": 13,
+    "x": 525,
+    "y": 303,
+    "w": 395,
+    "h": 59.04,
+    "text": "Similar-contact replacement atRs 400, 3 samples: \u2212Rs 96 [\u2212Rs 179, \u2212Rs 15]. A small, exploratory effect; not a universal rule."
+  },
+  {
+    "slide": 13,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Reprice when costs change. Use broad group coverage when early reach is the objective."
+  },
+  {
+    "slide": 14,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "WHAT WE LEARNED FROM A FAILED EXPECTATION"
+  },
+  {
+    "slide": 14,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "An awkward result exposed a weakness in our assumption"
+  },
+  {
+    "slide": 14,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "quality_diagnostic_summary.csv; quality_paired.csv"
+  },
+  {
+    "slide": 14,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 14,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "14"
+  },
+  {
+    "slide": 14,
+    "x": 653,
+    "y": 150,
+    "w": 270,
+    "h": 22.14,
+    "text": "Why can this happen?"
+  },
+  {
+    "slide": 14,
+    "x": 653,
+    "y": 195,
+    "w": 270,
+    "h": 125.46000000000001,
+    "text": "Belief 0.50 listens to 0.60.\nIt ignores 0.95 if d=0.20.\n\nVery positive owners can become too far from moderate nonowners to influence them."
+  },
+  {
+    "slide": 14,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "This is a model warning. Validate or soften the attention rule before real business use."
+  },
+  {
+    "slide": 15,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "ISSUES, FIXES AND LEARNING"
+  },
+  {
+    "slide": 15,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "We improved the project by testing things that could go wrong"
+  },
+  {
+    "slide": 15,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "PROJECT_JOURNAL.md; VALIDATION_REPORT.md; ../VALIDATION_REPORT.md"
+  },
+  {
+    "slide": 15,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 15,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "15"
+  },
+  {
+    "slide": 15,
+    "x": 43,
+    "y": 152.0,
+    "w": 257,
+    "h": 17.22,
+    "text": "Issue"
+  },
+  {
+    "slide": 15,
+    "x": 318,
+    "y": 152.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "What we did"
+  },
+  {
+    "slide": 15,
+    "x": 653,
+    "y": 152.0,
+    "w": 264,
+    "h": 17.22,
+    "text": "What we learned"
+  },
+  {
+    "slide": 15,
+    "x": 43,
+    "y": 210.0,
+    "w": 257,
+    "h": 17.22,
+    "text": "Existing mechanisms looked \u201cnovel\u201d"
+  },
+  {
+    "slide": 15,
+    "x": 318,
+    "y": 210.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Read primary literature; credit prior models"
+  },
+  {
+    "slide": 15,
+    "x": 653,
+    "y": 210.0,
+    "w": 264,
+    "h": 17.22,
+    "text": "Contribution is application + comparison"
+  },
+  {
+    "slide": 15,
+    "x": 43,
+    "y": 268.0,
+    "w": 257,
+    "h": 17.22,
+    "text": "Free owners confused with sales"
+  },
+  {
+    "slide": 15,
+    "x": 318,
+    "y": 268.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Separate free / paid flags and costs"
+  },
+  {
+    "slide": 15,
+    "x": 653,
+    "y": 268.0,
+    "w": 264,
+    "h": 17.22,
+    "text": "Reach, ownership and profit differ"
+  },
+  {
+    "slide": 15,
+    "x": 43,
+    "y": 326.0,
+    "w": 257,
+    "h": 17.22,
+    "text": "Unexpected quality reversal"
+  },
+  {
+    "slide": 15,
+    "x": 318,
+    "y": 326.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "1,200 diagnostic runs; tolerance / rewiring checks"
+  },
+  {
+    "slide": 15,
+    "x": 653,
+    "y": 326.0,
+    "w": 264,
+    "h": 17.22,
+    "text": "Test assumptions; keep awkward results"
+  },
+  {
+    "slide": 15,
+    "x": 43,
+    "y": 384.0,
+    "w": 257,
+    "h": 17.22,
+    "text": "Animation and run evidence differ"
+  },
+  {
+    "slide": 15,
+    "x": 318,
+    "y": 384.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Preserve tested fallback; compare actual CSVs"
+  },
+  {
+    "slide": 15,
+    "x": 653,
+    "y": 384.0,
+    "w": 264,
+    "h": 34.44,
+    "text": "A display/API check is not engine validation"
+  },
+  {
+    "slide": 15,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Checks:16 product checks;1,080 standalone Java runs; actual matched default AnyLogic export."
+  },
+  {
+    "slide": 16,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "RECOMMENDATION AND LIMITS"
+  },
+  {
+    "slide": 16,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Start small; buy network information only if it pays"
+  },
+  {
+    "slide": 16,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "confirmation_paired.csv; all_cost_revaluation.csv; OPEN_ISSUES.md"
+  },
+  {
+    "slide": 16,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment"
+  },
+  {
+    "slide": 16,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "16"
+  },
+  {
+    "slide": 16,
+    "x": 49,
+    "y": 165,
+    "w": 408,
+    "h": 22.14,
+    "text": "ACTION UNDER OUR ASSUMPTIONS"
+  },
+  {
+    "slide": 16,
+    "x": 49,
+    "y": 205,
+    "w": 408,
+    "h": 140.22,
+    "text": "1  Test priceRs 400 and 3 free samples.\n\n2  Use simple recipients unless contact information is cheap.\n\n3  Revisit price when unit cost changes."
+  },
+  {
+    "slide": 16,
+    "x": 505,
+    "y": 165,
+    "w": 406,
+    "h": 22.14,
+    "text": "BEFORE APPLYING IT OUTSIDE CLASS"
+  },
+  {
+    "slide": 16,
+    "x": 505,
+    "y": 205,
+    "w": 406,
+    "h": 154.98000000000002,
+    "text": "Validate budgets, sharing and buying rules.\n\nTest the hard opinion cutoff.\n\nAdd targeting, inventory and operating costs.\n\nNo claim of real-campus demand."
+  },
+  {
+    "slide": 16,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Better decisions came from clear metrics, fair comparisons and honest limits\u2014not a complex animation."
+  },
+  {
+    "slide": 17,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "Q&A \u2014 MODEL DETAILS"
+  },
+  {
+    "slide": 17,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Backup: exact parameters and policy codes"
+  },
+  {
+    "slide": 17,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "MODEL_SPEC.md; anylogic/ProductKernel.java; CampusProductLaunch_LiveNetwork.alp"
+  },
+  {
+    "slide": 17,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment | Q&A backup"
+  },
+  {
+    "slide": 17,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "17"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 147.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Setting"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 147.0,
+    "w": 629,
+    "h": 17.22,
+    "text": "Definition / location"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 189.14285714285714,
+    "w": 227,
+    "h": 17.22,
+    "text": "policyIndex =6"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 189.14285714285714,
+    "w": 629,
+    "h": 17.22,
+    "text": "Rs 400;12 samples; many-contact recipients; random new contacts"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 231.28571428571428,
+    "w": 227,
+    "h": 17.22,
+    "text": "policyIndex =24"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 231.28571428571428,
+    "w": 629,
+    "h": 17.22,
+    "text": "Same as 6, but 3 samples; recommended-policy illustration"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 273.42857142857144,
+    "w": 227,
+    "h": 17.22,
+    "text": "rep =1000"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 273.42857142857144,
+    "w": 629,
+    "h": 17.22,
+    "text": "One reproducible Java market; not an average"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 315.57142857142856,
+    "w": 227,
+    "h": 17.22,
+    "text": "Event recurrence =0.05"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 315.57142857142856,
+    "w": 629,
+    "h": 17.22,
+    "text": "Animation scheduling time; not a market period/day"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 357.7142857142857,
+    "w": 227,
+    "h": 17.22,
+    "text": "Model clock"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 357.7142857142857,
+    "w": 629,
+    "h": 17.22,
+    "text": "10 attempts/visual tick;300 attempts/period;60 periods"
+  },
+  {
+    "slide": 17,
+    "x": 43,
+    "y": 399.8571428571429,
+    "w": 227,
+    "h": 17.22,
+    "text": "Other defaults"
+  },
+  {
+    "slide": 17,
+    "x": 288,
+    "y": 399.8571428571429,
+    "w": 629,
+    "h": 17.22,
+    "text": "N 300; edges 1200; d 0.2; \u03bc 0.3; \u03c60.05; s 0.25; q 0.8"
+  },
+  {
+    "slide": 17,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "The simulation is a central event scheduler acting on individual agents; no physical movement model."
+  },
+  {
+    "slide": 18,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "Q&A \u2014 UNCERTAINTY"
+  },
+  {
+    "slide": 18,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Backup: statistical evidence and exact fresh-market comparisons"
+  },
+  {
+    "slide": 18,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "confirmation_summary.csv; confirmation_paired.csv; sim/final_audit.json"
+  },
+  {
+    "slide": 18,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment | Q&A backup"
+  },
+  {
+    "slide": 18,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "18"
+  },
+  {
+    "slide": 18,
+    "x": 43,
+    "y": 157,
+    "w": 372,
+    "h": 18.45,
+    "text": "Provisional minus control"
+  },
+  {
+    "slide": 18,
+    "x": 433,
+    "y": 157,
+    "w": 147,
+    "h": 18.45,
+    "text": "GainRs"
+  },
+  {
+    "slide": 18,
+    "x": 598,
+    "y": 157,
+    "w": 319,
+    "h": 18.45,
+    "text": "95% paired intervalRs"
+  },
+  {
+    "slide": 18,
+    "x": 43,
+    "y": 214,
+    "w": 372,
+    "h": 18.45,
+    "text": "3 vs 12 samples"
+  },
+  {
+    "slide": 18,
+    "x": 433,
+    "y": 214,
+    "w": 147,
+    "h": 18.45,
+    "text": "2,854.50"
+  },
+  {
+    "slide": 18,
+    "x": 598,
+    "y": 214,
+    "w": 319,
+    "h": 18.45,
+    "text": "2,698.50 to 3,006.00"
+  },
+  {
+    "slide": 18,
+    "x": 43,
+    "y": 271,
+    "w": 372,
+    "h": 18.45,
+    "text": "Many contacts vs random"
+  },
+  {
+    "slide": 18,
+    "x": 433,
+    "y": 271,
+    "w": 147,
+    "h": 18.45,
+    "text": "31.50"
+  },
+  {
+    "slide": 18,
+    "x": 598,
+    "y": 271,
+    "w": 319,
+    "h": 18.45,
+    "text": "-112.50 to 177.00"
+  },
+  {
+    "slide": 18,
+    "x": 43,
+    "y": 328,
+    "w": 372,
+    "h": 18.45,
+    "text": "vs Rs 500/12/random"
+  },
+  {
+    "slide": 18,
+    "x": 433,
+    "y": 328,
+    "w": 147,
+    "h": 18.45,
+    "text": "4,108.50"
+  },
+  {
+    "slide": 18,
+    "x": 598,
+    "y": 328,
+    "w": 319,
+    "h": 18.45,
+    "text": "3,581.50 to 4,623.50"
+  },
+  {
+    "slide": 18,
+    "x": 34,
+    "y": 395,
+    "w": 890,
+    "h": 41.82,
+    "text": "100 independent fresh markets;4 fixed choices;400 evaluations.\nResampling unit = market. Confidence intervals do not validate real-world assumptions."
+  },
+  {
+    "slide": 18,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Observed outcome variation \u2260 uncertainty about whether people actually behave this way."
+  },
+  {
+    "slide": 19,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "Q&A \u2014 LITERATURE AND NOVELTY"
+  },
+  {
+    "slide": 19,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Backup: published mechanisms and our own assumptions"
+  },
+  {
+    "slide": 19,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "LITERATURE_NOTES.md; ../LITERATURE_NOTES.md; sources/project_pitch_social_polarization.pdf"
+  },
+  {
+    "slide": 19,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment | Q&A backup"
+  },
+  {
+    "slide": 19,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "19"
+  },
+  {
+    "slide": 19,
+    "x": 43,
+    "y": 157.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Primary source"
+  },
+  {
+    "slide": 19,
+    "x": 288,
+    "y": 157.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "What it supports"
+  },
+  {
+    "slide": 19,
+    "x": 623,
+    "y": 157.0,
+    "w": 294,
+    "h": 17.22,
+    "text": "What it does NOT validate"
+  },
+  {
+    "slide": 19,
+    "x": 43,
+    "y": 214.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Deffuant et al.2000"
+  },
+  {
+    "slide": 19,
+    "x": 288,
+    "y": 214.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Pairwise influence within a tolerance"
+  },
+  {
+    "slide": 19,
+    "x": 623,
+    "y": 214.0,
+    "w": 294,
+    "h": 17.22,
+    "text": "Our purchase or budget rules"
+  },
+  {
+    "slide": 19,
+    "x": 43,
+    "y": 271.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Kozma & Barrat 2008"
+  },
+  {
+    "slide": 19,
+    "x": 288,
+    "y": 271.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Adaptive contacts and opinion clusters"
+  },
+  {
+    "slide": 19,
+    "x": 623,
+    "y": 271.0,
+    "w": 294,
+    "h": 17.22,
+    "text": "A new discovery of fragmentation"
+  },
+  {
+    "slide": 19,
+    "x": 43,
+    "y": 328.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Delre et al.2007 /2010"
+  },
+  {
+    "slide": 19,
+    "x": 288,
+    "y": 328.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Product diffusion, awareness and seeding"
+  },
+  {
+    "slide": 19,
+    "x": 623,
+    "y": 328.0,
+    "w": 294,
+    "h": 17.22,
+    "text": "Our exact monetary/customer parameters"
+  },
+  {
+    "slide": 19,
+    "x": 43,
+    "y": 385.0,
+    "w": 227,
+    "h": 17.22,
+    "text": "Kempe et al.2003"
+  },
+  {
+    "slide": 19,
+    "x": 288,
+    "y": 385.0,
+    "w": 317,
+    "h": 17.22,
+    "text": "Influence maximization; compare heuristics"
+  },
+  {
+    "slide": 19,
+    "x": 623,
+    "y": 385.0,
+    "w": 294,
+    "h": 17.22,
+    "text": "An optimality guarantee for our profit rule"
+  },
+  {
+    "slide": 19,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Read-status limits and claim corrections are explicit. Research, implementation and drafting were AI-assisted."
+  },
+  {
+    "slide": 20,
+    "x": 34,
+    "y": 18,
+    "w": 890,
+    "h": 12.3,
+    "text": "Q&A \u2014 RUBRIC AND SUBMISSION"
+  },
+  {
+    "slide": 20,
+    "x": 34,
+    "y": 43,
+    "w": 895,
+    "h": 31.98,
+    "text": "Backup: where every evaluation criterion is covered"
+  },
+  {
+    "slide": 20,
+    "x": 34,
+    "y": 499,
+    "w": 890,
+    "h": 9.84,
+    "text": "SUBMISSION_GUIDE.md; COURSE_REQUIREMENTS.md"
+  },
+  {
+    "slide": 20,
+    "x": 34,
+    "y": 520,
+    "w": 850,
+    "h": 9.84,
+    "text": "IE 305 | Group 9 | Synthetic decision experiment | Q&A backup"
+  },
+  {
+    "slide": 20,
+    "x": 913,
+    "y": 519,
+    "w": 25,
+    "h": 11.07,
+    "text": "20"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 147.0,
+    "w": 322,
+    "h": 17.22,
+    "text": "Professor\u2019s criterion"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 147.0,
+    "w": 534,
+    "h": 17.22,
+    "text": "Slides / evidence"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 189.14285714285714,
+    "w": 322,
+    "h": 17.22,
+    "text": "Scope and objectives"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 189.14285714285714,
+    "w": 534,
+    "h": 17.22,
+    "text": "2\u20133: application, boundary and decisions"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 231.28571428571428,
+    "w": 322,
+    "h": 17.22,
+    "text": "Data and input analysis"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 231.28571428571428,
+    "w": 534,
+    "h": 17.22,
+    "text": "5\u20136: distributions, actual generated summaries and parameters"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 273.42857142857144,
+    "w": 322,
+    "h": 17.22,
+    "text": "Model building"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 273.42857142857144,
+    "w": 534,
+    "h": 17.22,
+    "text": "4,6\u20137: AnyLogic components, scheduling and worked individual rule"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 315.57142857142856,
+    "w": 322,
+    "h": 17.22,
+    "text": "Basic + advanced output analysis"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 315.57142857142856,
+    "w": 534,
+    "h": 17.22,
+    "text": "8,10\u201314: metrics, intervals, alternatives, cost and mechanism checks"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 357.7142857142857,
+    "w": 322,
+    "h": 17.22,
+    "text": "Animation"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 357.7142857142857,
+    "w": 534,
+    "h": 17.22,
+    "text": "9:90-second live agent-network demonstration"
+  },
+  {
+    "slide": 20,
+    "x": 43,
+    "y": 399.8571428571429,
+    "w": 322,
+    "h": 17.22,
+    "text": "Recommendation + communication"
+  },
+  {
+    "slide": 20,
+    "x": 383,
+    "y": 399.8571428571429,
+    "w": 534,
+    "h": 17.22,
+    "text": "15\u201316: lessons, practical advice and limits; sources in footer"
+  },
+  {
+    "slide": 20,
+    "x": 46,
+    "y": 455,
+    "w": 866,
+    "h": 17.22,
+    "text": "Submit: .alp models + data/analysis support + slides. Keep the PDF and approved model as fallbacks."
+  }
+]

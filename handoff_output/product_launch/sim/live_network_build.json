@@ -2,9 +2,9 @@
   "model": "CampusProductLaunch_LiveNetwork.alp",
   "approved_grid_model_unchanged": true,
   "grid_sha256": "2762e98ce1b432139fcf5b896f8deb3f6b2a87718a9990b5f32bb1bf2b840759",
-  "live_sha256": "755e4725090e3970933c795030a5b27e6a7bc1d28abdab5667e44c62d814eb0c",
+  "live_sha256": "bbfe929ee6370e227b19f050ca7f7598fb5e1cde37bd83d2f067814dce5663a7",
   "same_kernel_source": true,
   "summary_schema_unchanged": true,
-  "actual_engine_status": "Not yet run; API and wiring checks follow",
+  "actual_engine_status": "Prior network default export verified; this simplified presentation requires a visual check. API/wiring checks are separate.",
   "new_export": "network_metrics with disjoint buying reasons and 10 opinion bins"
 }

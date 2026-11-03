@@ -11,7 +11,7 @@ Build started3 November2026,12:05 UTC; original four-hour target16:05 UTC. The s
 |Separate live-network animation|Actual installed API compile and animated/default plus180 batch wiring checks pass; earlier network default export verified; current white-layout visual review pending|
 |Rollback|Approved CampusProductLaunch.alp preserved byte-for-byte, plus Git checkpoint branch|
 |Report, literature and viva|Written; extraction gaps and negative findings retained|
-|Presentation|16 slides,735-second main plan; portable rendered-chart and native editable-chart copies; primary independently schema-validated and Java2D-rendered|
+|Presentation|20 slides (16 main,4 Q&A),700-second main plan; matching embedded-font PDF/editable PowerPoint; current primary schema-validated; PDF/PowerPoint previews checked|
 |Figures|Seven standard JFreeChart plots in PNG and SVG, with traceable data and exact interval endpoints|
 |Remote upload|Git access restored; completed package pushed to the public repository; verify the latest revision before downloading|
 |Students' remaining tasks|Run/assess optional live-network version, preserve actual engine outputs, inspect slides on the presenting computer, rehearse and submit|

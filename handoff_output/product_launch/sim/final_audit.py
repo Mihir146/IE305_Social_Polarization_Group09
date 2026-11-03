@@ -30,10 +30,11 @@ def main():
         assert main.findtext('.//EmbeddedObject[Name="consumers"]/Replication/Code')=='300'
         models.append(dict(model=name,sha256=hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),same_kernel=True,unique_ids=True))
     engine=list(csv.DictReader((ROOT/'sim/analysis/actual_anylogic_exact_comparison.csv').open()));net=list(csv.DictReader((ROOT/'sim/analysis/actual_anylogic_network_comparison.csv').open()));assert all(r['exact_match']=='1' for r in engine+net)
-    for filename in ('deck_checks.json','portable_deck_checks.json','deck_poi_checks.json'):
+    for filename in ('consulting_deck_checks.json','deck_poi_checks.json'):
         assert (ROOT/'sim'/filename).exists()
     assert json.loads((ROOT/'sim/deck_poi_checks.json').read_text())['schema_validation_passed']
-    assert json.loads((ROOT/'sim/deck_checks.json').read_text())['planned_main_seconds']==735
+    deck=json.loads((ROOT/'sim/consulting_deck_checks.json').read_text())
+    assert deck['slides']==20 and deck['main_slides']==16 and deck['planned_main_seconds']<=780
     # Check local Markdown targets in selected-product documents; historical files keep their own scope.
     missing=[]
     for path in [*ROOT.glob('*.md'),ROOT.parent.parent/'RUN_ANYLOGIC.md',ROOT.parent.parent/'README.md']:
@@ -47,7 +48,7 @@ def main():
         actual_engine_independent_market_labels=len({r['rep'] for name,_,_ in DESIGNS if name.startswith('anylogic') for r in load_runs(ROOT/f'sim/results/{name}_runs.csv')}),
         engine_scope='Grid and earlier live-network default; same replication1000. White-layout visual check remains separate.',
         approved_grid_preserved=True,models=models,markdown_local_links_checked=True,
-        primary_powerpoint_schema_valid=True,main_slides=12,backup_slides=4,main_seconds_including_demo=735,
+        primary_powerpoint_schema_valid=True,main_slides=deck['main_slides'],backup_slides=deck['backup_slides'],main_seconds_including_demo=deck['planned_main_seconds'],
         empirical_validation=False,paper_extraction_gaps='Explicit in parent/product literature read-status tables',
         remote_upload='Network/push now available; actual remote confirmation is recorded by Git, not inferred from local files')
     (ROOT/'sim/final_audit.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info,indent=2))

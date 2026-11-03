@@ -1,0 +1,13 @@
+{
+  "installation": "/opt/anylogic",
+  "version": "8.9.10.202609241721",
+  "attempt": "Launch editor with separate temporary Eclipse workspace/configuration",
+  "succeeded": false,
+  "errors": [
+    "Cannot open display",
+    "gtk_init_check() failed",
+    "Existing X display connection unavailable in managed workspace",
+    "Application log reports socket creation failure"
+  ],
+  "scope": "Environment launch limitation; no claim of model compilation failure"
+}

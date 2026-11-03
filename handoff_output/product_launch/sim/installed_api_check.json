@@ -1,0 +1,8 @@
+{
+  "installation": "/opt/anylogic",
+  "engine_jars": 35,
+  "real_agent_and_shape_api_compile": true,
+  "compiler_output": "",
+  "scope": "Actual installed API type check; no editor import, engine execution or rendering",
+  "first_engine_screenshot": "anylogic/evidence/first_engine_run_windows.jpg"
+}

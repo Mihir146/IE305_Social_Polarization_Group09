@@ -2,7 +2,7 @@
 
 | Priority | Issue | What resolves it / how to present honestly |
 |---|---|---|
-|1 — required submission and live demo|Actual AnyLogic 8.9 PLE execution is pending|Open the supplied `.alp`, run the requested default once, preserve exact errors or actual outputs. Standalone Java is checked; engine import/compile/animation is not inferred from that|
+|1 — required submission and live demo|Preserve the successful revised model and actual exports|Default import/compile/run/animation/export succeeded. Screenshot and CSV comparison are saved. Bring that exact model to the presentation; broader engine-batch evidence is still pending|
 |2 — submission logistics|The announcement says submit before 3 November 16:00 IST|The students must check the actual Moodle status or any extension and submit the `.alp`, support files and slides. A prepared folder is not an uploaded submission|
 |3 — live presentation|Rehearse the required 13 minutes including the model demonstration|Use the speaker timings, split speaking roles and keep the live demonstration short. Bring the saved model, local files and a screenshot fallback. Attend the whole Group 9 slot on 4 November, 14:00–15:40, LC002|
 |4 — engine evidence breadth|Large numerical results currently come from the reference implementation|After the first engine run succeeds, collect a small matched AnyLogic batch if feasible. Label actual engine run counts separately; do not relabel the full Python/C++ grid as AnyLogic output|

@@ -1,0 +1,285 @@
+[
+  {
+    "name": "Initial belief histogram",
+    "categories": [
+      "0.0\u20130.1",
+      "0.1\u20130.2",
+      "0.2\u20130.3",
+      "0.3\u20130.4",
+      "0.4\u20130.5",
+      "0.5\u20130.6",
+      "0.6\u20130.7",
+      "0.7\u20130.8",
+      "0.8\u20130.9",
+      "0.9\u20131.0"
+    ],
+    "series": [
+      {
+        "name": "Customers",
+        "values": [
+          15,
+          24,
+          37,
+          39,
+          29,
+          41,
+          51,
+          36,
+          21,
+          7
+        ]
+      }
+    ],
+    "ylabel": "Customer count"
+  },
+  {
+    "name": "Awareness and paid sales by price",
+    "categories": [
+      "Rs 400",
+      "Rs 500",
+      "Rs 600"
+    ],
+    "series": [
+      {
+        "name": "Aware",
+        "values": [
+          299.99,
+          299.99,
+          300.0
+        ],
+        "lo": [
+          299.97,
+          299.97,
+          300.0
+        ],
+        "hi": [
+          300.0,
+          300.0,
+          300.0
+        ]
+      },
+      {
+        "name": "Paid buyers",
+        "values": [
+          147.33,
+          84.85,
+          32.21
+        ],
+        "lo": [
+          145.04,
+          82.16,
+          30.83975
+        ],
+        "hi": [
+          149.58,
+          87.46024999999999,
+          33.59
+        ]
+      }
+    ],
+    "ylabel": "Customers"
+  },
+  {
+    "name": "Confirmed sample quantity profit",
+    "categories": [
+      "12 free bottles",
+      "3 free bottles"
+    ],
+    "series": [
+      {
+        "name": "Profit",
+        "values": [
+          18856.5,
+          21711.0
+        ],
+        "lo": [
+          18548.9625,
+          21405.0
+        ],
+        "hi": [
+          19164.0,
+          22017.0
+        ]
+      }
+    ],
+    "ylabel": "Modeled profit (Rs)"
+  },
+  {
+    "name": "Confirmed profit contrasts",
+    "categories": [
+      "Degree vs random\n3 samples",
+      "3 vs 12 samples\ndegree"
+    ],
+    "series": [
+      {
+        "name": "Paired profit difference",
+        "values": [
+          31.5,
+          2854.5
+        ],
+        "lo": [
+          -112.5,
+          2698.5
+        ],
+        "hi": [
+          177.0,
+          3006.0
+        ]
+      }
+    ],
+    "ylabel": "Profit difference (Rs)"
+  },
+  {
+    "name": "Confidence quality diagnostic",
+    "categories": [
+      "0.60",
+      "0.80",
+      "0.95"
+    ],
+    "series": [
+      {
+        "name": "Tolerance 0.2",
+        "values": [
+          168.74,
+          146.49,
+          130.58
+        ],
+        "lo": [
+          166.95975,
+          144.42,
+          128.88
+        ],
+        "hi": [
+          170.56,
+          148.59,
+          132.26024999999998
+        ]
+      },
+      {
+        "name": "All compatible",
+        "values": [
+          174.76,
+          240.28,
+          280.96
+        ],
+        "lo": [
+          172.56,
+          238.4,
+          280.03
+        ],
+        "hi": [
+          176.98,
+          242.14,
+          281.85
+        ]
+      }
+    ],
+    "ylabel": "Paid buyers",
+    "kind": "line"
+  },
+  {
+    "name": "Profit by price and recipient strategy",
+    "categories": [
+      "Rs 400",
+      "Rs 500",
+      "Rs 600"
+    ],
+    "series": [
+      {
+        "name": "Random",
+        "values": [
+          18994.5,
+          18225.0,
+          8270.0
+        ],
+        "lo": [
+          18642.0,
+          17482.5,
+          7818.5
+        ],
+        "hi": [
+          19332.0,
+          18970.0,
+          8725.0
+        ]
+      },
+      {
+        "name": "Degree",
+        "values": [
+          19099.5,
+          18212.5,
+          8273.5
+        ],
+        "lo": [
+          18756.0,
+          17540.0,
+          7793.9125
+        ],
+        "hi": [
+          19437.0,
+          18865.0625,
+          8756.5
+        ]
+      },
+      {
+        "name": "Distributed",
+        "values": [
+          19065.0,
+          18092.5,
+          8301.5
+        ],
+        "lo": [
+          18726.0,
+          17424.9375,
+          7825.5
+        ],
+        "hi": [
+          19395.0,
+          18747.5,
+          8781.087499999998
+        ]
+      }
+    ],
+    "ylabel": "Profit (Rs)"
+  },
+  {
+    "name": "Price and unit cost",
+    "categories": [
+      "Cost 150",
+      "Cost 250",
+      "Cost 350",
+      "Cost 450"
+    ],
+    "series": [
+      {
+        "name": "Price Rs 400",
+        "values": [
+          37375.0,
+          21945.0,
+          6515.0,
+          -8915.0
+        ]
+      },
+      {
+        "name": "Price Rs 500",
+        "values": [
+          29062.0,
+          20330.0,
+          11598.0,
+          2866.0
+        ]
+      },
+      {
+        "name": "Price Rs 600",
+        "values": [
+          13635.0,
+          10205.0,
+          6775.0,
+          3345.0
+        ]
+      }
+    ],
+    "ylabel": "Profit (Rs)",
+    "kind": "line"
+  }
+]

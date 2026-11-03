@@ -121,3 +121,15 @@ Before presenting, both students should be able to explain one interaction, one 
 ### Next checkpoint
 
 Await the single AnyLogic engine check while finishing the marketing literature notes,13-minute slides, report, sensitivity interpretation and viva preparation. Keep actual engine status pending until students report/record it.
+
+## Verified animation and confirmation checkpoint
+
+- The first real AnyLogic run matched the default Java realization: 300 aware, 148 paid, 12 samples, Rs 19,200 profit. Its spiral layout and overlapping editor labels were confusing.
+- We replaced that layout with three customer grids, person-shaped Consumer agents, opinion mini-bars and actual highlighted conversations. Animation now advances ten real interaction attempts per visual tick, preserving primitive draw order and period-end purchases.
+- The students ran the revised model successfully. Their screenshot and actual default exports are saved: one summary and 61 period rows. Every summary field except cohort and wall-clock runtime matches the Java reference. This establishes one tested engine realization, not all reference-grid runs.
+- The current animation is approved by the user. Further animation ideas were discussed only; no additional redesign is being implemented at this checkpoint.
+- Real installed AnyLogic 8.9.10 libraries are now available locally. The revised code compiles against their actual Agent/shape APIs. Launching the editor from this managed workspace failed because desktop/socket access is restricted; the students supplied the successful runtime evidence instead.
+- Three versus twelve samples improved profit on the main markets. To avoid selecting and confirming on the same data, four fixed comparisons were evaluated on 100 fresh markets (rep 5000–5099). The sample reduction gains Rs 2,854.50, paired 95% CI [2,698.50,3,006]; degree over random gains only Rs 31.50, CI [-112.50,177].
+- The unexpected quality reversal persists without rewiring and reverses when all beliefs can influence each other. We keep it as a warning about the hard confidence assumption, not advice to lower quality.
+- Prepared the report, viva, editable 16-slide PowerPoint (12 main + 4 backups), speaker notes and traceable chart data. Planned main duration is 735 seconds, leaving 45 seconds within the required 13 minutes. Windows PowerPoint rendering still needs a local look.
+- Cache-cleanup request: found 8.4 GB yay cache and 4.4 GB pacman cache, but these paths are mounted read-only to tools. No successful deletion is claimed. Safe normal-terminal commands were supplied.

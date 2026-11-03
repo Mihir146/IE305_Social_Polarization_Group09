@@ -68,7 +68,7 @@ Our project is a replication-informed simulation decision study. It combines est
 
 25. **What could invalidate your final recommendation?** Different real demand, costs, sharing, confidence behavior, campaign duration, sample quantities or targeting expenses could change it. We compare a finite candidate set. Small targeting differences are uncertain; our recommendation is conditional, not a global optimum or forecast.
 
-For question 21, describe only the AnyLogic evidence actually collected. Until the students' engine run succeeds, say: “The independent code and Java wiring are checked; actual AnyLogic execution is still pending.” Update that sentence after saving real evidence.
+For question 21, describe only the AnyLogic evidence actually collected. The revised default has now succeeded in the actual engine, with a saved screenshot and one summary/61 period rows. Its summary exactly matches Java except cohort/runtime. Do not imply that the full reference grid has run inside AnyLogic.
 
 ## Glossary
 

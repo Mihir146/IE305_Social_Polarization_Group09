@@ -8,11 +8,11 @@ A hypothetical campus seller launches a reusable bottle to 300 connected custome
 
 - Open [CampusProductLaunch.alp](CampusProductLaunch.alp) in **AnyLogic 8.9 PLE on Windows 11**. Follow [ANYLOGIC_BUILD.md](ANYLOGIC_BUILD.md). The first default run should match the independently tested Java realization: period 60, 300 aware, 148 paid, 12 free samples, ₹19,200 profit.
 - Read [PROJECT_REPORT.md](PROJECT_REPORT.md), then [VIVA_PREP.md](VIVA_PREP.md), to understand and defend the project.
-- Use `Campus_Product_Launch.pptx` for the presentation when generated. `presentation.html` is a browser fallback. `results_explorer.html` provides analysis charts and embedded tables.
+- Use `Campus_Product_Launch.pptx` for the presentation. `presentation.html` is a browser fallback. `results_explorer.html` provides analysis charts and embedded tables.
 - Check [VALIDATION_REPORT.md](VALIDATION_REPORT.md) and [OPEN_ISSUES.md](OPEN_ISSUES.md) before making claims about engine validation or real-world accuracy.
 - The living progress/issue/learning record is [PROJECT_JOURNAL.md](../../PROJECT_JOURNAL.md).
 
-**Engine status:** the AnyLogic file is generated and the Java kernel/wiring have been checked outside AnyLogic. Actual editor import, compilation and execution require the students' run. Standalone Java results are never labeled AnyLogic results.
+**Engine status:** the revised model has run successfully in AnyLogic. The student-supplied screenshot and actual default export match the Java reference exactly, except cohort and runtime. One summary row and 61 period rows were inspected. The automatic multi-policy engine batch remains unobserved. Evidence is in `anylogic/evidence/` and `sim/analysis/actual_anylogic_exact_comparison.csv`.
 
 ## What the model does
 
@@ -24,7 +24,7 @@ The original opinion-only project is preserved one level above this folder and i
 
 The original design fixed 12 samples, three prices, three seeding rules and two contact policies: **18 cells × 100 main markets = 1,800 runs**, preceded by a separate 30-market pilot. A later exploratory follow-up adds three-sample versions: **36 cells × the same 100 main markets = 3,600 policy evaluations**. This is still 100 independent markets, not 3,600 independent populations.
 
-Focused checks add 2,400 network/sample-stress runs, 2,100 behavioral sensitivity runs and 1,200 quality/confidence diagnostic runs. The separate Java implementation has 1,080 reference runs. Do not pool these designs or generators into one sample size.
+A further 400 evaluations compare four fixed policies on 100 fresh confirmation markets. Focused checks add 2,400 network/sample-stress runs, 2,100 behavioral sensitivity runs and 1,200 quality/confidence diagnostic runs. The separate Java implementation has 1,080 reference runs. Do not pool these designs or generators into one sample size.
 
 `sim/results/` contains raw rows. `sim/analysis/` contains bootstrap summaries and paired contrasts. `data/` contains the reproducible 300-customer exemplar and initial contacts. The data dictionary explains fields and synthetic distributions. Fixed seeds and the exact model rules are in [MODEL_SPEC.md](MODEL_SPEC.md).
 

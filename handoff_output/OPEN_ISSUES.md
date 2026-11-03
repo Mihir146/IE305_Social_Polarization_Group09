@@ -1,3 +1,5 @@
+> **Background opinion/contact study.** The selected final application and its current evidence are in [product_launch/](product_launch/README.md). Product sales, experience and actual product-model engine runs are separate from the mechanism results below.
+
 # Open issues, ranked by assessment impact
 
 **3 November 2026.** This is an evidence register, not a list of undisclosed assumptions. Completed checks and their limits appear in `VALIDATION_REPORT.md`.

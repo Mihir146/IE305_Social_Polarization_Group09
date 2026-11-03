@@ -8,11 +8,13 @@ A hypothetical campus seller launches a reusable bottle to 300 connected custome
 
 - Open [CampusProductLaunch.alp](CampusProductLaunch.alp) in **AnyLogic 8.9 PLE on Windows 11**. Follow [ANYLOGIC_BUILD.md](ANYLOGIC_BUILD.md). The first default run should match the independently tested Java realization: period 60, 300 aware, 148 paid, 12 free samples, ₹19,200 profit.
 - Read [PROJECT_REPORT.md](PROJECT_REPORT.md), then [VIVA_PREP.md](VIVA_PREP.md), to understand and defend the project.
-- Use `Campus_Product_Launch.pptx` for the presentation. `presentation.html` is a browser fallback. `results_explorer.html` provides analysis charts and embedded tables.
+- Use `Campus_Product_Launch.pptx` for the presentation; it contains rendered plots for reliable display. `Campus_Product_Launch_EditableCharts.pptx` retains native Office charts/workbooks. `Campus_Product_Launch.pdf` is a rendered backup. HTML files are optional viewers.
 - Check [VALIDATION_REPORT.md](VALIDATION_REPORT.md) and [OPEN_ISSUES.md](OPEN_ISSUES.md) before making claims about engine validation or real-world accuracy.
 - The living progress/issue/learning record is [PROJECT_JOURNAL.md](../../PROJECT_JOURNAL.md).
 
 **Engine status:** the revised model has run successfully in AnyLogic. The student-supplied screenshot and actual default export match the Java reference exactly, except cohort and runtime. One summary row and 61 period rows were inspected. The automatic multi-policy engine batch remains unobserved. Evidence is in `anylogic/evidence/` and `sim/analysis/actual_anylogic_exact_comparison.csv`.
+
+The optional [live-network variant](LIVE_NETWORK.md) is a separate `.alp`. The approved grid file remains unchanged. Check its own evidence status before using it for the live demo.
 
 ## What the model does
 
@@ -62,3 +64,7 @@ java -cp java_build KernelCheck sim/results/java_kernel_runs.csv
 The largest observed mean is a finite simulated policy comparison. It is not a global optimum, a calibrated business forecast or proof that the chosen targeting rule is best. In the baseline, price and sample spending matter more than small final targeting differences. A hard confidence cutoff also produces a counterintuitive quality result; the report keeps it visible as a model-risk diagnostic.
 
 Research, code, analysis and drafting were AI-assisted. The students are responsible for understanding, running and presenting the model and for following their course's disclosure rules.
+
+## Rebuild the presentation
+
+`sim/build_deck.py` makes the native chart deck and HTML/table data. `sim/render_figures.py` uses standard JFreeChart/JFreeSVG jars already bundled in the installed AnyLogic examples (or the `--examples` folder you supply). `sim/portable_deck.py` saves the native chart copy separately and uses the rendered figures in the primary deck. `sim/verify_deck_with_poi.py` independently parses, schema-validates and previews the primary deck with Apache POI/XmlBeans. Installed third-party libraries are not redistributed. Run the steps in that order. Windows PowerPoint rendering still deserves a local look.

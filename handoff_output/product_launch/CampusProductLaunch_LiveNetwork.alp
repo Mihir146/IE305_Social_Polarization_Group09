@@ -221,8 +221,8 @@ public void startLaunchCase(int policy,int replication){
  if(consumers.size()!=300)throw new IllegalStateException("Population must contain300 Consumer agents");
  for(int i=0;i&lt;300;i++){
   Consumer a=consumers.get(i);a.customerId=i;a.state=launch.customers[i];int local=i/3;
-  double angle=local*2.399963229728653,radius=127*Math.sqrt((local+.5)/100.0);
-  a.setXY(170+280*(i%3)+radius*Math.cos(angle),405+radius*Math.sin(angle));
+  double angle=local*2.399963229728653,radius=165*Math.sqrt((local+.5)/100.0);
+  a.setXY(220+425*(i%3)+radius*Math.cos(angle),405+radius*Math.sin(angle));
  }
  launchExported=false;visualFrame=0;recentI=recentJ=rewireI=rewireK=-1;rewireLife=0;lastTieRewires=-1;lastCurveRows=-1;
  drawnTies.clear();tieStyles.clear();linksLayer.clear();historyLayer.clear();histogramLayer.clear();networkHistory.clear();
@@ -263,7 +263,7 @@ public void synchronizeDisplayedTies(){
   int code=compatible?(a.aware&amp;&amp;z.aware?2:1):0;
   if(tieStyles.getOrDefault(e.getKey(),-1)!=code){
    e.getValue().setLineStyle(compatible?com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID:com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
-   e.getValue().setColor(code==2?new java.awt.Color(74,194,202,65):code==1?new java.awt.Color(74,194,202,32):new java.awt.Color(158,168,191,28));tieStyles.put(e.getKey(),code);
+   e.getValue().setColor(code==2?new java.awt.Color(61,132,177,80):code==1?new java.awt.Color(61,132,177,50):new java.awt.Color(125,132,143,48));tieStyles.put(e.getKey(),code);
   }
  }
 }
@@ -288,9 +288,9 @@ public void refreshHistory(double[] metrics){
  if(!animateNetwork)return;
  historyLayer.clear();
  for(int k=1;k&lt;launch.history.size();k++){
-  double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=950+270*a[0]/60.0,x2=950+270*z[0]/60.0;
-  historyLayer.add(line(x1,355-108*a[1]/300,x2-x1,-108*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
-  historyLayer.add(line(x1,355-108*a[2]/300,x2-x1,-108*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=65+325*a[0]/60.0,x2=65+325*z[0]/60.0;
+  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  }
 }
 public void refreshLaunchDisplay(){
@@ -300,20 +300,20 @@ public void refreshLaunchDisplay(){
  for(Consumer a:consumers){a.nodeMark.setFillColor(a.stateColor());a.ownerMark.setFillColor(a.ownerColor());a.focusMark.setVisible(a.customerId==recentI||a.customerId==recentJ||a.customerId==rewireK&amp;&amp;rewireLife&gt;0);}
  synchronizeDisplayedTies();
  statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples   |   "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
- kpiLabel.setText("AWARE "+(int)r[1]+" / 300        PAID "+(int)r[2]+"        FREE "+(int)r[3]+"        PROFIT Rs "+(int)r[7]);
+ kpiLabel.setText("Aware "+(int)r[1]+" / 300        Paid buyers "+(int)r[2]+"        Free samples "+(int)r[3]+"        Profit Rs "+(int)r[7]);
  financeLabel.setText("Revenue Rs "+(int)r[5]+"  -  all bottle costs Rs "+(int)r[6]+"  =  modeled profit");
  reachLabel.setText("Aware "+(int)r[1]+"     Paid "+(int)r[2]+"     |     periods 0–60");
- statsLabel.setText(String.format(java.util.Locale.US,"Compatible ties  %.1f%%\nLargest connected group  %.1f%%\nContacts replaced  %d\nCross-social-group ties  %.1f%%\nMean belief  %.3f   |   SD  %.3f",100*m[1]/1200,100*r[10],launch.rewires,100*r[11],r[13],Math.sqrt(r[14])));
- reasonsLabel.setText("Aware nonowners: "+(int)m[3]+"\nBudget too low: "+(int)m[4]+"   |   value too low: "+(int)m[5]+"\nReady for period-end purchase: "+(int)m[6]);
+ statsLabel.setText(String.format(java.util.Locale.US,"Compatible ties  %.1f%%   |   Replaced  %d\nLargest component  %.1f%%\nMean belief  %.3f   |   SD  %.3f",100*m[1]/1200,launch.rewires,100*r[10],r[13],Math.sqrt(r[14])));
+ reasonsLabel.setText("Aware, not buying: "+(int)m[3]+"\nBudget too low: "+(int)m[4]+"   |   value too low: "+(int)m[5]+"\nReady at the next period end: "+(int)m[6]);
  histogramLayer.clear();double max=1;for(int j=0;j&lt;10;j++)max=Math.max(max,m[7+j]);
- for(int j=0;j&lt;10;j++)histogramLayer.add(new com.anylogic.engine.presentation.ShapeRectangle(true,951+27*j,535-92*m[7+j]/max,0,null,beliefColor((j+.5)/10.0),20,92*m[7+j]/max,0,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+ for(int j=0;j&lt;10;j++)histogramLayer.add(new com.anylogic.engine.presentation.ShapeRectangle(true,480+28*j,825-70*m[7+j]/max,0,null,beliefColor((j+.5)/10.0),20,70*m[7+j]/max,0,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  histMaxLabel.setText((int)max+" people at top of scale");
  meetingLine.setVisible(recentI&gt;=0&amp;&amp;recentJ&gt;=0);
  if(recentI&gt;=0&amp;&amp;recentJ&gt;=0){
   positionHighlight(meetingLine,recentI,recentJ);
-  interactionLabel.setText("RECENT MEETING  "+recentI+" and "+recentJ+"   |   "+recentOutcome);
-  beliefLabel.setText(String.format(java.util.Locale.US,"Their opinions:  %.3f -&gt; %.3f      and      %.3f -&gt; %.3f",recentBeforeI,recentAfterI,recentBeforeJ,recentAfterJ));
- }else{interactionLabel.setText("Sample recipients begin the launch. Watch awareness travel through contacts.");beliefLabel.setText("Node fill: low appeal (blue) to high appeal (coral). Outer ring: ownership / awareness.");}
+  interactionLabel.setText("Meeting "+recentI+" and "+recentJ+"   |   "+recentOutcome);
+  beliefLabel.setText(String.format(java.util.Locale.US,"Their opinions:  %.4f -&gt; %.4f      and      %.4f -&gt; %.4f",recentBeforeI,recentAfterI,recentBeforeJ,recentAfterJ));
+ }else{interactionLabel.setText("Sample recipients begin the launch. Watch awareness travel through contacts.");beliefLabel.setText("Customers are colored by awareness and ownership. Opinions appear here and in the distribution plot.");}
  newContactLine.setVisible(rewireLife&gt;0&amp;&amp;rewireI&gt;=0&amp;&amp;rewireK&gt;=0);if(rewireLife&gt;0)positionHighlight(newContactLine,rewireI,rewireK);
 }
 public void advanceLaunchPeriod(){
@@ -358,7 +358,7 @@ public void exportLaunch(){
         <LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
         <ElementsLimitValue>100</ElementsLimitValue>
         <MakeDefaultViewArea>true</MakeDefaultViewArea>
-        <SceneBackgroundColor>-15919834</SceneBackgroundColor>
+        <SceneBackgroundColor>-1</SceneBackgroundColor>
         <SceneSkybox>null</SceneSkybox>
         <AgentProperties>
           <EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
@@ -497,147 +497,17 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-15919834</LineColor>
+                <LineColor>-1</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <Width>1290</Width>
                 <Height>900</Height>
                 <Rotation>0</Rotation>
-                <FillColor>-15919834</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000071</Id>
-                <Name>networkPanel</Name>
-                <X>24</X>
-                <Y>185</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-15589582</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>850</Width>
-                <Height>450</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-15589582</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000072</Id>
-                <Name>reachPanel</Name>
-                <X>900</X>
-                <Y>185</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-15260101</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>355</Width>
-                <Height>205</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-15260101</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000073</Id>
-                <Name>opinionPanel</Name>
-                <X>900</X>
-                <Y>405</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-15260101</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>355</Width>
-                <Height>175</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-15260101</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000074</Id>
-                <Name>statsPanel</Name>
-                <X>900</X>
-                <Y>595</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-15260101</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>355</Width>
-                <Height>205</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-15260101</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000075</Id>
-                <Name>meetingPanel</Name>
-                <X>24</X>
-                <Y>700</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-15260101</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>850</Width>
-                <Height>100</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-15260101</FillColor>
+                <FillColor>-1</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Group>
-                <Id>1793700000076</Id>
+                <Id>1793700000071</Id>
                 <Name>linksLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -654,7 +524,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000077</Id>
+                    <Id>1793700000072</Id>
                     <Name>linksLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -682,7 +552,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Rectangle>
-                <Id>1793700000078</Id>
+                <Id>1793700000073</Id>
                 <Name>meetingLine</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -698,17 +568,17 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-7263</LineColor>
+                <LineColor>-14587749</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <Width>0</Width>
-                <Height>2.3</Height>
+                <Height>2.5</Height>
                 <Rotation>0</Rotation>
-                <FillColor>-7263</FillColor>
+                <FillColor>-14587749</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <Rectangle>
-                <Id>1793700000079</Id>
+                <Id>1793700000074</Id>
                 <Name>newContactLine</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -724,13 +594,13 @@ public void exportLaunch(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-26026</LineColor>
+                <LineColor>-2654167</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <Width>0</Width>
-                <Height>3.0</Height>
+                <Height>3</Height>
                 <Rotation>0</Rotation>
-                <FillColor>-26026</FillColor>
+                <FillColor>-2654167</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Rectangle>
               <EmbeddedObjectPresentation>
@@ -756,7 +626,7 @@ public void exportLaunch(){
                 <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
               </EmbeddedObjectPresentation>
               <Group>
-                <Id>1793700000080</Id>
+                <Id>1793700000075</Id>
                 <Name>historyLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -773,7 +643,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000081</Id>
+                    <Id>1793700000076</Id>
                     <Name>historyLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -801,7 +671,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Group>
-                <Id>1793700000082</Id>
+                <Id>1793700000077</Id>
                 <Name>histogramLayer</Name>
                 <X>0</X>
                 <Y>0</Y>
@@ -818,7 +688,7 @@ public void exportLaunch(){
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000083</Id>
+                    <Id>1793700000078</Id>
                     <Name>histogramLayerAnchor</Name>
                     <X>0</X>
                     <Y>0</Y>
@@ -846,7 +716,7 @@ public void exportLaunch(){
                 </Presentation>
               </Group>
               <Text>
-                <Id>1793700000084</Id>
+                <Id>1793700000079</Id>
                 <Name>titleLabel</Name>
                 <X>24</X>
                 <Y>20</Y>
@@ -861,45 +731,20 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text>THE LAUNCH NETWORK</Text>
+                <Color>-14337718</Color>
+                <Text>Product launch simulation</Text>
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>29</Size>
+                  <Size>25</Size>
                   <Style>1</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000085</Id>
-                <Name>introLabel</Name>
-                <X>24</X>
-                <Y>57</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Watch launch news, opinions and purchases travel through a synthetic campus market.</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000086</Id>
+                <Id>1793700000080</Id>
                 <Name>statusLabel</Name>
                 <X>24</X>
-                <Y>88</Y>
+                <Y>60</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -911,18 +756,43 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
+                <Color>-14337718</Color>
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>16</Size>
+                  <Size>15</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000087</Id>
+                <Id>1793700000081</Id>
                 <Name>kpiLabel</Name>
+                <X>24</X>
+                <Y>92</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text />
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>20</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000082</Id>
+                <Name>financeLabel</Name>
                 <X>24</X>
                 <Y>122</Y>
                 <Label>
@@ -936,182 +806,7 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>21</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000088</Id>
-                <Name>financeLabel</Name>
-                <X>24</X>
-                <Y>154</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000089</Id>
-                <Name>networkTitle</Name>
-                <X>42</X>
-                <Y>203</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text>300 individual customers · 1,200 actual discussion ties</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>17</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000090</Id>
-                <Name>group0</Name>
-                <X>106</X>
-                <Y>580</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Social group 1</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000091</Id>
-                <Name>group1</Name>
-                <X>386</X>
-                <Y>580</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Social group 2</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000092</Id>
-                <Name>group2</Name>
-                <X>666</X>
-                <Y>580</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Social group 3</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000093</Id>
-                <Name>reachTitle</Name>
-                <X>920</X>
-                <Y>204</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text>REACH AND PAID SALES</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>17</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000094</Id>
-                <Name>reachLabel</Name>
-                <X>920</X>
-                <Y>231</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
+                <Color>-10062717</Color>
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
@@ -1120,63 +815,11 @@ public void exportLaunch(){
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
-              <Rectangle>
-                <Id>1793700000095</Id>
-                <Name>reachAxis</Name>
-                <X>949</X>
-                <Y>246</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-11443076</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>1</Width>
-                <Height>110</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-11443076</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000096</Id>
-                <Name>reachFloor</Name>
-                <X>949</X>
-                <Y>355</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-11443076</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>275</Width>
-                <Height>1</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-11443076</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
               <Text>
-                <Id>1793700000097</Id>
-                <Name>reachTop</Name>
-                <X>917</X>
-                <Y>247</Y>
+                <Id>1793700000083</Id>
+                <Name>interactionLabel</Name>
+                <X>24</X>
+                <Y>153</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1188,170 +831,20 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>300</Text>
+                <Color>-14337718</Color>
+                <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000098</Id>
-                <Name>reachZero</Name>
-                <X>933</X>
-                <Y>345</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>0</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000099</Id>
-                <Name>reachPeriod0</Name>
-                <X>949</X>
-                <Y>365</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>0</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000100</Id>
-                <Name>reachPeriod60</Name>
-                <X>1170</X>
-                <Y>365</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>60 periods</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000101</Id>
-                <Name>awareCurveKey</Name>
-                <X>990</X>
-                <Y>372</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-1001646</Color>
-                <Text>— Aware</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000102</Id>
-                <Name>paidCurveKey</Name>
-                <X>1080</X>
-                <Y>372</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-11086176</Color>
-                <Text>— Paid</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000103</Id>
-                <Name>opinionTitle</Name>
-                <X>920</X>
-                <Y>421</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text>CURRENT OPINIONS</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>17</Size>
+                  <Size>14</Size>
                   <Style>1</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000104</Id>
-                <Name>histMaxLabel</Name>
-                <X>920</X>
-                <Y>450</Y>
+                <Id>1793700000084</Id>
+                <Name>beliefLabel</Name>
+                <X>24</X>
+                <Y>180</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1363,20 +856,20 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
+                <Color>-14337718</Color>
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>12</Size>
+                  <Size>14</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000105</Id>
-                <Name>lowBelief</Name>
-                <X>950</X>
-                <Y>548</Y>
+                <Id>1793700000085</Id>
+                <Name>group0</Name>
+                <X>170</X>
+                <Y>590</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1388,8 +881,287 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-10567964</Color>
-                <Text>0 · low appeal</Text>
+                <Color>-10062717</Color>
+                <Text>Social group 1</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>15</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000086</Id>
+                <Name>group1</Name>
+                <X>595</X>
+                <Y>590</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>Social group 2</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>15</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000087</Id>
+                <Name>group2</Name>
+                <X>1020</X>
+                <Y>590</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>Social group 3</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>15</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Oval>
+                <Id>1793700000088</Id>
+                <Name>ownerKey0</Name>
+                <X>34</X>
+                <Y>640</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-7431770</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <RadiusX>5</RadiusX>
+                <RadiusY>5</RadiusY>
+                <Rotation>0</Rotation>
+                <FillColor>-7431770</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Oval>
+              <Text>
+                <Id>1793700000089</Id>
+                <Name>ownerCaption0</Name>
+                <X>48</X>
+                <Y>631</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Unaware</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>13</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Oval>
+                <Id>1793700000090</Id>
+                <Name>ownerKey1</Name>
+                <X>239</X>
+                <Y>640</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-1857739</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <RadiusX>5</RadiusX>
+                <RadiusY>5</RadiusY>
+                <Rotation>0</Rotation>
+                <FillColor>-1857739</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Oval>
+              <Text>
+                <Id>1793700000091</Id>
+                <Name>ownerCaption1</Name>
+                <X>253</X>
+                <Y>631</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Aware, not owner</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>13</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Oval>
+                <Id>1793700000092</Id>
+                <Name>ownerKey2</Name>
+                <X>444</X>
+                <Y>640</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-6852671</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <RadiusX>5</RadiusX>
+                <RadiusY>5</RadiusY>
+                <Rotation>0</Rotation>
+                <FillColor>-6852671</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Oval>
+              <Text>
+                <Id>1793700000093</Id>
+                <Name>ownerCaption2</Name>
+                <X>458</X>
+                <Y>631</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Free sample</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>13</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Oval>
+                <Id>1793700000094</Id>
+                <Name>ownerKey3</Name>
+                <X>649</X>
+                <Y>640</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-13919896</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <RadiusX>5</RadiusX>
+                <RadiusY>5</RadiusY>
+                <Rotation>0</Rotation>
+                <FillColor>-13919896</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Oval>
+              <Text>
+                <Id>1793700000095</Id>
+                <Name>ownerCaption3</Name>
+                <X>663</X>
+                <Y>631</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Paid buyer</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>13</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000096</Id>
+                <Name>tieLegend</Name>
+                <X>850</X>
+                <Y>631</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>Solid: similar beliefs   ·   Dotted: different beliefs</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>12</Size>
@@ -1398,10 +1170,10 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000106</Id>
-                <Name>highBelief</Name>
-                <X>1118</X>
-                <Y>548</Y>
+                <Id>1793700000097</Id>
+                <Name>activityLegend</Name>
+                <X>24</X>
+                <Y>662</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1413,8 +1185,8 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-811138</Color>
-                <Text>1 · high appeal</Text>
+                <Color>-10062717</Color>
+                <Text>Blue highlight: recent meeting   ·   Orange: new contact</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>12</Size>
@@ -1422,11 +1194,37 @@ public void exportLaunch(){
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
+              <Rectangle>
+                <Id>1793700000098</Id>
+                <Name>plotDivider</Name>
+                <X>24</X>
+                <Y>689</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-2038294</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>1240</Width>
+                <Height>1</Height>
+                <Rotation>0</Rotation>
+                <FillColor>-2038294</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
               <Text>
-                <Id>1793700000107</Id>
-                <Name>statsTitle</Name>
-                <X>920</X>
-                <Y>611</Y>
+                <Id>1793700000099</Id>
+                <Name>reachTitle</Name>
+                <X>40</X>
+                <Y>704</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1438,8 +1236,8 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text>NETWORK AND DECISIONS</Text>
+                <Color>-14337718</Color>
+                <Text>Awareness and paid sales</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>16</Size>
@@ -1448,10 +1246,10 @@ public void exportLaunch(){
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000108</Id>
-                <Name>statsLabel</Name>
-                <X>920</X>
-                <Y>639</Y>
+                <Id>1793700000100</Id>
+                <Name>reachLabel</Name>
+                <X>40</X>
+                <Y>729</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1463,20 +1261,20 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
+                <Color>-10062717</Color>
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>14</Size>
+                  <Size>11</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
-              <Text>
-                <Id>1793700000109</Id>
-                <Name>reasonsLabel</Name>
-                <X>920</X>
-                <Y>745</Y>
+              <Rectangle>
+                <Id>1793700000101</Id>
+                <Name>reachAxis</Name>
+                <X>64</X>
+                <Y>756</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1487,21 +1285,22 @@ public void exportLaunch(){
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-3879724</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>1</Width>
+                <Height>70</Height>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000110</Id>
-                <Name>tieLegend</Name>
-                <X>34</X>
-                <Y>647</Y>
+                <FillColor>-3879724</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
+              <Rectangle>
+                <Id>1793700000102</Id>
+                <Name>reachFloor</Name>
+                <X>64</X>
+                <Y>825</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1512,70 +1311,21 @@ public void exportLaunch(){
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
+                <ZHeight>0</ZHeight>
+                <LineWidth>0</LineWidth>
+                <LineColor>-3879724</LineColor>
+                <LineMaterial>null</LineMaterial>
+                <LineStyle>SOLID</LineStyle>
+                <Width>327</Width>
+                <Height>1</Height>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Solid cyan: beliefs within tolerance   ·   Dotted gray: beliefs too far apart</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
+                <FillColor>-3879724</FillColor>
+                <FillMaterial>null</FillMaterial>
+              </Rectangle>
               <Text>
-                <Id>1793700000111</Id>
-                <Name>activityLegend</Name>
-                <X>34</X>
-                <Y>671</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Bright gold: a recent meeting   ·   Orange: a recently formed contact</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000112</Id>
-                <Name>interactionLabel</Name>
-                <X>42</X>
-                <Y>718</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-1774089</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000113</Id>
-                <Name>beliefLabel</Name>
-                <X>42</X>
+                <Id>1793700000103</Id>
+                <Name>reachTop</Name>
+                <X>27</X>
                 <Y>748</Y>
                 <Label>
                   <X>10</X>
@@ -1588,20 +1338,270 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-1774089</Color>
+                <Color>-10062717</Color>
+                <Text>300</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000104</Id>
+                <Name>reachZero</Name>
+                <X>45</X>
+                <Y>815</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>0</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000105</Id>
+                <Name>reachPeriod0</Name>
+                <X>65</X>
+                <Y>834</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>0</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000106</Id>
+                <Name>reachPeriod60</Name>
+                <X>333</X>
+                <Y>834</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>60 periods</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000107</Id>
+                <Name>awareCurveKey</Name>
+                <X>105</X>
+                <Y>847</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-4356578</Color>
+                <Text>— Aware</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000108</Id>
+                <Name>paidCurveKey</Name>
+                <X>225</X>
+                <Y>847</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-13919896</Color>
+                <Text>— Paid</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000109</Id>
+                <Name>opinionTitle</Name>
+                <X>460</X>
+                <Y>704</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Belief distribution</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>16</Size>
+                  <Style>1</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000110</Id>
+                <Name>histMaxLabel</Name>
+                <X>460</X>
+                <Y>729</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
                 <Text />
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>14</Size>
+                  <Size>11</Size>
                   <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000111</Id>
+                <Name>lowBelief</Name>
+                <X>480</X>
+                <Y>835</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>0 · low appeal</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000112</Id>
+                <Name>highBelief</Name>
+                <X>680</X>
+                <Y>835</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text>1 · high appeal</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>11</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000113</Id>
+                <Name>statsTitle</Name>
+                <X>840</X>
+                <Y>704</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-14337718</Color>
+                <Text>Network and purchase decisions</Text>
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>16</Size>
+                  <Style>1</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
                 <Id>1793700000114</Id>
-                <Name>meetingNote</Name>
-                <X>42</X>
-                <Y>778</Y>
+                <Name>statsLabel</Name>
+                <X>840</X>
+                <Y>733</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1613,8 +1613,33 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>One recent meeting is highlighted; all attempts affect the model. Purchases occur at period end.</Text>
+                <Color>-14337718</Color>
+                <Text />
+                <Font>
+                  <Name>SansSerif</Name>
+                  <Size>13</Size>
+                  <Style>0</Style>
+                </Font>
+                <Alignment>LEFT</Alignment>
+              </Text>
+              <Text>
+                <Id>1793700000115</Id>
+                <Name>reasonsLabel</Name>
+                <X>840</X>
+                <Y>793</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <Color>-10062717</Color>
+                <Text />
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>12</Size>
@@ -1622,215 +1647,11 @@ public void exportLaunch(){
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
-              <Oval>
-                <Id>1793700000115</Id>
-                <Name>ownerKey0</Name>
-                <X>42</X>
-                <Y>826</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-8548699</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-8548699</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
               <Text>
                 <Id>1793700000116</Id>
-                <Name>ownerCaption0</Name>
-                <X>56</X>
-                <Y>817</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Unaware</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000117</Id>
-                <Name>ownerKey1</Name>
-                <X>247</X>
-                <Y>826</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-1001646</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-1001646</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000118</Id>
-                <Name>ownerCaption1</Name>
-                <X>261</X>
-                <Y>817</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Aware, not owner</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000119</Id>
-                <Name>ownerKey2</Name>
-                <X>452</X>
-                <Y>826</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-4678154</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-4678154</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000120</Id>
-                <Name>ownerCaption2</Name>
-                <X>466</X>
-                <Y>817</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Free sample</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000121</Id>
-                <Name>ownerKey3</Name>
-                <X>657</X>
-                <Y>826</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-11086176</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-11086176</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000122</Id>
-                <Name>ownerCaption3</Name>
-                <X>671</X>
-                <Y>817</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Paid buyer</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000123</Id>
                 <Name>caption</Name>
                 <X>24</X>
-                <Y>855</Y>
+                <Y>879</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1842,11 +1663,11 @@ public void exportLaunch(){
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Color>-6508603</Color>
-                <Text>Ring = awareness / ownership. Fill = current appeal. Positions show known groups, not opinion coordinates. All inputs synthetic.</Text>
+                <Color>-10062717</Color>
+                <Text>300 customers, 1,200 actual ties. Positions show known social groups. All inputs synthetic.</Text>
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>12</Size>
+                  <Size>11</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
@@ -2079,15 +1900,12 @@ public void exportLaunch(){
 public int customerId;
 public Main.ProductKernel.Customer state;
 public java.awt.Color stateColor(){
- if(state==null||!state.aware)return new java.awt.Color(93,110,133);
- double b=Math.max(0,Math.min(1,state.belief));return new java.awt.Color((int)(66+187*b),(int)(187-31*b),(int)(230-111*b));
+ if(state==null||!state.aware)return new java.awt.Color(142,153,166);
+ if(state.freeSample)return new java.awt.Color(151,111,193);
+ if(state.paidPeriod&gt;=0)return new java.awt.Color(43,153,104);
+ return new java.awt.Color(227,167,53);
 }
-public java.awt.Color ownerColor(){
- if(state==null||!state.aware)return new java.awt.Color(125,142,165);
- if(state.freeSample)return new java.awt.Color(184,157,246);
- if(state.paidPeriod&gt;=0)return new java.awt.Color(86,214,160);
- return new java.awt.Color(240,183,82);
-}
+public java.awt.Color ownerColor(){return java.awt.Color.WHITE;}
 public String customerTooltip(){
  if(state==null)return "Initializing";
  return "Customer "+customerId+" | group "+state.group+" | belief "+state.belief+" | perceived value Rs "+(int)(state.valueScale*state.belief)+" | budget Rs "+(int)state.budget+" | aware="+state.aware+" | free="+state.freeSample+" | paid period="+state.paidPeriod;
@@ -2246,13 +2064,13 @@ public String customerTooltip(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-7263</LineColor>
+                <LineColor>-5515794</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>9</RadiusX>
                 <RadiusY>9</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-7263</FillColor>
+                <FillColor>-5515794</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Oval>
@@ -2272,13 +2090,13 @@ public String customerTooltip(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-8548699</LineColor>
+                <LineColor>-1</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
                 <RadiusX>6.5</RadiusX>
                 <RadiusY>6.5</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-8548699</FillColor>
+                <FillColor>-1</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
               <Oval>
@@ -2298,13 +2116,13 @@ public String customerTooltip(){
                 <Z>0</Z>
                 <ZHeight>0</ZHeight>
                 <LineWidth>0</LineWidth>
-                <LineColor>-10654075</LineColor>
+                <LineColor>-7431770</LineColor>
                 <LineMaterial>null</LineMaterial>
                 <LineStyle>SOLID</LineStyle>
-                <RadiusX>4.4</RadiusX>
-                <RadiusY>4.4</RadiusY>
+                <RadiusX>5.4</RadiusX>
+                <RadiusY>5.4</RadiusY>
                 <Rotation>0</Rotation>
-                <FillColor>-10654075</FillColor>
+                <FillColor>-7431770</FillColor>
                 <FillMaterial>null</FillMaterial>
               </Oval>
             </Presentation>

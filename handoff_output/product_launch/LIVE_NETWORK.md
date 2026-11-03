@@ -15,17 +15,17 @@ Every node is one of 300 Consumer agents. The three clouds are the known initial
 
 | Visual | Meaning |
 |---|---|
-|Node fill, blue to coral|Low to high current expected appeal; unaware customers remain muted|
-|Outer ring gray / amber / purple / green|Unaware / informed nonowner / free recipient / paid owner|
+|Node fill gray / amber / purple / green|Unaware / informed nonowner / free recipient / paid owner|
+|Blue participant halo|Customer involved in the highlighted recent meeting|
 |Thin solid cyan discussion tie|Endpoint beliefs differ by less than the confidence tolerance|
 |Thin dotted gray discussion tie|Endpoint beliefs are too far apart to average|
-|Bright gold line and participant halos|A recent actual meeting, with before/after opinions below|
+|Bright blue line and participant halos|A recent actual meeting, with before/after opinions below|
 |Orange line|A recently formed contact after actual rewiring; it briefly persists for visibility|
 |Gold and green history curves|All aware customers and paid buyers over completed campaign periods|
 |Current-opinion histogram|All 300 current beliefs, including unaware customers; bin counts are exported|
 |Decision panel|Aware nonowners split into insufficient budget, insufficient perceived value, or ready for the next period-end purchase|
 
-All 1,200 discussion ties are drawn. Line style shows compatibility, not an empirical measure of friendship strength. A compatible edge does not guarantee both endpoints know the launch or that they are the pair currently meeting.
+The current design uses a white background and a larger network, with compact plots below. Individual opinions appear in the highlighted conversation and the distribution plot. All 1,200 discussion ties are drawn. Line style shows compatibility, not an empirical measure of friendship strength. A compatible edge does not guarantee both endpoints know the launch or that they are the pair currently meeting.
 
 The animation advances ten attempted interactions per visual tick. It highlights one recent meeting periodically so the caption can be read. All attempts still affect the simulation. The last orange edge can remain visible briefly even after another meeting happens; it is labeled recent, not current. Pause the model to inspect a conversation.
 

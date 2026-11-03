@@ -2,15 +2,12 @@
 public int customerId;
 public Main.ProductKernel.Customer state;
 public java.awt.Color stateColor(){
- if(state==null||!state.aware)return new java.awt.Color(93,110,133);
- double b=Math.max(0,Math.min(1,state.belief));return new java.awt.Color((int)(66+187*b),(int)(187-31*b),(int)(230-111*b));
+ if(state==null||!state.aware)return new java.awt.Color(142,153,166);
+ if(state.freeSample)return new java.awt.Color(151,111,193);
+ if(state.paidPeriod>=0)return new java.awt.Color(43,153,104);
+ return new java.awt.Color(227,167,53);
 }
-public java.awt.Color ownerColor(){
- if(state==null||!state.aware)return new java.awt.Color(125,142,165);
- if(state.freeSample)return new java.awt.Color(184,157,246);
- if(state.paidPeriod>=0)return new java.awt.Color(86,214,160);
- return new java.awt.Color(240,183,82);
-}
+public java.awt.Color ownerColor(){return java.awt.Color.WHITE;}
 public String customerTooltip(){
  if(state==null)return "Initializing";
  return "Customer "+customerId+" | group "+state.group+" | belief "+state.belief+" | perceived value Rs "+(int)(state.valueScale*state.belief)+" | budget Rs "+(int)state.budget+" | aware="+state.aware+" | free="+state.freeSample+" | paid period="+state.paidPeriod;

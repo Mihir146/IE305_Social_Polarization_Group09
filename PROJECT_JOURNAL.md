@@ -149,3 +149,9 @@ Presentation improvement: generated seven standard JFreeChart plots as PNG and S
 The normal `.git` branch and the tool's writable `.git-storage` branch diverged when both were committed independently. The files were substantially the same, but Git correctly rejected a non-fast-forward push. We fetched the local ordinary history and merged it without conflicts, preserving both parent histories and the user's commit `bb8f9da`.
 
 Prepared `unify-git.sh` for the normal terminal. It merges any remaining ordinary/remote commits, backs up the original metadata to ignored `.git-root-backup/`, and replaces `.git` with Git's supported pointer to `.git-storage`. Ordinary `git` and `project-git` then share one branch/index. It does not reset working files or force-push. A normal-terminal step is required because the managed permission profile makes the original root `.git` read-only to tools.
+
+## Live-network visual simplification
+
+The user rejected the dark dashboard style as cluttered. We changed the separate network variant to a white background, a larger full-width graph, plain labels and compact plots underneath. Customer colors now use the familiar four awareness/ownership states; opinions appear in the selected meeting and histogram instead of requiring a second color/ring legend. The highlighted meeting is blue and a new tie is orange. Data definitions, buying rules and financial outcomes are unchanged. The approved grid fallback remains byte-identical.
+
+The Git unification has been applied: `.git` now points to `.git-storage`, so ordinary Git and tool checkpoints share the same history.

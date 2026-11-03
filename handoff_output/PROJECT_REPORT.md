@@ -1,3 +1,5 @@
+> **Background opinion/contact study.** The selected final application and its current evidence are in [product_launch/](product_launch/README.md). Product sales, experience and actual product-model engine runs are separate from the mechanism results below.
+
 # Can more contacts prevent echo chambers—or only delay them?
 
 **Contact recommendations for a synthetic campus discussion platform**  

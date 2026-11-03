@@ -1,3 +1,5 @@
+> **Background opinion/contact study.** The selected final application and its current evidence are in [product_launch/](product_launch/README.md). Product sales, experience and actual product-model engine runs are separate from the mechanism results below.
+
 # Validation report
 
 **IE305 — 3 November 2026.** All numerical results below are synthetic simulation results. Literature replication tests check specified mechanisms; they do not validate a real population. The required AnyLogic execution remains pending.

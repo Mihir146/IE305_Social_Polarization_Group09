@@ -46,3 +46,9 @@ The original 12-sample pilot selected price ₹400, degree targeting and h=0 bef
 ## Evidence still needed from the students
 
 The revised screenshot and actual default CSV files are saved. Preserve the AnyLogic-converted `.alp` as well. Record the installed version and the successful run configuration. If the default result differs from its matching Java realization, resolve the discrepancy before showing a claimed match. If engine execution remains unavailable, say so clearly in the presentation and use precomputed reference data only as reference data.
+
+## Separate live-network presentation checks
+
+`CampusProductLaunch_LiveNetwork.alp` preserves the original customer kernel and summaries. It compiles against actual installed AnyLogic8.9.10 APIs. A separate stand-in wiring test matches the animated default and180 batch summaries to the existing Java references. It checks1,200 displayed actual ties,300 state references and61 extra metric rows per campaign, with exact histogram/tie/reason partitions. Actual engine execution of that optional variant is still pending; the approved grid model is preserved byte-for-byte.
+
+The primary16-slide PowerPoint is independently parsed and schema-validated with Apache POI5.4.1/XmlBeans5.3.0, and its Java2D previews were inspected. Its scientific plots are rendered by JFreeChart/JFreeSVG from the exact supplied bootstrap endpoints. A separate native-chart deck is provided; its complete schema validation was unavailable because the installed lite schema omits a chart type. No Windows PowerPoint execution is claimed here.

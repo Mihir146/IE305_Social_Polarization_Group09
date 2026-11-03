@@ -209,8 +209,8 @@ public void startLaunchCase(int policy,int replication){
  if(consumers.size()!=300)throw new IllegalStateException("Population must contain300 Consumer agents");
  for(int i=0;i<300;i++){
   Consumer a=consumers.get(i);a.customerId=i;a.state=launch.customers[i];int local=i/3;
-  double angle=local*2.399963229728653,radius=127*Math.sqrt((local+.5)/100.0);
-  a.setXY(170+280*(i%3)+radius*Math.cos(angle),405+radius*Math.sin(angle));
+  double angle=local*2.399963229728653,radius=165*Math.sqrt((local+.5)/100.0);
+  a.setXY(220+425*(i%3)+radius*Math.cos(angle),405+radius*Math.sin(angle));
  }
  launchExported=false;visualFrame=0;recentI=recentJ=rewireI=rewireK=-1;rewireLife=0;lastTieRewires=-1;lastCurveRows=-1;
  drawnTies.clear();tieStyles.clear();linksLayer.clear();historyLayer.clear();histogramLayer.clear();networkHistory.clear();
@@ -251,7 +251,7 @@ public void synchronizeDisplayedTies(){
   int code=compatible?(a.aware&&z.aware?2:1):0;
   if(tieStyles.getOrDefault(e.getKey(),-1)!=code){
    e.getValue().setLineStyle(compatible?com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID:com.anylogic.engine.presentation.LineStyle.LINE_STYLE_DOTTED);
-   e.getValue().setColor(code==2?new java.awt.Color(74,194,202,65):code==1?new java.awt.Color(74,194,202,32):new java.awt.Color(158,168,191,28));tieStyles.put(e.getKey(),code);
+   e.getValue().setColor(code==2?new java.awt.Color(61,132,177,80):code==1?new java.awt.Color(61,132,177,50):new java.awt.Color(125,132,143,48));tieStyles.put(e.getKey(),code);
   }
  }
 }
@@ -276,9 +276,9 @@ public void refreshHistory(double[] metrics){
  if(!animateNetwork)return;
  historyLayer.clear();
  for(int k=1;k<launch.history.size();k++){
-  double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=950+270*a[0]/60.0,x2=950+270*z[0]/60.0;
-  historyLayer.add(line(x1,355-108*a[1]/300,x2-x1,-108*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
-  historyLayer.add(line(x1,355-108*a[2]/300,x2-x1,-108*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  double[] a=launch.history.get(k-1),z=launch.history.get(k);double x1=65+325*a[0]/60.0,x2=65+325*z[0]/60.0;
+  historyLayer.add(line(x1,825-70*a[1]/300,x2-x1,-70*(z[1]-a[1])/300,new java.awt.Color(240,183,82),2.1,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+  historyLayer.add(line(x1,825-70*a[2]/300,x2-x1,-70*(z[2]-a[2])/300,new java.awt.Color(86,214,160),2.3,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  }
 }
 public void refreshLaunchDisplay(){
@@ -288,20 +288,20 @@ public void refreshLaunchDisplay(){
  for(Consumer a:consumers){a.nodeMark.setFillColor(a.stateColor());a.ownerMark.setFillColor(a.ownerColor());a.focusMark.setVisible(a.customerId==recentI||a.customerId==recentJ||a.customerId==rewireK&&rewireLife>0);}
  synchronizeDisplayedTies();
  statusLabel.setText("Period "+launch.period+" / 60   |   price Rs "+(int)launch.config.price+"   |   "+launch.config.nSamples+" samples   |   "+new String[]{"Random recipients","Most contacts","Across social groups"}[launch.strategy]+"   |   contacts: "+(launch.config.h==0?"random":"similar"));
- kpiLabel.setText("AWARE "+(int)r[1]+" / 300        PAID "+(int)r[2]+"        FREE "+(int)r[3]+"        PROFIT Rs "+(int)r[7]);
+ kpiLabel.setText("Aware "+(int)r[1]+" / 300        Paid buyers "+(int)r[2]+"        Free samples "+(int)r[3]+"        Profit Rs "+(int)r[7]);
  financeLabel.setText("Revenue Rs "+(int)r[5]+"  -  all bottle costs Rs "+(int)r[6]+"  =  modeled profit");
  reachLabel.setText("Aware "+(int)r[1]+"     Paid "+(int)r[2]+"     |     periods 0–60");
- statsLabel.setText(String.format(java.util.Locale.US,"Compatible ties  %.1f%%\nLargest connected group  %.1f%%\nContacts replaced  %d\nCross-social-group ties  %.1f%%\nMean belief  %.3f   |   SD  %.3f",100*m[1]/1200,100*r[10],launch.rewires,100*r[11],r[13],Math.sqrt(r[14])));
- reasonsLabel.setText("Aware nonowners: "+(int)m[3]+"\nBudget too low: "+(int)m[4]+"   |   value too low: "+(int)m[5]+"\nReady for period-end purchase: "+(int)m[6]);
+ statsLabel.setText(String.format(java.util.Locale.US,"Compatible ties  %.1f%%   |   Replaced  %d\nLargest component  %.1f%%\nMean belief  %.3f   |   SD  %.3f",100*m[1]/1200,launch.rewires,100*r[10],r[13],Math.sqrt(r[14])));
+ reasonsLabel.setText("Aware, not buying: "+(int)m[3]+"\nBudget too low: "+(int)m[4]+"   |   value too low: "+(int)m[5]+"\nReady at the next period end: "+(int)m[6]);
  histogramLayer.clear();double max=1;for(int j=0;j<10;j++)max=Math.max(max,m[7+j]);
- for(int j=0;j<10;j++)histogramLayer.add(new com.anylogic.engine.presentation.ShapeRectangle(true,951+27*j,535-92*m[7+j]/max,0,null,beliefColor((j+.5)/10.0),20,92*m[7+j]/max,0,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
+ for(int j=0;j<10;j++)histogramLayer.add(new com.anylogic.engine.presentation.ShapeRectangle(true,480+28*j,825-70*m[7+j]/max,0,null,beliefColor((j+.5)/10.0),20,70*m[7+j]/max,0,com.anylogic.engine.presentation.LineStyle.LINE_STYLE_SOLID));
  histMaxLabel.setText((int)max+" people at top of scale");
  meetingLine.setVisible(recentI>=0&&recentJ>=0);
  if(recentI>=0&&recentJ>=0){
   positionHighlight(meetingLine,recentI,recentJ);
-  interactionLabel.setText("RECENT MEETING  "+recentI+" and "+recentJ+"   |   "+recentOutcome);
-  beliefLabel.setText(String.format(java.util.Locale.US,"Their opinions:  %.3f -> %.3f      and      %.3f -> %.3f",recentBeforeI,recentAfterI,recentBeforeJ,recentAfterJ));
- }else{interactionLabel.setText("Sample recipients begin the launch. Watch awareness travel through contacts.");beliefLabel.setText("Node fill: low appeal (blue) to high appeal (coral). Outer ring: ownership / awareness.");}
+  interactionLabel.setText("Meeting "+recentI+" and "+recentJ+"   |   "+recentOutcome);
+  beliefLabel.setText(String.format(java.util.Locale.US,"Their opinions:  %.4f -> %.4f      and      %.4f -> %.4f",recentBeforeI,recentAfterI,recentBeforeJ,recentAfterJ));
+ }else{interactionLabel.setText("Sample recipients begin the launch. Watch awareness travel through contacts.");beliefLabel.setText("Customers are colored by awareness and ownership. Opinions appear here and in the distribution plot.");}
  newContactLine.setVisible(rewireLife>0&&rewireI>=0&&rewireK>=0);if(rewireLife>0)positionHighlight(newContactLine,rewireI,rewireK);
 }
 public void advanceLaunchPeriod(){

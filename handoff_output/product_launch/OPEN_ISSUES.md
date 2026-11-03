@@ -18,3 +18,9 @@
 |14 — remote synchronization|The user is uploading/pushing manually|Ensure the final files reach the remote and pull/download those exact files on the presentation computer. Local preparation does not prove a remote upload|
 
 Do not add untested features to address every limitation before the presentation. Prioritize a working required model, traceable analysis, a clear explanation and honest boundaries.
+
+## New live-network variant
+
+The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. Actual editor import, animation/performance and engine export for that variant remain pending. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, ownership rings, opinion colors and the extra disjoint customer-state metrics.
+
+The portable primary deck now passes independent Apache POI/XmlBeans schema validation and has Java2D previews. It uses standard rendered plots; the separate native-chart deck retains editable workbooks. The local schema library was incomplete for one native-chart type, so no full native-chart schema-validation claim is made.

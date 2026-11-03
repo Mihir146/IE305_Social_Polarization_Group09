@@ -1,3 +1,5 @@
+> **Background opinion/contact study.** The selected final application and its current evidence are in [product_launch/](product_launch/README.md). Product sales, experience and actual product-model engine runs are separate from the mechanism results below.
+
 # Viva preparation
 
 The answers describe the evidence at this handoff. Update implementation-status answers only from actual AnyLogic runs. Do not memorize a claim that a pending check has passed.

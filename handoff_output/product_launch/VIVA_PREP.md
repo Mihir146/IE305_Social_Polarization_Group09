@@ -99,3 +99,9 @@ For question 21, describe only the AnyLogic evidence actually collected. The rev
 |Ablation|Removing a mechanism to learn which part of the model produces an effect|
 |Pilot / confirmation|A pilot helps choose a policy; a separate confirmation tests fixed comparisons without searching again|
 |Synthetic data|Generated observations under explicit assumptions, rather than measurements of real people|
+
+## Two presentation details professors may ask about
+
+**Why does the default demonstrate twelve samples when the recommendation is three?** The default keeps the original numerical fixture stable so the engine can be checked exactly. Policy24 is the same price/degree/contact choice with three samples. The recommendation comes from replicated comparisons, not whichever single run is shown live.
+
+**Do thick lines mean stronger social influence?** No. In the optional live network, solid/dotted thin lines distinguish opinion compatibility. Gold highlights a recent actual meeting and orange a recently formed tie. These are visual encodings, not extra weights or behavioral rules. The data generator and buying logic are unchanged.

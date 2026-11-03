@@ -160,3 +160,7 @@ Only sample counts three and twelve were tested, and the zero-sample model has n
 Submit the actual `.alp`, supporting scripts/CSVs, the editable PowerPoint deck and any real engine exports. Use the thirteen-minute presentation plan, including its live demonstration; prepare for seven minutes of questions. Group 9 is scheduled on 4 November, 14:00–15:40 IST, LC002. The students must check Moodle submission access and save the final files on the presentation computer.
 
 Research, implementation, experiments and drafting were AI-assisted. The students must understand the individual decision rules, run the required model, check their course's disclosure requirements and be able to defend the results. `VIVA_PREP.md`, `MODEL_SPEC.md`, `VALIDATION_REPORT.md` and the root journal support that preparation.
+
+## Presentation variant added after the approved model
+
+At the students' request, a separate live-network model adds ownership-colored nodes and explicit opinion values, solid/dotted actual ties, recent-interaction highlights, awareness/sales histories and customer-state diagnostics. It uses the same kernel and exports the same summaries plus a separate17-column network-metrics CSV. API/wiring checks pass; actual engine execution of this optional version is pending. The approved grid `.alp` remains the tested fallback. See LIVE_NETWORK.md.

@@ -44,7 +44,7 @@ When experiences become more positive, our narrow-confidence model can sell fewe
 
 ## 11. Live: follow one conversation, then check the campaign accounts. — Vaibhav, 90 seconds
 
-Switch to the saved AnyLogic model. Show the three customer groups and ownership colors, then point to the individual blue opinion bars and the highlighted actual meeting. Explain one before/after opinion change and that purchases occur at the end of a period. Use around two-times speed and let the default finish. Check 300 aware, 148 paid, twelve samples, revenue 59,200, cost 40,000 and profit 19,200. The entire demonstration budget is ninety seconds including switching windows. If execution fails, use the saved real-engine screenshot and explicitly describe the failure.
+Switch to the saved engine-tested model. The approved grid shows opinion mini-bars and ownership colors; the separate live network shows belief as node fill and ownership as an outer ring. Follow the legend for the version actually tested. Point to a recent actual meeting and its before/after opinions. Explain that purchases occur at the end of a period. Use around two-times real-time speed and let the default finish. Check 300 aware, 148 paid, twelve samples, revenue 59,200, cost 40,000 and profit 19,200. The entire demonstration budget is ninety seconds including switching windows. If execution fails, use the saved real-engine screenshot and explicitly describe the failure.
 
 ## 12. Start small. Revisit price with cost. Validate the behavior before deployment. — Vaibhav, 70 seconds
 

@@ -61,17 +61,17 @@ Bass, *A New Product Growth for Model Consumer Durables* (title as printed in th
 |Opinion fragmentation and graph disconnection require separate definitions|**confirmed**|Parent literature review; not every disconnected network is polarized attitudes|
 |Product-diffusion models distinguish information and adoption|**confirmed**|Delre 2007 and verified 2010 model sections|
 |Promotional recipient arrangement and timing have prior work|**confirmed**|Delre 2007; distributed seeding is not our invention|
-|A highly connected person need not have extra persuasive power|**confirmed as a modeling distinction**|Delre 2010 examines reach versus influence; not a universal empirical assertion|
-|Highest-degree targeting is globally optimal|**corrected / rejected**|Kempe distinguishes degree heuristics from greedy influence maximization; our comparisons do not establish this|
-|Our profit optimizer inherits a 63% approximation guarantee|**corrected / rejected**|No submodularity or corresponding guarantee proved for this model|
-|The three-sample policy is best among every possible policy|**corrected / rejected**|Only a finite tested set; exploratory selection and fresh fixed comparisons identified|
+|A highly connected person need not have extra persuasive power|**confirmed**|Delre 2010 examines reach versus influence; not a universal empirical assertion|
+|Highest-degree targeting is globally optimal|**corrected**|Kempe distinguishes degree heuristics from greedy influence maximization; our comparisons do not establish this|
+|Our profit optimizer inherits a 63% approximation guarantee|**corrected**|No submodularity or corresponding guarantee proved for this model|
+|The three-sample policy is best among every possible policy|**corrected**|Only a finite tested set; exploratory selection and fresh fixed comparisons identified|
 |A strict 0.2 confidence cutoff is calibrated customer behavior|**unverifiable**|No product behavioral data; A rather than L|
-|All informed people, including nonbuyers, share launch news|**confirmed as A; differs from Delre**|Our specification/code; Delre owner-only information propagation|
-|Price/value/budget and experience rules are jointly validated by prior papers|**corrected / rejected**|New application assumptions; mechanism verification is not empirical sales validation|
-|The quality reversal is established marketing fact|**corrected / rejected**|R from our diagnostic CSVs; a model-risk finding|
-|The Java reference grid was executed in AnyLogic|**corrected / rejected**|Separate implementations. Actual engine export count is recorded independently|
-|Our model was fitted to Bass diffusion|**corrected / rejected**|Bass is only an abstract-level lead; no fitting or benchmark implemented|
-|Every equation in every source was read cleanly|**corrected / rejected**|Read table and parent review explicitly preserve extraction gaps|
+|All informed people, including nonbuyers, share launch news|**confirmed**|Our specification/code; Delre owner-only information propagation|
+|Price/value/budget and experience rules are jointly validated by prior papers|**corrected**|New application assumptions; mechanism verification is not empirical sales validation|
+|The quality reversal is established marketing fact|**corrected**|R from our diagnostic CSVs; a model-risk finding|
+|The Java reference grid was executed in AnyLogic|**corrected**|Separate implementations. Actual engine export count is recorded independently|
+|Our model was fitted to Bass diffusion|**corrected**|Bass is only an abstract-level lead; no fitting or benchmark implemented|
+|Every equation in every source was read cleanly|**corrected**|Read table and parent review explicitly preserve extraction gaps|
 
 ## 6. What to say about novelty
 

@@ -1,0 +1,11 @@
+{
+  "origin": "Actual network model output files produced during user local run",
+  "summary_rows": 1,
+  "trajectory_rows": 61,
+  "network_metric_rows": 61,
+  "summary_matches_java_except_cohort_and_secs": true,
+  "extra_metric_partitions_pass": true,
+  "independent_market_labels": 1,
+  "rep": 1000,
+  "scope": "Same default market as the grid; not an additional independent replication. White visual revision not inferred from prior output files."
+}

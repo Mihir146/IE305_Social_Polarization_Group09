@@ -66,7 +66,7 @@ public class Figures {
         manifest=[]
         for i,d in enumerate(charts,1):
             clean=lambda s:str(s).replace('\n',' ').replace('\t',' ')
-            labels={'Initial belief histogram':'Initial expected appeal (0–1)','Confidence quality diagnostic':'Mean personal experience q','Awareness and paid sales by price':'Launch price (Rs)','Confirmed sample quantity profit':'Free-sample policy','Confirmed profit contrasts':'Fixed paired comparison','Profit by price and recipient strategy':'Launch price (Rs)','Price and unit cost':'Unit cost (Rs)'}
+            labels={'Initial belief histogram':'Initial expected appeal (0–1)','Confidence quality diagnostic':'Experience parameter q','Awareness and paid sales by price':'Launch price (Rs)','Confirmed sample quantity profit':'Free-sample policy','Confirmed profit contrasts':'Fixed paired comparison','Profit by price and recipient strategy':'Launch price (Rs)','Price and unit cost':'Unit cost (Rs)'}
             lines=['\t'.join([d.get('kind','bar'),clean(d['name']),clean(d['ylabel']),labels.get(d['name'],'')]),'\t'.join(map(clean,d['categories']))]
             for ss in d['series']:
                 values=[]

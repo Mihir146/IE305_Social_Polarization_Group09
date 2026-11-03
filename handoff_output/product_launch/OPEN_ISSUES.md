@@ -24,3 +24,7 @@ Do not add untested features to address every limitation before the presentation
 The user requested it after approving the grid version. It is a separate file, with real API and181-case default/batch wiring checks passing. Actual editor import, animation/performance and engine export for that variant remain pending. Use the engine-tested grid as the fallback. The latest live-network guide defines line styles, ownership rings, opinion colors and the extra disjoint customer-state metrics.
 
 The portable primary deck now passes independent Apache POI/XmlBeans schema validation and has Java2D previews. It uses standard rendered plots; the separate native-chart deck retains editable workbooks. The local schema library was incomplete for one native-chart type, so no full native-chart schema-validation claim is made.
+
+Actual CSVs from the earlier live-network default have now been checked: the summary matches Java, all61 extra metric rows satisfy the partitions, and the same replication is not counted as an independent new market. The final white-layout visual check remains separate.
+
+For the remaining full-text extraction gaps, please attach readable authorized PDFs/OCR of Deffuant's unrecovered mathematics, DiMaggio1996, Bass1969 and the missing Delre2010 segment if those checks are to be completed. The current presentation does not rely on their unverified equations or an unread empirical trend claim.

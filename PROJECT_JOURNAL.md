@@ -155,3 +155,11 @@ Prepared `unify-git.sh` for the normal terminal. It merges any remaining ordinar
 The user rejected the dark dashboard style as cluttered. We changed the separate network variant to a white background, a larger full-width graph, plain labels and compact plots underneath. Customer colors now use the familiar four awareness/ownership states; opinions appear in the selected meeting and histogram instead of requiring a second color/ring legend. The highlighted meeting is blue and a new tie is orange. Data definitions, buying rules and financial outcomes are unchanged. The approved grid fallback remains byte-identical.
 
 The Git unification has been applied: `.git` now points to `.git-storage`, so ordinary Git and tool checkpoints share the same history.
+
+## Final package checkpoint
+
+The saved-data audit passed for10,240 reference policy evaluations,1,080 standalone Java evaluations and the supplied actual engine exports. The engine exports describe the same replication1000 across grid/network variants and are not independent extra markets. The approved grid SHA-256 remains unchanged.
+
+Both presentation copies, a16-page PDF, seven PNG/SVG figures, the report, literature/validation notes, viva and speaker notes are prepared. The primary deck passes independent OOXML schema validation and its previews were inspected. The submission ZIP includes project files and archived mechanism evidence, with a per-file SHA-256 manifest and archive CRC check. Moodle upload, current white-animation visual review, presentation-computer compatibility and rehearsal remain student actions. A multi-policy AnyLogic batch is recommended additional engine evidence; the larger reference grid stays separately labeled.
+
+Git metadata is unified for normal-terminal use. The managed tool now sees that shared metadata as read-only, so final file commits/pushes are performed by the user; no successful tool-side push is claimed.

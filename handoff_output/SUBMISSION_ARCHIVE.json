@@ -1,0 +1,11 @@
+{
+  "archive": "handoff_output/IE305_Group09_Submission.zip",
+  "files": 1010,
+  "bytes": 30102873,
+  "sha256": "dc3bfbdabe09410ae6b1a351ea2e707f0f597c72335ccc3411de0f9193fa7a61",
+  "crc_test_pass": true,
+  "includes": "Models, presentation, data, scripts, literature, validation and archived mechanism evidence",
+  "excludes": "Git metadata, caches, regenerable binaries, logs, application autosaves and other ZIPs",
+  "uploaded_to_moodle": false,
+  "remote_push_performed_by_user": true
+}

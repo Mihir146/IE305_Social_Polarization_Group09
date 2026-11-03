@@ -1,0 +1,11 @@
+dataset,policy_evaluation_rows,market_labels,implementation,note
+pilot,540,30,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+main,1800,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+budget3,1800,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+stress,2400,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+behavior,2100,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+quality_diagnostic,1200,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+confirmation,400,100,Python/NumPy initialization plus C++ dynamics,Markets reused across policies; do not pool datasets or generators as independent populations
+java_kernel,1080,30,Standalone Java,Markets reused across policies; do not pool datasets or generators as independent populations
+anylogic,1,1,Actual user engine export,Markets reused across policies; do not pool datasets or generators as independent populations
+anylogic_network,1,1,Actual user engine export,Markets reused across policies; do not pool datasets or generators as independent populations

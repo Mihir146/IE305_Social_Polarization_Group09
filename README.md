@@ -10,7 +10,7 @@ We simulate a hypothetical seller launching a reusable bottle to 300 connected c
 | File | Purpose / evidence |
 |---|---|
 |[CampusProductLaunch.alp](handoff_output/product_launch/CampusProductLaunch.alp)|Approved grid animation; actual default screenshot and CSV verified|
-|[CampusProductLaunch_LiveNetwork.alp](handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp)|Separate live network with opinion colors, tie styles and history plots; actual API/wiring checks pass, first engine run pending|
+|[CampusProductLaunch_LiveNetwork.alp](handoff_output/product_launch/CampusProductLaunch_LiveNetwork.alp)|Separate live network with opinion colors, tie styles and history plots; actual API/wiring checks pass, earlier network default export verified; white-layout visual check pending|
 |[RUN_ANYLOGIC.md](RUN_ANYLOGIC.md)|Exact opening and running steps|
 |[LIVE_NETWORK.md](handoff_output/product_launch/LIVE_NETWORK.md)|Visual meanings, extra data and immediate rollback|
 
@@ -27,6 +27,8 @@ Use AnyLogic **8.9 PLE**. The tested default is policyIndex6, rep1000: period60,
 
 The main synthetic finding is that three samples outperform twelve in contribution profit under the baseline assumptions; the gain persists on fresh confirmation markets. The extra degree-targeting advantage is small and uncertain. A quality/confidence diagnostic exposes an assumption that needs validation. None is presented as a real-campus sales forecast or a globally optimal policy.
 
+[Submission ZIP](handoff_output/IE305_Group09_Submission.zip) contains both models, slides, reports, data and support code. See [SUBMISSION_GUIDE.md](handoff_output/product_launch/SUBMISSION_GUIDE.md) for the remaining presentation/upload steps.
+
 ## Data and reproducibility
 
 The [product folder](handoff_output/product_launch/README.md) contains the exact model specification, synthetic inputs, raw policy outcomes, scripts, plots and actual engine evidence. Browser HTML files are optional chart/text-slide viewers. The required simulation is the `.alp`, and the submission deck is PowerPoint/PDF.
@@ -35,14 +37,14 @@ The original handoff is preserved in `handoff/`; the opinion-network literature 
 
 ## Git in this managed workspace
 
-Commits use **Mihir <mihirv416@gmail.com>**. The managed root `.git` is read-only to tools, so tool-created checkpoints use alternate metadata through `./project-git`. From your normal terminal in this folder:
+Commits use **Mihir <mihirv416@gmail.com>**. Git metadata is unified: the root `.git` points to `.git-storage`, and ordinary `git` and `project-git` share one history. The original metadata backup is ignored. From a normal terminal:
 
 ```sh
-./project-git status
-./project-git log -3 --oneline
-./project-git push origin main
+git add handoff_output PROJECT_JOURNAL.md RUN_ANYLOGIC.md README.md
+git commit -m "Update project handoff"
+git push
 ```
 
-The tool sandbox cannot resolve GitHub; the user performs the remote push. Do not force-push a diverged branch. A normal clone from the public repository uses ordinary Git. All project files belong on the remote; installed third-party software and personal caches do not.
+The managed tool can edit project files but cannot write the protected Git metadata or resolve GitHub, so the user performs the commit/push. A normal clone uses ordinary Git without any unification step. Installed third-party software and personal caches do not belong in the repository.
 
 Research, implementation, analysis and drafting were AI-assisted. The students must understand the work, run their required model, follow course disclosure rules and submit/present it themselves.

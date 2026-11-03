@@ -1,0 +1,31 @@
+{
+  "saved_dataset_checks_pass": true,
+  "reference_policy_evaluations": 10240,
+  "standalone_java_evaluations": 1080,
+  "actual_engine_summary_rows": 2,
+  "actual_engine_independent_market_labels": 1,
+  "engine_scope": "Grid and earlier live-network default; same replication1000. White-layout visual check remains separate.",
+  "approved_grid_preserved": true,
+  "models": [
+    {
+      "model": "CampusProductLaunch.alp",
+      "sha256": "2762e98ce1b432139fcf5b896f8deb3f6b2a87718a9990b5f32bb1bf2b840759",
+      "same_kernel": true,
+      "unique_ids": true
+    },
+    {
+      "model": "CampusProductLaunch_LiveNetwork.alp",
+      "sha256": "755e4725090e3970933c795030a5b27e6a7bc1d28abdab5667e44c62d814eb0c",
+      "same_kernel": true,
+      "unique_ids": true
+    }
+  ],
+  "markdown_local_links_checked": true,
+  "primary_powerpoint_schema_valid": true,
+  "main_slides": 12,
+  "backup_slides": 4,
+  "main_seconds_including_demo": 735,
+  "empirical_validation": false,
+  "paper_extraction_gaps": "Explicit in parent/product literature read-status tables",
+  "remote_upload": "Performed by user; no network push inferred from local files"
+}

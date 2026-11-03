@@ -14,3 +14,6 @@ __pycache__/
 handoff_output/sim/figure_script_for_syntax_check.js
 .git-root-backup/
 .git-pointer.tmp
+
+*.alp.autosave
+!handoff_output/IE305_Group09_Submission.zip

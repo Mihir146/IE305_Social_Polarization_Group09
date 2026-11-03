@@ -30,9 +30,9 @@ This records this session, not the previous assistant's claimed reading. The web
 | Baldassarri & Gelman 2008 | Published author PDF main article pp.408–446 | Distinguishes issue partisanship from issue alignment; NES1972–2004. Full main text read; correlation and centering-year errors noted in the literature notes. |
 | Balsamo et al., Inside the Echo Chamber, arXiv1906.09076v2 | Full arXiv main text; supplement not independently read | Direct precedent separating interaction dynamics and opinion polarization. |
 | Pansanella, Rossetti & Milli 2022, ANS7:57 | Full main HTML; image-only algorithms/supplement not fully inspected | Adaptive algorithmic bias; slower graph dynamics need not change final opinion state. |
-| Zhao, Sasahara & Chen 2026, arXiv2601.16457v2 | Abstract/introduction so far | Preprint already separates time paths of segregation and polarization; do not claim temporal ordering generally novel. |
-| Guerra et al. 2013, DOI10.1609/icwsm.v7i1.14421 | Abstract only so far | Modularity alone is not a measure of antagonism. |
-| Interian et al. 2023, DOI10.1111/itor.13224 | Search/abstract lead only | OR review of network-polarization measures. Do not imply full review read. |
+| Zhao, Sasahara & Chen 2026, arXiv2601.16457v2 | Full main and supplement HTML, all501 extracted lines | Temporal-path precedent; stopping-cap and uniform-homophily formula inconsistencies retained. |
+| Guerra et al. 2013, DOI10.1609/icwsm.v7i1.14421 | Full10-page main PDF text, boundary score and tables2–3 | Empty-boundary and separation-versus-antagonism qualifications; no plot digitization. |
+| Interian et al. 2023, DOI10.1111/itor.13224 | Partial main text through §3.6, lines0–612 | Remaining review unread. Follow primary Newman for modularity, not the questionable printed normalization. |
 
 ## Source URLs
 
@@ -69,3 +69,11 @@ Our own algebra: symmetric pair averaging conserves mean, and changes population
 Mapping: project phi=w/(1-w), w=phi/(1+phi), only w<=.5 is reachable with a project probability phi<=1. KB's w=.9 must use KB's separate update scheduler. Times in sweeps also differ by factor 1-w. Isolate protection is unnecessary for conserving edge count; replacing one edge by one already conserves it. Protection creates blocked discordant dyads, potentially causing permanent censoring under the old frozen() predicate. Diagnose these separately from slow dynamics.
 
 Observed so far: accelerated engine reproduced all 2790 saved runs/KPIs exactly; 707 were originally censored. At 30000 sweeps 522 of those remain flagged; D, k=8/16, phi=.005 changes from S≈1 to S≈.57. All522 remaining saved states have nonfreezing proofs:520 unmatched-agent cases and2 remaining blocked cases. The full isolate-allowed primary2790-run grid has0 capped runs at30000. See stall_audit.csv and results_primary.csv. HK N625 100 reps: epsilon=.01 mean37.92 clusters; .15 mean2.66; .20 Pcons=.03; .25/.30 Pcons=1. All source results remain in raw CSV.
+
+## Product-launch sources added during the four-hour build
+
+- Delre et al.2007: literal author PDF main text, tables, captions and Appendix A read,954 extracted lines. Parameter/timing inconsistencies are preserved in product notes.
+- Delre et al.2010: author PDF1354 lines. Main model/experiments/conclusions read across overlapping extracts, but visible coverage of lines695–745 remains incomplete; repeat requests timed out. Eq.3 typography partly garbled. Status remains partial.
+- Kempe, Kleinberg & Tardos2003: author PDF1101 lines, complete main text, proofs, experiments, extensions and references read through overlapping extracts. High-degree heuristic is distinguished from marginal-gain greedy selection; their guarantee is not applied to our profit objective.
+- Bass1969: publisher metadata/abstract confirmed, including the publisher's unusual title wording; located14-page scan returned zero text. Abstract-level only. No Bass fit or replication.
+- Actual AnyLogic8.9.10 public Agent/shape APIs became locally available; revised source compiled against them. GUI launch from the managed workspace could not connect to the desktop. Student-supplied actual revised run screenshot and exports subsequently checked separately.

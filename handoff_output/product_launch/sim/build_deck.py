@@ -126,7 +126,7 @@ def main():
     key=next(k for k in customers[0] if 'prior' in k or k=='initial_belief')
     counts,edges=np.histogram([float(r[key]) for r in customers],bins=np.linspace(0,1,11))
     s=slide('Synthetic inputs are specified, not fitted to campus data.','Data and input analysis',seconds=60,speaker='Mihir',note='Each market has 300 generated customers in three groups and 1,200 contacts. Initial appeal follows Beta two two. A value scale between 500 and 1,000 rupees is separate from a budget between 400 and 1,000. Experiences are centered at 0.8 with clipped noise. This histogram is one generated market, not surveyed attitudes. We report actual generated moments and vary important assumptions rather than claiming empirical calibration.')
-    s.body([('300 people, 1,200 ties','Three known groups; stronger initial preference for within-group contacts.'),('Different wants and budgets','Belief Beta(2,2)\nValue scale Rs 500–1,000\nAffordability Rs 400–1,000'),('Example market, rep 1000','Belief mean 0.490; SD 0.235.\nBudget mean Rs 710.93.')])
+    s.body([('300 people, 1,200 ties','Three known groups; stronger initial preference for within-group contacts.'),('Budgets and value','Belief Beta(2,2)\nValue scale Rs 500–1,000\nAffordability Rs 400–1,000'),('Example market, rep 1000','Belief mean 0.490; SD 0.235.\nBudget mean Rs 710.93.')])
     s.chart(dict(name='Initial belief histogram',categories=[f'{edges[i]:.1f}–{edges[i+1]:.1f}' for i in range(10)],series=[dict(name='Customers',values=[int(v) for v in counts])],ylabel='Customer count'))
     s.footer(3,'data/customers_rep1000.csv; sim/analysis/input_statistics.csv. Histogram is one synthetic market.')
 

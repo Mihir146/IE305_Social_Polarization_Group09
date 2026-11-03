@@ -1,3 +1,18 @@
+# Final presentation handoff plan — selected product application
+
+The original five-hour mechanism plan is retained below as historical background. The selected four-hour product build began at12:05 UTC on3 November. The model, synthetic experiments, report, viva and editable deck now exist; the approved revised default has actual AnyLogic evidence.
+
+1. Save/pull the exact approved `product_launch/CampusProductLaunch.alp` and actual engine exports. Avoid feature changes before presentation.
+2. Open `product_launch/Campus_Product_Launch.pptx` once on the presenting computer and check its native charts/layout. The12 main slides budget735 seconds, including90 seconds for the live model; four extra slides are Q&A backups.
+3. If feasible, collect the already prepared automatic180-campaign engine batch with policyIndex36, animateNetwork=false and virtual time. This adds actual policy evidence; do not relabel reference runs or duplicate reruns as engine replications.
+4. Read the one-page explanation and25 answers in `product_launch/VIVA_PREP.md`. Both students must explain one conversation, one buying decision, sample accounting and one uncertain result.
+5. Rehearse: Mihir slides1–6; Vaibhav slides7–12 including the live model. Bring the local screenshot/CSV fallback and identify it honestly if the live run fails.
+6. Submit the actual model, supporting data/analysis and slides through Moodle; check the announced deadline/access. Group9 presents4 November14:00–15:40 IST in LC002 and must attend the whole slot.
+
+The main recommendation is conditional: Rs400 and three samples among the tested baseline choices, with no established large premium for degree targeting. Keep the quality-cutoff warning, synthetic-data status and pointwise-interval limits visible.
+
+---
+
 # Five-hour execution plan — revised 3 November 2026
 
 **Mihir Vasave and Vaibhav Mathur, IE305 Simulation Lab.** The research/reference analysis is prepared. The highest-priority remaining work is to execute and verify the required AnyLogic model.
@@ -6,11 +21,11 @@
 
 Read `VALIDATION_REPORT.md`, then the model loop and invariants in `polarization_project_blueprint.md` §3. Use the **updated** documents in this folder. The original supplied figures and summary describe3000-sweep measurements; their old threshold captions must not drive the presentation.
 
-The tested application is contact design for a hypothetical campus discussion platform; see `APPLICATION_DESIGN.md`. The product-launch direction is a separate proposal and has no sales results yet.
+The selected final application is now implemented in `product_launch/`. The contact-policy study below is background. Use the product report, PowerPoint and timed speaker notes for the final presentation.
 
 The interesting story is now: **“A network that looks protected may simply not have fragmented yet.”** Pair that with the mathematical observation that opinion variance falls while the graph can break apart. These make a clear, defensible presentation. They are course-project contributions in replication and analysis; the mechanism itself is published work.
 
-No document should claim AnyLogic was already run or that cross-implementation agreement exists. Add that claim only after saving actual AnyLogic evidence. Keep the current status in the report until then.
+The original opinion-only port remains separate. The selected product default has an actual successful AnyLogic screenshot and inspected export matching Java; the large reference grid must still not be called AnyLogic output.
 
 ## 1. Findings the evidence supports
 

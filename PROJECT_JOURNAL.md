@@ -133,3 +133,13 @@ Await the single AnyLogic engine check while finishing the marketing literature 
 - The unexpected quality reversal persists without rewiring and reverses when all beliefs can influence each other. We keep it as a warning about the hard confidence assumption, not advice to lower quality.
 - Prepared the report, viva, editable 16-slide PowerPoint (12 main + 4 backups), speaker notes and traceable chart data. Planned main duration is 735 seconds, leaving 45 seconds within the required 13 minutes. Windows PowerPoint rendering still needs a local look.
 - Cache-cleanup request: found 8.4 GB yay cache and 4.4 GB pacman cache, but these paths are mounted read-only to tools. No successful deletion is claimed. Safe normal-terminal commands were supplied.
+
+## Live-network branch, after the approved grid version
+
+The user approved the grid animation, then requested a cleaner live-network alternative with explicit rollback. The alternative is a separate `CampusProductLaunch_LiveNetwork.alp`; the approved `CampusProductLaunch.alp` remains byte-identical. A local Git branch `approved_grid_animation_337a0f1` also preserves the checkpoint.
+
+The new view draws all1,200 actual discussion ties, with solid/dotted compatibility styles, recent-meeting and new-contact highlights, opinion-colored customer nodes and separate ownership rings. It adds awareness/sales history, an opinion histogram and disjoint reasons why informed nonowners are not buying. These are computed from individual states and exported in61 period rows; no new behavioral assumption or random draw was added.
+
+Checks: compilation against actual installed AnyLogic8.9.10 APIs passes; animated default plus180 batch summaries match the prior Java reference except cohort/runtime. Histogram sums, tie counts and buying-reason partitions pass. Actual live-network editor import/render/performance remains pending the first student engine run. Opening the approved grid file is the immediate rollback.
+
+Presentation improvement: generated seven standard JFreeChart plots as PNG and SVG with exact asymmetric bootstrap endpoints. The primary PowerPoint uses those rendered figures for portable display. A separate deck retains native editable Office charts/workbooks. Apache POI/XmlBeans independently parses and schema-validates the primary16-slide deck; Windows PowerPoint rendering is still a separate compatibility check. Java2D previews were inspected and an overlapping heading was shortened.

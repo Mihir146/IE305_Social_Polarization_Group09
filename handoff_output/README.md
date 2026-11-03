@@ -4,7 +4,7 @@
 
 The tested application is **contact recommendations for a hypothetical campus discussion platform**. Synthetic agents discuss one policy and may replace disagreeing contacts. The most useful result is that adding contacts or changing recommendations can change how quickly communication separates, so a short observation window can suggest a misleading long-run threshold.
 
-**The research/reference package is ready for review. The AnyLogic model still needs to be built and run by the students.** Java bodies and exact instructions are supplied; this workspace has no AnyLogic installation. The product-launch direction is documented as a proposal, with no simulated sales claims.
+**Selected final application: [product launch](product_launch/README.md).** The supplied product `.alp` has a successful actual default run, screenshot and inspected CSV export. Product sales results, report and PowerPoint are in that folder. The material below preserves the original opinion/contact mechanism study; its opinion-only Java port remains a separate unexecuted port.
 
 ## Read in this order
 
@@ -13,7 +13,7 @@ The tested application is **contact recommendations for a hypothetical campus di
 |[PROJECT_REPORT.md](PROJECT_REPORT.md)|Readable application, model, data, experiments, findings and limits|
 |[presentation.html](presentation.html)|Offline presentation with tables and speaker prompts; keyboard arrows navigate|
 |[results_explorer.html](results_explorer.html)|Nine standard Plotly scientific figures, embedded data, CSV links and offline numerical tables|
-|[APPLICATION_DESIGN.md](APPLICATION_DESIGN.md)|Exactly what the domain represents; finished contact study and separate product proposal|
+|[APPLICATION_DESIGN.md](APPLICATION_DESIGN.md)|Historical contact study and pointer to the implemented product application|
 |[AnyLogic_port.md](AnyLogic_port.md)|Build instructions, Java bodies, API audit, CSV export and test checklist|
 |[VALIDATION_REPORT.md](VALIDATION_REPORT.md)|Pass/partial/pending checks, quantitative benchmarks, revised conclusions and commands|
 |[LITERATURE_NOTES.md](LITERATURE_NOTES.md)|Actual reading status, exact published rules/targets, limitations and57 original claim passages|

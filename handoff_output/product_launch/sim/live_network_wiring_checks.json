@@ -1,0 +1,11 @@
+{
+  "wiring_compiles_with_standins": true,
+  "animated_default_matches_java": true,
+  "batch_matches_java": 180,
+  "displayed_actual_ties": 1200,
+  "customer_state_references": 300,
+  "network_metric_rows_per_campaign": 61,
+  "extra_metric_partitions_checked": true,
+  "approved_grid_model_unchanged": true,
+  "scope": "Stand-in wiring only. Actual API compile recorded separately. Live-network engine execution remains pending."
+}

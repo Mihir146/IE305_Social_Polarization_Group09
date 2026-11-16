@@ -4,6 +4,10 @@
 
 A hypothetical campus seller launches a reusable bottle to 300 connected customers. We compare launch prices, free-sample recipients, sample quantities and discussion-contact policies. The business outcome is campaign profit, while awareness and paid purchases are tracked separately. All input data are synthetic assumptions.
 
+## Lab-style visual review version
+
+[CampusProductLaunch_LabFlowchart.alp](CampusProductLaunch_LabFlowchart.alp) adds functional Source/Delay/SelectOutput/Sink routing below the network. Read [LAB_FLOWCHART.md](LAB_FLOWCHART.md) for each block, remaining custom-code scope and checks. The serialized branch harness matches72 policy/seed cases; actual editor import/run is still pending. Previous models and the current submission ZIP remain the verified fallback.
+
 ## Start here
 
 - Open [CampusProductLaunch.alp](CampusProductLaunch.alp) in **AnyLogic 8.9 PLE on Windows 11**. Follow [ANYLOGIC_BUILD.md](ANYLOGIC_BUILD.md). The first default run should match the independently tested Java realization: period 60, 300 aware, 148 paid, 12 free samples, ₹19,200 profit.

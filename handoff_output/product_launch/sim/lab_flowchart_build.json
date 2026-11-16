@@ -1,0 +1,19 @@
+{
+  "model": "CampusProductLaunch_LabFlowchart.alp",
+  "blocks": 11,
+  "connectors": 14,
+  "functions": 7,
+  "palette_classes": [
+    "Source",
+    "Delay",
+    "SelectOutput",
+    "Sink"
+  ],
+  "original_hashes": {
+    "CampusProductLaunch.alp": "2762e98ce1b432139fcf5b896f8deb3f6b2a87718a9990b5f32bb1bf2b840759",
+    "CampusProductLaunch_LiveNetwork.alp": "bbfe929ee6370e227b19f050ca7f7598fb5e1cde37bd83d2f067814dce5663a7"
+  },
+  "xml_and_ids_checked": true,
+  "engine_import_compile_run": "Not yet verified",
+  "scope": "Functional hybrid: PML controls behavior branches and clock; network setup/display/export remain custom Java. Not a no-code rewrite."
+}

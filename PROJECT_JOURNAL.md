@@ -181,3 +181,11 @@ The new20-slide presentation has16 main slides and4 Q&A backups, with a700-secon
 ## Simplified display confirmed by the students — 4 November
 
 The student supplied a completed screenshot at period60:300 aware,148 paid,12 samples,Rs59,200 revenue,Rs40,000 cost andRs19,200 profit. It shows the simplified flat-color network, plots and decision counts cleanly. The matching local summary still agrees with Java except runtime/cohort; all61 network-metric rows pass their partitions. We saved the screenshot and a scoped evidence record, and added it to the demo slide as an offline fallback. This is a rerun of the same default market, not another independent replication. No further default test is requested.
+
+## 16 November — align the model with the actual lab elements
+
+The student correctly identified that the original implementation put too much behavior in custom Java for the level taught. We inspected the local A1/A2 lab handouts and found Source, Delay, SelectOutput and Sink, including conditional rework loops. We made a separate LabFlowchart model with11 real PML blocks and14 connectors. These now execute discussion branching, attempt counting, period-end buying and termination. The old monolithic interaction/step methods and event loop are removed from this variant; seven visible Function elements implement the individual rule calculations.
+
+The change is not a no-code rewrite: network generation, visualization/metrics and CSV support remain substantial inherited Java, explicitly documented. A truly near-zero-code version would change the mechanism and require new analysis. No existing numerical result is relabeled as evidence for an untested different model.
+
+Installed API compilation and a harness traversing serialized connectors/actions match all period metrics and final states for72 policy/seed cases. The harness does not verify actual AnyLogic PML import/scheduling. One editor/default run remains needed. The two previously tested models and final submission ZIP are preserved unchanged, and the new review model writes to a separate output folder.

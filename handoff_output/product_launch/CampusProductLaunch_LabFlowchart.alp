@@ -409,11 +409,11 @@ public boolean canDiscuss = false;
             <Z>0</Z>
             <LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
             <Presentation>
-              <Rectangle>
-                <Id>1793700000070</Id>
-                <Name>canvasBackground</Name>
-                <X>0</X>
-                <Y>0</Y>
+              <Polyline>
+                <Id>1793700000187</Id>
+                <Name>visibleFlow13</Name>
+                <X>925</X>
+                <Y>390</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -424,22 +424,590 @@ public boolean canDiscuss = false;
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
                 <EmbeddedIcon>false</EmbeddedIcon>
                 <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-1</LineColor>
-                <LineMaterial>null</LineMaterial>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
                 <LineStyle>SOLID</LineStyle>
-                <Width>1290</Width>
-                <Height>900</Height>
-                <Rotation>0</Rotation>
+                <LineMaterial>null</LineMaterial>
                 <FillColor>-1</FillColor>
                 <FillMaterial>null</FillMaterial>
-              </Rectangle>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>-760</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>-760</X>
+                    <Y>-250</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>-720</X>
+                    <Y>-250</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000185</Id>
+                <Name>visibleFlow12</Name>
+                <X>925</X>
+                <Y>390</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>165</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000183</Id>
+                <Name>visibleFlow11</Name>
+                <X>1090</X>
+                <Y>270</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>-165</X>
+                    <Y>120</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000181</Id>
+                <Name>visibleFlow10</Name>
+                <X>1090</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>-165</X>
+                    <Y>250</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000179</Id>
+                <Name>visibleFlow9</Name>
+                <X>1090</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>0</X>
+                    <Y>130</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000177</Id>
+                <Name>visibleFlow8</Name>
+                <X>925</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>165</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000175</Id>
+                <Name>visibleFlow7</Name>
+                <X>740</X>
+                <Y>220</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>185</X>
+                    <Y>-80</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000173</Id>
+                <Name>visibleFlow6</Name>
+                <X>740</X>
+                <Y>100</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>185</X>
+                    <Y>40</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000171</Id>
+                <Name>visibleFlow5</Name>
+                <X>555</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>185</X>
+                    <Y>80</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000169</Id>
+                <Name>visibleFlow4</Name>
+                <X>555</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>185</X>
+                    <Y>-40</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000167</Id>
+                <Name>visibleFlow3</Name>
+                <X>380</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>0</X>
+                    <Y>170</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>545</X>
+                    <Y>170</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>545</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000165</Id>
+                <Name>visibleFlow2</Name>
+                <X>380</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>175</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000163</Id>
+                <Name>visibleFlow1</Name>
+                <X>205</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>175</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
+              <Polyline>
+                <Id>1793700000161</Id>
+                <Name>visibleFlow0</Name>
+                <X>60</X>
+                <Y>140</Y>
+                <Label>
+                  <X>10</X>
+                  <Y>0</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>false</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>false</EmbeddedIcon>
+                <Z>0</Z>
+                <LineWidth>1</LineWidth>
+                <LineColor>-7303024</LineColor>
+                <LineStyle>SOLID</LineStyle>
+                <LineMaterial>null</LineMaterial>
+                <FillColor>-1</FillColor>
+                <FillMaterial>null</FillMaterial>
+                <Closed>false</Closed>
+                <Rotation>0</Rotation>
+                <BeginArrowStyle>0</BeginArrowStyle>
+                <EndArrowStyle>0</EndArrowStyle>
+                <BeginArrowSize>1</BeginArrowSize>
+                <EndArrowSize>1</EndArrowSize>
+                <ZHeight>0</ZHeight>
+                <Points>
+                  <Point>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                  <Point>
+                    <X>145</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Point>
+                </Points>
+              </Polyline>
               <Group>
-                <Id>1793700000071</Id>
-                <Name>linksLayer</Name>
+                <Id>1793700000117</Id>
+                <Name>networkPresentation</Name>
                 <X>0</X>
-                <Y>0</Y>
+                <Y>650</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -453,8 +1021,8 @@ public boolean canDiscuss = false;
                 <Rotation>0</Rotation>
                 <Presentation>
                   <Rectangle>
-                    <Id>1793700000072</Id>
-                    <Name>linksLayerAnchor</Name>
+                    <Id>1793700000070</Id>
+                    <Name>canvasBackground</Name>
                     <X>0</X>
                     <Y>0</Y>
                     <Label>
@@ -469,1143 +1037,1408 @@ public boolean canDiscuss = false;
                     <Z>0</Z>
                     <ZHeight>0</ZHeight>
                     <LineWidth>0</LineWidth>
-                    <LineColor>-15919834</LineColor>
+                    <LineColor>-1</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <Width>1290</Width>
+                    <Height>900</Height>
+                    <Rotation>0</Rotation>
+                    <FillColor>-1</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Rectangle>
+                  <Group>
+                    <Id>1793700000071</Id>
+                    <Name>linksLayer</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Presentation>
+                      <Rectangle>
+                        <Id>1793700000072</Id>
+                        <Name>linksLayerAnchor</Name>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Label>
+                          <X>10</X>
+                          <Y>0</Y>
+                        </Label>
+                        <PublicFlag>true</PublicFlag>
+                        <PresentationFlag>true</PresentationFlag>
+                        <ShowLabel>false</ShowLabel>
+                        <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                        <EmbeddedIcon>false</EmbeddedIcon>
+                        <Z>0</Z>
+                        <ZHeight>0</ZHeight>
+                        <LineWidth>0</LineWidth>
+                        <LineColor>-15919834</LineColor>
+                        <LineMaterial>null</LineMaterial>
+                        <LineStyle>SOLID</LineStyle>
+                        <Width>0</Width>
+                        <Height>0</Height>
+                        <Rotation>0</Rotation>
+                        <FillColor>-15919834</FillColor>
+                        <FillMaterial>null</FillMaterial>
+                      </Rectangle>
+                    </Presentation>
+                  </Group>
+                  <Rectangle>
+                    <Id>1793700000073</Id>
+                    <Name>meetingLine</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-14540254</LineColor>
                     <LineMaterial>null</LineMaterial>
                     <LineStyle>SOLID</LineStyle>
                     <Width>0</Width>
-                    <Height>0</Height>
+                    <Height>2.5</Height>
                     <Rotation>0</Rotation>
-                    <FillColor>-15919834</FillColor>
+                    <FillColor>-14540254</FillColor>
                     <FillMaterial>null</FillMaterial>
                   </Rectangle>
+                  <Rectangle>
+                    <Id>1793700000074</Id>
+                    <Name>newContactLine</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-13140296</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <Width>0</Width>
+                    <Height>2</Height>
+                    <Rotation>0</Rotation>
+                    <FillColor>-13140296</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Rectangle>
+                  <EmbeddedObjectPresentation>
+                    <Id>1793700000026</Id>
+                    <Name>consumers_presentation</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <AsObject>true</AsObject>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+                    <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                    <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                    <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+                  </EmbeddedObjectPresentation>
+                  <Group>
+                    <Id>1793700000075</Id>
+                    <Name>historyLayer</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Presentation>
+                      <Rectangle>
+                        <Id>1793700000076</Id>
+                        <Name>historyLayerAnchor</Name>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Label>
+                          <X>10</X>
+                          <Y>0</Y>
+                        </Label>
+                        <PublicFlag>true</PublicFlag>
+                        <PresentationFlag>true</PresentationFlag>
+                        <ShowLabel>false</ShowLabel>
+                        <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                        <EmbeddedIcon>false</EmbeddedIcon>
+                        <Z>0</Z>
+                        <ZHeight>0</ZHeight>
+                        <LineWidth>0</LineWidth>
+                        <LineColor>-15919834</LineColor>
+                        <LineMaterial>null</LineMaterial>
+                        <LineStyle>SOLID</LineStyle>
+                        <Width>0</Width>
+                        <Height>0</Height>
+                        <Rotation>0</Rotation>
+                        <FillColor>-15919834</FillColor>
+                        <FillMaterial>null</FillMaterial>
+                      </Rectangle>
+                    </Presentation>
+                  </Group>
+                  <Group>
+                    <Id>1793700000077</Id>
+                    <Name>histogramLayer</Name>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Presentation>
+                      <Rectangle>
+                        <Id>1793700000078</Id>
+                        <Name>histogramLayerAnchor</Name>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Label>
+                          <X>10</X>
+                          <Y>0</Y>
+                        </Label>
+                        <PublicFlag>true</PublicFlag>
+                        <PresentationFlag>true</PresentationFlag>
+                        <ShowLabel>false</ShowLabel>
+                        <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                        <EmbeddedIcon>false</EmbeddedIcon>
+                        <Z>0</Z>
+                        <ZHeight>0</ZHeight>
+                        <LineWidth>0</LineWidth>
+                        <LineColor>-15919834</LineColor>
+                        <LineMaterial>null</LineMaterial>
+                        <LineStyle>SOLID</LineStyle>
+                        <Width>0</Width>
+                        <Height>0</Height>
+                        <Rotation>0</Rotation>
+                        <FillColor>-15919834</FillColor>
+                        <FillMaterial>null</FillMaterial>
+                      </Rectangle>
+                    </Presentation>
+                  </Group>
+                  <Text>
+                    <Id>1793700000079</Id>
+                    <Name>titleLabel</Name>
+                    <X>24</X>
+                    <Y>20</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Product launch simulation</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>25</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000080</Id>
+                    <Name>statusLabel</Name>
+                    <X>24</X>
+                    <Y>57</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>14</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000081</Id>
+                    <Name>kpiLabel</Name>
+                    <X>24</X>
+                    <Y>104</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>19</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000082</Id>
+                    <Name>financeLabel</Name>
+                    <X>24</X>
+                    <Y>133</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000083</Id>
+                    <Name>interactionLabel</Name>
+                    <X>24</X>
+                    <Y>162</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>14</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000084</Id>
+                    <Name>beliefLabel</Name>
+                    <X>24</X>
+                    <Y>188</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>14</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000085</Id>
+                    <Name>group0</Name>
+                    <X>170</X>
+                    <Y>590</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>Social group 1</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>15</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000086</Id>
+                    <Name>group1</Name>
+                    <X>595</X>
+                    <Y>590</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>Social group 2</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>15</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000087</Id>
+                    <Name>group2</Name>
+                    <X>1020</X>
+                    <Y>590</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>Social group 3</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>15</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Oval>
+                    <Id>1793700000088</Id>
+                    <Name>ownerKey0</Name>
+                    <X>34</X>
+                    <Y>640</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-5197648</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <RadiusX>5</RadiusX>
+                    <RadiusY>5</RadiusY>
+                    <Rotation>0</Rotation>
+                    <FillColor>-5197648</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Oval>
+                  <Text>
+                    <Id>1793700000089</Id>
+                    <Name>ownerCaption0</Name>
+                    <X>48</X>
+                    <Y>631</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Unaware</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Oval>
+                    <Id>1793700000090</Id>
+                    <Name>ownerKey1</Name>
+                    <X>239</X>
+                    <Y>640</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-13140296</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <RadiusX>5</RadiusX>
+                    <RadiusY>5</RadiusY>
+                    <Rotation>0</Rotation>
+                    <FillColor>-13140296</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Oval>
+                  <Text>
+                    <Id>1793700000091</Id>
+                    <Name>ownerCaption1</Name>
+                    <X>253</X>
+                    <Y>631</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Aware, not owner</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Oval>
+                    <Id>1793700000092</Id>
+                    <Name>ownerKey2</Name>
+                    <X>444</X>
+                    <Y>640</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-24804</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <RadiusX>5</RadiusX>
+                    <RadiusY>5</RadiusY>
+                    <Rotation>0</Rotation>
+                    <FillColor>-24804</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Oval>
+                  <Text>
+                    <Id>1793700000093</Id>
+                    <Name>ownerCaption2</Name>
+                    <X>458</X>
+                    <Y>631</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Free sample</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Oval>
+                    <Id>1793700000094</Id>
+                    <Name>ownerKey3</Name>
+                    <X>649</X>
+                    <Y>640</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-14184102</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <RadiusX>5</RadiusX>
+                    <RadiusY>5</RadiusY>
+                    <Rotation>0</Rotation>
+                    <FillColor>-14184102</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Oval>
+                  <Text>
+                    <Id>1793700000095</Id>
+                    <Name>ownerCaption3</Name>
+                    <X>663</X>
+                    <Y>631</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Paid buyer</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000096</Id>
+                    <Name>tieLegend</Name>
+                    <X>850</X>
+                    <Y>631</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>Solid: similar beliefs   ·   Dotted: different beliefs</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>12</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000097</Id>
+                    <Name>activityLegend</Name>
+                    <X>24</X>
+                    <Y>662</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>Black line: selected meeting   ·   Blue line: new contact</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>12</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Rectangle>
+                    <Id>1793700000098</Id>
+                    <Name>plotDivider</Name>
+                    <X>24</X>
+                    <Y>689</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-2038294</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <Width>1240</Width>
+                    <Height>1</Height>
+                    <Rotation>0</Rotation>
+                    <FillColor>-2038294</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Rectangle>
+                  <Text>
+                    <Id>1793700000099</Id>
+                    <Name>reachTitle</Name>
+                    <X>40</X>
+                    <Y>704</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Awareness and paid sales</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>16</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000100</Id>
+                    <Name>reachLabel</Name>
+                    <X>40</X>
+                    <Y>729</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Rectangle>
+                    <Id>1793700000101</Id>
+                    <Name>reachAxis</Name>
+                    <X>64</X>
+                    <Y>756</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-3879724</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <Width>1</Width>
+                    <Height>70</Height>
+                    <Rotation>0</Rotation>
+                    <FillColor>-3879724</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Rectangle>
+                  <Rectangle>
+                    <Id>1793700000102</Id>
+                    <Name>reachFloor</Name>
+                    <X>64</X>
+                    <Y>825</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <ZHeight>0</ZHeight>
+                    <LineWidth>0</LineWidth>
+                    <LineColor>-3879724</LineColor>
+                    <LineMaterial>null</LineMaterial>
+                    <LineStyle>SOLID</LineStyle>
+                    <Width>327</Width>
+                    <Height>1</Height>
+                    <Rotation>0</Rotation>
+                    <FillColor>-3879724</FillColor>
+                    <FillMaterial>null</FillMaterial>
+                  </Rectangle>
+                  <Text>
+                    <Id>1793700000103</Id>
+                    <Name>reachTop</Name>
+                    <X>27</X>
+                    <Y>748</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>300</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000104</Id>
+                    <Name>reachZero</Name>
+                    <X>45</X>
+                    <Y>815</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>0</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000105</Id>
+                    <Name>reachPeriod0</Name>
+                    <X>65</X>
+                    <Y>834</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>0</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000106</Id>
+                    <Name>reachPeriod60</Name>
+                    <X>333</X>
+                    <Y>834</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>60 periods</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000107</Id>
+                    <Name>awareCurveKey</Name>
+                    <X>105</X>
+                    <Y>847</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-13140296</Color>
+                    <Text>— Aware</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000108</Id>
+                    <Name>paidCurveKey</Name>
+                    <X>225</X>
+                    <Y>847</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14184102</Color>
+                    <Text>— Paid</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000109</Id>
+                    <Name>opinionTitle</Name>
+                    <X>460</X>
+                    <Y>704</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Belief distribution</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>16</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000110</Id>
+                    <Name>histMaxLabel</Name>
+                    <X>460</X>
+                    <Y>729</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000111</Id>
+                    <Name>lowBelief</Name>
+                    <X>480</X>
+                    <Y>835</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>0 · low appeal</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000112</Id>
+                    <Name>highBelief</Name>
+                    <X>680</X>
+                    <Y>835</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>1 · high appeal</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000113</Id>
+                    <Name>statsTitle</Name>
+                    <X>840</X>
+                    <Y>704</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text>Network and purchase decisions</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>16</Size>
+                      <Style>1</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000114</Id>
+                    <Name>statsLabel</Name>
+                    <X>840</X>
+                    <Y>733</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-14337718</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>13</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000115</Id>
+                    <Name>reasonsLabel</Name>
+                    <X>840</X>
+                    <Y>793</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text />
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>12</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
+                  <Text>
+                    <Id>1793700000116</Id>
+                    <Name>caption</Name>
+                    <X>24</X>
+                    <Y>879</Y>
+                    <Label>
+                      <X>10</X>
+                      <Y>0</Y>
+                    </Label>
+                    <PublicFlag>true</PublicFlag>
+                    <PresentationFlag>true</PresentationFlag>
+                    <ShowLabel>false</ShowLabel>
+                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                    <EmbeddedIcon>false</EmbeddedIcon>
+                    <Z>0</Z>
+                    <Rotation>0</Rotation>
+                    <Color>-10062717</Color>
+                    <Text>300 customers, 1,200 actual ties. Positions show known social groups. All inputs synthetic.</Text>
+                    <Font>
+                      <Name>SansSerif</Name>
+                      <Size>11</Size>
+                      <Style>0</Style>
+                    </Font>
+                    <Alignment>LEFT</Alignment>
+                  </Text>
                 </Presentation>
               </Group>
-              <Rectangle>
-                <Id>1793700000073</Id>
-                <Name>meetingLine</Name>
-                <X>0</X>
-                <Y>0</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-14540254</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>0</Width>
-                <Height>2.5</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-14540254</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000074</Id>
-                <Name>newContactLine</Name>
-                <X>0</X>
-                <Y>0</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-13140296</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>0</Width>
-                <Height>2</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-13140296</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
               <EmbeddedObjectPresentation>
-                <Id>1793700000026</Id>
-                <Name>consumers_presentation</Name>
-                <X>0</X>
-                <Y>0</Y>
+                <Id>1793700000129</Id>
+                <Name>startCampaign_presentation</Name>
+                <X>60</X>
+                <Y>140</Y>
                 <Label>
-                  <X>10</X>
-                  <Y>0</Y>
+                  <X>0</X>
+                  <Y>-25</Y>
                 </Label>
                 <PublicFlag>true</PublicFlag>
                 <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
+                <ShowLabel>true</ShowLabel>
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <AsObject>true</AsObject>
-                <EmbeddedIcon>false</EmbeddedIcon>
+                <EmbeddedIcon>true</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
                 <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
                 <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
                 <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
               </EmbeddedObjectPresentation>
-              <Group>
-                <Id>1793700000075</Id>
-                <Name>historyLayer</Name>
-                <X>0</X>
-                <Y>0</Y>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000132</Id>
+                <Name>nextMeeting_presentation</Name>
+                <X>205</X>
+                <Y>140</Y>
                 <Label>
-                  <X>10</X>
-                  <Y>0</Y>
+                  <X>0</X>
+                  <Y>-25</Y>
                 </Label>
                 <PublicFlag>true</PublicFlag>
                 <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
+                <ShowLabel>true</ShowLabel>
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
+                <EmbeddedIcon>true</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Presentation>
-                  <Rectangle>
-                    <Id>1793700000076</Id>
-                    <Name>historyLayerAnchor</Name>
-                    <X>0</X>
-                    <Y>0</Y>
-                    <Label>
-                      <X>10</X>
-                      <Y>0</Y>
-                    </Label>
-                    <PublicFlag>true</PublicFlag>
-                    <PresentationFlag>true</PresentationFlag>
-                    <ShowLabel>false</ShowLabel>
-                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                    <EmbeddedIcon>false</EmbeddedIcon>
-                    <Z>0</Z>
-                    <ZHeight>0</ZHeight>
-                    <LineWidth>0</LineWidth>
-                    <LineColor>-15919834</LineColor>
-                    <LineMaterial>null</LineMaterial>
-                    <LineStyle>SOLID</LineStyle>
-                    <Width>0</Width>
-                    <Height>0</Height>
-                    <Rotation>0</Rotation>
-                    <FillColor>-15919834</FillColor>
-                    <FillMaterial>null</FillMaterial>
-                  </Rectangle>
-                </Presentation>
-              </Group>
-              <Group>
-                <Id>1793700000077</Id>
-                <Name>histogramLayer</Name>
-                <X>0</X>
-                <Y>0</Y>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000135</Id>
+                <Name>bothAware_presentation</Name>
+                <X>380</X>
+                <Y>140</Y>
                 <Label>
-                  <X>10</X>
-                  <Y>0</Y>
+                  <X>0</X>
+                  <Y>-25</Y>
                 </Label>
                 <PublicFlag>true</PublicFlag>
                 <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
+                <ShowLabel>true</ShowLabel>
                 <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
+                <EmbeddedIcon>true</EmbeddedIcon>
                 <Z>0</Z>
                 <Rotation>0</Rotation>
-                <Presentation>
-                  <Rectangle>
-                    <Id>1793700000078</Id>
-                    <Name>histogramLayerAnchor</Name>
-                    <X>0</X>
-                    <Y>0</Y>
-                    <Label>
-                      <X>10</X>
-                      <Y>0</Y>
-                    </Label>
-                    <PublicFlag>true</PublicFlag>
-                    <PresentationFlag>true</PresentationFlag>
-                    <ShowLabel>false</ShowLabel>
-                    <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                    <EmbeddedIcon>false</EmbeddedIcon>
-                    <Z>0</Z>
-                    <ZHeight>0</ZHeight>
-                    <LineWidth>0</LineWidth>
-                    <LineColor>-15919834</LineColor>
-                    <LineMaterial>null</LineMaterial>
-                    <LineStyle>SOLID</LineStyle>
-                    <Width>0</Width>
-                    <Height>0</Height>
-                    <Rotation>0</Rotation>
-                    <FillColor>-15919834</FillColor>
-                    <FillMaterial>null</FillMaterial>
-                  </Rectangle>
-                </Presentation>
-              </Group>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000138</Id>
+                <Name>closeEnough_presentation</Name>
+                <X>555</X>
+                <Y>140</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000141</Id>
+                <Name>averageBeliefs_presentation</Name>
+                <X>740</X>
+                <Y>100</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000144</Id>
+                <Name>changeContact_presentation</Name>
+                <X>740</X>
+                <Y>220</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000147</Id>
+                <Name>finishAttempt_presentation</Name>
+                <X>925</X>
+                <Y>140</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000150</Id>
+                <Name>periodFinished_presentation</Name>
+                <X>1090</X>
+                <Y>140</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000153</Id>
+                <Name>buyAndExperience_presentation</Name>
+                <X>1090</X>
+                <Y>270</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000156</Id>
+                <Name>campaignFinished_presentation</Name>
+                <X>925</X>
+                <Y>390</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
+              <EmbeddedObjectPresentation>
+                <Id>1793700000159</Id>
+                <Name>finishCampaign_presentation</Name>
+                <X>1090</X>
+                <Y>390</Y>
+                <Label>
+                  <X>0</X>
+                  <Y>-25</Y>
+                </Label>
+                <PublicFlag>true</PublicFlag>
+                <PresentationFlag>true</PresentationFlag>
+                <ShowLabel>true</ShowLabel>
+                <DrawMode>SHAPE_DRAW_2D</DrawMode>
+                <EmbeddedIcon>true</EmbeddedIcon>
+                <Z>0</Z>
+                <Rotation>0</Rotation>
+                <ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+                <GISScaleForRealEmbeddedObjectPresentationSize>1</GISScaleForRealEmbeddedObjectPresentationSize>
+                <GISScaleForFixedEmbeddedObjectPresentationSize>1000</GISScaleForFixedEmbeddedObjectPresentationSize>
+              </EmbeddedObjectPresentation>
               <Text>
-                <Id>1793700000079</Id>
-                <Name>titleLabel</Name>
-                <X>24</X>
-                <Y>20</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Product launch simulation</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>25</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000080</Id>
-                <Name>statusLabel</Name>
-                <X>24</X>
-                <Y>57</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000081</Id>
-                <Name>kpiLabel</Name>
-                <X>24</X>
-                <Y>104</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>19</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000082</Id>
-                <Name>financeLabel</Name>
-                <X>24</X>
-                <Y>133</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000083</Id>
-                <Name>interactionLabel</Name>
-                <X>24</X>
-                <Y>162</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000084</Id>
-                <Name>beliefLabel</Name>
-                <X>24</X>
-                <Y>188</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>14</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000085</Id>
-                <Name>group0</Name>
-                <X>170</X>
-                <Y>590</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>Social group 1</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>15</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000086</Id>
-                <Name>group1</Name>
-                <X>595</X>
-                <Y>590</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>Social group 2</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>15</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000087</Id>
-                <Name>group2</Name>
-                <X>1020</X>
-                <Y>590</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>Social group 3</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>15</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000088</Id>
-                <Name>ownerKey0</Name>
-                <X>34</X>
-                <Y>640</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-5197648</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-5197648</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000089</Id>
-                <Name>ownerCaption0</Name>
-                <X>48</X>
-                <Y>631</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Unaware</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000090</Id>
-                <Name>ownerKey1</Name>
-                <X>239</X>
-                <Y>640</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-13140296</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-13140296</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000091</Id>
-                <Name>ownerCaption1</Name>
-                <X>253</X>
-                <Y>631</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Aware, not owner</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000092</Id>
-                <Name>ownerKey2</Name>
-                <X>444</X>
-                <Y>640</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-24804</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-24804</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000093</Id>
-                <Name>ownerCaption2</Name>
-                <X>458</X>
-                <Y>631</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Free sample</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Oval>
-                <Id>1793700000094</Id>
-                <Name>ownerKey3</Name>
-                <X>649</X>
-                <Y>640</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-14184102</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <RadiusX>5</RadiusX>
-                <RadiusY>5</RadiusY>
-                <Rotation>0</Rotation>
-                <FillColor>-14184102</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Oval>
-              <Text>
-                <Id>1793700000095</Id>
-                <Name>ownerCaption3</Name>
-                <X>663</X>
-                <Y>631</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Paid buyer</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000096</Id>
-                <Name>tieLegend</Name>
-                <X>850</X>
-                <Y>631</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>Solid: similar beliefs   ·   Dotted: different beliefs</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000097</Id>
-                <Name>activityLegend</Name>
-                <X>24</X>
-                <Y>662</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>Black line: selected meeting   ·   Blue line: new contact</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Rectangle>
-                <Id>1793700000098</Id>
-                <Name>plotDivider</Name>
-                <X>24</X>
-                <Y>689</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-2038294</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>1240</Width>
-                <Height>1</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-2038294</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Text>
-                <Id>1793700000099</Id>
-                <Name>reachTitle</Name>
-                <X>40</X>
-                <Y>704</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Awareness and paid sales</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000100</Id>
-                <Name>reachLabel</Name>
-                <X>40</X>
-                <Y>729</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Rectangle>
-                <Id>1793700000101</Id>
-                <Name>reachAxis</Name>
-                <X>64</X>
-                <Y>756</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-3879724</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>1</Width>
-                <Height>70</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-3879724</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Rectangle>
-                <Id>1793700000102</Id>
-                <Name>reachFloor</Name>
-                <X>64</X>
-                <Y>825</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <ZHeight>0</ZHeight>
-                <LineWidth>0</LineWidth>
-                <LineColor>-3879724</LineColor>
-                <LineMaterial>null</LineMaterial>
-                <LineStyle>SOLID</LineStyle>
-                <Width>327</Width>
-                <Height>1</Height>
-                <Rotation>0</Rotation>
-                <FillColor>-3879724</FillColor>
-                <FillMaterial>null</FillMaterial>
-              </Rectangle>
-              <Text>
-                <Id>1793700000103</Id>
-                <Name>reachTop</Name>
-                <X>27</X>
-                <Y>748</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>300</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000104</Id>
-                <Name>reachZero</Name>
-                <X>45</X>
-                <Y>815</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>0</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000105</Id>
-                <Name>reachPeriod0</Name>
-                <X>65</X>
-                <Y>834</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>0</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000106</Id>
-                <Name>reachPeriod60</Name>
-                <X>333</X>
-                <Y>834</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>60 periods</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000107</Id>
-                <Name>awareCurveKey</Name>
-                <X>105</X>
-                <Y>847</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-13140296</Color>
-                <Text>— Aware</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000108</Id>
-                <Name>paidCurveKey</Name>
-                <X>225</X>
-                <Y>847</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14184102</Color>
-                <Text>— Paid</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000109</Id>
-                <Name>opinionTitle</Name>
-                <X>460</X>
-                <Y>704</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Belief distribution</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000110</Id>
-                <Name>histMaxLabel</Name>
-                <X>460</X>
-                <Y>729</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000111</Id>
-                <Name>lowBelief</Name>
-                <X>480</X>
-                <Y>835</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>0 · low appeal</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000112</Id>
-                <Name>highBelief</Name>
-                <X>680</X>
-                <Y>835</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>1 · high appeal</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000113</Id>
-                <Name>statsTitle</Name>
-                <X>840</X>
-                <Y>704</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text>Network and purchase decisions</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>16</Size>
-                  <Style>1</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000114</Id>
-                <Name>statsLabel</Name>
-                <X>840</X>
-                <Y>733</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-14337718</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>13</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000115</Id>
-                <Name>reasonsLabel</Name>
-                <X>840</X>
-                <Y>793</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text />
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>12</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000116</Id>
-                <Name>caption</Name>
-                <X>24</X>
-                <Y>879</Y>
-                <Label>
-                  <X>10</X>
-                  <Y>0</Y>
-                </Label>
-                <PublicFlag>true</PublicFlag>
-                <PresentationFlag>true</PresentationFlag>
-                <ShowLabel>false</ShowLabel>
-                <DrawMode>SHAPE_DRAW_2D</DrawMode>
-                <EmbeddedIcon>false</EmbeddedIcon>
-                <Z>0</Z>
-                <Rotation>0</Rotation>
-                <Color>-10062717</Color>
-                <Text>300 customers, 1,200 actual ties. Positions show known social groups. All inputs synthetic.</Text>
-                <Font>
-                  <Name>SansSerif</Name>
-                  <Size>11</Size>
-                  <Style>0</Style>
-                </Font>
-                <Alignment>LEFT</Alignment>
-              </Text>
-              <Text>
-                <Id>1793700000162</Id>
+                <Id>1793700000188</Id>
                 <Name>flowHeading</Name>
                 <X>24</X>
-                <Y>935</Y>
+                <Y>25</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1618,19 +2451,19 @@ public boolean canDiscuss = false;
                 <Z>0</Z>
                 <Rotation>0</Rotation>
                 <Color>-15255989</Color>
-                <Text>Executable lab flowchart: one control token schedules the existing 300 customers</Text>
+                <Text>Lab flowchart: Source, Delay, SelectOutput and Sink</Text>
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>19</Size>
+                  <Size>23</Size>
                   <Style>1</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000163</Id>
+                <Id>1793700000189</Id>
                 <Name>flowHelp</Name>
                 <X>24</X>
-                <Y>970</Y>
+                <Y>65</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1643,19 +2476,19 @@ public boolean canDiscuss = false;
                 <Z>0</Z>
                 <Rotation>0</Rotation>
                 <Color>-15255989</Color>
-                <Text>True / false branches choose discussion and buying. Delay 0.005 paces each attempt; other delays are zero.</Text>
+                <Text>Actual execution blocks. One control token schedules 300 customers; the social-network display is below.</Text>
                 <Font>
                   <Name>SansSerif</Name>
-                  <Size>13</Size>
+                  <Size>14</Size>
                   <Style>0</Style>
                 </Font>
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000164</Id>
+                <Id>1793700000190</Id>
                 <Name>flowLoopNote</Name>
                 <X>120</X>
-                <Y>1335</Y>
+                <Y>435</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1668,7 +2501,7 @@ public boolean canDiscuss = false;
                 <Z>0</Z>
                 <Rotation>0</Rotation>
                 <Color>-15255989</Color>
-                <Text>False: repeat until 60 periods. The Source token is a scheduler, not a new customer.</Text>
+                <Text>False: repeat until 60 periods. Source creates a scheduler token, not another customer.</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>13</Size>
@@ -1677,10 +2510,10 @@ public boolean canDiscuss = false;
                 <Alignment>LEFT</Alignment>
               </Text>
               <Text>
-                <Id>1793700000165</Id>
+                <Id>1793700000191</Id>
                 <Name>flowFunctionsNote</Name>
                 <X>24</X>
-                <Y>1385</Y>
+                <Y>470</Y>
                 <Label>
                   <X>10</X>
                   <Y>0</Y>
@@ -1693,7 +2526,7 @@ public boolean canDiscuss = false;
                 <Z>0</Z>
                 <Rotation>0</Rotation>
                 <Color>-15255989</Color>
-                <Text>Small named Function elements below: inspect one rule at a time. Initialization, diagnostics and CSV export remain custom support.</Text>
+                <Text>Rule functions (editable in the Main diagram). Network initialization and output still use custom support.</Text>
                 <Font>
                   <Name>SansSerif</Name>
                   <Size>13</Size>
@@ -1885,10 +2718,10 @@ startCampaign.inject(1);</StartupCode>
             <QuantityColumn />
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000124</Id>
+            <Id>1793700000125</Id>
             <Name>startCampaign</Name>
             <X>60</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2080,19 +2913,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000127</Id>
+              <Id>1793700000128</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000129</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000128</Id>
+            <Id>1793700000130</Id>
             <Name>nextMeeting</Name>
             <X>205</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2195,19 +3029,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000129</Id>
+              <Id>1793700000131</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000132</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000130</Id>
+            <Id>1793700000133</Id>
             <Name>bothAware</Name>
             <X>380</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2297,19 +3132,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000131</Id>
+              <Id>1793700000134</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000135</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000132</Id>
+            <Id>1793700000136</Id>
             <Name>closeEnough</Name>
             <X>555</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2399,19 +3235,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000133</Id>
+              <Id>1793700000137</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000138</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000134</Id>
+            <Id>1793700000139</Id>
             <Name>averageBeliefs</Name>
             <X>740</X>
-            <Y>1000</Y>
+            <Y>100</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2514,19 +3351,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000135</Id>
+              <Id>1793700000140</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000141</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000136</Id>
+            <Id>1793700000142</Id>
             <Name>changeContact</Name>
             <X>740</X>
-            <Y>1120</Y>
+            <Y>220</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2629,19 +3467,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000137</Id>
+              <Id>1793700000143</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000144</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000138</Id>
+            <Id>1793700000145</Id>
             <Name>finishAttempt</Name>
             <X>925</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2744,19 +3583,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000139</Id>
+              <Id>1793700000146</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000147</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000140</Id>
+            <Id>1793700000148</Id>
             <Name>periodFinished</Name>
             <X>1090</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2846,19 +3686,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000141</Id>
+              <Id>1793700000149</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000150</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000142</Id>
+            <Id>1793700000151</Id>
             <Name>buyAndExperience</Name>
             <X>1090</X>
-            <Y>1170</Y>
+            <Y>270</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -2961,19 +3802,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000143</Id>
+              <Id>1793700000152</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000153</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000144</Id>
+            <Id>1793700000154</Id>
             <Name>campaignFinished</Name>
             <X>925</X>
-            <Y>1290</Y>
+            <Y>390</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -3066,19 +3908,20 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000145</Id>
+              <Id>1793700000155</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000156</PresentationId>
           </EmbeddedObject>
           <EmbeddedObject>
-            <Id>1793700000146</Id>
+            <Id>1793700000157</Id>
             <Name>finishCampaign</Name>
             <X>1090</X>
-            <Y>1290</Y>
+            <Y>390</Y>
             <Label>
               <X>-25</X>
               <Y>-25</Y>
@@ -3144,13 +3987,14 @@ startCampaign.inject(1);</StartupCode>
             </LocationNameCode>
             <InitializationType>SPECIFIED_NUMBER</InitializationType>
             <InitializationDatabaseTableQuery>
-              <Id>1793700000147</Id>
+              <Id>1793700000158</Id>
               <TableReference>
 						</TableReference>
             </InitializationDatabaseTableQuery>
             <InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
             <QuantityColumn>
 					</QuantityColumn>
+            <PresentationId>1793700000159</PresentationId>
           </EmbeddedObject>
         </EmbeddedObjects>
         <Events />
@@ -3158,10 +4002,10 @@ startCampaign.inject(1);</StartupCode>
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000117</Id>
+            <Id>1793700000118</Id>
             <Name>chooseMeeting</Name>
             <X>70</X>
-            <Y>1460</Y>
+            <Y>500</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3188,10 +4032,10 @@ for (int j = 0; j &lt; 300; j++) {
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000118</Id>
+            <Id>1793700000119</Id>
             <Name>shareLaunchNews</Name>
-            <X>245</X>
-            <Y>1460</Y>
+            <X>290</X>
+            <Y>500</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3216,10 +4060,10 @@ canDiscuss = true;</Body>
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000119</Id>
+            <Id>1793700000120</Id>
             <Name>moveBeliefsCloser</Name>
-            <X>420</X>
-            <Y>1460</Y>
+            <X>510</X>
+            <Y>500</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3235,10 +4079,10 @@ launch.lastOutcome = "Opinions moved closer";</Body>
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000120</Id>
+            <Id>1793700000121</Id>
             <Name>replaceContact</Name>
-            <X>595</X>
-            <Y>1460</Y>
+            <X>730</X>
+            <Y>500</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3269,10 +4113,10 @@ launch.lastOutcome = "Disagreement: discussion contact replaced";</Body>
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000121</Id>
+            <Id>1793700000122</Id>
             <Name>countAttempt</Name>
             <X>70</X>
-            <Y>1550</Y>
+            <Y>565</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3290,10 +4134,10 @@ if (launch.lastNew &gt;= 0) {
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000122</Id>
+            <Id>1793700000123</Id>
             <Name>checkPurchases</Name>
-            <X>245</X>
-            <Y>1550</Y>
+            <X>290</X>
+            <Y>565</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3317,10 +4161,10 @@ launch.history.add(row); launch.check(row);</Body>
           <Function AccessType="public" StaticFunction="false">
             <ReturnModificator>VOID</ReturnModificator>
             <ReturnType>double</ReturnType>
-            <Id>1793700000123</Id>
+            <Id>1793700000124</Id>
             <Name>showProgress</Name>
-            <X>420</X>
-            <Y>1550</Y>
+            <X>510</X>
+            <Y>565</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3342,10 +4186,10 @@ refreshLaunchDisplay();</Body>
         </Functions>
         <Connectors>
           <Connector>
-            <Id>1793700000148</Id>
+            <Id>1793700000160</Id>
             <Name>flow0</Name>
             <X>60</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3385,10 +4229,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000149</Id>
+            <Id>1793700000162</Id>
             <Name>flow1</Name>
             <X>205</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3428,10 +4272,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000150</Id>
+            <Id>1793700000164</Id>
             <Name>flow2</Name>
             <X>380</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3471,10 +4315,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000151</Id>
+            <Id>1793700000166</Id>
             <Name>flow3</Name>
             <X>380</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3522,10 +4366,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000152</Id>
+            <Id>1793700000168</Id>
             <Name>flow4</Name>
             <X>555</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3565,10 +4409,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000153</Id>
+            <Id>1793700000170</Id>
             <Name>flow5</Name>
             <X>555</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3608,10 +4452,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000154</Id>
+            <Id>1793700000172</Id>
             <Name>flow6</Name>
             <X>740</X>
-            <Y>1000</Y>
+            <Y>100</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3651,10 +4495,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000155</Id>
+            <Id>1793700000174</Id>
             <Name>flow7</Name>
             <X>740</X>
-            <Y>1120</Y>
+            <Y>220</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3694,10 +4538,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000156</Id>
+            <Id>1793700000176</Id>
             <Name>flow8</Name>
             <X>925</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3737,10 +4581,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000157</Id>
+            <Id>1793700000178</Id>
             <Name>flow9</Name>
             <X>1090</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3780,10 +4624,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000158</Id>
+            <Id>1793700000180</Id>
             <Name>flow10</Name>
             <X>1090</X>
-            <Y>1040</Y>
+            <Y>140</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3823,10 +4667,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000159</Id>
+            <Id>1793700000182</Id>
             <Name>flow11</Name>
             <X>1090</X>
-            <Y>1170</Y>
+            <Y>270</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3866,10 +4710,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000160</Id>
+            <Id>1793700000184</Id>
             <Name>flow12</Name>
             <X>925</X>
-            <Y>1290</Y>
+            <Y>390</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -3909,10 +4753,10 @@ refreshLaunchDisplay();</Body>
             </Points>
           </Connector>
           <Connector>
-            <Id>1793700000161</Id>
+            <Id>1793700000186</Id>
             <Name>flow13</Name>
             <X>925</X>
-            <Y>1290</Y>
+            <Y>390</Y>
             <Label>
               <X>10</X>
               <Y>0</Y>
@@ -4208,7 +5052,7 @@ public String customerTooltip(){
     <Frame>
       <Id>1793700000063</Id>
       <Width>1290</Width>
-      <Height>900</Height>
+      <Height>1550</Height>
     </Frame>
     <Database>
       <Id>1793700000064</Id>

@@ -1,6 +1,6 @@
 # Lab-style flowchart version: what changed and what still uses code
 
-Open **CampusProductLaunch_LabFlowchart.alp**. This is a separate review version. The two previously tested models remain byte-identical and are the rollback. This file has not yet been imported/compiled/run in the actual AnyLogic editor.
+Open **CampusProductLaunch_LabFlowchart.alp**. This is a separate review version. The two previously tested models remain byte-identical and are the rollback. The first revision was imported/compiled/run locally, as evidenced by its generated AnyLogic sources/classes and actual product_lab_output CSVs. Those default outputs match Java. The corrected top-left/runtime-icon layout still needs an editor/display check; prior execution does not establish its rendering.
 
 ## Based on the elements actually used in your handouts
 
@@ -10,7 +10,7 @@ This version uses **Source, Delay, SelectOutput and Sink**, plus ordinary named 
 
 ## Where to find the elements
 
-In Projects, double-click **Main**. The existing network animation occupies the upper diagram. Scroll below it (approximately y=1,000) to see the connected palette blocks; the named rule functions are immediately below them. Click a block to inspect its condition, delay or action in Properties.
+In Projects, double-click **Main**. The connected palette blocks now occupy the top-left of Main (approximately y=100–400). Named rule functions are below them; the network presentation is grouped underneath at y=650. Explicit native icon presentations and connector views are included in the running display as well. The earlier revision placed blocks out of view and omitted runtime icons; that layout mistake is corrected in this revision. Click a block to inspect its condition, delay or action in Properties.
 
 The source creates **one control token**. It schedules the campaign's encounters; it is not a new customer. The actual 300 Consumer agents remain the population on the network. The result is a hybrid agent-based model with a process-flow scheduler, not a model of customers arriving at a shop.
 

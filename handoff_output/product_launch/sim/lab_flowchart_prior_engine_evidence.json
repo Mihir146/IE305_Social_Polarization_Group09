@@ -1,0 +1,8 @@
+{
+  "source": "Actual local product_lab_output default CSVs plus generated AnyLogic BUILD sources/classes",
+  "rep": 1000,
+  "summary_matches_java_except_cohort_secs": true,
+  "summary_sha256": "0f695def12e8cd45541eafe4c90a491154aac3afdb1bde65e4b4c60ca8898f5b",
+  "evidence_scope": "First lab-flowchart revision executed; corrected top-left/icon layout has not been observed in the editor/runtime",
+  "does_not_establish": "No full engine-grid or latest rendering claim"
+}

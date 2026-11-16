@@ -144,15 +144,23 @@ def main():
     a.find('AdditionalClassCode').text=code
     a.find('Events').clear();a.find('StartupCode').text='initializeLaunch();\nstartCampaign.inject(1);'
     a.find('.//Variable[Name="outputDirectory"]/Properties/DefaultValue/Code').text='"product_lab_output"'
+    # First editor viewport must contain the actual PML blocks. The network
+    # presentation is a translated group below, preserving local UI coordinates.
+    shape=a.find('Presentation/Level/Presentation')
+    old_shapes=list(shape);shape.clear()
+    network=b.el(shape,'Group');b.common(network,'networkPresentation',0,650,shape=True);b.el(network,'Rotation',0)
+    network_contents=b.el(network,'Presentation')
+    for e in old_shapes:network_contents.append(e)
     functions=b.el(a,'Functions')
     for k,(name,body) in enumerate(FUNCTIONS.items()):
-        f=b.el(functions,'Function',AccessType='public',StaticFunction='false');b.el(f,'ReturnModificator','VOID');b.el(f,'ReturnType','double');b.common(f,name,70+175*(k%4),1460+90*(k//4),public=True,show=True);b.el(f,'Body',body.strip())
+        f=b.el(functions,'Function',AccessType='public',StaticFunction='false');b.el(f,'ReturnModificator','VOID');b.el(f,'ReturnType','double');b.common(f,name,70+220*(k%4),500+65*(k//4),public=True,show=True);b.el(f,'Body',body.strip())
     sample=ET.parse(EXAMPLES/'basicmodels/Bank Office - Phase 3/Bank Office - Phase 3.alp').getroot().find('.//ActiveObjectClass[Name="Main"]')
     if model.find('RequiredLibraryReference[LibraryName="com.anylogic.libraries.processmodeling"]') is None:
         ref=b.el(model,'RequiredLibraryReference');b.el(ref,'LibraryName',LIB);b.el(ref,'VersionMajor',8);b.el(ref,'VersionMinor',0);b.el(ref,'VersionBuild',5)
     templates={o.findtext('ActiveObjectClass/ClassName'):o for o in sample.findall('EmbeddedObjects/EmbeddedObject') if o.findtext('ActiveObjectClass/ClassName') in ['Source','Delay','SelectOutput','Sink']}
     objects=a.find('EmbeddedObjects');names={}
     for name,kind,x,y,params in BLOCKS:
+        y-=900
         o=copy.deepcopy(templates[kind]);o.find('Name').text=name;o.find('X').text=str(x);o.find('Y').text=str(y);o.find('ShowLabel').text='true';o.find('PresentationFlag').text='true';o.find('Label/X').text='-25';o.find('Label/Y').text='-25'
         for e in o.iter('Id'):e.text=b.ident()
         gs=o.find('GenericParameterSubstitute');v=gs.find('GenericParameterSubstituteValue')
@@ -163,6 +171,12 @@ def main():
         if kind=='Delay':params=dict(params,capacity='1')
         if kind=='SelectOutput':params=dict(params,conditionIsProbabilistic='false',choiceIsVolatile='false')
         for key,value in params.items():param(o,key,value,key=='delayTime')
+        # Explicit native icon presentation: embedded blocks otherwise exist
+        # in the editor but have no shapes in the running Main presentation.
+        presentation_id=b.ident();b.el(o,'PresentationId',presentation_id)
+        icon=b.el(shape,'EmbeddedObjectPresentation');b.el(icon,'Id',presentation_id);b.el(icon,'Name',name+'_presentation');b.el(icon,'X',x);b.el(icon,'Y',y)
+        lab=b.el(icon,'Label');b.el(lab,'X',0);b.el(lab,'Y',-25)
+        for tag,v in [('PublicFlag','true'),('PresentationFlag','true'),('ShowLabel','true'),('DrawMode','SHAPE_DRAW_2D'),('EmbeddedIcon','true'),('Z',0),('Rotation',0),('ScaleType','AUTOMATICALLY_CALCULATED'),('GISScaleForRealEmbeddedObjectPresentationSize',1),('GISScaleForFixedEmbeddedObjectPresentationSize',1000)]:b.el(icon,tag,v)
         objects.append(o);names[name]=(kind,x,y)
     connectors=b.el(a,'Connectors')
     for k,(src,port,dst) in enumerate(EDGES):
@@ -174,13 +188,19 @@ def main():
         elif src=='bothAware' and port=='outF':coords=[(0,0),(0,170),(545,170),(545,0)]
         else:coords=[(0,0),(dx-sx,dy-sy)]
         for x,y in coords:p=b.el(points,'Point');b.el(p,'X',x);b.el(p,'Y',y)
-    shape=a.find('Presentation/Level/Presentation')
-    b.text(shape,'flowHeading','Executable lab flowchart: one control token schedules the existing 300 customers',24,935,19,True)
-    b.text(shape,'flowHelp','True / false branches choose discussion and buying. Delay 0.005 paces each attempt; other delays are zero.',24,970,13)
-    b.text(shape,'flowLoopNote','False: repeat until 60 periods. The Source token is a scheduler, not a new customer.',120,1335,13)
-    b.text(shape,'flowFunctionsNote','Small named Function elements below: inspect one rule at a time. Initialization, diagnostics and CSV export remain custom support.',24,1385,13)
-    # Keep flowchart and its native block icons off the runtime viewport; in Main
-    # the network occupies y0..900 and the connected flow is directly below it.
+        # Draw the same connector route in the runtime presentation. These are
+        # views of real connected PML ports, not additional behavioral logic.
+        poly=b.el(shape,'Polyline');b.common(poly,'visibleFlow'+str(k),sx,sy,shape=True)
+        for tag,v in [('LineWidth',1),('LineColor',b.color('909090')),('LineStyle','SOLID'),('LineMaterial','null'),('FillColor',-1),('FillMaterial','null'),('Closed','false'),('Rotation',0),('BeginArrowStyle',0),('EndArrowStyle',0),('BeginArrowSize',1),('EndArrowSize',1),('ZHeight',0)]:b.el(poly,tag,v)
+        pp=b.el(poly,'Points')
+        for x,y in coords:p=b.el(pp,'Point');b.el(p,'X',x);b.el(p,'Y',y);b.el(p,'Z',0)
+    # Put runtime lines behind icons/text.
+    for poly in list(shape.findall('Polyline')):shape.remove(poly);shape.insert(0,poly)
+    b.text(shape,'flowHeading','Lab flowchart: Source, Delay, SelectOutput and Sink',24,25,23,True)
+    b.text(shape,'flowHelp','Actual execution blocks. One control token schedules 300 customers; the social-network display is below.',24,65,14)
+    b.text(shape,'flowLoopNote','False: repeat until 60 periods. Source creates a scheduler token, not another customer.',120,435,13)
+    b.text(shape,'flowFunctionsNote','Rule functions (editable in the Main diagram). Network initialization and output still use custom support.',24,470,13)
+    model.find('Frame/Height').text='1550'
     for kind in ['SimulationExperiment']:
         for ex in root.iter(kind):
             title=ex.find('PresentationProperties/Title')

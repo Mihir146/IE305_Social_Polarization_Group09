@@ -189,3 +189,9 @@ The student correctly identified that the original implementation put too much b
 The change is not a no-code rewrite: network generation, visualization/metrics and CSV support remain substantial inherited Java, explicitly documented. A truly near-zero-code version would change the mechanism and require new analysis. No existing numerical result is relabeled as evidence for an untested different model.
 
 Installed API compilation and a harness traversing serialized connectors/actions match all period metrics and final states for72 policy/seed cases. The harness does not verify actual AnyLogic PML import/scheduling. One editor/default run remains needed. The two previously tested models and final submission ZIP are preserved unchanged, and the new review model writes to a separate output folder.
+
+### Follow-up: actual flowchart visibility and scope
+
+The student could not find the components. The first version placed the PML blocks below the900-pixel animation and did not include native icon presentations in the runtime scene. We corrected that layout: real blocks and Functions now occupy the top of Main, the network is grouped below them, and explicit embedded icon/connector views are added. The first variant has now actually been imported/compiled/run: generated editor sources/classes and product_lab_output files are present, with the default matching Java. Rendering of the new layout is a separate unverified check.
+
+We also clarified the pedagogical limit: the PML blocks execute orchestration/branching, but network operations, purchases and setup/output still rely on custom functions. This is not evidence that most domain work is now performed by standard blocks or that it has become a near-zero-code lab model.

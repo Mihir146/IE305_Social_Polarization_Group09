@@ -5,7 +5,7 @@ and conditions. This is not an AnyLogic editor/import or PML runtime test.
 """
 from pathlib import Path
 import xml.etree.ElementTree as ET
-import tempfile,subprocess,json,os,csv
+import tempfile,subprocess,json,os,csv,hashlib
 
 ROOT=Path(__file__).resolve().parent.parent
 TYPES={'Group':'ShapeGroup','Rectangle':'ShapeRectangle','Text':'ShapeText','Oval':'ShapeOval'}
@@ -26,9 +26,10 @@ def main():
         if kind=='Source':p+='node="'+edges[name,'out']+'"; break;'
         elif kind=='Sink':p+='return;'
         elif kind=='Delay':p+=value(o,'onAtExit')+value(o,'onExit')+'node="'+edges[name,'out']+'"; break;'
-        elif kind=='SelectOutput':p+=value(o,'onEnter')+'node=('+value(o,'condition')+')?"'+edges[name,'outT']+'":"'+edges[name,'outF']+'"; break;'
+        elif kind=='SelectOutput':p+=value(o,'onEnter')+'if('+value(o,'condition')+'){'+value(o,'onExitTrue')+'node="'+edges[name,'outT']+'";}else{'+value(o,'onExitFalse')+'node="'+edges[name,'outF']+'";}break;'
         cases.append(p+'}')
     functions='\n'.join('public void '+f.findtext('Name')+'(){\n'+f.findtext('Body')+'\n}' for f in a.findall('Functions/Function'))
+    variable_fields='\n'.join('public '+v.findtext('Properties/Type')+' '+v.findtext('Name')+' = '+v.findtext('Properties/InitialValue/Code')+';' for v in a.findall('Variables/Variable[@Class="PlainVariable"]'))
     jars=list(Path('/opt/anylogic/plugins').glob('com.anylogic.engine*/**/*.jar'))+[Path('/opt/anylogic/plugins/com.anylogic.process_modeling_library_8.9.10.202609241721/lib/ProcessModelingLibrary.jar')]
     jars+=list(Path('/opt/anylogic/plugins').glob('com.anylogic.third_party_libraries*/lib/*.jar'))
     cp=os.pathsep.join(map(str,jars))
@@ -40,8 +41,8 @@ def main():
         body=a.findtext('AdditionalClassCode')
         start=body.index('public void refreshLaunchDisplay()');end=body.index('public void exportLaunch()',start)
         # Preserve display implementation for the API compile; do not run it.
-        runner='public void executeFlow(){String node="startCampaign";int visits=0;while(visits++<300000){switch(node){'+''.join(cases)+'default:throw new AssertionError(node);}}throw new AssertionError("Flow did not finish");}'
-        src=prefix+fields(a)+body+functions+runner+'}'
+        runner='public void executeFlow(){String node="startCampaign";int visits=0;while(visits++<2000000){switch(node){'+''.join(cases)+'default:throw new AssertionError(node);}}throw new AssertionError("Flow did not finish");}'
+        src=prefix+fields(a)+variable_fields+body+functions+runner+'}'
         (tmp/'Main.java').write_text(src)
         (tmp/'Consumer.java').write_text('import com.anylogic.engine.*;import com.anylogic.engine.presentation.*;public class Consumer extends Agent {'+fields(person)+person.findtext('AdditionalClassCode')+'}')
         original=(ROOT/'anylogic/ProductKernel.java').read_text().replace('ProductKernel','OriginalKernel')
@@ -52,11 +53,22 @@ public class FlowCheck {
  static class QuietMain extends Main {public void showProgress(){}}
  public static void main(String[] args){
   int cases=0;
-  for(int policy=0;policy<36;policy++)for(int rep=1000;rep<1002;rep++){
+  for(int test=0;test<80;test++){
+   int policy=test<72?test/2:24,rep=1000+(test%2);
    int normal=policy%18;Main m=new QuietMain();Main.ProductKernel.Config c=new Main.ProductKernel.Config();
    c.price=new double[]{400,500,600}[(normal/2)%3];c.h=normal%2;c.nSamples=policy>=18?3:12;
+   if(test>=72)switch(test-72){
+    case 0:c.nSamples=0;break;
+    case 1:c.shareProb=0;break;
+    case 2:c.price=2000;break;
+    case 3:c.k0=0;break;
+    case 4:c.d=1;c.mu=.5;c.phi=0;break;
+    case 5:c.d=.000001;c.phi=1;c.h=1;break;
+    case 6:c.k0=299;c.d=.000001;c.phi=1;break;
+    case 7:c.quality=.95;c.shareProb=1;c.d=.4;c.phi=1;break;
+   }
    m.launch=new Main.ProductKernel(c,rep,normal/6);
-   OriginalKernel.Config z=new OriginalKernel.Config();z.price=c.price;z.h=c.h;z.nSamples=c.nSamples;
+   OriginalKernel.Config z=new OriginalKernel.Config();z.price=c.price;z.h=c.h;z.nSamples=c.nSamples;z.shareProb=c.shareProb;z.k0=c.k0;z.d=c.d;z.mu=c.mu;z.phi=c.phi;z.quality=c.quality;
    OriginalKernel reference=new OriginalKernel(z,rep,normal/6);while(reference.period<60)reference.stepPeriod();
    m.executeFlow();
    if(m.launch.period!=60||m.launch.history.size()!=61)throw new AssertionError("Completion");
@@ -74,9 +86,9 @@ public class FlowCheck {
         (tmp/'FlowCheck.java').write_text(runner_src)
         r=subprocess.run(['javac','-cp',cp,'-d',str(tmp),*map(str,tmp.glob('*.java'))],capture_output=True,text=True)
         if r.returncode:print(r.stderr);raise SystemExit(r.returncode)
-        r=subprocess.run(['java','-Djava.awt.headless=true','-cp',str(tmp)+os.pathsep+cp,'FlowCheck'],capture_output=True,text=True)
+        r=subprocess.run(['java','-Djava.awt.headless=true','-cp',str(tmp)+os.pathsep+cp,'FlowCheck'],capture_output=True,text=True,timeout=90)
         if r.returncode:print(r.stdout,r.stderr);raise SystemExit(r.returncode)
-        info=dict(installed_api_compile=True,serialized_connector_graph_executed_in_harness=True,matching_cases=72,all_period_metrics_and_final_states_match=True,output=r.stdout,scope='Agent/shape/Source APIs compiled against installed libraries. Block graph/actions traversed by harness, not by PML engine. Actual AnyLogic editor import/compile/runtime still needs verification.')
+        info=dict(model_sha256=hashlib.sha256((ROOT/'CampusProductLaunch_LabFlowchart.alp').read_bytes()).hexdigest(),installed_api_compile=True,serialized_connector_graph_executed_in_harness=True,matching_cases=80,all_period_metrics_and_final_states_match=True,output=r.stdout,edge_cases=['zero samples','zero sharing','unaffordable price','zero degree','broad tolerance/full averaging/no rewiring','tiny tolerance/frequent similar rewiring','complete graph/no replacement candidate','high experience/sharing/rewiring'],scope='Installed APIs type-checked; serialized PML graph/actions executed in a traversal harness. Editor import, PML scheduling and display remain separate checks.')
         (ROOT/'sim/lab_flowchart_checks.json').write_text(json.dumps(info,indent=2)+'\n');print(json.dumps(info,indent=2))
 
 if __name__=='__main__':main()

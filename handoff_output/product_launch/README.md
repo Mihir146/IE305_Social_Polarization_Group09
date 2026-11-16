@@ -6,7 +6,7 @@ A hypothetical campus seller launches a reusable bottle to 300 connected custome
 
 ## Lab-style visual review version
 
-[CampusProductLaunch_LabFlowchart.alp](CampusProductLaunch_LabFlowchart.alp) adds functional Source/Delay/SelectOutput/Sink routing below the network. Read [LAB_FLOWCHART.md](LAB_FLOWCHART.md) for each block, remaining custom-code scope and checks. The serialized branch harness matches72 policy/seed cases; actual editor import/run is still pending. Previous models and the current submission ZIP remain the verified fallback.
+[CampusProductLaunch_LabFlowchart.alp](CampusProductLaunch_LabFlowchart.alp) uses33 real Source/Delay/SelectOutput/Sink blocks, including17 explicit decisions and separate customer-buying/experience loops. Read [LAB_FLOWCHART.md](LAB_FLOWCHART.md) for remaining functions, custom-support scope and checks. The serialized graph matches80 reference/edge cases; actual editor import/run of this expanded version remains pending. Previous models and the current submission ZIP remain the verified fallback.
 
 ## Start here
 

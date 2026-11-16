@@ -1,8 +1,19 @@
 {
+  "model_sha256": "09111275a09056de6cd482771e926ff0791f1b0eceaa62ddbf549f15a6f7687e",
   "installed_api_compile": true,
   "serialized_connector_graph_executed_in_harness": true,
-  "matching_cases": 72,
+  "matching_cases": 80,
   "all_period_metrics_and_final_states_match": true,
-  "output": "Exact original-kernel match: 72 policy/seed cases, all61x23 trajectory fields, final beliefs/ties/purchase/awareness periods.\n",
-  "scope": "Agent/shape/Source APIs compiled against installed libraries. Block graph/actions traversed by harness, not by PML engine. Actual AnyLogic editor import/compile/runtime still needs verification."
+  "output": "Exact original-kernel match: 80 policy/seed cases, all61x23 trajectory fields, final beliefs/ties/purchase/awareness periods.\n",
+  "edge_cases": [
+    "zero samples",
+    "zero sharing",
+    "unaffordable price",
+    "zero degree",
+    "broad tolerance/full averaging/no rewiring",
+    "tiny tolerance/frequent similar rewiring",
+    "complete graph/no replacement candidate",
+    "high experience/sharing/rewiring"
+  ],
+  "scope": "Installed APIs type-checked; serialized PML graph/actions executed in a traversal harness. Editor import, PML scheduling and display remain separate checks."
 }

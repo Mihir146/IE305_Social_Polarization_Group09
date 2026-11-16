@@ -1,0 +1,266 @@
+[
+  {
+    "block": "startCampaign",
+    "type": "Source",
+    "condition": null,
+    "action": null,
+    "x": 60,
+    "y": 140
+  },
+  {
+    "block": "nextMeeting",
+    "type": "Delay",
+    "condition": null,
+    "action": "if (launch.activationInPeriod == 0) launch.period++;\nfor (int k = 0; k < 6; k++) draws[k] = launch.eventRng.nextDouble();\nlaunch.lastI = (int)(draws[0] * 300);\nlaunch.lastJ = launch.lastNew = -1; informed = false;\na = launch.customers[launch.lastI]; z = null;\nlaunch.beforeI = launch.afterI = a.belief;\nlaunch.lastOutcome = \"No discussion contact\";",
+    "x": 205,
+    "y": 140
+  },
+  {
+    "block": "hasContact",
+    "type": "SelectOutput",
+    "condition": "launch.degree[launch.lastI] > 0",
+    "action": null,
+    "x": 380,
+    "y": 140
+  },
+  {
+    "block": "chooseNeighbor",
+    "type": "Delay",
+    "condition": null,
+    "action": "chooseContact();",
+    "x": 555,
+    "y": 140
+  },
+  {
+    "block": "eitherAware",
+    "type": "SelectOutput",
+    "condition": "a.aware || z.aware",
+    "action": null,
+    "x": 740,
+    "y": 140
+  },
+  {
+    "block": "bothAware",
+    "type": "SelectOutput",
+    "condition": "a.aware && z.aware",
+    "action": null,
+    "x": 925,
+    "y": 140
+  },
+  {
+    "block": "sharingWorks",
+    "type": "SelectOutput",
+    "condition": "draws[2] < launch.config.shareProb",
+    "action": null,
+    "x": 1120,
+    "y": 140
+  },
+  {
+    "block": "receiveNews",
+    "type": "Delay",
+    "condition": null,
+    "action": "ProductKernel.Customer other = a.aware ? z : a;\nother.aware = true; other.awarePeriod = launch.period; informed = true;",
+    "x": 1120,
+    "y": 260
+  },
+  {
+    "block": "closeEnough",
+    "type": "SelectOutput",
+    "condition": "Math.abs(launch.beforeI - launch.beforeJ) < launch.config.d",
+    "action": null,
+    "x": 925,
+    "y": 260
+  },
+  {
+    "block": "averageBeliefs",
+    "type": "Delay",
+    "condition": null,
+    "action": "a.belief = launch.beforeI + launch.config.mu * (launch.beforeJ - launch.beforeI);\nz.belief = launch.beforeJ + launch.config.mu * (launch.beforeI - launch.beforeJ);\nlaunch.lastOutcome = informed ? \"News shared and opinions moved closer\" : \"Opinions moved closer\";",
+    "x": 740,
+    "y": 260
+  },
+  {
+    "block": "replaceThisTie",
+    "type": "SelectOutput",
+    "condition": "draws[3] < launch.config.phi",
+    "action": "launch.lastOutcome = informed ? \"Launch news shared; opinions too far apart\" : \"Opinions too far apart; contact kept\";",
+    "x": 925,
+    "y": 380
+  },
+  {
+    "block": "preferSimilar",
+    "type": "SelectOutput",
+    "condition": "draws[4] < launch.config.h",
+    "action": null,
+    "x": 1120,
+    "y": 380
+  },
+  {
+    "block": "scanSimilar",
+    "type": "Delay",
+    "condition": null,
+    "action": "findSimilarContacts();",
+    "x": 1120,
+    "y": 500
+  },
+  {
+    "block": "similarExists",
+    "type": "SelectOutput",
+    "condition": "!choices.isEmpty()",
+    "action": null,
+    "x": 925,
+    "y": 500
+  },
+  {
+    "block": "scanAnyone",
+    "type": "Delay",
+    "condition": null,
+    "action": "findAnyContacts();",
+    "x": 1120,
+    "y": 620
+  },
+  {
+    "block": "anyoneExists",
+    "type": "SelectOutput",
+    "condition": "!choices.isEmpty()",
+    "action": null,
+    "x": 925,
+    "y": 620
+  },
+  {
+    "block": "changeContact",
+    "type": "Delay",
+    "condition": null,
+    "action": "int i = launch.lastI, j = launch.lastJ;\nint k = choices.get((int)(draws[5] * choices.size()));\nlaunch.adj[i][j] = launch.adj[j][i] = false;\nlaunch.adj[i][k] = launch.adj[k][i] = true;\nlaunch.degree[j]--; launch.degree[k]++; launch.rewires++;\nlaunch.lastNew = k; rewireI = i; rewireK = k; rewireLife = 18;\nlaunch.lastOutcome = \"Disagreement: discussion contact replaced\";",
+    "x": 740,
+    "y": 500
+  },
+  {
+    "block": "finishAttempt",
+    "type": "Delay",
+    "condition": null,
+    "action": "launch.afterI = a.belief;\nif (launch.lastJ >= 0) launch.afterJ = z.belief;\nlaunch.activationInPeriod++;",
+    "x": 205,
+    "y": 500
+  },
+  {
+    "block": "periodFinished",
+    "type": "SelectOutput",
+    "condition": "launch.activationInPeriod == 300",
+    "action": null,
+    "x": 380,
+    "y": 500
+  },
+  {
+    "block": "showCampaign",
+    "type": "Delay",
+    "condition": null,
+    "action": "showProgress();",
+    "x": 380,
+    "y": 740
+  },
+  {
+    "block": "campaignFinished",
+    "type": "SelectOutput",
+    "condition": "launch.period >= 60 && launch.activationInPeriod == 0",
+    "action": null,
+    "x": 205,
+    "y": 740
+  },
+  {
+    "block": "finishCampaign",
+    "type": "Sink",
+    "condition": null,
+    "action": "exportLaunch(); finishSimulation();",
+    "x": 60,
+    "y": 740
+  },
+  {
+    "block": "beginBuying",
+    "type": "Delay",
+    "condition": null,
+    "action": "customerIndex = 0; experienceIndex = 0; newBuyers.clear();",
+    "x": 60,
+    "y": 940
+  },
+  {
+    "block": "moreCustomers",
+    "type": "SelectOutput",
+    "condition": "customerIndex < 300",
+    "action": null,
+    "x": 240,
+    "y": 940
+  },
+  {
+    "block": "buyerAware",
+    "type": "SelectOutput",
+    "condition": "launch.customers[customerIndex].aware",
+    "action": null,
+    "x": 430,
+    "y": 940
+  },
+  {
+    "block": "notOwner",
+    "type": "SelectOutput",
+    "condition": "!launch.customers[customerIndex].freeSample && launch.customers[customerIndex].paidPeriod < 0",
+    "action": null,
+    "x": 620,
+    "y": 940
+  },
+  {
+    "block": "canAfford",
+    "type": "SelectOutput",
+    "condition": "launch.customers[customerIndex].budget >= launch.config.price",
+    "action": null,
+    "x": 810,
+    "y": 940
+  },
+  {
+    "block": "worthPrice",
+    "type": "SelectOutput",
+    "condition": "launch.customers[customerIndex].valueScale * launch.customers[customerIndex].belief >= launch.config.price",
+    "action": null,
+    "x": 1000,
+    "y": 940
+  },
+  {
+    "block": "recordBuyer",
+    "type": "Delay",
+    "condition": null,
+    "action": "ProductKernel.Customer buyer = launch.customers[customerIndex];\nbuyer.paidPeriod = launch.period; buyer.valueAtPurchase = buyer.valueScale * buyer.belief;\nnewBuyers.add(buyer);",
+    "x": 1190,
+    "y": 940
+  },
+  {
+    "block": "nextCustomer",
+    "type": "Delay",
+    "condition": null,
+    "action": "customerIndex++;",
+    "x": 620,
+    "y": 1060
+  },
+  {
+    "block": "moreExperiences",
+    "type": "SelectOutput",
+    "condition": "experienceIndex < newBuyers.size()",
+    "action": null,
+    "x": 240,
+    "y": 1180
+  },
+  {
+    "block": "revealExperience",
+    "type": "Delay",
+    "condition": null,
+    "action": "newBuyers.get(experienceIndex).belief = newBuyers.get(experienceIndex).experience;\nexperienceIndex++;",
+    "x": 430,
+    "y": 1180
+  },
+  {
+    "block": "savePeriod",
+    "type": "Delay",
+    "condition": null,
+    "action": "launch.activationInPeriod = 0;\ndouble[] row = launch.snapshot(newBuyers.size());\nlaunch.history.add(row); launch.check(row);",
+    "x": 620,
+    "y": 1180
+  }
+]

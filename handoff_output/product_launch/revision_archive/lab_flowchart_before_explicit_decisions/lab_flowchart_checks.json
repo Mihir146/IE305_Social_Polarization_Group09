@@ -1,0 +1,8 @@
+{
+  "installed_api_compile": true,
+  "serialized_connector_graph_executed_in_harness": true,
+  "matching_cases": 72,
+  "all_period_metrics_and_final_states_match": true,
+  "output": "Exact original-kernel match: 72 policy/seed cases, all61x23 trajectory fields, final beliefs/ties/purchase/awareness periods.\n",
+  "scope": "Agent/shape/Source APIs compiled against installed libraries. Block graph/actions traversed by harness, not by PML engine. Actual AnyLogic editor import/compile/runtime still needs verification."
+}

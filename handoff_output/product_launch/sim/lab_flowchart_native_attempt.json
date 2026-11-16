@@ -1,0 +1,6 @@
+{
+  "attempt": "Direct construction of headless native PML Engine",
+  "succeeded": false,
+  "reason": "Engine has no reference to experiment; model properties unavailable in direct construction context",
+  "claim_limit": "No native-engine or editor-import success claimed for expanded revision; traversal checks are separate"
+}
